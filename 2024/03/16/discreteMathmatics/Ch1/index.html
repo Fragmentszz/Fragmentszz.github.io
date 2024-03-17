@@ -1,0 +1,385 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>离散数学第一章: 数理逻辑 | Fragments' Blog</title><meta name="author" content="Fragments WANG"><meta name="copyright" content="Fragments WANG"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数理逻辑 1. 断言与命题 1.1 断言  定义: 断言是一个陈述句。   1.2 命题  定义: 命题是一个有明确真假的断言。   如果有的断言不可以被指定真假，比如&quot;我说的是假的&quot;，这种断言叫做&quot;悖论&quot;。   定义: 不能再被分解的最简单的命题叫做原子命题或本原命题。  命题之间可以用命题连接词连接，形成新的命题。  1.3 命题连接词  运算顺序: $">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离散数学第一章: 数理逻辑">
+<meta property="og:url" content="http://blog.fragments.work/2024/03/16/discreteMathmatics/Ch1/index.html">
+<meta property="og:site_name" content="Fragments&#39; Blog">
+<meta property="og:description" content="数理逻辑 1. 断言与命题 1.1 断言  定义: 断言是一个陈述句。   1.2 命题  定义: 命题是一个有明确真假的断言。   如果有的断言不可以被指定真假，比如&quot;我说的是假的&quot;，这种断言叫做&quot;悖论&quot;。   定义: 不能再被分解的最简单的命题叫做原子命题或本原命题。  命题之间可以用命题连接词连接，形成新的命题。  1.3 命题连接词  运算顺序: $">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.fragments.work/img/lisan.jpg">
+<meta property="article:published_time" content="2024-03-16T05:30:00.000Z">
+<meta property="article:modified_time" content="2024-03-17T06:47:29.692Z">
+<meta property="article:author" content="Fragments WANG">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.fragments.work/img/lisan.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://blog.fragments.work/2024/03/16/discreteMathmatics/Ch1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '离散数学第一章: 数理逻辑',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-17 14:47:29'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Fragments' Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/lisan.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Fragments' Blog"><span class="site-name">Fragments' Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">离散数学第一章: 数理逻辑</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-16T05:30:00.000Z" title="发表于 2024-03-16 13:30:00">2024-03-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-17T06:47:29.692Z" title="更新于 2024-03-17 14:47:29">2024-03-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="离散数学第一章: 数理逻辑"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>数理逻辑</h1>
+<h2 id="1-断言与命题">1. 断言与命题</h2>
+<h3 id="1-1-断言">1.1 断言</h3>
+<blockquote>
+<p>定义: 断言是一个陈述句。</p>
+</blockquote>
+<hr>
+<h3 id="1-2-命题">1.2 命题</h3>
+<blockquote>
+<p>定义: 命题是一个有<strong>明确真假</strong>的断言。</p>
+</blockquote>
+<blockquote>
+<p>如果有的断言不可以被指定真假，比如&quot;我说的是假的&quot;，这种断言叫做&quot;悖论&quot;。</p>
+</blockquote>
+<blockquote>
+<p>定义: 不能再被分解的最简单的命题叫做<strong>原子命题</strong>或<strong>本原</strong>命题。</p>
+</blockquote>
+<p>命题之间可以用命题连接词连接，形成新的命题。</p>
+<hr>
+<h3 id="1-3-命题连接词">1.3 命题连接词</h3>
+<blockquote>
+<p>运算顺序: $\neg \ &gt; \   \wedge \ &gt;\   \vee &gt; \ \to \ &gt; \ \leftrightarrow$</p>
+</blockquote>
+<h4 id="否定连接词-neg">否定连接词$\neg$</h4>
+<h4 id="合区词-wedge">合区词$\wedge$</h4>
+<h4 id="析取词-vee-：可兼或">析取词$\vee$ ：可兼或</h4>
+<h4 id="蕴含词-rightarrow">蕴含词$\rightarrow$</h4>
+<p>$P \to Q$和以下说法均等价:</p>
+<ol>
+<li>如果$P$，那么$Q$</li>
+<li>$P$是$Q$的充分条件</li>
+<li>$Q$是$P$的必要条件</li>
+<li>$P$仅当$Q$</li>
+<li>$Q$每当$P$</li>
+</ol>
+<h4 id="等值词-leftrightarrow">等值词$\leftrightarrow$</h4>
+<p>$P \leftrightarrow Q \Leftrightarrow P\to Q \wedge Q \to P$</p>
+<p>并且$P \leftrightarrow Q$等价于:</p>
+<ol>
+<li>$P$是$Q$的充要条件</li>
+<li>$Q$是$P$的充要条件</li>
+<li>$P$当且仅当$Q$</li>
+<li>$Q$当且仅当$P$</li>
+</ol>
+<hr>
+<h3 id="1-4-命题公式">1.4 命题公式</h3>
+<blockquote>
+<p>若变元$P$的值域为真值域${True,False}$，就叫做命题变元。</p>
+</blockquote>
+<blockquote>
+<p>若常量值$T/F$代表真值$True$或$False$，则$T/F$称为命题常元。</p>
+</blockquote>
+<blockquote>
+<p>定义: 单个命题变元和单个命题常元叫做原子公式。</p>
+</blockquote>
+<blockquote>
+<p>归纳定义:</p>
+<p>①. 单个原子公式是命题公式</p>
+<p>②. 若$P$和$Q$都是命题公式，则…也是命题公式。</p>
+<p>③. 只有有限步使用上述规则得到的公式才是命题公式。</p>
+</blockquote>
+<p>上述归纳定义得出的公式也叫做<strong>合式公式</strong>。</p>
+<h3 id="1-5-命题的逻辑等价">1.5 命题的逻辑等价</h3>
+<p>如果命题公式$P$和$Q$在所有指派下都具有相同的真值，则$P$和$Q$逻辑等价。</p>
+<p>可记作$P \Leftrightarrow Q$，$P$和$Q$逻辑恒等。</p>
+<hr>
+<h2 id="2-重言式-永真式">2. 重言式(永真式)</h2>
+<p>对于一个具有$n$个变元的命题公式$A(\alpha_1,\alpha_2,\cdots,\alpha_n)$,变元$\alpha_i$的真值一共有$2^n$种，每一种组合叫做一种<strong>指派</strong>。</p>
+<blockquote>
+<p>定义: 对于每一种指派，如果命题公式$A$的真值都是真，则命题公式$A$是一个重言式(永真式)。</p>
+</blockquote>
+<blockquote>
+<p>定义: 对于每一种指派，如果命题公式$A$的真值都是假，则命题公式$A$是一个矛盾式(永假式)。</p>
+</blockquote>
+<blockquote>
+<p>定义: 对于不同指派，如果命题公式$A$的真值有真有假，则命题公式$A$是一个偶然式。</p>
+</blockquote>
+<ul>
+<li>永真蕴含式和恒等式具有传递特性，即$A \Rightarrow B, B \Rightarrow C$,则$A \Rightarrow C$；$A \Leftrightarrow B, B \Leftrightarrow C$,则$A \Leftrightarrow C$。</li>
+<li>永真蕴含式有如下特性:$A \Rightarrow B, A \Rightarrow C$，则$A \Rightarrow B \wedge C$。</li>
+</ul>
+<h3 id="2-1-代入规则-重言式中的变元代入为任意公式">2.1 代入规则: 重言式中的变元代入为任意公式</h3>
+<p>一个<strong>永真式</strong>$P(a_1,a_2,\cdots,a_n)$有$n$个变元，则将其中任意变元所在的<strong>所有</strong>位置用任意公式代入后，得到另一<strong>永真式</strong>$P’$。</p>
+<p>注意，<strong>永真式</strong>使用代入规则后还是<strong>永真式</strong>，但是偶然式不一定！</p>
+<h3 id="2-2-替换规则-用逻辑恒等式替换公式">2.2 替换规则: 用逻辑恒等式替换公式</h3>
+<blockquote>
+<p>定义： 若一个公式$C$是公式$P$中其中完整的一部分，则称$C$是公式$P$的子公式。</p>
+</blockquote>
+<p>若存在逻辑恒等式$C \Leftrightarrow D$，则可以将公式$P$中的子公式$C$替换为公式$D$，如此得到公式$P’$，且$P \Leftrightarrow P’$。</p>
+<h3 id="2-3-对偶公式">2.3 对偶公式</h3>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>对公式$A(a_1,a_2,\cdots,a_n)$，定义其对偶公式$A^*$为:</p>
+<p>$$<br>
+\begin{align}<br>
+公式A中: \\  \wedge 换为 \vee \\ \vee 换为 \wedge \\ T 换为 F \\ F 换为T \\ 得到新公式A^*(a_1,a_2,\cdots,a_n)<br>
+\end{align}<br>
+$$</p>
+<blockquote>
+<p>定理: $\neg A(a_1,a_2,\cdots,a_n) =  A^*(\neg a_1, \neg a_2,\cdots, \neg a_n)$</p>
+</blockquote>
+<blockquote>
+<p>延申定理: 当$A$和$B$都为变元$(a_1,a_2,\cdots,a_n)$的命题公式时:</p>
+</blockquote>
+<p>$$<br>
+A \to B \Leftrightarrow B^* \to A^* \\ A \leftrightarrow B \Leftrightarrow A^* \leftrightarrow B^*<br>
+$$</p>
+<h2 id="3-范式">3. 范式</h2>
+<h3 id="3-1-基本积与基本和">3.1 基本积与基本和</h3>
+<blockquote>
+<p>定义：一些命题变元和一些命题变元的否定之积(合取)，称为基本积。</p>
+<p>定理： 当一个基本积是永假式，当且仅当这个基本积中包含$P$和$\neg P$。</p>
+</blockquote>
+<blockquote>
+<p>定义：一些命题变元和一些命题变元的否定之和(析取)，称为基本和。</p>
+<p>定理：当一个基本和是永真式，当且仅当这个基本和中包含$P$和$\neg P$。</p>
+</blockquote>
+<h3 id="3-2-析取范式和合取范式">3.2 析取范式和合取范式</h3>
+<blockquote>
+<p>定义$3.2.1$：如果存在一个由基本积的析取形成的公式$A’$和公式$A$等价，即:<br>
+$$<br>
+A \Leftrightarrow A’ = A_1 \vee A_2 \vee \cdots \vee A_n<br>
+$$<br>
+其中$A_i$为基本积，则称$A’$是公式$A$的<strong>析取范式</strong>(积之和)。其中含有最少运算符的析取范式叫做<strong>最简析取范式</strong>。(用卡诺图可化简)</p>
+</blockquote>
+<blockquote>
+<p>定义$3.2.2$ ：如果存在一个由基本和的合取形成的公式$B’$和公式$B$等价，即:<br>
+$$<br>
+B \Leftrightarrow B’ = B_1 \wedge B_2 \wedge \cdots \wedge B_n<br>
+$$<br>
+其中$B_i$为基本和，则称$B’$是公式$B$的<strong>合取范式</strong>(和之积)。其中运算符个数最少的合取范式叫做<strong>最简合取范式</strong>。(先求$B^*$的最简析取式)</p>
+</blockquote>
+<h3 id="3-3-极小项和极大项">3.3 极小项和极大项</h3>
+<blockquote>
+<p>定义$3.3.1$：对于一个$n$元命题公式$A(a_1,a_2,\cdots,a_n)$，假如基本积中每个变元或该变元的逆不同时出现，并且只出现其中的一个，则这个基本积叫做命题公式$A$的<strong>极小项</strong>。</p>
+</blockquote>
+<p>显然$n$元命题公式$A(a_1,a_2,\cdots,a_n)$有且仅有$2^n$个极小项，可以用二进制数对应这些极小项，对应用$m_i$表示：<br>
+$$<br>
+\begin{align}<br>
+\neg a_1 \wedge \neg a_2 \wedge \cdots \wedge \neg a_n  -----&gt; 00\cdots0(m_0) \\<br>
+a_1 \ \ \wedge a_2 \ \wedge \cdots \wedge a_n \ \ -----&gt; 11\cdots1(m_{2^n -1})<br>
+\end{align}<br>
+$$</p>
+<blockquote>
+<p>性质$3.3.1$：<br>
+$$<br>
+m_i \wedge m_j \Leftrightarrow F(i \ne j) \\ \mathop{\vee}\limits_{i=0}^{2^n-1}m_i \Leftrightarrow T<br>
+$$</p>
+</blockquote>
+<blockquote>
+<p>定义$3.3.2$：对于一个$n$元命题公式$A(a_1,a_2,\cdots,a_n)$，假如基本和中每个变元或该变元的逆不同时出现，并且只出现其中的一个，则这个基本和叫做命题公式$A$的<strong>极大项</strong>。</p>
+</blockquote>
+<p>$n$元命题公式$A(a_1,a_2,\cdots,a_n)$同样也有$2^n$个极大项，也用二进制数表示极大项(表示方式和极小项相反)，但用$M_i$表示:<br>
+$$<br>
+\begin{align}<br>
+a_1 \ \ \wedge a_2 \ \wedge \cdots \wedge a_n \ \ -----&gt; 00\cdots0(M_{0}) \\<br>
+\neg a_1 \wedge \neg a_2 \wedge \cdots \wedge \neg a_n  -----&gt; 11\cdots1(M_{2^{n}-1})<br>
+\end{align}<br>
+$$</p>
+<blockquote>
+<p>性质$3.3.2$：<br>
+$$<br>
+M_i \vee M_j \Leftrightarrow T(i \ne j) \\ \mathop{\wedge}_{i=0}^{2^n-1}M_i \Leftrightarrow F<br>
+$$</p>
+</blockquote>
+<blockquote>
+<p>性质$3.3.3$：<br>
+$$<br>
+\neg m_i \Leftrightarrow M_i \\ \neg M_i \Leftrightarrow m_i<br>
+$$</p>
+</blockquote>
+<h3 id="3-4-主析取范式和主合取范式">3.4 主析取范式和主合取范式</h3>
+<blockquote>
+<p>定义$3.4.1$：如果一个析取范式中的基本积全都是极小项，那么这个析取范式叫做<strong>主析取范式</strong>。</p>
+</blockquote>
+<blockquote>
+<p>定义$3.4.2$：如果一个合取范式中的基本和全都是极大项，那么这个合取范式叫做<strong>主合取范式</strong>。</p>
+</blockquote>
+<p>每一个命题公式$A$都对应一个<strong>真值表</strong>，也对应一个<strong>主析取范式</strong>和<strong>主合取范式</strong>。</p>
+<blockquote>
+<p>对于$n$元命题$A(a_1,a_2,\cdots,a_n)$共有$2^n$个极大项/极小项，可以组合出$2^{2^n}$种主合取范式/主析取范式/真值表，因此一共有$2^{2^n}$种$n$变元命题。</p>
+</blockquote>
+<h2 id="4-连结词的扩充与规约">4. 连结词的扩充与规约</h2>
+<h3 id="4-1-连结词的扩充">4.1 连结词的扩充</h3>
+<p>二元运算还可以定义有意义的几个运算：<br>
+$$<br>
+与非: P\uparrow Q \Leftrightarrow<br>
+$$</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://blog.fragments.work">Fragments WANG</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://blog.fragments.work/2024/03/16/discreteMathmatics/Ch1/">http://blog.fragments.work/2024/03/16/discreteMathmatics/Ch1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.fragments.work" target="_blank">Fragments' Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="post_share"><div class="social-share" data-image="/img/lisan.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/03/17/PrincipleofCompiling/compilation-Week3/" title="Week3: 词法分析"><img class="cover" src="/img/PrinciplesofCompilation.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Week3: 词法分析</div></div></a></div><div class="next-post pull-right"><a href="/2024/03/15/PrincipleofCompiling/compilation-Week2/" title="编译原理Week2： 文法、句型、句子、语言和文法的类型"><img class="cover" src="/img/PrinciplesofCompilation.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">编译原理Week2： 文法、句型、句子、语言和文法的类型</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/03/15/PrincipleofCompiling/compilation-Week2/" title="编译原理Week2： 文法、句型、句子、语言和文法的类型"><img class="cover" src="/img/PrinciplesofCompilation.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-15</div><div class="title">编译原理Week2： 文法、句型、句子、语言和文法的类型</div></div></a></div><div><a href="/2024/03/17/PrincipleofCompiling/compilation-Week3/" title="Week3: 词法分析"><img class="cover" src="/img/PrinciplesofCompilation.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-17</div><div class="title">Week3: 词法分析</div></div></a></div><div><a href="/2024/03/17/ComputerNetwork/Ch1/" title="网络原理: 互联网的组成和分类，计算机网络的性能与体系结构"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-17</div><div class="title">网络原理: 互联网的组成和分类，计算机网络的性能与体系结构</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fragments WANG</div><div class="author-info__description">记录Fragments的普通生活~</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Fragmentszz"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Fragmentszz" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/w2059559391@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">数理逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%96%AD%E8%A8%80%E4%B8%8E%E5%91%BD%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">1. 断言与命题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%96%AD%E8%A8%80"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 断言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%91%BD%E9%A2%98"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 命题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%91%BD%E9%A2%98%E8%BF%9E%E6%8E%A5%E8%AF%8D"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 命题连接词</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%A6%E5%AE%9A%E8%BF%9E%E6%8E%A5%E8%AF%8D-neg"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">否定连接词$\neg$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%88%E5%8C%BA%E8%AF%8D-wedge"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">合区词$\wedge$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%90%E5%8F%96%E8%AF%8D-vee-%EF%BC%9A%E5%8F%AF%E5%85%BC%E6%88%96"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">析取词$\vee$ ：可兼或</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%95%B4%E5%90%AB%E8%AF%8D-rightarrow"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">蕴含词$\rightarrow$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E5%80%BC%E8%AF%8D-leftrightarrow"><span class="toc-number">1.1.3.5.</span> <span class="toc-text">等值词$\leftrightarrow$</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%91%BD%E9%A2%98%E5%85%AC%E5%BC%8F"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.4 命题公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E5%91%BD%E9%A2%98%E7%9A%84%E9%80%BB%E8%BE%91%E7%AD%89%E4%BB%B7"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.5 命题的逻辑等价</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%87%8D%E8%A8%80%E5%BC%8F-%E6%B0%B8%E7%9C%9F%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">2. 重言式(永真式)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E4%BB%A3%E5%85%A5%E8%A7%84%E5%88%99-%E9%87%8D%E8%A8%80%E5%BC%8F%E4%B8%AD%E7%9A%84%E5%8F%98%E5%85%83%E4%BB%A3%E5%85%A5%E4%B8%BA%E4%BB%BB%E6%84%8F%E5%85%AC%E5%BC%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 代入规则: 重言式中的变元代入为任意公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%9B%BF%E6%8D%A2%E8%A7%84%E5%88%99-%E7%94%A8%E9%80%BB%E8%BE%91%E6%81%92%E7%AD%89%E5%BC%8F%E6%9B%BF%E6%8D%A2%E5%85%AC%E5%BC%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 替换规则: 用逻辑恒等式替换公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%AF%B9%E5%81%B6%E5%85%AC%E5%BC%8F"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 对偶公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%8C%83%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">3. 范式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%9F%BA%E6%9C%AC%E7%A7%AF%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%92%8C"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 基本积与基本和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%9E%90%E5%8F%96%E8%8C%83%E5%BC%8F%E5%92%8C%E5%90%88%E5%8F%96%E8%8C%83%E5%BC%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 析取范式和合取范式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%9E%81%E5%B0%8F%E9%A1%B9%E5%92%8C%E6%9E%81%E5%A4%A7%E9%A1%B9"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 极小项和极大项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E4%B8%BB%E6%9E%90%E5%8F%96%E8%8C%83%E5%BC%8F%E5%92%8C%E4%B8%BB%E5%90%88%E5%8F%96%E8%8C%83%E5%BC%8F"><span class="toc-number">1.3.4.</span> <span class="toc-text">3.4 主析取范式和主合取范式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%BF%9E%E7%BB%93%E8%AF%8D%E7%9A%84%E6%89%A9%E5%85%85%E4%B8%8E%E8%A7%84%E7%BA%A6"><span class="toc-number">1.4.</span> <span class="toc-text">4. 连结词的扩充与规约</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E8%BF%9E%E7%BB%93%E8%AF%8D%E7%9A%84%E6%89%A9%E5%85%85"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 连结词的扩充</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/17/ComputerNetwork/Ch1/" title="网络原理: 互联网的组成和分类，计算机网络的性能与体系结构">网络原理: 互联网的组成和分类，计算机网络的性能与体系结构</a><time datetime="2024-03-17T10:34:27.000Z" title="发表于 2024-03-17 18:34:27">2024-03-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/17/PrincipleofCompiling/compilation-Week3/" title="Week3: 词法分析"><img src="/img/PrinciplesofCompilation.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Week3: 词法分析"/></a><div class="content"><a class="title" href="/2024/03/17/PrincipleofCompiling/compilation-Week3/" title="Week3: 词法分析">Week3: 词法分析</a><time datetime="2024-03-17T06:02:22.000Z" title="发表于 2024-03-17 14:02:22">2024-03-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/16/discreteMathmatics/Ch1/" title="离散数学第一章: 数理逻辑"><img src="/img/lisan.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="离散数学第一章: 数理逻辑"/></a><div class="content"><a class="title" href="/2024/03/16/discreteMathmatics/Ch1/" title="离散数学第一章: 数理逻辑">离散数学第一章: 数理逻辑</a><time datetime="2024-03-16T05:30:00.000Z" title="发表于 2024-03-16 13:30:00">2024-03-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/15/PrincipleofCompiling/compilation-Week2/" title="编译原理Week2： 文法、句型、句子、语言和文法的类型"><img src="/img/PrinciplesofCompilation.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理Week2： 文法、句型、句子、语言和文法的类型"/></a><div class="content"><a class="title" href="/2024/03/15/PrincipleofCompiling/compilation-Week2/" title="编译原理Week2： 文法、句型、句子、语言和文法的类型">编译原理Week2： 文法、句型、句子、语言和文法的类型</a><time datetime="2024-03-15T14:09:29.000Z" title="发表于 2024-03-15 22:09:29">2024-03-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Fragments WANG</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

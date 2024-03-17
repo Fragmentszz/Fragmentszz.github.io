@@ -1,0 +1,459 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>编译原理Week2： 文法、句型、句子、语言和文法的类型 | Fragments' Blog</title><meta name="author" content="Fragments WANG"><meta name="copyright" content="Fragments WANG"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Week2: 文法、句型、句子、语言和文法的类型  一门高级语言是一个记号系统，需要定义语言和语义两部分。  1. 符号串上的运算: 1.0 符号串的长度 $x$为一串，则$|x|$为$x$所占字符表中，字符的个数 1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀 若$z &#x3D; xy$，则$x$为$z$的头(前缀)，注意$x$可以为$\varepsilon$ $x$为$z$的头，且$x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译原理Week2： 文法、句型、句子、语言和文法的类型">
+<meta property="og:url" content="http://blog.fragments.work/2024/03/15/PrincipleofCompiling/compilation-Week2/index.html">
+<meta property="og:site_name" content="Fragments&#39; Blog">
+<meta property="og:description" content="Week2: 文法、句型、句子、语言和文法的类型  一门高级语言是一个记号系统，需要定义语言和语义两部分。  1. 符号串上的运算: 1.0 符号串的长度 $x$为一串，则$|x|$为$x$所占字符表中，字符的个数 1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀 若$z &#x3D; xy$，则$x$为$z$的头(前缀)，注意$x$可以为$\varepsilon$ $x$为$z$的头，且$x">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.fragments.work/img/PrinciplesofCompilation.jpg">
+<meta property="article:published_time" content="2024-03-15T14:09:29.000Z">
+<meta property="article:modified_time" content="2024-03-17T06:43:08.335Z">
+<meta property="article:author" content="Fragments WANG">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.fragments.work/img/PrinciplesofCompilation.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://blog.fragments.work/2024/03/15/PrincipleofCompiling/compilation-Week2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '编译原理Week2： 文法、句型、句子、语言和文法的类型',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-17 14:43:08'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Fragments' Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/PrinciplesofCompilation.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Fragments' Blog"><span class="site-name">Fragments' Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">编译原理Week2： 文法、句型、句子、语言和文法的类型</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-15T14:09:29.000Z" title="发表于 2024-03-15 22:09:29">2024-03-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-17T06:43:08.335Z" title="更新于 2024-03-17 14:43:08">2024-03-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="编译原理Week2： 文法、句型、句子、语言和文法的类型"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>Week2: 文法、句型、句子、语言和文法的类型</h1>
+<blockquote>
+<p>一门高级语言是一个记号系统，需要定义语言和语义两部分。</p>
+</blockquote>
+<h2 id="1-符号串上的运算">1. 符号串上的运算:</h2>
+<h3 id="1-0-符号串的长度">1.0 符号串的长度</h3>
+<p>$x$为一串，则$|x|$为$x$所占字符表中，字符的个数</p>
+<h3 id="1-1-符号串的-固有-头和-固有-尾，-真-前缀和-真-后缀">1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀</h3>
+<p>若$z = xy$，则$x$为$z$的头(前缀)，注意$x$可以为<font color="red">$\varepsilon$</font></p>
+<p>$x$为$z$的头，且$x \ne z$，则$x$为$z$的固有头/真前缀</p>
+<h3 id="1-2-符号串的连接。">1.2 符号串的连接。</h3>
+<p>$x$,$y$为两个符号串,$z = xy$，$|z| = |x| + |y|$<br>
+$$<br>
+x = \varepsilon x=x \varepsilon<br>
+$$</p>
+<h3 id="1-3-符号串的方幂">1.3 符号串的方幂</h3>
+<p>$x^n$表示将串$x$重复连接$n$次<br>
+$$<br>
+x^0=\varepsilon \ x^mx^{n-m}=x^{n-m}x^m=x^n,\quad n\ge m<br>
+$$</p>
+<h3 id="1-4-符号串集">1.4 符号串集</h3>
+<blockquote>
+<p>定义: 如果集合$<span class="md-search-hit">A</span>$中所有的元素都是定义在符号表$\Sigma $上的符号串，则称集合$<span class="md-search-hit">A</span>$为定义在字符表$ \Sigma $的符号串集合</p>
+</blockquote>
+<blockquote>
+<p>定义两个符号串的乘积: $A \times B = {xy|x\in A,y \in B}$</p>
+</blockquote>
+<p>$$<br>
+{\varepsilon} \times A = A<br>
+$$</p>
+<p>已有符号集$\Sigma$,根据集合乘积的定义，可得到集合的方幂$\Sigma^n$</p>
+<p>其中:<br>
+$$<br>
+\Sigma^0 = {\varepsilon}<br>
+$$<br>
+定义闭包:<br>
+$$<br>
+\Sigma^*=\Sigma^0 \cup \Sigma^1 \cup \Sigma^2 \cup \Sigma^3 \cup …<br>
+$$<br>
+定义正闭包:<br>
+$$<br>
+\Sigma^+=\Sigma^1 \cup \Sigma^2 \cup \Sigma^3 \cup …<br>
+$$</p>
+<p>$$<br>
+\Sigma ^* = \Sigma^+ \cup \Sigma^0 \<br>
+\Sigma ^+ = \Sigma^\ \times \Sigma^*<br>
+$$</p>
+<h2 id="2-文法的定义-V-N-V-T-P-S">2. 文法的定义: ($V_N,V_T,P,S$)</h2>
+<p>对于某一<strong>语言</strong>，能够使用的是语言当中的<strong>句子</strong>，如果这些句子是有穷的，对于该语言可以列出一个有限大的句子集合。</p>
+<p>但是有的语言当中的句子是无穷的，因此需要有限数量的<strong>文法</strong>来描述<strong>无穷</strong>数量的句子。</p>
+<blockquote>
+<p>文法: 用有穷集合描述无穷集合的工具。</p>
+</blockquote>
+<p><strong>文法</strong>由<font color="blue">非空有穷</font>集合**$V_N,V_T,P$**和一个起始符$S$构成。</p>
+<h3 id="2-1-非终结符集-V-N-（non-terminal-symbols">2.1 非终结符集$V_N$（non-terminal symbols)</h3>
+<p><strong>非终结符</strong>的含义是，能够<font color = "red">继续被替换下去的符号</font>。</p>
+<ul>
+<li>
+<p>rule:</p>
+<ol>
+<li>
+<p>一般用尖括号<font color="red">“&lt;&gt;”</font>扩起非终结符。</p>
+</li>
+<li>
+<p>一般用<strong>大写字母</strong>表示非终结符。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-2-终结符集-V-T-terminal-symbols">2.2 终结符集$V_T$(terminal symbols)</h3>
+<p><strong>终结符</strong>的含义是，不能够继续被替换的符号。</p>
+<ul>
+<li>
+<p>rule:</p>
+<pre><code>  1. 一般不用尖括号扩起。
+  1. 一般用**小写字母**表示终结符
+</code></pre>
+</li>
+</ul>
+<h3 id="2-3-规则集-P-prescriptions">2.3 规则集$P$(prescriptions)</h3>
+<blockquote>
+<p>定义：</p>
+</blockquote>
+<p>规则(重写规则/产生式/生成式)，是一种形如$\alpha \to \beta$,$\alpha ::= \beta$,$(\alpha,\beta)$的有序对。<font color="blue">读作:$\alpha$定义为$\beta$</font></p>
+<p><font color = "red">其中$\alpha$是规则的左部，$\alpha \in (V_N \cup V_T)^*,且至少包含一个非终结符$</font></p>
+<p><font color = "red">$\beta$是规则的右部，$\beta \in (V_N \cup V_P)^*$</font></p>
+<h3 id="2-4-识别符-开始符-S">2.4 识别符(开始符)$S$</h3>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>识别符$S$是一个<strong>非终结符</strong>，即$S \in V_N$。</p>
+<ul>
+<li>rule:<br>
+1. 识别符$S$至少需要在一条规则中的左部出现。<br>
+1. 一般<strong>第一条产生式</strong>的左部就是识别符$S$<br>
+1. 文法$G$还可以表示为$G[S]$，突出识别符$S$</li>
+</ul>
+<h3 id="2-5-字母表-字汇表-V">2.5 字母表(字汇表)V</h3>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>字母表$V = V_N \cup V_T$。</p>
+<p>另外:<br>
+$$<br>
+V_N \cap V_T = \varnothing<br>
+$$<br>
+故${V_N,V_T}$是$V$的一个划分。</p>
+<h2 id="3-推导">3. 推导</h2>
+<h3 id="3-1-直接推导">3.1 直接推导</h3>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>若规则$\alpha \to \beta$是文法$G$的一条规则，且有$\delta,\gamma \in V^*$,$\exists v,w$满足:<br>
+$$<br>
+v = \delta \alpha \gamma \ \ \ \ w=\delta \beta \gamma<br>
+$$<br>
+显然，$\delta,\gamma$可以是空串。</p>
+<p>则以下说法等价:</p>
+<ol>
+<li>$v$应用规则$\alpha \to \beta$<strong>直接推导</strong>出$w$</li>
+<li>$w$<strong>直接规约</strong>到$v$</li>
+<li>$w$是$v$的<strong>直接推导</strong></li>
+<li>$v$是$w$的<strong>直接规约</strong></li>
+<li>$v =&gt; w$</li>
+</ol>
+<h3 id="3-2-长度大于0的推导-v-xRightarrow-w">3.2 长度大于0的推导$v \xRightarrow{+} w$</h3>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>如果有推导序列:<br>
+$$<br>
+v =&gt; w_1 =&gt; w_2 =&gt; \cdots =&gt; w_n =&gt; w (n&gt;0)<br>
+$$<br>
+则称:</p>
+<ol>
+<li>$v$推导到$w$, 长度为$n$</li>
+<li>$w$归约到$w$</li>
+<li>$v \xRightarrow{+} w$</li>
+</ol>
+<h3 id="3-3-长度大于等于0的推导-v-xRightarrow-w">3.3 长度大于等于0的推导$v \xRightarrow{*}w$</h3>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>$v = w 可写作v \xRightarrow{0} w$</p>
+<p>则$v \xRightarrow{+} w$<strong>或者</strong>$v = w$，写作$v \xRightarrow{*}w$，<font color="blue">读作: $v$推导到$w$</font></p>
+<h2 id="4-句型、句子、语言">4. 句型、句子、语言</h2>
+<h3 id="4-1-句型">4.1 句型</h3>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>有文法$G[S]$，对某一$x \in V^<em>$, 若$x$可由识别符$S$推导而来，即:<br>
+$$<br>
+S \xRightarrow{</em>} x<br>
+$$<br>
+则称$x$为文法$G[S]$的句型。</p>
+<blockquote>
+<p>Hint:</p>
+<p>识别符$S$满足$S \xRightarrow{*} S(S=S)$，但$S$是一个非终结符，故$S$本身是一个句型而不是句子。</p>
+</blockquote>
+<h3 id="4-2-句子">4.2 句子</h3>
+<blockquote>
+<p>定义：</p>
+</blockquote>
+<p>有文法$G[S]$和文法$G[S]$上的句型$x$，如果$x$仅由<font color="red">终结符组成<strong>或者为空串</strong></font>,即:<br>
+$$<br>
+S \xRightarrow{<em>} x \wedge x \in (V_T)^</em><br>
+$$<br>
+则句型$x$为文法$G[S]$的句子。</p>
+<blockquote>
+<p>句子是不包含非终结符的句型。</p>
+</blockquote>
+<h3 id="4-3-语言-Language">4.3 语言(Language)</h3>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>对文法$G[S]$,<br>
+$$<br>
+L[G] = {x| x \in (V_T)^* \wedge S \xRightarrow{*} x }<br>
+$$<br>
+则$L[G]$为文法$G[S]$的语言。</p>
+<blockquote>
+<p>文法$G[S]$的语言是该文法一切句子的集合。[<font color="red">包含空串</font>]</p>
+</blockquote>
+<h3 id="4-4-文法的等价">4.4 文法的等价</h3>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>有两个文法$G_1[S_1],G_2[S_2]$,若：<br>
+$$<br>
+L[G_1] = L[G_2]<br>
+$$<br>
+则称文法$G_1$和文法$G_2$等价。</p>
+<blockquote>
+<p>两个文法等价当且仅当他们能够表示的语言相同。</p>
+</blockquote>
+<h2 id="5-文法的类型">5. 文法的类型</h2>
+<h3 id="5-1-0型文法（短语文法Phrase-Structure-Grammar）-图灵机">5.1  0型文法（短语文法Phrase Structure Grammar）:图灵机</h3>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>对于一文法$G[S]$规则集$P$中的规则$\alpha \to \beta$<font color="red"><strong>都</strong></font>满足:<br>
+$$<br>
+\alpha \in V^* 并且\alpha 至少包含一个非终结符 \ \beta \in V^*<br>
+$$<br>
+即是一个<strong>0型文法</strong>。</p>
+<blockquote>
+<p>任何0型语言都是递归可枚举的。任何递归可枚举集也都是0型语言。</p>
+</blockquote>
+<h3 id="5-2-1型文法（上下文有关文法-Context-Sensitive-Grammar）-线性界限自动机">5.2 1型文法（上下文有关文法 Context-Sensitive Grammar）:线性界限自动机</h3>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>对于<strong>一个0型文法</strong>$G[S]$，若规则集$P$中的规则$\alpha \to \beta$<font color="red"><strong>都</strong></font>满足:<br>
+$$<br>
+|\alpha| \le |\beta| \vee \beta = \varepsilon<br>
+$$<br>
+此文法即是一个1型文法。</p>
+<blockquote>
+<p>0型文法规则集中除了$\beta = \varepsilon$的情况，规则右部的长度<em>不小于</em>左部的长度，则文法为一个1型文法。</p>
+</blockquote>
+<h3 id="5-3-2型文法（上下文无关文法-Context-Free-Grammar-下推自动机">5.3 2型文法（上下文无关文法 Context-Free Grammar):  下推自动机</h3>
+<blockquote>
+<p>定义：</p>
+</blockquote>
+<p>对于一个0型文法$G[S]$，对于规则集$P$中的规则<strong>每一个</strong>规则$\alpha \to \beta$，满足:<br>
+$$<br>
+\alpha \in V_N \ \beta \in V^*<br>
+$$<br>
+即每一条规则都形如$A \to \beta$，该文法为一个2型文法。</p>
+<blockquote>
+<p>每一条规则的左部都是<strong>一个非终结符</strong>的文法就是上下文无关文法。</p>
+</blockquote>
+<blockquote>
+<p><font color="red">上下文无关文法也是上下文有关文法。</font></p>
+</blockquote>
+<h3 id="5-4-3型文法-正规文法-左线性文法-右线性文法-有穷状态自动机">5.4 3型文法 (正规文法:左线性文法/右线性文法) : 有穷状态自动机</h3>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>对于一个文法$G[S]$，规则集中<strong>每一条</strong>规则$\alpha \to \beta$都满足:<br>
+$$<br>
+\alpha = A, A\in V_N \ \beta = aB \ \vee \beta = \ a , B \in V_N<br>
+$$<br>
+即规则形如$ A\to a$或者 $A \to  aB$。<font color="red">(一定有终结符，且终结符一定在左边，非终结符可有可无。）</font></p>
+<p>此文法为一个3型文法，是一个<strong>右线性文法</strong>。</p>
+<blockquote>
+<p>定义:</p>
+</blockquote>
+<p>对于一个文法$G[S]$，规则集中<strong>每一条</strong>规则$\alpha \to \beta$都满足:<br>
+$$<br>
+\alpha = A, A\in V_N \ \beta = Ba \ \vee \beta = \ a , B \in V_N<br>
+$$<br>
+即规则形如$ A\to a$或者 $A \to  aB$。<font color="red">(一定有终结符，且终结符一定在右边，非终结符可有可无。）</font></p>
+<p>此文法也是一个3型文法，是一个<strong>左线性文法</strong>。</p>
+<p>但有的规则终结符在左边，有的规则在右边的文法不是3型文法！</p>
+<blockquote>
+<p>显然，3型文法一定是一个上下文无关文法。</p>
+</blockquote>
+<h3 id="5-5-语言的类型">5.5 语言的类型</h3>
+<p>不同种文法产生不同种语言。<br>
+$$<br>
+0型文法 \to 0型语言 \ 上下文有关文法 \to 上下文有关语言 \ 上下文无关文法 \to 上下文无关语言 \ 正规文法 \to 正规语言<br>
+$$</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://blog.fragments.work">Fragments WANG</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://blog.fragments.work/2024/03/15/PrincipleofCompiling/compilation-Week2/">http://blog.fragments.work/2024/03/15/PrincipleofCompiling/compilation-Week2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.fragments.work" target="_blank">Fragments' Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="post_share"><div class="social-share" data-image="/img/PrinciplesofCompilation.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/03/16/discreteMathmatics/Ch1/" title="离散数学第一章: 数理逻辑"><img class="cover" src="/img/lisan.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">离散数学第一章: 数理逻辑</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/03/17/PrincipleofCompiling/compilation-Week3/" title="Week3: 词法分析"><img class="cover" src="/img/PrinciplesofCompilation.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-17</div><div class="title">Week3: 词法分析</div></div></a></div><div><a href="/2024/03/16/discreteMathmatics/Ch1/" title="离散数学第一章: 数理逻辑"><img class="cover" src="/img/lisan.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-16</div><div class="title">离散数学第一章: 数理逻辑</div></div></a></div><div><a href="/2024/03/17/ComputerNetwork/Ch1/" title="网络原理: 互联网的组成和分类，计算机网络的性能与体系结构"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-17</div><div class="title">网络原理: 互联网的组成和分类，计算机网络的性能与体系结构</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fragments WANG</div><div class="author-info__description">记录Fragments的普通生活~</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Fragmentszz"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Fragmentszz" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/w2059559391@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Week2: 文法、句型、句子、语言和文法的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AC%A6%E5%8F%B7%E4%B8%B2%E4%B8%8A%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-number">1.1.</span> <span class="toc-text">1. 符号串上的运算:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-0-%E7%AC%A6%E5%8F%B7%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.0 符号串的长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E7%AC%A6%E5%8F%B7%E4%B8%B2%E7%9A%84-%E5%9B%BA%E6%9C%89-%E5%A4%B4%E5%92%8C-%E5%9B%BA%E6%9C%89-%E5%B0%BE%EF%BC%8C-%E7%9C%9F-%E5%89%8D%E7%BC%80%E5%92%8C-%E7%9C%9F-%E5%90%8E%E7%BC%80"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E7%AC%A6%E5%8F%B7%E4%B8%B2%E7%9A%84%E8%BF%9E%E6%8E%A5%E3%80%82"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.2 符号串的连接。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E7%AC%A6%E5%8F%B7%E4%B8%B2%E7%9A%84%E6%96%B9%E5%B9%82"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.3 符号串的方幂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E7%AC%A6%E5%8F%B7%E4%B8%B2%E9%9B%86"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.4 符号串集</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%96%87%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89-V-N-V-T-P-S"><span class="toc-number">1.2.</span> <span class="toc-text">2. 文法的定义: ($V_N,V_T,P,S$)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E9%9D%9E%E7%BB%88%E7%BB%93%E7%AC%A6%E9%9B%86-V-N-%EF%BC%88non-terminal-symbols"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 非终结符集$V_N$（non-terminal symbols)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%BB%88%E7%BB%93%E7%AC%A6%E9%9B%86-V-T-terminal-symbols"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 终结符集$V_T$(terminal symbols)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E8%A7%84%E5%88%99%E9%9B%86-P-prescriptions"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 规则集$P$(prescriptions)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E8%AF%86%E5%88%AB%E7%AC%A6-%E5%BC%80%E5%A7%8B%E7%AC%A6-S"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 识别符(开始符)$S$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E5%AD%97%E6%AF%8D%E8%A1%A8-%E5%AD%97%E6%B1%87%E8%A1%A8-V"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5 字母表(字汇表)V</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8E%A8%E5%AF%BC"><span class="toc-number">1.3.</span> <span class="toc-text">3. 推导</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E7%9B%B4%E6%8E%A5%E6%8E%A8%E5%AF%BC"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 直接推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E9%95%BF%E5%BA%A6%E5%A4%A7%E4%BA%8E0%E7%9A%84%E6%8E%A8%E5%AF%BC-v-xRightarrow-w"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 长度大于0的推导$v \xRightarrow{+} w$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E9%95%BF%E5%BA%A6%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E0%E7%9A%84%E6%8E%A8%E5%AF%BC-v-xRightarrow-w"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 长度大于等于0的推导$v \xRightarrow{*}w$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%8F%A5%E5%9E%8B%E3%80%81%E5%8F%A5%E5%AD%90%E3%80%81%E8%AF%AD%E8%A8%80"><span class="toc-number">1.4.</span> <span class="toc-text">4. 句型、句子、语言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%8F%A5%E5%9E%8B"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 句型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%8F%A5%E5%AD%90"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 句子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E8%AF%AD%E8%A8%80-Language"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 语言(Language)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E6%96%87%E6%B3%95%E7%9A%84%E7%AD%89%E4%BB%B7"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.4 文法的等价</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%96%87%E6%B3%95%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.5.</span> <span class="toc-text">5. 文法的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-0%E5%9E%8B%E6%96%87%E6%B3%95%EF%BC%88%E7%9F%AD%E8%AF%AD%E6%96%87%E6%B3%95Phrase-Structure-Grammar%EF%BC%89-%E5%9B%BE%E7%81%B5%E6%9C%BA"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1  0型文法（短语文法Phrase Structure Grammar）:图灵机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-1%E5%9E%8B%E6%96%87%E6%B3%95%EF%BC%88%E4%B8%8A%E4%B8%8B%E6%96%87%E6%9C%89%E5%85%B3%E6%96%87%E6%B3%95-Context-Sensitive-Grammar%EF%BC%89-%E7%BA%BF%E6%80%A7%E7%95%8C%E9%99%90%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2 1型文法（上下文有关文法 Context-Sensitive Grammar）:线性界限自动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-2%E5%9E%8B%E6%96%87%E6%B3%95%EF%BC%88%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95-Context-Free-Grammar-%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3 2型文法（上下文无关文法 Context-Free Grammar):  下推自动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-3%E5%9E%8B%E6%96%87%E6%B3%95-%E6%AD%A3%E8%A7%84%E6%96%87%E6%B3%95-%E5%B7%A6%E7%BA%BF%E6%80%A7%E6%96%87%E6%B3%95-%E5%8F%B3%E7%BA%BF%E6%80%A7%E6%96%87%E6%B3%95-%E6%9C%89%E7%A9%B7%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">1.5.4.</span> <span class="toc-text">5.4 3型文法 (正规文法:左线性文法&#x2F;右线性文法) : 有穷状态自动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-%E8%AF%AD%E8%A8%80%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.5.5.</span> <span class="toc-text">5.5 语言的类型</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/17/ComputerNetwork/Ch1/" title="网络原理: 互联网的组成和分类，计算机网络的性能与体系结构">网络原理: 互联网的组成和分类，计算机网络的性能与体系结构</a><time datetime="2024-03-17T10:34:27.000Z" title="发表于 2024-03-17 18:34:27">2024-03-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/17/PrincipleofCompiling/compilation-Week3/" title="Week3: 词法分析"><img src="/img/PrinciplesofCompilation.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Week3: 词法分析"/></a><div class="content"><a class="title" href="/2024/03/17/PrincipleofCompiling/compilation-Week3/" title="Week3: 词法分析">Week3: 词法分析</a><time datetime="2024-03-17T06:02:22.000Z" title="发表于 2024-03-17 14:02:22">2024-03-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/16/discreteMathmatics/Ch1/" title="离散数学第一章: 数理逻辑"><img src="/img/lisan.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="离散数学第一章: 数理逻辑"/></a><div class="content"><a class="title" href="/2024/03/16/discreteMathmatics/Ch1/" title="离散数学第一章: 数理逻辑">离散数学第一章: 数理逻辑</a><time datetime="2024-03-16T05:30:00.000Z" title="发表于 2024-03-16 13:30:00">2024-03-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/15/PrincipleofCompiling/compilation-Week2/" title="编译原理Week2： 文法、句型、句子、语言和文法的类型"><img src="/img/PrinciplesofCompilation.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理Week2： 文法、句型、句子、语言和文法的类型"/></a><div class="content"><a class="title" href="/2024/03/15/PrincipleofCompiling/compilation-Week2/" title="编译原理Week2： 文法、句型、句子、语言和文法的类型">编译原理Week2： 文法、句型、句子、语言和文法的类型</a><time datetime="2024-03-15T14:09:29.000Z" title="发表于 2024-03-15 22:09:29">2024-03-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Fragments WANG</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
