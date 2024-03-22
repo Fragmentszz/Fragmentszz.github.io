@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>网络原理: 物理层 | Fragments' Blog</title><meta name="author" content="Fragments WANG"><meta name="copyright" content="Fragments WANG"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Ch2: 物理层 1.1 物理层的基本概念 1.1.1 物理层的主要任务:  物理层的传输媒介和通信手段差别很大，种类多样。物理层的作用就是尽可能地屏蔽这些传输媒体和通信手段的差异。   物理层的协议也被称为是物理层规程。  物理层的主要任务有:  机械特性: 指明接口所用的接线器的尺寸和形状，引脚数目和排列，固定和锁定装置。接插件的规格。 电气特性: 接口电缆上电压的范围 功能特性: 某条线上电">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络原理: 物理层">
+<meta property="og:url" content="http://blog.fragments.work/2024/03/22/ComputerNetwork/Ch2/index.html">
+<meta property="og:site_name" content="Fragments&#39; Blog">
+<meta property="og:description" content="Ch2: 物理层 1.1 物理层的基本概念 1.1.1 物理层的主要任务:  物理层的传输媒介和通信手段差别很大，种类多样。物理层的作用就是尽可能地屏蔽这些传输媒体和通信手段的差异。   物理层的协议也被称为是物理层规程。  物理层的主要任务有:  机械特性: 指明接口所用的接线器的尺寸和形状，引脚数目和排列，固定和锁定装置。接插件的规格。 电气特性: 接口电缆上电压的范围 功能特性: 某条线上电">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.fragments.work/img/ComputerNetwork.jpg">
+<meta property="article:published_time" content="2024-03-22T14:52:00.000Z">
+<meta property="article:modified_time" content="2024-03-22T14:52:58.555Z">
+<meta property="article:author" content="Fragments WANG">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.fragments.work/img/ComputerNetwork.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://blog.fragments.work/2024/03/22/ComputerNetwork/Ch2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '网络原理: 物理层',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-22 22:52:58'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Fragments' Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/ComputerNetwork.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Fragments' Blog"><span class="site-name">Fragments' Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">网络原理: 物理层</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-22T14:52:00.000Z" title="发表于 2024-03-22 22:52:00">2024-03-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-22T14:52:58.555Z" title="更新于 2024-03-22 22:52:58">2024-03-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">网络原理</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="网络原理: 物理层"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>Ch2: 物理层</h1>
+<h2 id="1-1-物理层的基本概念">1.1 物理层的基本概念</h2>
+<h3 id="1-1-1-物理层的主要任务">1.1.1 物理层的主要任务:</h3>
+<blockquote>
+<p>物理层的传输媒介和通信手段差别很大，种类多样。物理层的作用就是尽可能地屏蔽这些传输媒体和通信手段的差异。</p>
+</blockquote>
+<blockquote>
+<p>物理层的协议也被称为是物理层<strong>规程</strong>。</p>
+</blockquote>
+<p>物理层的主要任务有:</p>
+<ol>
+<li><strong>机械特性</strong>: 指明接口所用的接线器的尺寸和形状，引脚数目和排列，固定和锁定装置。接插件的规格。</li>
+<li><strong>电气特性</strong>: 接口电缆上电压的范围</li>
+<li><strong>功能特性</strong>: 某条线上电平的电压的含义</li>
+<li><strong>过程特性</strong>: 不同功能的事件出现的顺序</li>
+<li>传输方式的转变: 并串行转换</li>
+</ol>
+<h2 id="1-2-数据通信的基本知识">1.2 数据通信的基本知识</h2>
+<blockquote>
+<p>通信的目的是传输<strong>消息</strong>。</p>
+<p><strong>数据</strong>是运送<strong>消息</strong>的实体，一般是有意义的符号序列。</p>
+<p><strong>信号</strong>是<strong>数据</strong>在电气/电子中的具体表现。</p>
+</blockquote>
+<blockquote>
+<p><font color="red">定义</font>：<strong>码元</strong>指的是代表不同离散数值的基本波形。比如高低电平分别代表离散值0/1，则高电平和低电平都是<strong>码元</strong>。</p>
+</blockquote>
+<blockquote>
+<p>比特率: 每秒钟传送的<strong>比特数</strong>(bps)</p>
+<p>波特率: 每秒钟传送的<strong>码元数</strong>(码元/秒)</p>
+</blockquote>
+<p>以上两个量用来描述信道的<strong>传输速率</strong>。</p>
+<blockquote>
+<p>$$<br>
+比特率 = 波特率 * 每个码元携带的比特数<br>
+$$</p>
+<p><font color="red">请注意是每个码元携带的信息的比特数，而非码元数！！</font></p>
+</blockquote>
+<blockquote>
+<p>例题: 若某通信链路的数据传输速率为2400bps,采用4相位调制,则该链路的波特率是?</p>
+</blockquote>
+<h3 id="1-2-1-通信的简单模型">1.2.1 通信的简单模型</h3>
+<p>用一个简单的模型来建立数据通信系统的模型。<br>
+$$<br>
+源点(source) \xrightarrow{数字信号} 发送器(调制器) \xrightarrow{模拟信号} 传输系统 \xrightarrow{模拟信号}  接收器(解调器)\xrightarrow{数字信号}终点(destination)<br>
+$$</p>
+<ul>
+<li><strong>源点</strong>(source): 源点产生要传输的数据。一般是计算机产生用户想要发送的消息的数据。也称为<strong>源头</strong>或<strong>信源</strong>。</li>
+<li><strong>发送器</strong>一般是调制器。源点产生的数字比特流一般要经过发送器编码以后才能够在传输系统中进行传输。</li>
+<li><strong>接收器</strong>一般是解调器。收到的信号一般要经过解码才能提取出要传输的数据。</li>
+<li><strong>终点</strong>处理要传输的数据。也叫<strong>目的站</strong>，<strong>信宿</strong>。</li>
+</ul>
+<h3 id="1-2-2-信道">1.2.2 信道</h3>
+<h4 id="1-2-2-1-信道基本概念">1.2.2.1 信道基本概念</h4>
+<blockquote>
+<p>定义$1.2.2.1$：<strong>信道</strong>一般指<strong>向某一个方向</strong>传送信息的媒体。</p>
+<p>因此一般通信电路包含一个发送信道和一条接收信道。</p>
+</blockquote>
+<p>按照通信双方的交互可以把通信分为：</p>
+<ul>
+<li>单向通信: 只有一个方向的交互</li>
+<li>双向交替通信(半双工通信): 支持双向通信，但不能双方同时发送或者同时接收。一个时间一定是一方发送一方接收。</li>
+<li>双向同时通信(全双工通信): 通信双方可以同时发送/接收消息。</li>
+</ul>
+<blockquote>
+<p><strong>单工</strong>指的是半双工，而不是单向通信。</p>
+</blockquote>
+<h4 id="1-2-2-2-信道极限容量">1.2.2.2 信道极限容量</h4>
+<p>高频分量在信道中传播时会衰减，每一个<strong>码元</strong>在时间轴上会有拉伸。</p>
+<blockquote>
+<p>定义$1.2.2.2$: 如果接收端上收到的信号波形失去了<strong>码元</strong>之间的清楚界限，则无法再恢复成原来分离的码元，这种现象叫做<strong>码间干扰</strong>。</p>
+</blockquote>
+<p>为了避免这个码间干扰，信号在信道中的频率过大。<strong>在理想情况下</strong>这个最大频率可以由<strong>奈奎斯特定理</strong>给出</p>
+<blockquote>
+<p><strong>奈奎斯特定理</strong> : 在任何信道中，码元传输的速率$C$是有上限的，如果超过这个上限，就会出现严重的码间干扰现象，使得接收端判定码元变为不可能。<br>
+$$<br>
+C = 2*\omega*log_2V(bps)<br>
+$$<br>
+其中$\omega$为信道的带宽(信道能够传输的最大频率)，$V$为码元总个数。</p>
+</blockquote>
+<p>然而现实中的情况可能并不是理想状况，存在噪声。噪声的影响和时间有关，有时影响大，有时影响小。刻画影响大小的量是<strong>信噪比</strong>。</p>
+<blockquote>
+<p>定义$1.2.2.3$ <strong>信噪比</strong>是信号的<strong>平均功率</strong>和噪声的<strong>平均功率</strong>之比，常记为$S/N$。并用**分贝(db)**作为度量单位。具体的换算公式是：<br>
+$$<br>
+t(S/N) \Leftrightarrow 10*log_{10}t(db)<br>
+$$</p>
+</blockquote>
+<p>描述有噪声情况下的最大频率可以用<strong>香农定理</strong>。</p>
+<blockquote>
+<p><strong>香农定理</strong>：在有噪声的信道中信道的极限传输速率$C$是:<br>
+$$<br>
+C = \omega * log_2(1 + S/N) = \omega <em>log_2(\frac{N + S}{N}) = \omega</em>(log_2(N+S) - log_2N))<br>
+$$<br>
+其中$\omega$为信道的带宽。$S/N$越大，信道的极限传输速率也越大。</p>
+</blockquote>
+<blockquote>
+<p>当传输速率$C$低于香农定理得到的极限速率$C_{max}$，就说明一定存在一种传输方法可以使得传输速率更加快。</p>
+</blockquote>
+<blockquote>
+<p>当信道的带宽$\omega$和信噪比$S/N$都不能再增大时，可以通过<strong>提高码元的总数量</strong>，也就是提高每一个码元所携带的信息量来提高信道的极限传输速率。</p>
+</blockquote>
+<h3 id="1-2-3-调制与解调">1.2.3 调制与解调</h3>
+<blockquote>
+<p>定义$1.2.3.1$: 来自信源的信号常被称为<strong>基带信号</strong>。一般是被计算机直接输出的信号(大部分是数字信号)，包含<strong>较多的低频成分和直流成分。</strong></p>
+</blockquote>
+<p>信道并大概率不能直接传输基带信号。因此要进行<strong>调制</strong>。</p>
+<p>调制一般分为<strong>基带调制</strong>和<strong>带通调制</strong>两大类。</p>
+<h4 id="1-2-3-1-基带调制-编码">1.2.3.1 基带调制(编码)</h4>
+<blockquote>
+<p>定义$1.2.3.2$：<strong>基带调制</strong>是把数字信号转换为另一种形式的数字信号。也被称为<strong>编码</strong>。</p>
+</blockquote>
+<p>常用的编码方式有:</p>
+<ol>
+<li>不归零制: 正<strong>电平</strong>/负<strong>电平</strong>代表1/0</li>
+<li>归零制: 正<strong>脉冲</strong>/负<strong>脉冲</strong>代表1/0</li>
+<li>曼彻斯特编码: 每个<strong>周期中心</strong>的<font color="red">向上跳变代表0，向下跳变代表1</font></li>
+<li>差分曼彻斯特编码: 每个周期中心都有跳变。在每个周期<strong>开始时</strong><font color="red">如果有跳变代表0，无跳变代表1。</font></li>
+</ol>
+<blockquote>
+<p>曼彻斯特编码的变化比起非归零型编码更加<strong>频繁</strong>，说明曼彻斯特编码的频率会比不归零型编码高。</p>
+</blockquote>
+<blockquote>
+<p>曼彻斯特编码具有<strong>自同步的能力</strong>(?)而不归零制却没有       ----why? 待解决的一个小问题</p>
+</blockquote>
+<h4 id="1-2-3-2-带通调制-使用载波进行调制">1.2.3.2 带通调制(使用载波进行调制)</h4>
+<blockquote>
+<p>定义$1.2.3.3$: 通过<strong>载波(carrier)<strong>把频带搬迁到更高的频率范围，并转换为</strong>模拟信号</strong>，这个过程叫做<strong>带通调制</strong>。调制后的信号叫做<strong>带通信号</strong>。</p>
+</blockquote>
+<p>基本的调制方法有:</p>
+<ol>
+<li>调幅(AM): 不同的数字信号映射为不同幅度值的信号</li>
+<li>调频(FM): 不同的数字信号映射为不同频率的信号</li>
+<li>调相(PM): 不同的数字信号映射为不同初相位的信号</li>
+</ol>
+<p>可以把这些基本的调制方法合在一起，比如把调幅和调相结合在一起的<strong>正交振幅调制(QAM)</strong>。</p>
+<h2 id="1-3-物理层中的传输媒介">1.3 物理层中的传输媒介</h2>
+<blockquote>
+<p>信号在物理层中传输的媒介主要分为两种，一种是电磁波被<strong>导引</strong>沿着固体媒体(铜线或者光纤)传播，称为<strong>导引型媒介</strong>，另一种是在自由空间中进行无线传输，叫做<strong>非导引型媒介</strong>。</p>
+</blockquote>
+<h3 id="1-3-1-导引型媒介">1.3.1 导引型媒介</h3>
+<h4 id="1-3-1-1-绞线">1.3.1.1 绞线</h4>
+<blockquote>
+<p><strong>绞线</strong>是把两根相互绝缘的铜导线并排放在一起，再通过<strong>绞合</strong>在一起。好处是<strong>绞合</strong>在一起的铜导线对相邻的电磁干扰很小。</p>
+<p><strong>绞线</strong>越粗，传播距离越远，价格越高。</p>
+</blockquote>
+<blockquote>
+<p>使用<strong>绞线</strong>最多的系统是<strong>电话系统</strong>。</p>
+</blockquote>
+<blockquote>
+<p><strong>绞线</strong>按照外层<strong>有无金属丝屏蔽层</strong>分为<strong>无屏蔽双绞线(UTP)</strong>(Unshielded Twisted Pair)和<strong>屏蔽双绞线(STP)</strong>(Shielded Twisted Pair)。</p>
+</blockquote>
+<h4 id="1-3-1-2-同轴电缆">1.3.1.2 同轴电缆</h4>
+<blockquote>
+<p><strong>同轴电缆</strong>是由内部铜芯，绝缘层、网状外导体屏蔽层以及保护塑料外层组成的传输介质。抗干扰能力很强。用来传输高速数据。<strong>现在已经很少使用</strong></p>
+</blockquote>
+<h4 id="1-3-1-3-光纤和光缆">1.3.1.3 光纤和光缆</h4>
+<blockquote>
+<p><strong>光纤</strong>是利用光导纤维(全反射)传递光脉冲的传输媒介。由内部的石英玻璃拉成丝和外部包层构成双层圆柱体。<strong>直径只有$8-100um$</strong>。</p>
+</blockquote>
+<blockquote>
+<p>由于光全反射角度不唯一，只需要大于临界角度即可。因此一条光纤可以有很多束<strong>不同角度</strong>的光线同时传输。这样的光纤叫做<strong>多模光纤</strong>。但是由于光线在多模光纤中易展宽失真，因此<strong>多模光纤只适用于近距离传输</strong>。</p>
+</blockquote>
+<blockquote>
+<p>也可以把光纤的内芯做得非常细，使得只允许<strong>一条光线</strong>近乎于<strong>直线传播</strong>，这样的光纤叫做<strong>单模光纤</strong>。<strong>单模光纤</strong>贵，但是损耗非常小，能无损耗地在极高速度下传输。</p>
+</blockquote>
+<blockquote>
+<p>一般把非常非常细的光纤包在一起，加上填充物组成物理抗性比较好的<strong>光缆</strong>。</p>
+</blockquote>
+<p>光纤传输的有点有:</p>
+<ol>
+<li>通信容量大，速度快</li>
+<li>损耗小，中继距离长</li>
+<li>抗雷电抗干扰能力很强</li>
+<li>保密性好</li>
+<li>轻便</li>
+</ol>
+<h4 id="1-3-1-4-架空明线">1.3.1.4 架空明线</h4>
+<blockquote>
+<p><strong>架空明线</strong>是在电线杆上架设互相绝缘的明线的传输介质，现在已经几乎不适用。</p>
+</blockquote>
+<h3 id="1-3-2-非导引型媒介">1.3.2 非导引型媒介</h3>
+<h4 id="1-3-2-1-短波通信">1.3.2.1 短波通信</h4>
+<blockquote>
+<p>短波通信质量比较差，而且传输速率也不高。</p>
+</blockquote>
+<h4 id="1-3-2-2-微波通信">1.3.2.2 微波通信</h4>
+<blockquote>
+<p>微波通信在数据通信中地位很重要。主要使用$2\to 40GHz$的频率范围。一般的微波通信有<strong>地面微波接力通信</strong>和<strong>卫星通信</strong>两种形式。</p>
+</blockquote>
+<blockquote>
+<p><strong>地面微波接力通信</strong>是指在地面上在两个终端之间建立若干个<strong>中继站</strong>的形式。频段很宽，容量也很大，其他电磁干扰小。传输质量非常高。</p>
+<p><strong>卫星通信</strong>的特点是**<font color="red">传播</font>时延长**，<strong>通信距离远</strong>。</p>
+</blockquote>
+<h4 id="1-3-2-3-红外通信">1.3.2.3 红外通信</h4>
+<h4 id="1-3-2-4-激光通信">1.3.2.4 激光通信</h4>
+<h2 id="1-4-信道复用技术">1.4 信道复用技术</h2>
+<h3 id="1-4-1-频分复用">1.4.1 频分复用</h3>
+<blockquote>
+<p>如果不同用户分别在<strong>同一时间</strong>占用信道的<strong>不同频率范围</strong>，则是<strong>频分复用(FDM)</strong>(Frequency Division Multiplexing)。</p>
+</blockquote>
+<h3 id="1-4-2-时分复用">1.4.2 时分复用</h3>
+<blockquote>
+<p>如果不同用户分别在<strong>不同时间</strong>占用信道的<strong>同一</strong>频率范围，则是<strong>时分复用(TDM)</strong>(Time Division Multiplexing)。</p>
+<p>一般是每一个用户占用相同的一段时间，这一段时间被称为<strong>时分复用帧(TDM帧)</strong>。</p>
+</blockquote>
+<p>频分复用和时分复用技术成熟，但是<strong>不够灵活</strong>。</p>
+<p>由于计算机网络传输数据往往具有突发性，像这样一段时间一直只有某一个用户占用信道（同步时分复用）利用率并不高，因此引入改进的时分复用模式: <strong>统计时分复用(STDM)</strong>(Statistic Time Division Multiplexing)。</p>
+<blockquote>
+<p><strong>统计分时复用</strong>: 引入<strong>集中器</strong>和<strong>STDM帧</strong>，STDM帧的个数一般比用户个数少。用户将要发送的数据先发送到集中器的缓冲区，由集中器扫描缓冲区将数据放到STDM帧上，只有当STDM帧满后才统一发送。也叫做<strong>异步时分复用</strong>。</p>
+</blockquote>
+<p>![](C:\Users\FragmentsZ\OneDrive - <a target="_blank" rel="noopener" href="http://ahu.edu.cn">ahu.edu.cn</a>\AHU-CS\计算机网络\笔记\imgs\ch2_2.png)</p>
+<p>统计时分复用存在的问题:</p>
+<ol>
+<li><strong>统计时分复用必须要添加一些&quot;头信息&quot;来告诉发送模块究竟是哪一个用户发送的数据包。</strong></li>
+<li>统计时分复用在所有用户都不断发送数据的时候无法应付，建立在<strong>用户都是间歇性发送数据</strong>的假设上。</li>
+</ol>
+<hr>
+<p>假设使用的是频分复用，每一个用户都要占据一定的频带宽度，当用户变多时信道的频带宽度一定会很大。</p>
+<p>假设使用的是时分复用，每一个用户都要占据一定的时间宽度，意味着要在短时间内发送脉冲信号，时间宽度窄的脉冲信号的频率肯定也会加大。</p>
+<hr>
+<h3 id="1-4-3-波分复用">1.4.3 波分复用</h3>
+<blockquote>
+<p><strong>波分复用(WDM)</strong>(Wavelength Division Multiplexing)就是光的频分复用。也就是不同的数据信号在不同的波段上进行传输。</p>
+<p>不过光信号在传播了一定时间后会衰减， 所以在端到端之间还要加入**掺铒光纤放大器(EDFA)**来放大光信号。</p>
+</blockquote>
+<h3 id="1-4-4-码分复用">1.4.4 码分复用</h3>
+<blockquote>
+<p><strong>码分复用(CDM)</strong>(Code Division Multiplexing)是另一种共享信道传输的方式。也叫做<strong>码分多址(CDMA)</strong>(Code Division Multiple Access)</p>
+</blockquote>
+<p>一个$CDMA$系统里每一个可发送传输信号的站点都具有一个$n$位0/1的<strong>码片序列$S_i$</strong>。<font color="red">$n$一般取64或128。</font></p>
+<p>如果该站点要发送数字信号$1$则发送该码片序列$S_i$，如果要发送$0$则发送该码片序列的反码$\overline S_i$。</p>
+<p>并且要保证每一个站点的码片序列$S_i$映射的向量$\vec{S_i}$要满足正交，即<br>
+$$<br>
+\begin{align}<br>
+\vec{S_i} = ({1|{-1},1|-1,\cdots,1|-1)} \quad\quad &amp;其中若S_{ik}=1,则\vec{S_{ik}}=1,否则为0\<br>
+\vec{S_i}*\vec{S_j} = 0 ,\quad \quad\quad &amp; i\ne j<br>
+\end{align}<br>
+$$<br>
+每一个站点发送的信号都会在振幅上叠加。</p>
+<p>要是想得到站点$i$发送的数字信号，则需要将得到的信号点乘上对应的码片序列$\frac{1}{n}\vec{S_i}$，即:<br>
+$$<br>
+\begin{align}<br>
+bit &amp;= signal \cdot \frac{1}{m} \vec{S_i} \<br>
+若bit &amp;= 1, \quad &amp;站点i该位发送的是1 \<br>
+若bit &amp;= -1, \quad &amp;站点i该位发送的是0 \<br>
+若bit &amp;= 0, \quad &amp;站点i没有发送该位<br>
+\end{align}<br>
+$$</p>
+<blockquote>
+<p>一个具有$n$位码片序列的系统，最多支持$n$个站点同时收发。</p>
+</blockquote>
+<blockquote>
+<p>注意到原来每发送一个0/1电平，码片序列需要发送$n$个，于是传输速度会扩大$n$倍。这种形式是<strong>扩频(SS)</strong>(Spread Spectrum)通信的一种。属于扩频通信中的<strong>直接序列扩频(DSSS)</strong>。另一种叫做<strong>跳频扩频(FHSS)</strong>。</p>
+</blockquote>
+<p>码分复用(CDM)的优势:</p>
+<ol>
+<li>各个用户直接不会干扰，也不用分频率、分时间。</li>
+<li>频谱类似白噪声，保密性比较好，只有知道码片序列才能解码出信息。</li>
+<li>抗干扰能力也很强。</li>
+</ol>
+<h2 id="错题">错题</h2>
+<p>6.各种网络在物理层互联时要求（ ）。<br>
+A.数据传输率和链路层协议相同<br>
+B.数据传输率相同，链路层协议可不同<br>
+C.数据传输率可不同，链路层协议相同<br>
+D.数据传输率和链路层协议都可不同</p>
+<blockquote>
+<p>【答案】A<br>
+【解析】物理层不具备差错控制和流量控制功能，它所实现的是设备之间如何通过物理传输介质进行连接， 发送或接收原始的数据比特流。因此，如果各种网络在物理层进行互联，它们一定要具有相同的数据传输率和链路层协议，这样才能提供数据传输的准确性。一般说来，差错控制和流量控制功能由数据链路层协议完成。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://blog.fragments.work">Fragments WANG</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://blog.fragments.work/2024/03/22/ComputerNetwork/Ch2/">http://blog.fragments.work/2024/03/22/ComputerNetwork/Ch2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.fragments.work" target="_blank">Fragments' Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="post_share"><div class="social-share" data-image="/img/ComputerNetwork.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/03/17/ComputerNetwork/Ch1/" title="网络原理: 互联网的组成和分类，计算机网络的性能与体系结构"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">网络原理: 互联网的组成和分类，计算机网络的性能与体系结构</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/03/15/PrincipleofCompiling/compilation-Week2/" title="编译原理Week2： 文法、句型、句子、语言和文法的类型"><img class="cover" src="/img/PrinciplesofCompilation.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-15</div><div class="title">编译原理Week2： 文法、句型、句子、语言和文法的类型</div></div></a></div><div><a href="/2024/03/17/PrincipleofCompiling/compilation-Week3/" title="Week3: 词法分析"><img class="cover" src="/img/PrinciplesofCompilation.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-17</div><div class="title">Week3: 词法分析</div></div></a></div><div><a href="/2024/03/16/discreteMathmatics/Ch1/" title="离散数学第一章: 数理逻辑"><img class="cover" src="/img/lisan.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-16</div><div class="title">离散数学第一章: 数理逻辑</div></div></a></div><div><a href="/2024/03/17/ComputerNetwork/Ch1/" title="网络原理: 互联网的组成和分类，计算机网络的性能与体系结构"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-17</div><div class="title">网络原理: 互联网的组成和分类，计算机网络的性能与体系结构</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fragments WANG</div><div class="author-info__description">记录Fragments的普通生活~</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Fragmentszz"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Fragmentszz" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/w2059559391@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Ch2: 物理层</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E7%89%A9%E7%90%86%E5%B1%82%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 物理层的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%E7%89%A9%E7%90%86%E5%B1%82%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 物理层的主要任务:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 数据通信的基本知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E9%80%9A%E4%BF%A1%E7%9A%84%E7%AE%80%E5%8D%95%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 通信的简单模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%E4%BF%A1%E9%81%93"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 信道</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-1-%E4%BF%A1%E9%81%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">1.2.2.1 信道基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-2-%E4%BF%A1%E9%81%93%E6%9E%81%E9%99%90%E5%AE%B9%E9%87%8F"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">1.2.2.2 信道极限容量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-%E8%B0%83%E5%88%B6%E4%B8%8E%E8%A7%A3%E8%B0%83"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.2.3 调制与解调</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-1-%E5%9F%BA%E5%B8%A6%E8%B0%83%E5%88%B6-%E7%BC%96%E7%A0%81"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">1.2.3.1 基带调制(编码)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-2-%E5%B8%A6%E9%80%9A%E8%B0%83%E5%88%B6-%E4%BD%BF%E7%94%A8%E8%BD%BD%E6%B3%A2%E8%BF%9B%E8%A1%8C%E8%B0%83%E5%88%B6"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">1.2.3.2 带通调制(使用载波进行调制)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E7%89%A9%E7%90%86%E5%B1%82%E4%B8%AD%E7%9A%84%E4%BC%A0%E8%BE%93%E5%AA%92%E4%BB%8B"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 物理层中的传输媒介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-%E5%AF%BC%E5%BC%95%E5%9E%8B%E5%AA%92%E4%BB%8B"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 导引型媒介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-1-%E7%BB%9E%E7%BA%BF"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">1.3.1.1 绞线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-2-%E5%90%8C%E8%BD%B4%E7%94%B5%E7%BC%86"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">1.3.1.2 同轴电缆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-3-%E5%85%89%E7%BA%A4%E5%92%8C%E5%85%89%E7%BC%86"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">1.3.1.3 光纤和光缆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-4-%E6%9E%B6%E7%A9%BA%E6%98%8E%E7%BA%BF"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">1.3.1.4 架空明线</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-%E9%9D%9E%E5%AF%BC%E5%BC%95%E5%9E%8B%E5%AA%92%E4%BB%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 非导引型媒介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-1-%E7%9F%AD%E6%B3%A2%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">1.3.2.1 短波通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-2-%E5%BE%AE%E6%B3%A2%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">1.3.2.2 微波通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-3-%E7%BA%A2%E5%A4%96%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">1.3.2.3 红外通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-4-%E6%BF%80%E5%85%89%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.2.4.</span> <span class="toc-text">1.3.2.4 激光通信</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E4%BF%A1%E9%81%93%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 信道复用技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-1-%E9%A2%91%E5%88%86%E5%A4%8D%E7%94%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.4.1 频分复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-2-%E6%97%B6%E5%88%86%E5%A4%8D%E7%94%A8"><span class="toc-number">1.4.2.</span> <span class="toc-text">1.4.2 时分复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-3-%E6%B3%A2%E5%88%86%E5%A4%8D%E7%94%A8"><span class="toc-number">1.4.3.</span> <span class="toc-text">1.4.3 波分复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-4-%E7%A0%81%E5%88%86%E5%A4%8D%E7%94%A8"><span class="toc-number">1.4.4.</span> <span class="toc-text">1.4.4 码分复用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">错题</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/03/22/ComputerNetwork/Ch2/" title="网络原理: 物理层"><img src="/img/ComputerNetwork.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网络原理: 物理层"/></a><div class="content"><a class="title" href="/2024/03/22/ComputerNetwork/Ch2/" title="网络原理: 物理层">网络原理: 物理层</a><time datetime="2024-03-22T14:52:00.000Z" title="发表于 2024-03-22 22:52:00">2024-03-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/17/ComputerNetwork/Ch1/" title="网络原理: 互联网的组成和分类，计算机网络的性能与体系结构">网络原理: 互联网的组成和分类，计算机网络的性能与体系结构</a><time datetime="2024-03-17T10:34:27.000Z" title="发表于 2024-03-17 18:34:27">2024-03-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/17/PrincipleofCompiling/compilation-Week3/" title="Week3: 词法分析"><img src="/img/PrinciplesofCompilation.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Week3: 词法分析"/></a><div class="content"><a class="title" href="/2024/03/17/PrincipleofCompiling/compilation-Week3/" title="Week3: 词法分析">Week3: 词法分析</a><time datetime="2024-03-17T06:02:22.000Z" title="发表于 2024-03-17 14:02:22">2024-03-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/16/discreteMathmatics/Ch1/" title="离散数学第一章: 数理逻辑"><img src="/img/lisan.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="离散数学第一章: 数理逻辑"/></a><div class="content"><a class="title" href="/2024/03/16/discreteMathmatics/Ch1/" title="离散数学第一章: 数理逻辑">离散数学第一章: 数理逻辑</a><time datetime="2024-03-16T05:30:00.000Z" title="发表于 2024-03-16 13:30:00">2024-03-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/15/PrincipleofCompiling/compilation-Week2/" title="编译原理Week2： 文法、句型、句子、语言和文法的类型"><img src="/img/PrinciplesofCompilation.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理Week2： 文法、句型、句子、语言和文法的类型"/></a><div class="content"><a class="title" href="/2024/03/15/PrincipleofCompiling/compilation-Week2/" title="编译原理Week2： 文法、句型、句子、语言和文法的类型">编译原理Week2： 文法、句型、句子、语言和文法的类型</a><time datetime="2024-03-15T14:09:29.000Z" title="发表于 2024-03-15 22:09:29">2024-03-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Fragments WANG</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
