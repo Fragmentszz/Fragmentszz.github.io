@@ -27,23 +27,18 @@
 <meta property="og:site_name" content="Fragments&#39; Blog">
 <meta property="og:description" content="Ch1: 互联网的组成和分类，计算机网络的性能与体系结构 1.1 互联网的组成  互联网主要分为2个部分，分别是  边缘部分(所有互联网上的主机组成，给用户直接使用的部分) 核心部分(由网络和连接网络的路由器组成，给边缘部分的主机提供连接服务)   1.1.1 边缘部分 边缘部分由主机组成，边缘部分中主机和主机之间的通信实际上是一台主机的进程和另一台主机的进程进行通信。这也被">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.fragments.work/img/ComputerNetwork.jpg">
 <meta property="article:published_time" content="2024-03-17T10:34:27.000Z">
-<meta property="article:modified_time" content="2024-04-01T05:19:30.279Z">
+<meta property="article:modified_time" content="2024-04-02T07:17:21.389Z">
 <meta property="article:author" content="Fragments WANG">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.fragments.work/img/ComputerNetwork.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Fragments' Blog" type="application/atom+xml">
   
   
-    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
-    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
-    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
-    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
-    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
-    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
-    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
-    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+    <link rel="shortcut icon" href="/./images/favicon.jpg">
   
   
   
@@ -125,19 +120,21 @@
   <div class="info-card">
     <div class="avatar">
       
+        <image src=/images/top_img.jpg></image>
+      
       <div class="img-dim"></div>
     </div>
     <div class="info">
-      <div class="username">Your Name </div>
+      <div class="username">Fragments WANG </div>
       <div class="dot"></div>
-      <div class="subtitle">This is the subtitle </div>
+      <div class="subtitle">一个非常平凡的人 </div>
       <div class="link-list">
         
-          <a class="link-btn" target="_blank" rel="noopener" href="https://twitter.com" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a class="link-btn" target="_blank" rel="noopener" href="https://www.zhihu.com/people/dui-fang-casteryi-xia-xian" title="知乎"><i class="fa-brands fa-zhihu"></i></a>
         
-          <a class="link-btn" target="_blank" rel="noopener" href="https://store.steampowered.com" title="Steam"><i class="fa-brands fa-steam"></i></a>
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/1786427191" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
         
-          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/Fragmentszz" title="GitHub"><i class="fa-brands fa-github"></i></a>
          
       </div>  
     </div>
@@ -194,6 +191,16 @@
 <article id="post-ComputerNetwork/Ch1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img" rel="gallery_clui0dyxf0001cswadc8qgnjm">
+        <img src="/img/ComputerNetwork.jpg" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
    
   <div class="article-inner">
     <div class="article-main">
@@ -223,7 +230,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            4.4k 词 
+            4.7k 词 
           </div>
         </div>
         
@@ -289,11 +296,11 @@ class="math inline">\(n\)</span>步电话都先连接到<strong>交换机</stron
 </blockquote>
 <p>对于相对较远的两个区域，则将这两个区域的交换机相连接，构成一张由<strong>交换机</strong>连接的电话网络的<strong>网络</strong>。</p>
 <p>路由器做的也是类似的事情，互联网是<strong>路由器</strong>连接的网络的大网络，收到分组信息并暂存后，路由器查找转发表，将分组信息转发到下一个路由器，最后抵达目的地址所在的路由器。</p>
-<p>不过电话交换的特点在于<strong>建立连接</strong>。电话交换需要经过3个步骤:
-<span class="math display">\[
+<p>不过电话交换的特点在于<strong>建立连接</strong>。电话交换需要经过3个步骤:</p>
+<p><span class="math display">\[
 建立连接\to 通话 \to 释放连接
-\]</span>
-在这个过程中，某一个链路和其中的资源会<strong>一直</strong>被通信的用户<strong>独占</strong>。互联网的通信如果依照这种方式，传输的资源利用率很低。因为网络通信主要是以<strong>突发</strong>的信息传输为主。</p>
+\]</span></p>
+<p>在这个过程中，某一个链路和其中的资源会<strong>一直</strong>被通信的用户<strong>独占</strong>。互联网的通信如果依照这种方式，传输的资源利用率很低。因为网络通信主要是以<strong>突发</strong>的信息传输为主。</p>
 <p>因此网络通信的链路是只有当该链路上正在传送信息时才被占用。</p>
 <p>另外，还有一种用于电报的<strong>报文交换</strong> -&gt;
 类似于不分组的路由交换，整个报文一起在路由器网络中交换。</p>
@@ -321,8 +328,8 @@ class="math inline">\(n\)</span>步电话都先连接到<strong>交换机</stron
 按照互联网的作用范围(广度)进行分类</h3>
 <table>
 <colgroup>
-<col style="width: 62%" />
-<col style="width: 37%" />
+<col style="width: 65%" />
+<col style="width: 34%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -372,8 +379,9 @@ class="math inline">\(\star\star\star\)</span>)</h2>
 <blockquote>
 <p>将从7个不同的方面评价计算机网络的性能。</p>
 </blockquote>
-<h3 id="速率数据的额定传送速率数据率data-rate">1.3.1
-速率:数据的<font color="red">额定</font>传送速率(数据率data rate):</h3>
+<h3 id="速率数据的-font-colorred额定-font传送速率数据率data-rate">1.3.1
+速率:数据的 <code>&lt;font color="red"&gt;</code>额定
+<code>&lt;/font&gt;</code>传送速率(数据率data rate):</h3>
 <blockquote>
 <p>定义<span class="math inline">\(1.3.1.1\)</span>
 速率指的是数据的传送速率，它也被称为数据率，用单位<span
@@ -381,14 +389,16 @@ class="math inline">\(bps(bit \ per \
 second)\)</span>描述。一般指的是数据的传送的<strong>额定速率</strong>或<strong>标称速率</strong>。</p>
 </blockquote>
 <blockquote>
-<p><font color="red">注意: <span
+<p><code>&lt;font color="red"&gt;</code>注意: <span
 class="math inline">\(bit\)</span>前面的<span class="math inline">\(k =
-1000,M = 1e6, G = 1e9\)</span></font>，<font color="green">而<span
+1000,M = 1e6, G =
+1e9\)</span><code>&lt;/font&gt;</code>，<code>&lt;font color="green"&gt;</code>而<span
 class="math inline">\(B\)</span>前的<span
-class="math inline">\(K=2^{10},M=2^{20},G=2^{30}\)</span></font></p>
+class="math inline">\(K=2^{10},M=2^{20},G=2^{30}\)</span><code>&lt;/font&gt;</code></p>
 </blockquote>
-<h3 id="带宽-衡量某一信道中的最大传输速率">1.3.2 带宽:
-衡量某一信道中的<font color="red">最大</font>传输速率</h3>
+<h3 id="带宽-衡量某一信道中的-font-colorred最大-font传输速率">1.3.2
+带宽: 衡量某一信道中的 <code>&lt;font color="red"&gt;</code>最大
+<code>&lt;/font&gt;</code>传输速率</h3>
 <p>带宽有两种含义:</p>
 <ol type="1">
 <li>信号与系统中: 某一信道能够传送的频率范围。</li>
@@ -398,8 +408,9 @@ class="math inline">\(bps\)</span>表示。</li>
 <blockquote>
 <p>前者为频率表述，后者为时域表述。两者的描述是一致的，比如能传送的频率范围越大，信道中单位时间内能通过的数据量也就越多。</p>
 </blockquote>
-<h3 id="吞吐量-衡量网络中实际的传输速度">1.3.3 吞吐量:
-衡量网络中<font color="red">实际</font>的传输速度</h3>
+<h3 id="吞吐量-衡量网络中-font-colorred实际-font的传输速度">1.3.3
+吞吐量: 衡量网络中 <code>&lt;font color="red"&gt;</code>实际
+<code>&lt;/font&gt;</code>的传输速度</h3>
 <blockquote>
 <p>定义<span class="math inline">\(1.3.3.1\)</span>
 <strong>吞吐量</strong>表示在单位时间内通过这个网络(或信道或接口)的实际的数据量。</p>
@@ -416,8 +427,8 @@ class="math inline">\(bps\)</span>表示。</li>
 Delay)</h4>
 <blockquote>
 <p>定义<span class="math inline">\(1.3.4.1.1\)</span>
-<strong>发送时延</strong>是指从发送端的主机/路由器<strong>完全发送数据</strong>所需要的时间，因此和数据包的大小呈正相关。且一般发生在网络适配器中，和传输的路径长短没有任何关系。也叫做<strong>传输时延</strong>。
-<span class="math display">\[
+<strong>发送时延</strong>是指从发送端的主机/路由器<strong>完全发送数据</strong>所需要的时间，因此和数据包的大小呈正相关。且一般发生在网络适配器中，和传输的路径长短没有任何关系。也叫做<strong>传输时延</strong>。</p>
+<p><span class="math display">\[
 发送时延 t_1 = \frac{数据大小}{发送数据速率}
 \]</span></p>
 </blockquote>
@@ -425,8 +436,8 @@ Delay)</h4>
 Delay)</h4>
 <blockquote>
 <p>定义<span class="math inline">\(1.3.4.2.1\)</span>
-<strong>传播时延</strong>是指电磁波在信道中传播所需要的时间，和信道的<strong>介质</strong>(影响电磁波的传播速率)和信道长度有关。但由于信道的传播有并行性，所以传播时延和数据的大小无关。
-<span class="math display">\[
+<strong>传播时延</strong>是指电磁波在信道中传播所需要的时间，和信道的<strong>介质</strong>(影响电磁波的传播速率)和信道长度有关。但由于信道的传播有并行性，所以传播时延和数据的大小无关。</p>
+<p><span class="math display">\[
 传播时延t_2=\frac{传播距离}{传播速率}
 \]</span></p>
 </blockquote>
@@ -442,18 +453,19 @@ Delay)</h4>
 </blockquote>
 <p>当排队队列超过限制的时候，就免不了有一些分组因为队列溢出而丢失。那么这些分组的排队时延可以视作<strong>无穷大</strong>。</p>
 <h4 id="总时延">1.3.4.5 总时延</h4>
-<p>显然总时延为上述4种时延之和: <span class="math display">\[
+<p>显然总时延为上述4种时延之和:</p>
+<p><span class="math display">\[
 总时延 = 发送时延 + 传播时延 + 处理时延 + 排队时延
 \]</span></p>
 <blockquote>
-<p><font color="red">需要注意的是:</font>
+<p><code>&lt;font color="red"&gt;</code>需要注意的是:<code>&lt;/font&gt;</code>
 总时延中的决定性力量要视情况而定，因此有时候提升了某一种时延总时延减小的效果很大而有时候却几乎没什么变化。</p>
 </blockquote>
 <h3 id="传播时延带宽积">1.3.5 传播时延带宽积</h3>
 <blockquote>
 <p>定义<span class="math inline">\(1.3.5.1\)</span>
-定义一条信道的<strong>传播时延带宽积</strong>(时延带宽积)： <span
-class="math display">\[
+定义一条信道的<strong>传播时延带宽积</strong>(时延带宽积)：</p>
+<p><span class="math display">\[
 传播时延带宽积 = 传播时延 \times 带宽
 \]</span></p>
 </blockquote>
@@ -473,11 +485,13 @@ Time)</h3>
 <p>定义<span class="math inline">\(1.3.6\)</span>
 <strong>往返时间</strong>是指发送方发送完最后一个数据以后，直到发送方再次接收到接收方发来的确认消息所需要的时间。往往假定<strong>确认消息的数据量非常小，接收端发送确认消息的时间为0</strong>。</p>
 </blockquote>
-<p>因此往返时间一般是这样计算的: <span class="math display">\[
+<p>因此往返时间一般是这样计算的:</p>
+<p><span class="math display">\[
 往返时间RTT = 传播时延 +  接收端排队时延 + 接收端处理时延 +传播时延 =
 传播时延*2 + 接收端排队时延 + 接收端处理时延
-\]</span> 应用往返时间可以计算得到真正的有效数据速率: <span
-class="math display">\[
+\]</span></p>
+<p>应用往返时间可以计算得到真正的有效数据速率:</p>
+<p><span class="math display">\[
 有效数据速率 = \frac{发送数据量}{发送时延 + 往返时间RTT}
 \]</span></p>
 <h3 id="利用率">1.3.7 利用率</h3>
@@ -491,10 +505,11 @@ class="math display">\[
 </blockquote>
 <blockquote>
 <p>公式<span class="math inline">\(1.3.7.1\)</span>
-理想情况下，<strong>网络利用率U</strong>和网络的时延的关系有： <span
-class="math display">\[
+理想情况下，<strong>网络利用率U</strong>和网络的时延的关系有：</p>
+<p><span class="math display">\[
 \frac{D_0}{D} = 1-U \Leftrightarrow U =1 - \frac{D_0}{D}
-\]</span> 其中<span
+\]</span></p>
+<p>其中<span
 class="math inline">\(D_0\)</span>表示某一数据量在该网络完全空闲时的时延，<span
 class="math inline">\(D\)</span>表示相同数据量的数据在当前网络状态下的时延。</p>
 </blockquote>
@@ -506,7 +521,7 @@ alt="1808215-20201212160108590-911020597.png (802×314) (cnblogs.com)" />
 (802×314) (cnblogs.com)</figcaption>
 </figure>
 <blockquote>
-<p><font color="red">注意：</font>利用率并非越大越好，从上图可以看出利用率加大，时延上升的比较快。利用率50%
+<p><code>&lt;font color="red"&gt;</code>注意：<code>&lt;/font&gt;</code>利用率并非越大越好，从上图可以看出利用率加大，时延上升的比较快。利用率50%
 时延变为2倍。因此基本上控制利用率不超过50%。</p>
 </blockquote>
 <h3 id="一些非量化的性能指标">1.3.8 一些非量化的性能指标</h3>
@@ -627,7 +642,7 @@ Data Unit)。</p>
   
   <div id="footer-info" class="inner">
     
-    &copy; 2024 Your Name<br>
+    &copy; 2024 Fragments WANG<br>
     Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
   </div>
 </footer>

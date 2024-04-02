@@ -20,30 +20,25 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="Week2: 文法、句型、句子、语言和文法的类型  一门高级语言是一个记号系统，需要定义语言和语义两部分。  1. 符号串上的运算: 1.0 符号串的长度 \(x\)为一串，则\(|x|\)为\(x\)所占字符表中，字符的个数 1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀 若\(z &#x3D; xy\)，则\(x\)为\(z\)的头(前缀)，注意\(x\)可以为\(\">
+  <meta name="description" content="Week2: 文法、句型、句子、语言和文法的类型  一门高级语言是一个记号系统，需要定义语言和语义两部分。  1. 符号串上的运算: 1.0 符号串的长度 \(x\)为一串，则\(|x|\)为\(x\)所占字符表中，字符的个数 1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀 若\(z &#x3D; xy\)，则\(x\)为\(z\)的头(前缀)，注意\(x\)可以为&amp;lt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理Week2： 文法、句型、句子、语言和文法的类型">
 <meta property="og:url" content="http://blog.fragments.work/2024/03/15/PrincipleofCompiling/compilation-Week2/index.html">
 <meta property="og:site_name" content="Fragments&#39; Blog">
-<meta property="og:description" content="Week2: 文法、句型、句子、语言和文法的类型  一门高级语言是一个记号系统，需要定义语言和语义两部分。  1. 符号串上的运算: 1.0 符号串的长度 \(x\)为一串，则\(|x|\)为\(x\)所占字符表中，字符的个数 1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀 若\(z &#x3D; xy\)，则\(x\)为\(z\)的头(前缀)，注意\(x\)可以为\(\">
+<meta property="og:description" content="Week2: 文法、句型、句子、语言和文法的类型  一门高级语言是一个记号系统，需要定义语言和语义两部分。  1. 符号串上的运算: 1.0 符号串的长度 \(x\)为一串，则\(|x|\)为\(x\)所占字符表中，字符的个数 1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀 若\(z &#x3D; xy\)，则\(x\)为\(z\)的头(前缀)，注意\(x\)可以为&amp;lt">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.fragments.work/img/covers/PrinciplesofCompilation.jpg">
 <meta property="article:published_time" content="2024-03-15T14:09:29.000Z">
-<meta property="article:modified_time" content="2024-04-01T05:19:30.382Z">
+<meta property="article:modified_time" content="2024-04-02T07:19:00.763Z">
 <meta property="article:author" content="Fragments WANG">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.fragments.work/img/covers/PrinciplesofCompilation.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Fragments' Blog" type="application/atom+xml">
   
   
-    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
-    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
-    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
-    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
-    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
-    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
-    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
-    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+    <link rel="shortcut icon" href="/./images/favicon.jpg">
   
   
   
@@ -125,19 +120,21 @@
   <div class="info-card">
     <div class="avatar">
       
+        <image src=/images/top_img.jpg></image>
+      
       <div class="img-dim"></div>
     </div>
     <div class="info">
-      <div class="username">Your Name </div>
+      <div class="username">Fragments WANG </div>
       <div class="dot"></div>
-      <div class="subtitle">This is the subtitle </div>
+      <div class="subtitle">一个非常平凡的人 </div>
       <div class="link-list">
         
-          <a class="link-btn" target="_blank" rel="noopener" href="https://twitter.com" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a class="link-btn" target="_blank" rel="noopener" href="https://www.zhihu.com/people/dui-fang-casteryi-xia-xian" title="知乎"><i class="fa-brands fa-zhihu"></i></a>
         
-          <a class="link-btn" target="_blank" rel="noopener" href="https://store.steampowered.com" title="Steam"><i class="fa-brands fa-steam"></i></a>
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/1786427191" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
         
-          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/Fragmentszz" title="GitHub"><i class="fa-brands fa-github"></i></a>
          
       </div>  
     </div>
@@ -194,6 +191,16 @@
 <article id="post-PrincipleofCompiling/compilation-Week2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img" rel="gallery_clui0dyxp000ccswadvoa1ayb">
+        <img src="/img/covers/PrinciplesofCompilation.jpg" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
    
   <div class="article-inner">
     <div class="article-main">
@@ -223,7 +230,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            3.9k 词 
+            4.5k 词 
           </div>
         </div>
         
@@ -247,8 +254,8 @@ class="math inline">\(x\)</span>所占字符表中，字符的个数</p>
 <p>若<span class="math inline">\(z = xy\)</span>，则<span
 class="math inline">\(x\)</span>为<span
 class="math inline">\(z\)</span>的头(前缀)，注意<span
-class="math inline">\(x\)</span>可以为<font color="red"><span
-class="math inline">\(\varepsilon\)</span></font></p>
+class="math inline">\(x\)</span>可以为<code>&lt;font color="red"&gt;</code><span
+class="math inline">\(\varepsilon\)</span><code>&lt;/font&gt;</code></p>
 <p><span class="math inline">\(x\)</span>为<span
 class="math inline">\(z\)</span>的头，且<span class="math inline">\(x
 \ne z\)</span>，则<span class="math inline">\(x\)</span>为<span
@@ -257,13 +264,15 @@ class="math inline">\(z\)</span>的固有头/真前缀</p>
 <p><span class="math inline">\(x\)</span>,<span
 class="math inline">\(y\)</span>为两个符号串,<span
 class="math inline">\(z = xy\)</span>，<span class="math inline">\(|z| =
-|x| + |y|\)</span> <span class="math display">\[
+|x| + |y|\)</span></p>
+<p><span class="math display">\[
 x = \varepsilon x=x \varepsilon
 \]</span></p>
 <h3 id="符号串的方幂">1.3 符号串的方幂</h3>
 <p><span class="math inline">\(x^n\)</span>表示将串<span
 class="math inline">\(x\)</span>重复连接<span
-class="math inline">\(n\)</span>次 <span class="math display">\[
+class="math inline">\(n\)</span>次</p>
+<p><span class="math display">\[
 x^0=\varepsilon \\ x^mx^{n-m}=x^{n-m}x^m=x^n,\quad n\ge m
 \]</span></p>
 <h3 id="符号串集">1.4 符号串集</h3>
@@ -284,11 +293,16 @@ class="math inline">\(为定义在字符表\)</span> $的符号串集合</p>
 <p>已有符号集<span
 class="math inline">\(\Sigma\)</span>,根据集合乘积的定义，可得到集合的方幂<span
 class="math inline">\(\Sigma^n\)</span></p>
-<p>其中: <span class="math display">\[
+<p>其中:</p>
+<p><span class="math display">\[
 \Sigma^0 = {\varepsilon}
-\]</span> 定义闭包: <span class="math display">\[
+\]</span></p>
+<p>定义闭包:</p>
+<p><span class="math display">\[
 \Sigma^*=\Sigma^0 \cup \Sigma^1 \cup \Sigma^2 \cup \Sigma^3 \cup ...
-\]</span> 定义正闭包: <span class="math display">\[
+\]</span></p>
+<p>定义正闭包:</p>
+<p><span class="math display">\[
 \Sigma^+=\Sigma^1 \cup \Sigma^2 \cup \Sigma^3 \cup ...
 \]</span></p>
 <p><span class="math display">\[
@@ -302,17 +316,17 @@ class="math inline">\(V_N,V_T,P,S\)</span>)</h2>
 <blockquote>
 <p>文法: 用有穷集合描述无穷集合的工具。</p>
 </blockquote>
-<p><strong>文法</strong>由<font color="blue">非空有穷</font>集合<strong><span
+<p><strong>文法</strong>由<code>&lt;font color="blue"&gt;</code>非空有穷<code>&lt;/font&gt;</code>集合<strong><span
 class="math inline">\(V_N,V_T,P\)</span></strong>和一个起始符<span
 class="math inline">\(S\)</span>构成。</p>
 <h3 id="非终结符集v_nnon-terminal-symbols">2.1 非终结符集<span
 class="math inline">\(V_N\)</span>（non-terminal symbols)</h3>
-<p><strong>非终结符</strong>的含义是，能够<font color = "red">继续被替换下去的符号</font>。</p>
+<p><strong>非终结符</strong>的含义是，能够<code>&lt;font color = "red"&gt;</code>继续被替换下去的符号<code>&lt;/font&gt;</code>。</p>
 <ul>
 <li><p>rule:</p>
 <ol type="1">
-<li><p>一般用尖括号<font color="red">“&lt;&gt;”</font>扩起非终结符。</p></li>
-<li><p>一般用<strong>大写字母</strong>表示非终结符。</p></li>
+<li>一般用尖括号<code>&lt;font color="red"&gt;</code>“&lt;&gt;”<code>&lt;/font&gt;</code>扩起非终结符。</li>
+<li>一般用<strong>大写字母</strong>表示非终结符。</li>
 </ol></li>
 </ul>
 <h3 id="终结符集v_tterminal-symbols">2.2 终结符集<span
@@ -320,8 +334,10 @@ class="math inline">\(V_T\)</span>(terminal symbols)</h3>
 <p><strong>终结符</strong>的含义是，不能够继续被替换的符号。</p>
 <ul>
 <li><p>rule:</p>
-<pre><code>  1. 一般不用尖括号扩起。
-  1. 一般用**小写字母**表示终结符</code></pre></li>
+<ol type="1">
+<li>一般不用尖括号扩起。</li>
+<li>一般用<strong>小写字母</strong>表示终结符</li>
+</ol></li>
 </ul>
 <h3 id="规则集pprescriptions">2.3 规则集<span
 class="math inline">\(P\)</span>(prescriptions)</h3>
@@ -331,16 +347,17 @@ class="math inline">\(P\)</span>(prescriptions)</h3>
 <p>规则(重写规则/产生式/生成式)，是一种形如<span
 class="math inline">\(\alpha \to \beta\)</span>,<span
 class="math inline">\(\alpha ::= \beta\)</span>,<span
-class="math inline">\((\alpha,\beta)\)</span>的有序对。<font color="blue">读作:<span
+class="math inline">\((\alpha,\beta)\)</span>的有序对。<code>&lt;font color="blue"&gt;</code>读作:<span
 class="math inline">\(\alpha\)</span>定义为<span
-class="math inline">\(\beta\)</span></font></p>
-<p><font color = "red">其中<span
+class="math inline">\(\beta\)</span><code>&lt;/font&gt;</code></p>
+<p><code>&lt;font color = "red"&gt;</code>其中<span
 class="math inline">\(\alpha\)</span>是规则的左部，<span
 class="math inline">\(\alpha \in (V_N \cup
-V_T)^*,且至少包含一个非终结符\)</span></font></p>
-<p><font color = "red"><span
+V_T)^*,且至少包含一个非终结符\)</span><code>&lt;/font&gt;</code></p>
+<p><code>&lt;font color = "red"&gt;</code><span
 class="math inline">\(\beta\)</span>是规则的右部，<span
-class="math inline">\(\beta \in (V_N \cup V_P)^*\)</span></font></p>
+class="math inline">\(\beta \in (V_N \cup
+V_P)^*\)</span><code>&lt;/font&gt;</code></p>
 <h3 id="识别符开始符s">2.4 识别符(开始符)<span
 class="math inline">\(S\)</span></h3>
 <blockquote>
@@ -350,22 +367,27 @@ class="math inline">\(S\)</span></h3>
 class="math inline">\(S\)</span>是一个<strong>非终结符</strong>，即<span
 class="math inline">\(S \in V_N\)</span>。</p>
 <ul>
-<li>rule: 1. 识别符<span
-class="math inline">\(S\)</span>至少需要在一条规则中的左部出现。 1.
-一般<strong>第一条产生式</strong>的左部就是识别符<span
-class="math inline">\(S\)</span> 1. 文法<span
-class="math inline">\(G\)</span>还可以表示为<span
+<li>rule:
+<ol type="1">
+<li>识别符<span
+class="math inline">\(S\)</span>至少需要在一条规则中的左部出现。</li>
+<li>一般<strong>第一条产生式</strong>的左部就是识别符<span
+class="math inline">\(S\)</span></li>
+<li>文法<span class="math inline">\(G\)</span>还可以表示为<span
 class="math inline">\(G[S]\)</span>，突出识别符<span
 class="math inline">\(S\)</span></li>
+</ol></li>
 </ul>
 <h3 id="字母表字汇表v">2.5 字母表(字汇表)V</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
 <p>字母表<span class="math inline">\(V = V_N \cup V_T\)</span>。</p>
-<p>另外: <span class="math display">\[
+<p>另外:</p>
+<p><span class="math display">\[
 V_N \cap V_T = \varnothing
-\]</span> 故<span class="math inline">\(\{V_N,V_T\}\)</span>是<span
+\]</span></p>
+<p>故<span class="math inline">\(\{V_N,V_T\}\)</span>是<span
 class="math inline">\(V\)</span>的一个划分。</p>
 <h2 id="推导">3. 推导</h2>
 <h3 id="直接推导">3.1 直接推导</h3>
@@ -376,10 +398,11 @@ class="math inline">\(V\)</span>的一个划分。</p>
 \beta\)</span>是文法<span
 class="math inline">\(G\)</span>的一条规则，且有<span
 class="math inline">\(\delta,\gamma \in V^*\)</span>,<span
-class="math inline">\(\exists v,w\)</span>满足: <span
-class="math display">\[
+class="math inline">\(\exists v,w\)</span>满足:</p>
+<p><span class="math display">\[
 v = \delta \alpha \gamma \ \ \ \ w=\delta \beta \gamma
-\]</span> 显然，<span
+\]</span></p>
+<p>显然，<span
 class="math inline">\(\delta,\gamma\)</span>可以是空串。</p>
 <p>则以下说法等价:</p>
 <ol type="1">
@@ -401,9 +424,11 @@ class="math inline">\(v \xRightarrow{+} w\)</span></h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>如果有推导序列: <span class="math display">\[
+<p>如果有推导序列:</p>
+<p><span class="math display">\[
 v =&gt; w_1 =&gt; w_2 =&gt; \cdots =&gt; w_n =&gt; w (n&gt;0)
-\]</span> 则称:</p>
+\]</span></p>
+<p>则称:</p>
 <ol type="1">
 <li><span class="math inline">\(v\)</span>推导到<span
 class="math inline">\(w\)</span>, 长度为<span
@@ -422,9 +447,9 @@ w\)</span></p>
 <p>则<span class="math inline">\(v \xRightarrow{+}
 w\)</span><strong>或者</strong><span class="math inline">\(v =
 w\)</span>，写作<span class="math inline">\(v
-\xRightarrow{*}w\)</span>，<font color="blue">读作: <span
-class="math inline">\(v\)</span>推导到<span
-class="math inline">\(w\)</span></font></p>
+\xRightarrow{*}w\)</span>，<code>&lt;font color="blue"&gt;</code>读作:
+<span class="math inline">\(v\)</span>推导到<span
+class="math inline">\(w\)</span><code>&lt;/font&gt;</code></p>
 <h2 id="句型句子语言">4. 句型、句子、语言</h2>
 <h3 id="句型">4.1 句型</h3>
 <blockquote>
@@ -433,10 +458,11 @@ class="math inline">\(w\)</span></font></p>
 <p>有文法<span class="math inline">\(G[S]\)</span>，对某一<span
 class="math inline">\(x \in V^*\)</span>, 若<span
 class="math inline">\(x\)</span>可由识别符<span
-class="math inline">\(S\)</span>推导而来，即: <span
-class="math display">\[
+class="math inline">\(S\)</span>推导而来，即:</p>
+<p><span class="math display">\[
 S \xRightarrow{*} x
-\]</span> 则称<span class="math inline">\(x\)</span>为文法<span
+\]</span></p>
+<p>则称<span class="math inline">\(x\)</span>为文法<span
 class="math inline">\(G[S]\)</span>的句型。</p>
 <blockquote>
 <p>Hint:</p>
@@ -452,10 +478,11 @@ class="math inline">\(S\)</span>本身是一个句型而不是句子。</p>
 <p>有文法<span class="math inline">\(G[S]\)</span>和文法<span
 class="math inline">\(G[S]\)</span>上的句型<span
 class="math inline">\(x\)</span>，如果<span
-class="math inline">\(x\)</span>仅由<font color="red">终结符组成<strong>或者为空串</strong></font>,即:
-<span class="math display">\[
+class="math inline">\(x\)</span>仅由<code>&lt;font color="red"&gt;</code>终结符组成<strong>或者为空串</strong><code>&lt;/font&gt;</code>,即:</p>
+<p><span class="math display">\[
 S \xRightarrow{*} x \wedge x \in (V_T)^*
-\]</span> 则句型<span class="math inline">\(x\)</span>为文法<span
+\]</span></p>
+<p>则句型<span class="math inline">\(x\)</span>为文法<span
 class="math inline">\(G[S]\)</span>的句子。</p>
 <blockquote>
 <p>句子是不包含非终结符的句型。</p>
@@ -464,23 +491,26 @@ class="math inline">\(G[S]\)</span>的句子。</p>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>对文法<span class="math inline">\(G[S]\)</span>, <span
-class="math display">\[
+<p>对文法<span class="math inline">\(G[S]\)</span>,</p>
+<p><span class="math display">\[
 L[G] = \{x| x \in (V_T)^* \wedge S \xRightarrow{*} x \}
-\]</span> 则<span class="math inline">\(L[G]\)</span>为文法<span
+\]</span></p>
+<p>则<span class="math inline">\(L[G]\)</span>为文法<span
 class="math inline">\(G[S]\)</span>的语言。</p>
 <blockquote>
 <p>文法<span
-class="math inline">\(G[S]\)</span>的语言是该文法一切句子的集合。[<font color="red">包含空串</font>]</p>
+class="math inline">\(G[S]\)</span>的语言是该文法一切句子的集合。[<code>&lt;font color="red"&gt;</code>包含空串<code>&lt;/font&gt;</code>]</p>
 </blockquote>
 <h3 id="文法的等价">4.4 文法的等价</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>有两个文法<span class="math inline">\(G_1[S_1],G_2[S_2]\)</span>,若：
-<span class="math display">\[
+<p>有两个文法<span
+class="math inline">\(G_1[S_1],G_2[S_2]\)</span>,若：</p>
+<p><span class="math display">\[
 L[G_1] = L[G_2]
-\]</span> 则称文法<span class="math inline">\(G_1\)</span>和文法<span
+\]</span></p>
+<p>则称文法<span class="math inline">\(G_1\)</span>和文法<span
 class="math inline">\(G_2\)</span>等价。</p>
 <blockquote>
 <p>两个文法等价当且仅当他们能够表示的语言相同。</p>
@@ -494,10 +524,11 @@ class="math inline">\(G_2\)</span>等价。</p>
 <p>对于一文法<span class="math inline">\(G[S]\)</span>规则集<span
 class="math inline">\(P\)</span>中的规则<span
 class="math inline">\(\alpha \to
-\beta\)</span><font color="red"><strong>都</strong></font>满足: <span
-class="math display">\[
+\beta\)</span><code>&lt;font color="red"&gt;</code><strong>都</strong><code>&lt;/font&gt;</code>满足:</p>
+<p><span class="math display">\[
 \alpha \in V^* 并且\alpha 至少包含一个非终结符 \\ \beta \in V^*
-\]</span> 即是一个<strong>0型文法</strong>。</p>
+\]</span></p>
+<p>即是一个<strong>0型文法</strong>。</p>
 <blockquote>
 <p>任何0型语言都是递归可枚举的。任何递归可枚举集也都是0型语言。</p>
 </blockquote>
@@ -511,10 +542,11 @@ id="型文法上下文有关文法-context-sensitive-grammar线性界限自动�
 class="math inline">\(G[S]\)</span>，若规则集<span
 class="math inline">\(P\)</span>中的规则<span
 class="math inline">\(\alpha \to
-\beta\)</span><font color="red"><strong>都</strong></font>满足: <span
-class="math display">\[
+\beta\)</span><code>&lt;font color="red"&gt;</code><strong>都</strong><code>&lt;/font&gt;</code>满足:</p>
+<p><span class="math display">\[
 |\alpha| \le |\beta| \vee \beta = \varepsilon
-\]</span> 此文法即是一个1型文法。</p>
+\]</span></p>
+<p>此文法即是一个1型文法。</p>
 <blockquote>
 <p>0型文法规则集中除了<span class="math inline">\(\beta =
 \varepsilon\)</span>的情况，规则右部的长度<em>不小于</em>左部的长度，则文法为一个1型文法。</p>
@@ -527,16 +559,17 @@ class="math display">\[
 <p>对于一个0型文法<span
 class="math inline">\(G[S]\)</span>，对于规则集<span
 class="math inline">\(P\)</span>中的规则<strong>每一个</strong>规则<span
-class="math inline">\(\alpha \to \beta\)</span>，满足: <span
-class="math display">\[
+class="math inline">\(\alpha \to \beta\)</span>，满足:</p>
+<p><span class="math display">\[
 \alpha \in V_N \\ \beta \in V^*
-\]</span> 即每一条规则都形如<span class="math inline">\(A \to
+\]</span></p>
+<p>即每一条规则都形如<span class="math inline">\(A \to
 \beta\)</span>，该文法为一个2型文法。</p>
 <blockquote>
 <p>每一条规则的左部都是<strong>一个非终结符</strong>的文法就是上下文无关文法。</p>
 </blockquote>
 <blockquote>
-<p><font color="red">上下文无关文法也是上下文有关文法。</font></p>
+<p><code>&lt;font color="red"&gt;</code>上下文无关文法也是上下文有关文法。<code>&lt;/font&gt;</code></p>
 </blockquote>
 <h3 id="型文法-正规文法左线性文法右线性文法-有穷状态自动机">5.4 3型文法
 (正规文法:左线性文法/右线性文法) : 有穷状态自动机</h3>
@@ -545,29 +578,32 @@ class="math display">\[
 </blockquote>
 <p>对于一个文法<span
 class="math inline">\(G[S]\)</span>，规则集中<strong>每一条</strong>规则<span
-class="math inline">\(\alpha \to \beta\)</span>都满足: <span
-class="math display">\[
+class="math inline">\(\alpha \to \beta\)</span>都满足:</p>
+<p><span class="math display">\[
 \alpha = A, A\in V_N \\ \beta = aB \ \vee \beta = \ a , B \in V_N
-\]</span> 即规则形如$ Aa$或者 <span class="math inline">\(A
-\to  aB\)</span>。<font color="red">(一定有终结符，且终结符一定在左边，非终结符可有可无。）</font></p>
+\]</span></p>
+<p>即规则形如$ Aa$或者 <span class="math inline">\(A
+\to  aB\)</span>。<code>&lt;font color="red"&gt;</code>(一定有终结符，且终结符一定在左边，非终结符可有可无。）<code>&lt;/font&gt;</code></p>
 <p>此文法为一个3型文法，是一个<strong>右线性文法</strong>。</p>
 <blockquote>
 <p>定义:</p>
 </blockquote>
 <p>对于一个文法<span
 class="math inline">\(G[S]\)</span>，规则集中<strong>每一条</strong>规则<span
-class="math inline">\(\alpha \to \beta\)</span>都满足: <span
-class="math display">\[
+class="math inline">\(\alpha \to \beta\)</span>都满足:</p>
+<p><span class="math display">\[
 \alpha = A, A\in V_N \\ \beta = Ba \ \vee \beta = \ a , B \in V_N
-\]</span> 即规则形如$ Aa$或者 <span class="math inline">\(A
-\to  aB\)</span>。<font color="red">(一定有终结符，且终结符一定在右边，非终结符可有可无。）</font></p>
+\]</span></p>
+<p>即规则形如$ Aa$或者 <span class="math inline">\(A
+\to  aB\)</span>。<code>&lt;font color="red"&gt;</code>(一定有终结符，且终结符一定在右边，非终结符可有可无。）<code>&lt;/font&gt;</code></p>
 <p>此文法也是一个3型文法，是一个<strong>左线性文法</strong>。</p>
 <p>但有的规则终结符在左边，有的规则在右边的文法不是3型文法！</p>
 <blockquote>
 <p>显然，3型文法一定是一个上下文无关文法。</p>
 </blockquote>
 <h3 id="语言的类型">5.5 语言的类型</h3>
-<p>不同种文法产生不同种语言。 <span class="math display">\[
+<p>不同种文法产生不同种语言。</p>
+<p><span class="math display">\[
 0型文法 \to 0型语言 \\ 上下文有关文法 \to 上下文有关语言 \\
 上下文无关文法 \to 上下文无关语言 \\ 正规文法 \to 正规语言
 \]</span></p>
@@ -620,7 +656,7 @@ class="math display">\[
   
   <div id="footer-info" class="inner">
     
-    &copy; 2024 Your Name<br>
+    &copy; 2024 Fragments WANG<br>
     Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
   </div>
 </footer>
