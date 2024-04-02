@@ -1,7 +1,8 @@
-http://blog.fragments.work/2024/04/01/nh/
+http://blog.fragments.work/about/index-2.html
+http://blog.fragments.work/about/index-1.html
+http://blog.fragments.work/about/index.html
 http://blog.fragments.work/2024/03/16/discreteMathmatics/Ch1/
 http://blog.fragments.work/tags/index.html
-http://blog.fragments.work/2024/03/22/Ch2/
 http://blog.fragments.work/2024/03/17/PrincipleofCompiling/compilation-Week3/
 http://blog.fragments.work/2024/03/15/PrincipleofCompiling/compilation-Week2/
 http://blog.fragments.work/2024/03/17/ComputerNetwork/Ch1/

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="false" > 
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>网络原理: 物理层 | Fragments&#39; Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="Ch3: 物理层 1.1 物理层的基本概念 1.1.1 物理层的主要任务:  物理层的传输媒介和通信手段差别很大，种类多样。物理层的作用就是尽可能地屏蔽这些传输媒体和通信手段的差异。   物理层的协议也被称为是物理层规程。  物理层的主要任务有:  机械特性: 指明接口所用的接线器的尺寸和形状，引脚数目和排列，固定和锁定装置。接插件的规格。 电气特性: 接口电缆上电压的范围 功能特性: 某条线上电">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络原理: 物理层">
+<meta property="og:url" content="http://blog.fragments.work/2024/03/22/ComputerNetwork/Ch2/index.html">
+<meta property="og:site_name" content="Fragments&#39; Blog">
+<meta property="og:description" content="Ch3: 物理层 1.1 物理层的基本概念 1.1.1 物理层的主要任务:  物理层的传输媒介和通信手段差别很大，种类多样。物理层的作用就是尽可能地屏蔽这些传输媒体和通信手段的差异。   物理层的协议也被称为是物理层规程。  物理层的主要任务有:  机械特性: 指明接口所用的接线器的尺寸和形状，引脚数目和排列，固定和锁定装置。接插件的规格。 电气特性: 接口电缆上电压的范围 功能特性: 某条线上电">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-22T14:52:00.000Z">
+<meta property="article:modified_time" content="2024-04-01T05:19:30.210Z">
+<meta property="article:author" content="Fragments WANG">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Fragments' Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  
+   
+  <div id="main-grid" class="  ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Fragments' Blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS 订阅">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS 订阅">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">Your Name </div>
+      <div class="dot"></div>
+      <div class="subtitle">This is the subtitle </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://twitter.com" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://store.steampowered.com" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">
+                网络原理
+                <div class="category-count">2</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">
+                离散数学
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
+                编译原理
+                <div class="category-count">2</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+
+<article id="post-ComputerNetwork/Ch2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        网络原理: 物理层
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-03-22T14:52:00.000Z" itemprop="datePublished">2024-03-22</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">网络原理</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+             词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1>Ch3: 物理层</h1>
+<h2 id="1-1-物理层的基本概念">1.1 物理层的基本概念</h2>
+<h3 id="1-1-1-物理层的主要任务">1.1.1 物理层的主要任务:</h3>
+<blockquote>
+<p>物理层的传输媒介和通信手段差别很大，种类多样。物理层的作用就是尽可能地屏蔽这些传输媒体和通信手段的差异。</p>
+</blockquote>
+<blockquote>
+<p>物理层的协议也被称为是物理层<strong>规程</strong>。</p>
+</blockquote>
+<p>物理层的主要任务有:</p>
+<ol>
+<li><strong>机械特性</strong>: 指明接口所用的接线器的尺寸和形状，引脚数目和排列，固定和锁定装置。接插件的规格。</li>
+<li><strong>电气特性</strong>: 接口电缆上电压的范围</li>
+<li><strong>功能特性</strong>: 某条线上电平的电压的含义</li>
+<li><strong>过程特性</strong>: 不同功能的事件出现的顺序</li>
+<li>传输方式的转变: 并串行转换</li>
+</ol>
+<h2 id="1-2-数据通信的基本知识">1.2 数据通信的基本知识</h2>
+<blockquote>
+<p>通信的目的是传输<strong>消息</strong>。</p>
+<p><strong>数据</strong>是运送<strong>消息</strong>的实体，一般是有意义的符号序列。</p>
+<p><strong>信号</strong>是<strong>数据</strong>在电气/电子中的具体表现。</p>
+</blockquote>
+<blockquote>
+<p><font color="red">定义</font>：<strong>码元</strong>指的是代表不同离散数值的基本波形。比如高低电平分别代表离散值0/1，则高电平和低电平都是<strong>码元</strong>。</p>
+</blockquote>
+<blockquote>
+<p>比特率: 每秒钟传送的<strong>比特数</strong>(bps)</p>
+<p>波特率: 每秒钟传送的<strong>码元数</strong>(码元/秒)</p>
+</blockquote>
+<p>以上两个量用来描述信道的<strong>传输速率</strong>。</p>
+<blockquote>
+<p>$$<br>
+比特率 = 波特率 * 每个码元携带的比特数<br>
+$$</p>
+<p><font color="red">请注意是每个码元携带的信息的比特数，而非码元数！！</font></p>
+</blockquote>
+<blockquote>
+<p>例题: 若某通信链路的数据传输速率为2400bps,采用4相位调制,则该链路的波特率是?</p>
+</blockquote>
+<h3 id="1-2-1-通信的简单模型">1.2.1 通信的简单模型</h3>
+<p>用一个简单的模型来建立数据通信系统的模型。<br>
+$$<br>
+源点(source) \xrightarrow{数字信号} 发送器(调制器) \xrightarrow{模拟信号} 传输系统 \xrightarrow{模拟信号}  接收器(解调器)\xrightarrow{数字信号}终点(destination)<br>
+$$</p>
+<ul>
+<li><strong>源点</strong>(source): 源点产生要传输的数据。一般是计算机产生用户想要发送的消息的数据。也称为<strong>源头</strong>或<strong>信源</strong>。</li>
+<li><strong>发送器</strong>一般是调制器。源点产生的数字比特流一般要经过发送器编码以后才能够在传输系统中进行传输。</li>
+<li><strong>接收器</strong>一般是解调器。收到的信号一般要经过解码才能提取出要传输的数据。</li>
+<li><strong>终点</strong>处理要传输的数据。也叫<strong>目的站</strong>，<strong>信宿</strong>。</li>
+</ul>
+<h3 id="1-2-2-信道">1.2.2 信道</h3>
+<h4 id="1-2-2-1-信道基本概念">1.2.2.1 信道基本概念</h4>
+<blockquote>
+<p>定义$1.2.2.1$：<strong>信道</strong>一般指<strong>向某一个方向</strong>传送信息的媒体。</p>
+<p>因此一般通信电路包含一个发送信道和一条接收信道。</p>
+</blockquote>
+<p>按照通信双方的交互可以把通信分为：</p>
+<ul>
+<li>单向通信: 只有一个方向的交互</li>
+<li>双向交替通信(半双工通信): 支持双向通信，但不能双方同时发送或者同时接收。一个时间一定是一方发送一方接收。</li>
+<li>双向同时通信(全双工通信): 通信双方可以同时发送/接收消息。</li>
+</ul>
+<blockquote>
+<p><strong>单工</strong>指的是半双工，而不是单向通信。</p>
+</blockquote>
+<h4 id="1-2-2-2-信道极限容量">1.2.2.2 信道极限容量</h4>
+<p>高频分量在信道中传播时会衰减，每一个<strong>码元</strong>在时间轴上会有拉伸。</p>
+<blockquote>
+<p>定义$1.2.2.2$: 如果接收端上收到的信号波形失去了<strong>码元</strong>之间的清楚界限，则无法再恢复成原来分离的码元，这种现象叫做<strong>码间干扰</strong>。</p>
+</blockquote>
+<p>为了避免这个码间干扰，信号在信道中的频率过大。<strong>在理想情况下</strong>这个最大频率可以由<strong>奈奎斯特定理</strong>给出</p>
+<blockquote>
+<p><strong>奈奎斯特定理</strong> : 在任何信道中，码元传输的速率$C$是有上限的，如果超过这个上限，就会出现严重的码间干扰现象，使得接收端判定码元变为不可能。<br>
+$$<br>
+C = 2*\omega*log_2V(bps)<br>
+$$<br>
+其中$\omega$为信道的带宽(信道能够传输的最大频率)，$V$为码元总个数。</p>
+</blockquote>
+<p>然而现实中的情况可能并不是理想状况，存在噪声。噪声的影响和时间有关，有时影响大，有时影响小。刻画影响大小的量是<strong>信噪比</strong>。</p>
+<blockquote>
+<p>定义$1.2.2.3$ <strong>信噪比</strong>是信号的<strong>平均功率</strong>和噪声的<strong>平均功率</strong>之比，常记为$S/N$。并用**分贝(db)**作为度量单位。具体的换算公式是：<br>
+$$<br>
+t(S/N) \Leftrightarrow 10*log_{10}t(db)<br>
+$$</p>
+</blockquote>
+<p>描述有噪声情况下的最大频率可以用<strong>香农定理</strong>。</p>
+<blockquote>
+<p><strong>香农定理</strong>：在有噪声的信道中信道的极限传输速率$C$是:<br>
+$$<br>
+C = \omega * log_2(1 + S/N) = \omega <em>log_2(\frac{N + S}{N}) = \omega</em>(log_2(N+S) - log_2N))<br>
+$$<br>
+其中$\omega$为信道的带宽。$S/N$越大，信道的极限传输速率也越大。</p>
+</blockquote>
+<blockquote>
+<p>当传输速率$C$低于香农定理得到的极限速率$C_{max}$，就说明一定存在一种传输方法可以使得传输速率更加快。</p>
+</blockquote>
+<blockquote>
+<p>当信道的带宽$\omega$和信噪比$S/N$都不能再增大时，可以通过<strong>提高码元的总数量</strong>，也就是提高每一个码元所携带的信息量来提高信道的极限传输速率。</p>
+</blockquote>
+<h3 id="1-2-3-调制与解调">1.2.3 调制与解调</h3>
+<blockquote>
+<p>定义$1.2.3.1$: 来自信源的信号常被称为<strong>基带信号</strong>。一般是被计算机直接输出的信号(大部分是数字信号)，包含<strong>较多的低频成分和直流成分。</strong></p>
+</blockquote>
+<p>信道并大概率不能直接传输基带信号。因此要进行<strong>调制</strong>。</p>
+<p>调制一般分为<strong>基带调制</strong>和<strong>带通调制</strong>两大类。</p>
+<h4 id="1-2-3-1-基带调制-编码">1.2.3.1 基带调制(编码)</h4>
+<blockquote>
+<p>定义$1.2.3.2$：<strong>基带调制</strong>是把数字信号转换为另一种形式的数字信号。也被称为<strong>编码</strong>。</p>
+</blockquote>
+<p>常用的编码方式有:</p>
+<ol>
+<li>不归零制: 正<strong>电平</strong>/负<strong>电平</strong>代表1/0</li>
+<li>归零制: 正<strong>脉冲</strong>/负<strong>脉冲</strong>代表1/0</li>
+<li>曼彻斯特编码: 每个<strong>周期中心</strong>的<font color="red">向上跳变代表0，向下跳变代表1</font></li>
+<li>差分曼彻斯特编码: 每个周期中心都有跳变。在每个周期<strong>开始时</strong><font color="red">如果有跳变代表0，无跳变代表1。</font></li>
+</ol>
+<blockquote>
+<p>曼彻斯特编码的变化比起非归零型编码更加<strong>频繁</strong>，说明曼彻斯特编码的频率会比不归零型编码高。</p>
+</blockquote>
+<blockquote>
+<p>曼彻斯特编码具有<strong>自同步的能力</strong>(?)而不归零制却没有       ----why? 待解决的一个小问题</p>
+</blockquote>
+<h4 id="1-2-3-2-带通调制-使用载波进行调制">1.2.3.2 带通调制(使用载波进行调制)</h4>
+<blockquote>
+<p>定义$1.2.3.3$: 通过<strong>载波(carrier)<strong>把频带搬迁到更高的频率范围，并转换为</strong>模拟信号</strong>，这个过程叫做<strong>带通调制</strong>。调制后的信号叫做<strong>带通信号</strong>。</p>
+</blockquote>
+<p>基本的调制方法有:</p>
+<ol>
+<li>调幅(AM): 不同的数字信号映射为不同幅度值的信号</li>
+<li>调频(FM): 不同的数字信号映射为不同频率的信号</li>
+<li>调相(PM): 不同的数字信号映射为不同初相位的信号</li>
+</ol>
+<p>可以把这些基本的调制方法合在一起，比如把调幅和调相结合在一起的<strong>正交振幅调制(QAM)</strong>。</p>
+<h2 id="1-3-物理层中的传输媒介">1.3 物理层中的传输媒介</h2>
+<blockquote>
+<p>信号在物理层中传输的媒介主要分为两种，一种是电磁波被<strong>导引</strong>沿着固体媒体(铜线或者光纤)传播，称为<strong>导引型媒介</strong>，另一种是在自由空间中进行无线传输，叫做<strong>非导引型媒介</strong>。</p>
+</blockquote>
+<h3 id="1-3-1-导引型媒介">1.3.1 导引型媒介</h3>
+<h4 id="1-3-1-1-绞线">1.3.1.1 绞线</h4>
+<blockquote>
+<p><strong>绞线</strong>是把两根相互绝缘的铜导线并排放在一起，再通过<strong>绞合</strong>在一起。好处是<strong>绞合</strong>在一起的铜导线对相邻的电磁干扰很小。</p>
+<p><strong>绞线</strong>越粗，传播距离越远，价格越高。</p>
+</blockquote>
+<blockquote>
+<p>使用<strong>绞线</strong>最多的系统是<strong>电话系统</strong>。</p>
+</blockquote>
+<blockquote>
+<p><strong>绞线</strong>按照外层<strong>有无金属丝屏蔽层</strong>分为<strong>无屏蔽双绞线(UTP)</strong>(Unshielded Twisted Pair)和<strong>屏蔽双绞线(STP)</strong>(Shielded Twisted Pair)。</p>
+</blockquote>
+<h4 id="1-3-1-2-同轴电缆">1.3.1.2 同轴电缆</h4>
+<blockquote>
+<p><strong>同轴电缆</strong>是由内部铜芯，绝缘层、网状外导体屏蔽层以及保护塑料外层组成的传输介质。抗干扰能力很强。用来传输高速数据。<strong>现在已经很少使用</strong></p>
+</blockquote>
+<h4 id="1-3-1-3-光纤和光缆">1.3.1.3 光纤和光缆</h4>
+<blockquote>
+<p><strong>光纤</strong>是利用光导纤维(全反射)传递光脉冲的传输媒介。由内部的石英玻璃拉成丝和外部包层构成双层圆柱体。<strong>直径只有$8-100um$</strong>。</p>
+</blockquote>
+<blockquote>
+<p>由于光全反射角度不唯一，只需要大于临界角度即可。因此一条光纤可以有很多束<strong>不同角度</strong>的光线同时传输。这样的光纤叫做<strong>多模光纤</strong>。但是由于光线在多模光纤中易展宽失真，因此<strong>多模光纤只适用于近距离传输</strong>。</p>
+</blockquote>
+<blockquote>
+<p>也可以把光纤的内芯做得非常细，使得只允许<strong>一条光线</strong>近乎于<strong>直线传播</strong>，这样的光纤叫做<strong>单模光纤</strong>。<strong>单模光纤</strong>贵，但是损耗非常小，能无损耗地在极高速度下传输。</p>
+</blockquote>
+<blockquote>
+<p>一般把非常非常细的光纤包在一起，加上填充物组成物理抗性比较好的<strong>光缆</strong>。</p>
+</blockquote>
+<p>光纤传输的有点有:</p>
+<ol>
+<li>通信容量大，速度快</li>
+<li>损耗小，中继距离长</li>
+<li>抗雷电抗干扰能力很强</li>
+<li>保密性好</li>
+<li>轻便</li>
+</ol>
+<h4 id="1-3-1-4-架空明线">1.3.1.4 架空明线</h4>
+<blockquote>
+<p><strong>架空明线</strong>是在电线杆上架设互相绝缘的明线的传输介质，现在已经几乎不适用。</p>
+</blockquote>
+<h3 id="1-3-2-非导引型媒介">1.3.2 非导引型媒介</h3>
+<h4 id="1-3-2-1-短波通信">1.3.2.1 短波通信</h4>
+<blockquote>
+<p>短波通信质量比较差，而且传输速率也不高。</p>
+</blockquote>
+<h4 id="1-3-2-2-微波通信">1.3.2.2 微波通信</h4>
+<blockquote>
+<p>微波通信在数据通信中地位很重要。主要使用$2\to 40GHz$的频率范围。一般的微波通信有<strong>地面微波接力通信</strong>和<strong>卫星通信</strong>两种形式。</p>
+</blockquote>
+<blockquote>
+<p><strong>地面微波接力通信</strong>是指在地面上在两个终端之间建立若干个<strong>中继站</strong>的形式。频段很宽，容量也很大，其他电磁干扰小。传输质量非常高。</p>
+<p><strong>卫星通信</strong>的特点是**<font color="red">传播</font>时延长**，<strong>通信距离远</strong>。</p>
+</blockquote>
+<h4 id="1-3-2-3-红外通信">1.3.2.3 红外通信</h4>
+<h4 id="1-3-2-4-激光通信">1.3.2.4 激光通信</h4>
+<h2 id="1-4-信道复用技术">1.4 信道复用技术</h2>
+<h3 id="1-4-1-频分复用">1.4.1 频分复用</h3>
+<blockquote>
+<p>如果不同用户分别在<strong>同一时间</strong>占用信道的<strong>不同频率范围</strong>，则是<strong>频分复用(FDM)</strong>(Frequency Division Multiplexing)。</p>
+</blockquote>
+<h3 id="1-4-2-时分复用">1.4.2 时分复用</h3>
+<blockquote>
+<p>如果不同用户分别在<strong>不同时间</strong>占用信道的<strong>同一</strong>频率范围，则是<strong>时分复用(TDM)</strong>(Time Division Multiplexing)。</p>
+<p>一般是每一个用户占用相同的一段时间，这一段时间被称为<strong>时分复用帧(TDM帧)</strong>。</p>
+</blockquote>
+<p>频分复用和时分复用技术成熟，但是<strong>不够灵活</strong>。</p>
+<p>由于计算机网络传输数据往往具有突发性，像这样一段时间一直只有某一个用户占用信道（同步时分复用）利用率并不高，因此引入改进的时分复用模式: <strong>统计时分复用(STDM)</strong>(Statistic Time Division Multiplexing)。</p>
+<blockquote>
+<p><strong>统计分时复用</strong>: 引入<strong>集中器</strong>和<strong>STDM帧</strong>，STDM帧的个数一般比用户个数少。用户将要发送的数据先发送到集中器的缓冲区，由集中器扫描缓冲区将数据放到STDM帧上，只有当STDM帧满后才统一发送。也叫做<strong>异步时分复用</strong>。</p>
+</blockquote>
+<p>![](C:\Users\FragmentsZ\OneDrive - <a target="_blank" rel="noopener" href="http://ahu.edu.cn">ahu.edu.cn</a>\AHU-CS\计算机网络\笔记\imgs\ch2_2.png)</p>
+<p>统计时分复用存在的问题:</p>
+<ol>
+<li><strong>统计时分复用必须要添加一些&quot;头信息&quot;来告诉发送模块究竟是哪一个用户发送的数据包。</strong></li>
+<li>统计时分复用在所有用户都不断发送数据的时候无法应付，建立在<strong>用户都是间歇性发送数据</strong>的假设上。</li>
+</ol>
+<hr>
+<p>假设使用的是频分复用，每一个用户都要占据一定的频带宽度，当用户变多时信道的频带宽度一定会很大。</p>
+<p>假设使用的是时分复用，每一个用户都要占据一定的时间宽度，意味着要在短时间内发送脉冲信号，时间宽度窄的脉冲信号的频率肯定也会加大。</p>
+<hr>
+<h3 id="1-4-3-波分复用">1.4.3 波分复用</h3>
+<blockquote>
+<p><strong>波分复用(WDM)</strong>(Wavelength Division Multiplexing)就是光的频分复用。也就是不同的数据信号在不同的波段上进行传输。</p>
+<p>不过光信号在传播了一定时间后会衰减， 所以在端到端之间还要加入**掺铒光纤放大器(EDFA)**来放大光信号。</p>
+</blockquote>
+<h3 id="1-4-4-码分复用">1.4.4 码分复用</h3>
+<blockquote>
+<p><strong>码分复用(CDM)</strong>(Code Division Multiplexing)是另一种共享信道传输的方式。也叫做<strong>码分多址(CDMA)</strong>(Code Division Multiple Access)</p>
+</blockquote>
+<p>一个$CDMA$系统里每一个可发送传输信号的站点都具有一个$n$位0/1的<strong>码片序列$S_i$</strong>。<font color="red">$n$一般取64或128。</font></p>
+<p>如果该站点要发送数字信号$1$则发送该码片序列$S_i$，如果要发送$0$则发送该码片序列的反码$\overline S_i$。</p>
+<p>并且要保证每一个站点的码片序列$S_i$映射的向量$\vec{S_i}$要满足正交，即<br>
+$$<br>
+\begin{align}<br>
+\vec{S_i} = ({1|{-1},1|-1,\cdots,1|-1)} \quad\quad &amp;其中若S_{ik}=1,则\vec{S_{ik}}=1,否则为0\<br>
+\vec{S_i}*\vec{S_j} = 0 ,\quad \quad\quad &amp; i\ne j<br>
+\end{align}<br>
+$$<br>
+每一个站点发送的信号都会在振幅上叠加。</p>
+<p>要是想得到站点$i$发送的数字信号，则需要将得到的信号点乘上对应的码片序列$\frac{1}{n}\vec{S_i}$，即:<br>
+$$<br>
+\begin{align}<br>
+bit &amp;= signal \cdot \frac{1}{m} \vec{S_i} \<br>
+若bit &amp;= 1, \quad &amp;站点i该位发送的是1 \<br>
+若bit &amp;= -1, \quad &amp;站点i该位发送的是0 \<br>
+若bit &amp;= 0, \quad &amp;站点i没有发送该位<br>
+\end{align}<br>
+$$</p>
+<blockquote>
+<p>一个具有$n$位码片序列的系统，最多支持$n$个站点同时收发。</p>
+</blockquote>
+<blockquote>
+<p>注意到原来每发送一个0/1电平，码片序列需要发送$n$个，于是传输速度会扩大$n$倍。这种形式是<strong>扩频(SS)</strong>(Spread Spectrum)通信的一种。属于扩频通信中的<strong>直接序列扩频(DSSS)</strong>。另一种叫做<strong>跳频扩频(FHSS)</strong>。</p>
+</blockquote>
+<p>码分复用(CDM)的优势:</p>
+<ol>
+<li>各个用户直接不会干扰，也不用分频率、分时间。</li>
+<li>频谱类似白噪声，保密性比较好，只有知道码片序列才能解码出信息。</li>
+<li>抗干扰能力也很强。</li>
+</ol>
+<h2 id="错题">错题</h2>
+<p>6.各种网络在物理层互联时要求（ ）。<br>
+A.数据传输率和链路层协议相同<br>
+B.数据传输率相同，链路层协议可不同<br>
+C.数据传输率可不同，链路层协议相同<br>
+D.数据传输率和链路层协议都可不同</p>
+<blockquote>
+<p>【答案】A<br>
+【解析】物理层不具备差错控制和流量控制功能，它所实现的是设备之间如何通过物理传输介质进行连接， 发送或接收原始的数据比特流。因此，如果各种网络在物理层进行互联，它们一定要具有相同的数据传输率和链路层协议，这样才能提供数据传输的准确性。一般说来，差错控制和流量控制功能由数据链路层协议完成。</p>
+</blockquote>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2024/03/17/ComputerNetwork/Ch1/"
+      title="网络原理: 互联网的组成和分类，计算机网络的性能与体系结构"
+     >
+
+    <p class="title-text">
+      
+        网络原理: 互联网的组成和分类，计算机网络的性能与体系结构
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2024 Your Name<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
