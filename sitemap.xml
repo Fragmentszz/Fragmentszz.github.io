@@ -2,18 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.fragments.work/2024/03/22/ComputerNetwork/Ch2/</loc>
+    <loc>http://blog.fragments.work/2024/04/01/nh/</loc>
     
-    <lastmod>2024-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fragments.work/2024/03/17/ComputerNetwork/Ch1/</loc>
-    
-    <lastmod>2024-03-22</lastmod>
+    <lastmod>2024-04-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -22,34 +13,7 @@
   <url>
     <loc>http://blog.fragments.work/2024/03/16/discreteMathmatics/Ch1/</loc>
     
-    <lastmod>2024-03-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fragments.work/2024/03/17/PrincipleofCompiling/compilation-Week3/</loc>
-    
-    <lastmod>2024-03-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fragments.work/2024/03/15/PrincipleofCompiling/compilation-Week2/</loc>
-    
-    <lastmod>2024-03-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fragments.work/about/index.html</loc>
-    
-    <lastmod>2024-03-16</lastmod>
+    <lastmod>2024-04-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -58,7 +22,52 @@
   <url>
     <loc>http://blog.fragments.work/tags/index.html</loc>
     
-    <lastmod>2024-03-16</lastmod>
+    <lastmod>2024-04-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fragments.work/2024/03/22/Ch2/</loc>
+    
+    <lastmod>2024-04-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fragments.work/2024/03/17/PrincipleofCompiling/compilation-Week3/</loc>
+    
+    <lastmod>2024-04-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fragments.work/2024/03/15/PrincipleofCompiling/compilation-Week2/</loc>
+    
+    <lastmod>2024-04-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fragments.work/2024/03/17/ComputerNetwork/Ch1/</loc>
+    
+    <lastmod>2024-04-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fragments.work/2024/03/22/ComputerNetwork/Ch2/</loc>
+    
+    <lastmod>2024-04-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -67,7 +76,16 @@
   <url>
     <loc>http://blog.fragments.work/categories/index.html</loc>
     
-    <lastmod>2024-03-16</lastmod>
+    <lastmod>2024-04-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fragments.work/about/index.html</loc>
+    
+    <lastmod>2024-04-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -76,7 +94,7 @@
 
   <url>
     <loc>http://blog.fragments.work/</loc>
-    <lastmod>2024-03-22</lastmod>
+    <lastmod>2024-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -84,7 +102,7 @@
   
   <url>
     <loc>http://blog.fragments.work/tags/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-03-22</lastmod>
+    <lastmod>2024-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -92,22 +110,22 @@
 
   
   <url>
-    <loc>http://blog.fragments.work/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2024-03-22</lastmod>
+    <loc>http://blog.fragments.work/categories/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2024-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.fragments.work/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2024-03-22</lastmod>
+    <lastmod>2024-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.fragments.work/categories/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2024-03-22</lastmod>
+    <loc>http://blog.fragments.work/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2024-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
