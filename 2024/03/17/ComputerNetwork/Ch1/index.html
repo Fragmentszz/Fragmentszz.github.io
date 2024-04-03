@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html theme="dark" showBanner="true" hasBanner="false" > 
+<html theme="light" showBanner="true" hasBanner="false" > 
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.fragments.work/img/ComputerNetwork.jpg">
 <meta property="article:published_time" content="2024-03-17T10:34:27.000Z">
-<meta property="article:modified_time" content="2024-04-02T07:17:21.389Z">
+<meta property="article:modified_time" content="2024-04-03T01:22:26.034Z">
 <meta property="article:author" content="Fragments WANG">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -187,6 +187,11 @@
       <h3 class="widget-title">归档</h3>
       
       
+        <a class="archive-link" href="/archives/2024/04 ">
+          四月 2024 
+          <div class="archive-count">1 </div>
+        </a>
+      
         <a class="archive-link" href="/archives/2024/03 ">
           三月 2024 
           <div class="archive-count">4 </div>
@@ -202,6 +207,12 @@
     <div class="widget">
       <h3 class="widget-title">最新文章</h3>
       <ul>
+        
+          <a class="recent-link" href="/2024/04/03/hello-ty/" title="hello,try" >
+            <div class="recent-link-text">
+              hello,try
+            </div>
+          </a>
         
           <a class="recent-link" href="/2024/03/22/ComputerNetwork/Ch2/" title="网络原理: 物理层" >
             <div class="recent-link-text">
@@ -281,7 +292,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            4.7k 词 
+            4.5k 词 
           </div>
         </div>
         
@@ -430,9 +441,8 @@ class="math inline">\(\star\star\star\)</span>)</h2>
 <blockquote>
 <p>将从7个不同的方面评价计算机网络的性能。</p>
 </blockquote>
-<h3 id="速率数据的-font-colorred额定-font传送速率数据率data-rate">1.3.1
-速率:数据的 <code>&lt;font color="red"&gt;</code>额定
-<code>&lt;/font&gt;</code>传送速率(数据率data rate):</h3>
+<h3 id="速率数据的-额定-传送速率数据率data-rate">1.3.1 速率:数据的
+<font color="red">额定 </font>传送速率(数据率data rate):</h3>
 <blockquote>
 <p>定义<span class="math inline">\(1.3.1.1\)</span>
 速率指的是数据的传送速率，它也被称为数据率，用单位<span
@@ -440,16 +450,15 @@ class="math inline">\(bps(bit \ per \
 second)\)</span>描述。一般指的是数据的传送的<strong>额定速率</strong>或<strong>标称速率</strong>。</p>
 </blockquote>
 <blockquote>
-<p><code>&lt;font color="red"&gt;</code>注意: <span
+<p><font color="red">注意: <span
 class="math inline">\(bit\)</span>前面的<span class="math inline">\(k =
 1000,M = 1e6, G =
-1e9\)</span><code>&lt;/font&gt;</code>，<code>&lt;font color="green"&gt;</code>而<span
+1e9\)</span></font>，<code>&lt;font color="green"&gt;</code>而<span
 class="math inline">\(B\)</span>前的<span
-class="math inline">\(K=2^{10},M=2^{20},G=2^{30}\)</span><code>&lt;/font&gt;</code></p>
+class="math inline">\(K=2^{10},M=2^{20},G=2^{30}\)</span></font></p>
 </blockquote>
-<h3 id="带宽-衡量某一信道中的-font-colorred最大-font传输速率">1.3.2
-带宽: 衡量某一信道中的 <code>&lt;font color="red"&gt;</code>最大
-<code>&lt;/font&gt;</code>传输速率</h3>
+<h3 id="带宽-衡量某一信道中的-最大-传输速率">1.3.2 带宽:
+衡量某一信道中的 <font color="red">最大 </font>传输速率</h3>
 <p>带宽有两种含义:</p>
 <ol type="1">
 <li>信号与系统中: 某一信道能够传送的频率范围。</li>
@@ -459,9 +468,8 @@ class="math inline">\(bps\)</span>表示。</li>
 <blockquote>
 <p>前者为频率表述，后者为时域表述。两者的描述是一致的，比如能传送的频率范围越大，信道中单位时间内能通过的数据量也就越多。</p>
 </blockquote>
-<h3 id="吞吐量-衡量网络中-font-colorred实际-font的传输速度">1.3.3
-吞吐量: 衡量网络中 <code>&lt;font color="red"&gt;</code>实际
-<code>&lt;/font&gt;</code>的传输速度</h3>
+<h3 id="吞吐量-衡量网络中-实际-的传输速度">1.3.3 吞吐量: 衡量网络中
+<font color="red">实际 </font>的传输速度</h3>
 <blockquote>
 <p>定义<span class="math inline">\(1.3.3.1\)</span>
 <strong>吞吐量</strong>表示在单位时间内通过这个网络(或信道或接口)的实际的数据量。</p>
@@ -509,7 +517,7 @@ Delay)</h4>
 总时延 = 发送时延 + 传播时延 + 处理时延 + 排队时延
 \]</span></p>
 <blockquote>
-<p><code>&lt;font color="red"&gt;</code>需要注意的是:<code>&lt;/font&gt;</code>
+<p><font color="red">需要注意的是:</font>
 总时延中的决定性力量要视情况而定，因此有时候提升了某一种时延总时延减小的效果很大而有时候却几乎没什么变化。</p>
 </blockquote>
 <h3 id="传播时延带宽积">1.3.5 传播时延带宽积</h3>
@@ -572,7 +580,7 @@ alt="1808215-20201212160108590-911020597.png (802×314) (cnblogs.com)" />
 (802×314) (cnblogs.com)</figcaption>
 </figure>
 <blockquote>
-<p><code>&lt;font color="red"&gt;</code>注意：<code>&lt;/font&gt;</code>利用率并非越大越好，从上图可以看出利用率加大，时延上升的比较快。利用率50%
+<p><font color="red">注意：</font>利用率并非越大越好，从上图可以看出利用率加大，时延上升的比较快。利用率50%
 时延变为2倍。因此基本上控制利用率不超过50%。</p>
 </blockquote>
 <h3 id="一些非量化的性能指标">1.3.8 一些非量化的性能指标</h3>

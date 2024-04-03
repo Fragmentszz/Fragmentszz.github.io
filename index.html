@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html theme="dark" showBanner="true" hasBanner="true" > 
+<html theme="light" showBanner="true" hasBanner="true" > 
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
@@ -50,7 +50,12 @@
   
     
 <div id="banner" class=" is_home ">
-  <img src="/./images/gifbanner.gif" itemprop="image">
+  
+    <video autoplay loop muted itemprop="image">
+      <source src="/./images/mp4banner.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  
   <div id="banner-dim"></div>
 </div>
  
@@ -189,6 +194,11 @@
       <h3 class="widget-title">归档</h3>
       
       
+        <a class="archive-link" href="/archives/2024/04 ">
+          四月 2024 
+          <div class="archive-count">1 </div>
+        </a>
+      
         <a class="archive-link" href="/archives/2024/03 ">
           三月 2024 
           <div class="archive-count">4 </div>
@@ -204,6 +214,12 @@
     <div class="widget">
       <h3 class="widget-title">最新文章</h3>
       <ul>
+        
+          <a class="recent-link" href="/2024/04/03/hello-ty/" title="hello,try" >
+            <div class="recent-link-text">
+              hello,try
+            </div>
+          </a>
         
           <a class="recent-link" href="/2024/03/22/ComputerNetwork/Ch2/" title="网络原理: 物理层" >
             <div class="recent-link-text">
@@ -242,6 +258,87 @@
    
 
 
+<article id="post-hello-ty" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/04/03/hello-ty/">hello,try</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-04-03T01:14:43.000Z" itemprop="datePublished">2024-04-03</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            20 词 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              
+
+
+hello
+
+&gt;&gt;&gt;
+hhh
+
+
+
+
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/04/03/hello-ty/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+   
+
+
 <article id="post-ComputerNetwork/Ch2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
@@ -272,7 +369,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            5.5k 词 
+            5.3k 词 
           </div>
         </div>
         
@@ -308,13 +405,18 @@
 信号是数据在电气/电子中的具体表现。
 
 
-&lt;font color="red"&gt;定义&lt;/font&gt;：码元指的是代表不同离散数值的基本波形。比如高低电平分别代表离散值0/1，则高电平和低电平都是码元。
+定义：码元指的是代表不同离散数值的基本波形。比如高低电平分别代表离散值0/1，则高电平和低电平都是码元。
 
 
 比特率: 每秒钟传送的比特数(bps)
 波特率: 每秒钟传送的码元数(码元/秒)
 
-以上两个量用来描述信道的传输速率。...
+以上两个量用来描述信道的传输速率。
+
+\[
+比特率 = 波特率 * 每个码元携带的比特数
+\]
+请...
             
           </div>
         
@@ -378,7 +480,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            4.7k 词 
+            4.5k 词 
           </div>
         </div>
         
@@ -491,7 +593,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.8k 词 
+            1.7k 词 
           </div>
         </div>
         
@@ -508,7 +610,7 @@
 词法分析程序主要有两种工作方式:
 
 词法分析和语法分析完全分开，变为两个等地位的模块，词法分析的输出作为语法分析的输入，词法分析和语法分析一共至少扫描文本两遍。
-词法分析作为语法分析的调用子模块，每当语法分析需要读入一个单词时，调用词法分析子模块从字符流种读入一个单词。词法分析和语法分析放在一起扫描文本一遍。&lt;font color="red"&gt;一般采用的都是这个方式。&lt;/font&gt;
+词法分析作为语法分析的调用子模块，每当语法分析需要读入一个单词时，调用词法分析子模块从字符流种读入一个单词。词法分析和语法分析放在一起扫描文本一遍。一般采用的都是这个方式。
 
 0.2: 词法分析程序的输出:
 词法分析程序每次从字符流中取出一个字符时，以单词符号的形式发送至语法分析程序。
@@ -517,7 +619,9 @@
 const int i=1,j = 25，\(1\)和\(25\)都是常量，但是需要有单词本身的值来区分。特别的，一般标识符本身的值往往是单词符号表中的指针。
 
 0.3: 词法分析的主要功能:
-词法也是语法的一...
+词法也是语法的一部分，但是仍旧将词法分析和语法分析分开的原因是：
+
+使编译程序的结构更...
             
           </div>
         
