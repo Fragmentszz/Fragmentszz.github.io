@@ -738,7 +738,7 @@ navbar,
 :root #banner.is_home {
   height: 60vh;
 }
-#banner video {
+video {
   position: absolute; /* 使用绝对定位，以便可以调整视频的大小和位置 */
   top: 50%; /* 将视频的顶部定位在容器的中间 */
   left: 50%; /* 将视频的左边定位在容器的中间 */
