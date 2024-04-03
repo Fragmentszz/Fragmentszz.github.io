@@ -738,19 +738,10 @@ navbar,
 :root #banner.is_home {
   height: 60vh;
 }
-video {
-  position: absolute; /* 使用绝对定位，以便可以调整视频的大小和位置 */
-  top: 50%; /* 将视频的顶部定位在容器的中间 */
-  left: 50%; /* 将视频的左边定位在容器的中间 */
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); /* 将视频向上和向左移动其宽度和高度的一半，以使其居中 */
-  min-width: 100%; /* 视频的最小宽度为容器的宽度 */
-  min-height: 100%; /* 视频的最小高度为容器的高度 */
-  width: auto; /* 根据视频的原始宽高比调整宽度 */
-  height: auto; /* 根据视频的原始宽高比调整高度 */
-  object-fit: cover; /* 使视频覆盖整个容器，保持宽高比 */
+#banner video {
+  height: 100%;
+  width: 110%;
+  object-fit: cover;
 }
 #banner img {
   height: 100%;
