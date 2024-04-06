@@ -13,8 +13,8 @@ http://blog.fragments.work/about/index.html
 http://blog.fragments.work/tags/index.html
 http://blog.fragments.work/categories/index.html
 http://blog.fragments.work/
-http://blog.fragments.work/tags/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/
 http://blog.fragments.work/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/
+http://blog.fragments.work/tags/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/
 http://blog.fragments.work/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/
 http://blog.fragments.work/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/
 http://blog.fragments.work/categories/%E7%AC%94%E8%AE%B0/
