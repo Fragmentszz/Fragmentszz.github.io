@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.fragments.work/img/covers/PrinciplesofCompilation.jpg">
 <meta property="article:published_time" content="2024-03-15T14:09:29.000Z">
-<meta property="article:modified_time" content="2024-04-06T02:31:28.439Z">
+<meta property="article:modified_time" content="2024-04-06T03:46:37.329Z">
 <meta property="article:author" content="Fragments WANG">
 <meta property="article:tag" content="编译原理">
 <meta name="twitter:card" content="summary">
@@ -246,7 +246,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clunhk54j000pokwa5d48caf6">
+      <a class="article-gallery-img" rel="gallery_clunkfsvy000cagwa0dex53ql">
         <img src="/img/covers/PrinciplesofCompilation.jpg" itemprop="image">
       </a>
     
@@ -512,7 +512,7 @@ class="math inline">\(G[S]\)</span>上的句型<span
 class="math inline">\(x\)</span>，如果<span
 class="math inline">\(x\)</span>仅由<font color="red">终结符组成<strong>或者为空串</strong></font>,即:
 <span class="math display">\[
-S \xRightarrow{*} x \and x \in (V_T)^*
+S \xRightarrow{*} x \wedge x \in (V_T)^*
 \]</span> 则句型<span class="math inline">\(x\)</span>为文法<span
 class="math inline">\(G[S]\)</span>的句子。</p>
 <blockquote>
@@ -524,7 +524,7 @@ class="math inline">\(G[S]\)</span>的句子。</p>
 </blockquote>
 <p>对文法<span class="math inline">\(G[S]\)</span>, <span
 class="math display">\[
-L[G] = \{x| x \in (V_T)^* \and S \xRightarrow{*} x \}
+L[G] = \{x| x \in (V_T)^* \wedge S \xRightarrow{*} x \}
 \]</span> 则<span class="math inline">\(L[G]\)</span>为文法<span
 class="math inline">\(G[S]\)</span>的语言。</p>
 <blockquote>
@@ -571,7 +571,7 @@ class="math inline">\(P\)</span>中的规则<span
 class="math inline">\(\alpha \to
 \beta\)</span><font color="red"><strong>都</strong></font>满足: <span
 class="math display">\[
-|\alpha| \le |\beta| \or \beta = \varepsilon
+|\alpha| \le |\beta| \vee \beta = \varepsilon
 \]</span> 此文法即是一个1型文法。</p>
 <blockquote>
 <p>0型文法规则集中除了<span class="math inline">\(\beta =
@@ -605,7 +605,7 @@ class="math display">\[
 class="math inline">\(G[S]\)</span>，规则集中<strong>每一条</strong>规则<span
 class="math inline">\(\alpha \to \beta\)</span>都满足: <span
 class="math display">\[
-\alpha = A, A\in V_N \\ \beta = aB \ \or \beta = \ a , B \in V_N
+\alpha = A, A\in V_N \\ \beta = aB \ \vee \beta = \ a , B \in V_N
 \]</span> 即规则形如$ Aa$或者 <span class="math inline">\(A
 \to  aB\)</span>。<font color="red">(一定有终结符，且终结符一定在左边，非终结符可有可无。）</font></p>
 <p>此文法为一个3型文法，是一个<strong>右线性文法</strong>。</p>
@@ -616,7 +616,7 @@ class="math display">\[
 class="math inline">\(G[S]\)</span>，规则集中<strong>每一条</strong>规则<span
 class="math inline">\(\alpha \to \beta\)</span>都满足: <span
 class="math display">\[
-\alpha = A, A\in V_N \\ \beta = Ba \ \or \beta = \ a , B \in V_N
+\alpha = A, A\in V_N \\ \beta = Ba \ \vee \beta = \ a , B \in V_N
 \]</span> 即规则形如$ Aa$或者 <span class="math inline">\(A
 \to  aB\)</span>。<font color="red">(一定有终结符，且终结符一定在右边，非终结符可有可无。）</font></p>
 <p>此文法也是一个3型文法，是一个<strong>左线性文法</strong>。</p>
