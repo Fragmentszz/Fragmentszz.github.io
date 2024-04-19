@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.fragments.work/img/covers/ComputerNetwork.jpg">
 <meta property="article:published_time" content="2024-04-05T14:52:00.000Z">
-<meta property="article:modified_time" content="2024-04-05T15:10:00.874Z">
+<meta property="article:modified_time" content="2024-04-19T04:19:35.592Z">
 <meta property="article:author" content="Fragments WANG">
 <meta property="article:tag" content="网络原理">
 <meta name="twitter:card" content="summary">
@@ -153,7 +153,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
-                <div class="category-count">8</div>
+                <div class="category-count">9</div>
             </a>
         </div>
     </div>
@@ -179,12 +179,12 @@
       
         <a class="archive-link" href="/archives/2024/04 ">
           四月 2024 
-          <div class="archive-count">3 </div>
+          <div class="archive-count">5 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/03 ">
           三月 2024 
-          <div class="archive-count">6 </div>
+          <div class="archive-count">5 </div>
         </a>
       
     </div>
@@ -197,6 +197,18 @@
     <div class="widget">
       <h3 class="widget-title">最新文章</h3>
       <ul>
+        
+          <a class="recent-link" href="/2024/04/18/discreteMathmatics/Ch2_%E9%9B%86%E5%90%88/" title="离散数学 Ch2: 集合" >
+            <div class="recent-link-text">
+              离散数学 Ch2: 集合
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/04/18/discreteMathmatics/Ch1_%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/" title="离散数学第一章: 数理逻辑" >
+            <div class="recent-link-text">
+              离散数学第一章: 数理逻辑
+            </div>
+          </a>
         
           <a class="recent-link" href="/2024/04/05/ComputerNetwork/Ch3/" title="网络原理: 数据链路层" >
             <div class="recent-link-text">
@@ -213,18 +225,6 @@
           <a class="recent-link" href="/2024/04/03/hello-ty/" title="hello,try" >
             <div class="recent-link-text">
               hello,try
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/03/22/ComputerNetwork/Ch2/" title="网络原理: 物理层" >
-            <div class="recent-link-text">
-              网络原理: 物理层
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/03/17/ComputerNetwork/Ch1/" title="网络原理: 互联网的组成和分类，计算机网络的性能与体系结构" >
-            <div class="recent-link-text">
-              网络原理: 互联网的组成和分类，计算机网络的性能与体系结构
             </div>
           </a>
         
@@ -246,7 +246,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clunkfsvw0009agwa3zsuao87">
+      <a class="article-gallery-img" rel="gallery_clv65vw7q000bd8wa6076cnma">
         <img src="/img/covers/ComputerNetwork.jpg" itemprop="image">
       </a>
     
@@ -282,7 +282,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            7.7k 词 
+            9.3k 词 
           </div>
         </div>
         
@@ -840,6 +840,74 @@ class="math inline">\(100Mbit/s\)</span>，整个系统也只能工作在<span
 class="math inline">\(10Mbit/s\)</span>。因为没有处理速度不匹配的机制。</p>
 <h3 id="在数据链路层扩展以太网-使用交换机的以太网">2.5
 在数据链路层扩展以太网: 使用交换机的以太网</h3>
+<blockquote>
+<p>最初在数据链路层扩展以太网的是<strong>网桥(Bridge)</strong>，网桥根据数据帧的<strong>MAC</strong>地址，查找<strong>网桥</strong>内部的<strong>MAC</strong>地址表，进行数据帧的转发或者丢弃(找不到)。</p>
+<p>后来<strong>以太网交换机(交换式集线器、第二层交换机)</strong>出现了。</p>
+</blockquote>
+<h4 id="以太网交换机的基本特点">2.5.1 以太网交换机的基本特点</h4>
+<p>以太网交换机也有许多不同的种类，有<strong>具有第三层特性的第二层交换机</strong>，拥有部分<strong>网络层</strong>的功能，可以对数据报文进行分片和对<strong>多播通信量</strong>的管理。有<strong>多层交换机</strong>，可以根据第三层的<strong>IP</strong>地址对分组进行过滤。</p>
+<h5 id="并行性独占传输媒体">2.5.1.1 并行性、独占传输媒体</h5>
+<p><strong>以太网交换机</strong>具有多个接口，每个接口和一台主机或者是另一个交换机相连接。以太网交换机具有<font color="red">并行性</font>，因此大多工作在<strong>全双工模式</strong>。</p>
+<p>另外<strong>以太网交换机</strong>在两台主机进行通信时都是<strong>独占传输媒体，完全不碰撞地传输。</strong></p>
+<blockquote>
+<p><strong>独占传输媒体并行传输的好处是带宽变得很大</strong>:</p>
+<p>每个接口的带宽是<span class="math inline">\(10M
+bit/s\)</span>，一共有<span
+class="math inline">\(10\)</span>个接口，则整个<strong>以太网交换机</strong>系统的带宽是**10*10Mbit/s**。</p>
+<p>而普通集线器仍然是<span class="math inline">\(10M
+bit/s\)</span>。</p>
+</blockquote>
+<h5 id="自学习性">2.5.1.2 自学习性</h5>
+<p><strong>以太网交换机</strong>内部的<strong><span
+class="math inline">\(MAC\)</span>地址表</strong>是通过自主学习算法自动地逐渐建立起来的。因此是一种<strong>即插即用</strong>的设备。</p>
+<p>每当帧信息传给交换机以后，交换机<strong>先</strong>查找地址表，查找目标地址是否在表中，如果在则单独转发，如果不在则<strong>广播</strong>。<strong>接着</strong>把<strong>源地址</strong>和对应的端口号写入地址表中。</p>
+<p>一般地址表会设置一定的<strong>有效时长</strong>，过期的项目会被自动地删除，来应对某个端口的主机<strong>网卡适配器MAC改变</strong>的情况。</p>
+<p>但是在<strong>有环路</strong>的拓扑网络中，自学习性可能会带来<strong>兜圈子</strong>的问题，因此对于交换机还制定了<strong>生成树协议STP</strong>，即切断某些线路，使得从一台主机到其他的主机是<strong>无环的树形结构</strong>。</p>
+<h5 id="缓存与直通">2.5.1.3 缓存与直通</h5>
+<p>交换机一般有<strong>缓存帧</strong>的功能，即暂时保存帧。当帧的接收方端口非常繁忙时，交换机会保存该帧，等到空闲时再转发。</p>
+<p>也有的交换机有<strong>直通</strong>的功能，不在转发前先把帧全缓存，而是直接查找转发表立即转发到目的<span
+class="math inline">\(MAC\)</span>地址对应端口。此种交换方式基于<strong>硬件的交叉矩阵</strong>，<strong>传播时延非常小</strong>。不过，此种方式不进行帧校验，可能会发送错误的帧。</p>
+<h4 id="从总线网到星型网">2.5.2 从总线网到星型网</h4>
+<blockquote>
+<p>随着总线上主机设备逐渐变多，总线网的性能逐渐下降。但是基于交换机的星形网效率非常好。<strong>因此如今大多数以太网是星型结构。</strong></p>
+</blockquote>
+<p><strong>使用交换机的以太网不会产生冲突，也就不使用<span
+class="math inline">\(CSMA/CD\)</span>协议。</strong>不像总线网那样工作在半双工模式，以太交换网工作在<strong>全双工模式</strong>。但是<strong>帧的结构</strong>没有改变。</p>
+<h3 id="虚拟局域网vlanvirtual-local-area-network">2.6
+虚拟局域网VLAN<span class="math inline">\((Virtual \ Local \
+Area\  Network)\)</span></h3>
+<blockquote>
+<p>利用<strong>交换机</strong>可以很简单地做到<strong>VLAN</strong>。</p>
+</blockquote>
+<blockquote>
+<p>定义<span class="math inline">\(2.6.1\)</span>
+<strong>虚拟局域网VLAN</strong>是由一些局域网网段构成的与物理位置无关的<strong>逻辑组。</strong>这些网段往往有某些共同的特性或者需求。<strong>每一个VLAN的帧都有标识符，标识该帧来自于何处。</strong></p>
+<p><font color="red">虚拟局域网只是局域网提供的一种服务，而不是真正的新型网络。</font></p>
+</blockquote>
+<p><strong>虚拟局域网</strong>中的每一个成员都可以听到来自该虚拟局域网中另一台主机的<strong>广播</strong>。但是非该虚拟局域网中的成员听不到。通过限制广播的范围，能够网络不会因为传播过多的广播信息而造成<strong>广播风暴</strong>。</p>
+<p>支持虚拟局域网的方式是<strong>在数据帧中插入4个字节的<span
+class="math inline">\(VLAN\)</span>标志</strong>。</p>
+<p><img src="/img/CN/ch3_9.png" /></p>
+<p><strong>前两个字节一定是<span class="math inline">\(0\)</span>x<span
+class="math inline">\(8100\)</span></strong>，当接收方检测到<span
+class="math inline">\(0\)</span>x<span
+class="math inline">\(8100\)</span>时就知晓该帧是<strong>VLAN帧</strong>。</p>
+<p>接着前<span
+class="math inline">\(3\)</span>位是<strong>用户优先级</strong>标识符，接着是<strong>规范格式指示符(Canonical
+Format Indicator)</strong>，最后的<span
+class="math inline">\(12\)</span>位是<span
+class="math inline">\(VLAN\)</span>标识符，标识该虚拟局域网的<strong>VID</strong>，唯一标识该以太网帧属于哪一个虚拟局域网。</p>
+<blockquote>
+<p>加入该<span
+class="math inline">\(4\)</span>字节后，以太网帧的最大帧长变为$ 18 +
+1500 + 4 = 1522$字节。</p>
+</blockquote>
+<h3 id="高速以太网">2.7 高速以太网</h3>
+<blockquote>
+<p><span class="math inline">\(100BASE-T\)</span>指的是<span
+class="math inline">\(100Mbit/s\)</span>，<font color="red">Base表示传输的是基带信号</font>，<font color="blue">T表示传输的介质是双绞线（F表示是光纤)</font></p>
+<p><span class="math inline">\(100BASE-F\)</span></p>
+</blockquote>
 
         
       </div>
@@ -852,10 +920,15 @@ class="math inline">\(10Mbit/s\)</span>。因为没有处理速度不匹配的�
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left  disabled "
+  <a class="article-nav-btn left "
+    
+      href="/2024/04/18/discreteMathmatics/Ch1_%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/"
+      title="离散数学第一章: 数理逻辑"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
+      
+        离散数学第一章: 数理逻辑
         
     </p>
   </a>

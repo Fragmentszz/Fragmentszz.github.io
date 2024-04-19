@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.fragments.work/img/covers/PrinciplesofCompilation.jpg">
 <meta property="article:published_time" content="2024-03-15T14:09:29.000Z">
-<meta property="article:modified_time" content="2024-04-06T03:46:37.329Z">
+<meta property="article:modified_time" content="2024-04-19T04:19:35.606Z">
 <meta property="article:author" content="Fragments WANG">
 <meta property="article:tag" content="编译原理">
 <meta name="twitter:card" content="summary">
@@ -153,7 +153,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
-                <div class="category-count">8</div>
+                <div class="category-count">9</div>
             </a>
         </div>
     </div>
@@ -179,12 +179,12 @@
       
         <a class="archive-link" href="/archives/2024/04 ">
           四月 2024 
-          <div class="archive-count">3 </div>
+          <div class="archive-count">5 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/03 ">
           三月 2024 
-          <div class="archive-count">6 </div>
+          <div class="archive-count">5 </div>
         </a>
       
     </div>
@@ -197,6 +197,18 @@
     <div class="widget">
       <h3 class="widget-title">最新文章</h3>
       <ul>
+        
+          <a class="recent-link" href="/2024/04/18/discreteMathmatics/Ch2_%E9%9B%86%E5%90%88/" title="离散数学 Ch2: 集合" >
+            <div class="recent-link-text">
+              离散数学 Ch2: 集合
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/04/18/discreteMathmatics/Ch1_%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/" title="离散数学第一章: 数理逻辑" >
+            <div class="recent-link-text">
+              离散数学第一章: 数理逻辑
+            </div>
+          </a>
         
           <a class="recent-link" href="/2024/04/05/ComputerNetwork/Ch3/" title="网络原理: 数据链路层" >
             <div class="recent-link-text">
@@ -213,18 +225,6 @@
           <a class="recent-link" href="/2024/04/03/hello-ty/" title="hello,try" >
             <div class="recent-link-text">
               hello,try
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/03/22/ComputerNetwork/Ch2/" title="网络原理: 物理层" >
-            <div class="recent-link-text">
-              网络原理: 物理层
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/03/17/ComputerNetwork/Ch1/" title="网络原理: 互联网的组成和分类，计算机网络的性能与体系结构" >
-            <div class="recent-link-text">
-              网络原理: 互联网的组成和分类，计算机网络的性能与体系结构
             </div>
           </a>
         
@@ -246,7 +246,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clunkfsvy000cagwa0dex53ql">
+      <a class="article-gallery-img" rel="gallery_clv65vw7r000cd8wa0mdy3rh9">
         <img src="/img/covers/PrinciplesofCompilation.jpg" itemprop="image">
       </a>
     
@@ -282,7 +282,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            5.3k 词 
+            5.5k 词 
           </div>
         </div>
         
@@ -437,7 +437,7 @@ class="math inline">\(\delta,\gamma \in V^*\)</span>,<span
 class="math inline">\(\exist v,w\)</span>满足: <span
 class="math display">\[
 v = \delta \alpha \gamma \ \ \ \ w=\delta \beta \gamma
-\]</span> 显然，<span
+\]</span> 其中<span
 class="math inline">\(\delta,\gamma\)</span>可以是空串。</p>
 <p>则以下说法等价:</p>
 <ol type="1">
@@ -607,7 +607,9 @@ class="math inline">\(\alpha \to \beta\)</span>都满足: <span
 class="math display">\[
 \alpha = A, A\in V_N \\ \beta = aB \ \vee \beta = \ a , B \in V_N
 \]</span> 即规则形如$ Aa$或者 <span class="math inline">\(A
-\to  aB\)</span>。<font color="red">(一定有终结符，且终结符一定在左边，非终结符可有可无。）</font></p>
+\to  aB\)</span>​。<font color="red">(一定有终结符，且终结符一定在左边，非终结符可有可无。）</font></p>
+<p>其中<span class="math inline">\(a \in V_T \cup
+{\varepsilon}\)</span>。</p>
 <p>此文法为一个3型文法，是一个<strong>右线性文法</strong>。</p>
 <blockquote>
 <p>定义:</p>
@@ -710,6 +712,29 @@ class="math inline">\(T\)</span>，保证只有当归约<span
 class="math inline">\(*\)</span>后才能归约<span
 class="math inline">\(+\)</span>。</p>
 <p>*一定比+更先结合。</p>
+<h2 id="句型分析">7. 句型分析</h2>
+<h3 id="句型分析和分析算法">7.1 句型分析和分析算法</h3>
+<blockquote>
+<p>定义<span class="math inline">\(7.1.1\)</span>
+<strong>句型分析</strong>是识别一个符号串是否是某个文法的句型，也就是某个推导的构造过程。</p>
+</blockquote>
+<p>一般把完成<strong>句型分析</strong>的程序叫做<strong>分析程序</strong>或者<strong>识别程序</strong>。</p>
+<blockquote>
+<p>分析算法可以<strong>从左往右</strong>也可以<strong>从右往左</strong>分析单词。</p>
+</blockquote>
+<blockquote>
+<p>分析算法的实现方式主要有：</p>
+<ol type="1">
+<li>自顶向下(从开始符号<span
+class="math inline">\(S\)</span>出发，不断推导到该句型)</li>
+<li>自底向上(从该句型出发，不断归约到开始符号<span
+class="math inline">\(S\)</span>)</li>
+</ol>
+</blockquote>
+<h3 id="自顶向下的分析方法">7.2 自顶向下的分析方法</h3>
+<blockquote>
+<p><font color="red">不断利用产生式替换最左非终结符，使匹配上目标句型第一个未被匹配的字符。</font></p>
+</blockquote>
 
         
       </div>
@@ -724,7 +749,7 @@ class="math inline">\(+\)</span>。</p>
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/2024/03/16/discreteMathmatics/Ch1_%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/"
+      href="/2024/03/16/discreteMathmatics/Ch1/"
       title="离散数学第一章: 数理逻辑"
      >
     <i class="fa-solid fa-angle-left"></i>
