@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+
+
+<html theme="light" showBanner="true" hasBanner="false" > 
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>Fragments&#39; Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="文档            var pcChaoxingStudyApiVersion;     var p_auth_token &#x3D; &quot;&quot;;     var copyMaxCount &#x3D; &quot;1000&quot;;     var yunpanDomainName &#x3D; &quot;https:&#x2F;&#x2F;pan-yz.chaoxing.com&quot;;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fragments&#39; Blog">
+<meta property="og:url" content="http://blog.fragments.work/2024/04/30/ComputerNetwork/%E6%96%87%E6%A1%A3/index.html">
+<meta property="og:site_name" content="Fragments&#39; Blog">
+<meta property="og:description" content="文档            var pcChaoxingStudyApiVersion;     var p_auth_token &#x3D; &quot;&quot;;     var copyMaxCount &#x3D; &quot;1000&quot;;     var yunpanDomainName &#x3D; &quot;https:&#x2F;&#x2F;pan-yz.chaoxing.com&quot;;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/1.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/2.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/3.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/4.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/5.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/6.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/7.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/8.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/9.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/10.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/11.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/12.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/13.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/14.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/15.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/16.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/17.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/18.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/19.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/20.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/21.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/22.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/23.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/24.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/25.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/26.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/27.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/28.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/29.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/30.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/31.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/32.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/33.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/34.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/35.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/36.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/37.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/38.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/39.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/40.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/41.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/42.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/43.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/44.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/45.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/46.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/47.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/48.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/49.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/50.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/51.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/52.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/53.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/54.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/55.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/56.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/57.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/58.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/59.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/60.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/61.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/62.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/63.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/64.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/65.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/66.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/67.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/68.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/69.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/70.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/71.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/72.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/73.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/74.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/75.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/76.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/77.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/78.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/79.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/80.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/81.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/82.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/83.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/84.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/85.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/86.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/87.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/88.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/89.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/90.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/91.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/92.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/93.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/94.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/95.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/96.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/97.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/98.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/99.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/100.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/101.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/102.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/103.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/104.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/105.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/106.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/107.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/108.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/109.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/110.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/111.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/112.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/113.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/114.png">
+<meta property="og:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/115.png">
+<meta property="article:published_time" content="2024-04-30T11:56:45.689Z">
+<meta property="article:modified_time" content="2024-04-30T06:48:44.095Z">
+<meta property="article:author" content="Fragments WANG">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Fragments' Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/./images/favicon.jpg">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  
+   
+  <div id="main-grid" class="  ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Fragments' Blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS 订阅">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS 订阅">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/images/top_img.jpg></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">Fragments WANG </div>
+      <div class="dot"></div>
+      <div class="subtitle">一个非常平凡的人 </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://www.zhihu.com/people/dui-fang-casteryi-xia-xian" title="知乎"><i class="fa-brands fa-zhihu"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/1786427191" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/Fragmentszz" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
+                笔记
+                <div class="category-count">11</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="tag">离散数学</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">网络原理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" rel="tag">计算机视觉</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2024/04 ">
+          四月 2024 
+          <div class="archive-count">10 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/03 ">
+          三月 2024 
+          <div class="archive-count">5 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2024/04/30/discreteMathmatics/Ch3_%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB/" title="" >
+            <div class="recent-link-text">
+              (no title)
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" title="" >
+            <div class="recent-link-text">
+              (no title)
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/04/30/ComputerNetwork/%E6%96%87%E6%A1%A3/" title="" >
+            <div class="recent-link-text">
+              (no title)
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/04/29/ComputerNetwork/Ch4/" title="网络原理: 网络层" >
+            <div class="recent-link-text">
+              网络原理: 网络层
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/04/23/PrincipleofCompiling/Ch4/" title="编译原理: " >
+            <div class="recent-link-text">
+              编译原理: 
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+
+<article id="post-ComputerNetwork/文档" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        无标题
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-04-30T11:56:45.689Z" itemprop="datePublished">2024-04-30</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            3.6k 词 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=0.1,maximum-scale=4,user-scalable=yes">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="expires" content="0">
+    <title>文档</title>
+    <script type="text/javascript" src="//pan-static.chaoxing.com/pan/static/pc/lib/yunpanAjax.js?v=18033251492821"></script>
+<link rel="icon" href="/favicon.ico">
+<script type="text/javascript">
+    var pcChaoxingStudyApiVersion;
+    var p_auth_token = "";
+    var copyMaxCount = "1000";
+    var yunpanDomainName = "https://pan-yz.chaoxing.com";
+    var staticDomain = "//pan-static.chaoxing.com/pan"
+    var visitPrefix = "";
+    var versionNumber = "18033251492821";
+    var barrierFree;
+    var pcForwardDomain = "chaoxing.com";
+    var noteDomainName = "https://noteyd.chaoxing.com";
+    var groupwebDomainName = "https://groupweb.chaoxing.com";
+    var pAnanasDomainName = "https://p.ananas.chaoxing.com";
+    var moocImportExportAnsDomainName = "https://mooc-import-export-ans.chaoxing.com";
+    var isPcChaoxingStudy = undefined;
+    var isPcChaoxingClass = undefined;
+    var cx_p_token = undefined;
+    var isMirror = false;
+    var udvc3_enc = "";
+    try {
+        // AfterInterceptor中返回
+        pcChaoxingStudyApiVersion = eval("0");
+    } catch (e) {
+        console.log(e)
+    }
+    try {
+        // 盲童项目, 无障碍模式
+        barrierFree = eval("${barrierFree}");
+    } catch (e) {
+        console.log(e)
+    }
+    try {
+        // AfterInterceptor中返回
+        isPcChaoxingStudy = eval("false");
+    } catch (e) {
+        console.log(e)
+    }
+    try {
+        // AfterInterceptor中返回
+        isPcChaoxingClass = eval("false");
+    } catch (e) {
+        console.log(e)
+    }
+    try {
+        // AfterInterceptor中返回
+        cx_p_token = "37b737d9a017c842030f57382cb525c5";
+    } catch (e) {
+        console.log(e)
+    }
+    try {
+        // AfterInterceptor中返回
+        isMirror = eval("false")
+    } catch (e) {
+        console.log(e)
+    }
+    try {
+        // AfterInterceptor中返回
+        isSharePan = eval("false")
+    } catch (e) {
+        console.log(e)
+    }
+    try {
+        udvc3_enc = "";
+    } catch (e) {
+    }
+</script>
+    <link type="text/css" rel="stylesheet" href="/static/mobile/css/filestyle.css?v=18033251492821"/>
+    <script type="text/javascript" src="//pan-static.chaoxing.com/pan/static/js/rem750.js?v=18033251492821"></script>
+    <script type="text/javascript" src="//pan-static.chaoxing.com/pan/static/js/jquery-3.7.0.min.js?v=18033251492821"></script>
+    <script type="text/javascript" src="//pan-static.chaoxing.com/pan/static/js/commutils.js?v=18033251492821"></script>
+    <script type="text/javascript" src="https://x.chaoxing.com/res/js/phoneControlRoll.js?v=18033251492821"></script>
+    </head>
+
+<body>
+<div class="fileBox">
+    <ul>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/1.png"/>
+                <span class="pageNum">1</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/2.png"/>
+                <span class="pageNum">2</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/3.png"/>
+                <span class="pageNum">3</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/4.png"/>
+                <span class="pageNum">4</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/5.png"/>
+                <span class="pageNum">5</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/6.png"/>
+                <span class="pageNum">6</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/7.png"/>
+                <span class="pageNum">7</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/8.png"/>
+                <span class="pageNum">8</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/9.png"/>
+                <span class="pageNum">9</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/10.png"/>
+                <span class="pageNum">10</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/11.png"/>
+                <span class="pageNum">11</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/12.png"/>
+                <span class="pageNum">12</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/13.png"/>
+                <span class="pageNum">13</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/14.png"/>
+                <span class="pageNum">14</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/15.png"/>
+                <span class="pageNum">15</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/16.png"/>
+                <span class="pageNum">16</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/17.png"/>
+                <span class="pageNum">17</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/18.png"/>
+                <span class="pageNum">18</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/19.png"/>
+                <span class="pageNum">19</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/20.png"/>
+                <span class="pageNum">20</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/21.png"/>
+                <span class="pageNum">21</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/22.png"/>
+                <span class="pageNum">22</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/23.png"/>
+                <span class="pageNum">23</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/24.png"/>
+                <span class="pageNum">24</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/25.png"/>
+                <span class="pageNum">25</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/26.png"/>
+                <span class="pageNum">26</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/27.png"/>
+                <span class="pageNum">27</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/28.png"/>
+                <span class="pageNum">28</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/29.png"/>
+                <span class="pageNum">29</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/30.png"/>
+                <span class="pageNum">30</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/31.png"/>
+                <span class="pageNum">31</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/32.png"/>
+                <span class="pageNum">32</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/33.png"/>
+                <span class="pageNum">33</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/34.png"/>
+                <span class="pageNum">34</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/35.png"/>
+                <span class="pageNum">35</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/36.png"/>
+                <span class="pageNum">36</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/37.png"/>
+                <span class="pageNum">37</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/38.png"/>
+                <span class="pageNum">38</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/39.png"/>
+                <span class="pageNum">39</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/40.png"/>
+                <span class="pageNum">40</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/41.png"/>
+                <span class="pageNum">41</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/42.png"/>
+                <span class="pageNum">42</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/43.png"/>
+                <span class="pageNum">43</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/44.png"/>
+                <span class="pageNum">44</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/45.png"/>
+                <span class="pageNum">45</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/46.png"/>
+                <span class="pageNum">46</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/47.png"/>
+                <span class="pageNum">47</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/48.png"/>
+                <span class="pageNum">48</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/49.png"/>
+                <span class="pageNum">49</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/50.png"/>
+                <span class="pageNum">50</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/51.png"/>
+                <span class="pageNum">51</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/52.png"/>
+                <span class="pageNum">52</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/53.png"/>
+                <span class="pageNum">53</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/54.png"/>
+                <span class="pageNum">54</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/55.png"/>
+                <span class="pageNum">55</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/56.png"/>
+                <span class="pageNum">56</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/57.png"/>
+                <span class="pageNum">57</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/58.png"/>
+                <span class="pageNum">58</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/59.png"/>
+                <span class="pageNum">59</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/60.png"/>
+                <span class="pageNum">60</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/61.png"/>
+                <span class="pageNum">61</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/62.png"/>
+                <span class="pageNum">62</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/63.png"/>
+                <span class="pageNum">63</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/64.png"/>
+                <span class="pageNum">64</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/65.png"/>
+                <span class="pageNum">65</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/66.png"/>
+                <span class="pageNum">66</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/67.png"/>
+                <span class="pageNum">67</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/68.png"/>
+                <span class="pageNum">68</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/69.png"/>
+                <span class="pageNum">69</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/70.png"/>
+                <span class="pageNum">70</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/71.png"/>
+                <span class="pageNum">71</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/72.png"/>
+                <span class="pageNum">72</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/73.png"/>
+                <span class="pageNum">73</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/74.png"/>
+                <span class="pageNum">74</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/75.png"/>
+                <span class="pageNum">75</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/76.png"/>
+                <span class="pageNum">76</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/77.png"/>
+                <span class="pageNum">77</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/78.png"/>
+                <span class="pageNum">78</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/79.png"/>
+                <span class="pageNum">79</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/80.png"/>
+                <span class="pageNum">80</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/81.png"/>
+                <span class="pageNum">81</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/82.png"/>
+                <span class="pageNum">82</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/83.png"/>
+                <span class="pageNum">83</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/84.png"/>
+                <span class="pageNum">84</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/85.png"/>
+                <span class="pageNum">85</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/86.png"/>
+                <span class="pageNum">86</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/87.png"/>
+                <span class="pageNum">87</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/88.png"/>
+                <span class="pageNum">88</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/89.png"/>
+                <span class="pageNum">89</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/90.png"/>
+                <span class="pageNum">90</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/91.png"/>
+                <span class="pageNum">91</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/92.png"/>
+                <span class="pageNum">92</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/93.png"/>
+                <span class="pageNum">93</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/94.png"/>
+                <span class="pageNum">94</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/95.png"/>
+                <span class="pageNum">95</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/96.png"/>
+                <span class="pageNum">96</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/97.png"/>
+                <span class="pageNum">97</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/98.png"/>
+                <span class="pageNum">98</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/99.png"/>
+                <span class="pageNum">99</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/100.png"/>
+                <span class="pageNum">100</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/101.png"/>
+                <span class="pageNum">101</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/102.png"/>
+                <span class="pageNum">102</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/103.png"/>
+                <span class="pageNum">103</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/104.png"/>
+                <span class="pageNum">104</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/105.png"/>
+                <span class="pageNum">105</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/106.png"/>
+                <span class="pageNum">106</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/107.png"/>
+                <span class="pageNum">107</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/108.png"/>
+                <span class="pageNum">108</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/109.png"/>
+                <span class="pageNum">109</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/110.png"/>
+                <span class="pageNum">110</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/111.png"/>
+                <span class="pageNum">111</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/112.png"/>
+                <span class="pageNum">112</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/113.png"/>
+                <span class="pageNum">113</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/114.png"/>
+                <span class="pageNum">114</span>
+            </li>
+                    <li>
+                <img src="https://s3.ananas.chaoxing.com/sv-w7/doc/be/f8/2d/8845be07c2d7dd154630a8c3f0130355/thumb/115.png"/>
+                <span class="pageNum">115</span>
+            </li>
+            </ul>
+</div>
+<div id="markDataStr" style="display: none">{"resourceID":"8845be07c2d7dd154630a8c3f0130355","resourceType":"doc","from":4,"passportUID":"195743760","t":"20240430144805","location":1,"curPage":1,"totalPage":1,"ext":"{\"_from_\":\"216491192_93113362_195743760_d06603f83def160971855432396be13f\"}","token":"d7339b973980e762af62f9da3d092a7e"}</div>
+</body>
+<script type="text/javascript">
+    var hideWeixinOptionMenu = "false";
+    var markDataStr = $("#markDataStr").text();
+
+    $(function () {
+        var status = null; //定义一个定时器，默认为空，表示没滚动
+        $(window).scroll(function () {
+            if (status != null) {
+                clearTimeout(status);
+                $(".pageNum").css("opacity", "1");
+            }
+            //一直滚动就会一直触发 setTimeout，触了 status 就不等于null，不等于 null 就会一直执行上面那一句
+            status = setTimeout(function () {
+                $(".pageNum").animate({"opacity": "0"}, 400);
+            }, 3000);
+
+
+            var scrollh = $(document).height();
+            var scrollTop = Math.max(document.documentElement.scrollTop || document.body.scrollTop);
+            if ((scrollTop + $(window).height()) >= scrollh) {
+                if (parent != self) {
+                    parent.postMessage({isFinished: 1}, '*');
+                }
+                console.log("到底了");
+            }
+        });
+    });
+
+    if (hideWeixinOptionMenu != "" && eval(hideWeixinOptionMenu)) {
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            // 通过下面这个API隐藏右上角按钮
+            WeixinJSBridge.call('hideOptionMenu');
+        });
+    }
+
+    function _jsBridgeReady() {
+        var host = window.location.host;
+        var protocol = window.location.protocol;
+        var url = protocol + "//" + host + "/" + visitPrefix + "screen/file_8845be07c2d7dd154630a8c3f0130355"
+        console.log(url);
+        // 投屏
+        jsBridge.postNotification("CLIENT_SCREEN_CAST_EVENT", {"resType": 2, "opt": 1, "url": url, "openModel": 0});
+        // 控屏
+        jsBridge.postNotification("CLIENT_SCREEN_CAST_CONTROL", {
+            "enabled": 1,
+            "data": {"resType": 5, "screenUrl": url}
+        });
+    }
+
+    window.onload = function () {
+        controlRoll();
+
+        if (markDataStr != "") {
+            var markData = JSON.parse(markDataStr);
+            setSetting({
+                resourceID: markData.resourceID,
+                resourceType: markData.resourceType,
+                from: markData.from,
+                passportUID: markData.passportUID,
+                t: markData.t,
+                location: markData.location,
+                curPage: markData.curPage,
+                totalPage: markData.totalPage,
+                ext: markData.ext,
+                token: markData.token,
+            });
+        }
+    }
+    if (markDataStr != "") {
+        var _bdhmProtocol = (("https:" === document.location.protocol) ? " https://" : " http://");
+        var hm = document.createElement("script");
+        hm.setAttribute('charset', 'utf-8');
+        hm.src = "/views/screen/addPoint.js?v=18033251492821";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    }
+</script>
+</html>
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"
+      title=""
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        (No Title)
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2024/04/29/ComputerNetwork/Ch4/"
+      title="网络原理: 网络层"
+     >
+
+    <p class="title-text">
+      
+        网络原理: 网络层
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2024 Fragments WANG<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

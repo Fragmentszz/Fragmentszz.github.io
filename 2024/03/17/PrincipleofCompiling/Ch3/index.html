@@ -20,16 +20,16 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="Ch3: 词法分析 0. 词法分析的模式和主要功能 0.1: 词法分析的工作方式: 词法分析程序主要有两种工作方式:  词法分析和语法分析完全分开，变为两个等地位的模块，词法分析的输出作为语法分析的输入，词法分析和语法分析一共至少扫描文本两遍。 词法分析作为语法分析的调用子模块，每当语法分析需要读入一个单词时，调用词法分析子模块从字符流种读入一个单词。词法分析和语法分析放在一起扫描文本">
+  <meta name="description" content="更新于2024-04-21 22:34:13  Ch3: 词法分析 0. 词法分析的模式和主要功能 0.1: 词法分析的工作方式: 词法分析程序主要有两种工作方式:  词法分析和语法分析完全分开，变为两个等地位的模块，词法分析的输出作为语法分析的输入，词法分析和语法分析一共至少扫描文本两遍。 词法分析作为语法分析的调用子模块，每当语法分析需要读入一个单词时，调用词法分析子模块从">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理: 词法分析">
 <meta property="og:url" content="http://blog.fragments.work/2024/03/17/PrincipleofCompiling/Ch3/index.html">
 <meta property="og:site_name" content="Fragments&#39; Blog">
-<meta property="og:description" content="Ch3: 词法分析 0. 词法分析的模式和主要功能 0.1: 词法分析的工作方式: 词法分析程序主要有两种工作方式:  词法分析和语法分析完全分开，变为两个等地位的模块，词法分析的输出作为语法分析的输入，词法分析和语法分析一共至少扫描文本两遍。 词法分析作为语法分析的调用子模块，每当语法分析需要读入一个单词时，调用词法分析子模块从字符流种读入一个单词。词法分析和语法分析放在一起扫描文本">
+<meta property="og:description" content="更新于2024-04-21 22:34:13  Ch3: 词法分析 0. 词法分析的模式和主要功能 0.1: 词法分析的工作方式: 词法分析程序主要有两种工作方式:  词法分析和语法分析完全分开，变为两个等地位的模块，词法分析的输出作为语法分析的输入，词法分析和语法分析一共至少扫描文本两遍。 词法分析作为语法分析的调用子模块，每当语法分析需要读入一个单词时，调用词法分析子模块从">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.fragments.work/img/covers/PrinciplesofCompilation.jpg">
 <meta property="article:published_time" content="2024-03-17T06:02:22.000Z">
-<meta property="article:modified_time" content="2024-04-06T02:30:38.199Z">
+<meta property="article:modified_time" content="2024-04-30T11:56:46.053Z">
 <meta property="article:author" content="Fragments WANG">
 <meta property="article:tag" content="编译原理">
 <meta name="twitter:card" content="summary">
@@ -153,7 +153,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
-                <div class="category-count">9</div>
+                <div class="category-count">11</div>
             </a>
         </div>
     </div>
@@ -179,7 +179,7 @@
       
         <a class="archive-link" href="/archives/2024/04 ">
           四月 2024 
-          <div class="archive-count">5 </div>
+          <div class="archive-count">10 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/03 ">
@@ -198,33 +198,33 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/04/18/discreteMathmatics/Ch2_%E9%9B%86%E5%90%88/" title="离散数学 Ch2: 集合" >
+          <a class="recent-link" href="/2024/04/30/discreteMathmatics/Ch3_%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB/" title="" >
             <div class="recent-link-text">
-              离散数学 Ch2: 集合
+              (no title)
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/04/18/discreteMathmatics/Ch1_%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/" title="离散数学第一章: 数理逻辑" >
+          <a class="recent-link" href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" title="" >
             <div class="recent-link-text">
-              离散数学第一章: 数理逻辑
+              (no title)
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/04/05/ComputerNetwork/Ch3/" title="网络原理: 数据链路层" >
+          <a class="recent-link" href="/2024/04/30/ComputerNetwork/%E6%96%87%E6%A1%A3/" title="" >
             <div class="recent-link-text">
-              网络原理: 数据链路层
+              (no title)
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/04/04/ComputerVision/%E7%89%B9%E5%BE%81%E6%A3%80%E6%B5%8B%E4%B8%8E%E6%8F%8F%E8%BF%B0/" title="计算机视觉: 第5章特征检测与描述" >
+          <a class="recent-link" href="/2024/04/29/ComputerNetwork/Ch4/" title="网络原理: 网络层" >
             <div class="recent-link-text">
-              计算机视觉: 第5章特征检测与描述
+              网络原理: 网络层
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/04/03/hello-ty/" title="hello,try" >
+          <a class="recent-link" href="/2024/04/23/PrincipleofCompiling/Ch4/" title="编译原理: " >
             <div class="recent-link-text">
-              hello,try
+              编译原理: 
             </div>
           </a>
         
@@ -246,7 +246,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clv65vw7t000gd8wahci83txw">
+      <a class="article-gallery-img" rel="gallery_clvmc26s8000nw4waacrqba2b">
         <img src="/img/covers/PrinciplesofCompilation.jpg" itemprop="image">
       </a>
     
@@ -282,7 +282,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            5.2k 词 
+            6.9k 词 
           </div>
         </div>
         
@@ -291,7 +291,10 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="ch3-词法分析">Ch3: 词法分析</h1>
+          <blockquote>
+<p>更新于<code>2024-04-21 22:34:13</code></p>
+</blockquote>
+<h1 id="ch3-词法分析">Ch3: 词法分析</h1>
 <h2 id="词法分析的模式和主要功能">0. 词法分析的模式和主要功能</h2>
 <h3 id="词法分析的工作方式">0.1: 词法分析的工作方式:</h3>
 <p>词法分析程序主要有两种工作方式:</p>
@@ -444,8 +447,8 @@ class="math inline">\(\cdot\)</span>完全一致)</p>
 <p>定义：<strong>有穷自动机(有限自动机)</strong>(Finite
 Automata)是一种识别装置，用来自动识别正规集[正规文法构成的语言的集合/正规式所表示的集合]。分为确定的有穷自动机和不确定的有穷自动机。</p>
 </blockquote>
-<h2 id="确定的有穷自动机dfadeterministic-finite-automata">3.1
-确定的有穷自动机DFA(Deterministic Finite Automata)</h2>
+<h3 id="确定的有穷自动机dfadeterministic-finite-automata">3.1
+确定的有穷自动机DFA(Deterministic Finite Automata)</h3>
 <blockquote>
 <p>定义<span class="math inline">\(3.1.1\)</span>
 一个<strong>确定的有穷自动机M</strong>是一个5元组 <span
@@ -502,8 +505,8 @@ class="math inline">\(V \subseteq
 class="math inline">\(M\)</span>的语言<span class="math inline">\(L(M) =
 V\)</span>。</p>
 </blockquote>
-<h2 id="不确定的有穷自动机nfanondeterministic-finite-automata">3.2
-不确定的有穷自动机NFA(Nondeterministic Finite Automata)</h2>
+<h3 id="不确定的有穷自动机nfanondeterministic-finite-automata">3.2
+不确定的有穷自动机NFA(Nondeterministic Finite Automata)</h3>
 <blockquote>
 <p>定义<span class="math inline">\(3.2.1\)</span>
 不确定的有穷自动机<span class="math inline">\(M\)</span>也是一个5元组：
@@ -551,9 +554,9 @@ class="math inline">\(M\)</span>使得<span
 class="math inline">\(M&#39;\)</span>和<span
 class="math inline">\(M\)</span>等价。</p>
 </blockquote>
-<h2 id="nfa转换为dfa-子集法">3.3 <span
+<h3 id="nfa转换为dfa-子集法">3.3 <span
 class="math inline">\(NFA\)</span>转换为<span
-class="math inline">\(DFA\)</span>: 子集法</h2>
+class="math inline">\(DFA\)</span>: 子集法</h3>
 <blockquote>
 <p>定义<span class="math inline">\(3.3.1\)</span> 状态集合<span
 class="math inline">\(I\)</span>的<span
@@ -570,7 +573,7 @@ class="math inline">\(a\)</span>弧转换： <span class="math display">\[
 move(I,a) = \{u|v经过&lt;一条&gt;a弧可以抵达u,其中v \in I \}
 \]</span></p>
 </blockquote>
-<h3 id="子集法转换">3.3.1 子集法转换</h3>
+<h4 id="子集法转换">3.3.1 子集法转换</h4>
 <p>用确定的有穷自动机<span
 class="math inline">\(M\)</span>的一个状态来对应不确定自动机<span
 class="math inline">\(N\)</span>的一组状态。</p>
@@ -588,7 +591,7 @@ class="math display">\[
 \]</span></p>
 <p>如果是手算，一般是构建一个表格。</p>
 <p>横行是输入字符集，纵列是状态集合。</p>
-<h2 id="dfa的最小化">3.4 DFA的最小化</h2>
+<h3 id="dfa的最小化">3.4 DFA的最小化</h3>
 <blockquote>
 <p>定义<span class="math inline">\(3.4.1\)</span>
 当一个<strong>DFA</strong>既没有多余状态，也没有等价状态时，该<span
@@ -600,7 +603,7 @@ class="math inline">\(DFA\)</span>的步骤有<strong>2</strong>步！！</font>
 <li>消除多余状态</li>
 <li>合并等价状态</li>
 </ol>
-<h3 id="消除多于状态">3.4.1 消除多于状态</h3>
+<h4 id="消除多余状态">3.4.1 消除多余状态</h4>
 <blockquote>
 <p>定义<span class="math inline">\(3.4.2\)</span>
 <strong>有穷自动机</strong>的多余状态是</p>
@@ -613,7 +616,7 @@ class="math inline">\(DFA\)</span>的步骤有<strong>2</strong>步！！</font>
 <font color="red">简单地去掉该节点和和该节点相关的边即可。</font></p>
 <p>建议还是先<span
 class="math inline">\(bfs\)</span>找出多余的状态。</p>
-<h3 id="合并等价状态">3.4.2 合并等价状态</h3>
+<h4 id="合并等价状态">3.4.2 合并等价状态</h4>
 <blockquote>
 <p>定义<span class="math inline">\(3.4.3\)</span>
 <strong>有穷自动机</strong>的状态<span
@@ -665,6 +668,170 @@ Z\}(终止集和非终止集)\\
 \ \ \ 则此为最后的最小状态集合。
 \end{align}
 \]</span></p>
+<h3 id="正规式和有穷自动机的等价性">3.5 正规式和有穷自动机的等价性</h3>
+<blockquote>
+<p>定理<span class="math inline">\(3.5.1\)</span>
+对于任何一个不确定的有穷自动机(NFA)<span
+class="math inline">\(M\)</span>，一定存在一个相同<span
+class="math inline">\(\Sigma\)</span>上的正规式<span
+class="math inline">\(r\)</span>，使得<span class="math inline">\(L(r) =
+L(M)\)</span>。</p>
+</blockquote>
+<blockquote>
+<p>定理<span class="math inline">\(3.5.2\)</span>
+对于任何一个正规式<span
+class="math inline">\(r\)</span>，一定存在一个相同<span
+class="math inline">\(\Sigma\)</span>上的不确定的有穷自动机(NFA)<span
+class="math inline">\(M\)</span>，使得<span class="math inline">\(L(M) =
+L(r)\)</span>。</p>
+</blockquote>
+<h4 id="不确定有穷自动机m转换为等价的正规式r">3.5.1
+不确定有穷自动机<span
+class="math inline">\(M\)</span>转换为等价的正规式<span
+class="math inline">\(r\)</span></h4>
+<h5 id="添加新的节点x和y">3.5.1.1 <font color="red">添加新的节点<span
+class="math inline">\(x\)</span>和<span
+class="math inline">\(y\)</span></font></h5>
+<p>在原不确定有穷自动机<span
+class="math inline">\(M\)</span>中添加两个新的节点<span
+class="math inline">\(x\)</span>和<span
+class="math inline">\(y\)</span>，<font color="red">其中<span
+class="math inline">\(x\)</span>向每一个起始节点添加一条<span
+class="math inline">\(\varepsilon\)</span>弧</font>，<font color="blue">每个终止节点向<span
+class="math inline">\(y\)</span>添加一条<span
+class="math inline">\(\varepsilon\)</span>弧</font>。</p>
+<h5 id="将自动机的弧转换为正规式直至只剩下节点x和y">3.5.1.2
+将自动机的弧转换为正规式，直至只剩下节点<span
+class="math inline">\(x\)</span>和<span
+class="math inline">\(y\)</span></h5>
+<ol type="1">
+<li>顺序</li>
+</ol>
+<p><img src="./img/CP/CH3_4.png" /></p>
+<ol start="2" type="1">
+<li>选择</li>
+</ol>
+<p><img src="./img/CP/CH3_5.png" /></p>
+<ol start="3" type="1">
+<li>循环</li>
+</ol>
+<p><img src="./img/CP/CH3_6.png" /></p>
+<p>最后节点<span class="math inline">\(x\)</span>和<span
+class="math inline">\(y\)</span>上弧的正规式就是最后的答案。</p>
+<h4 id="正规式r转换为等价的不确定有穷自动机m">3.5.2 正规式<span
+class="math inline">\(r\)</span>转换为等价的不确定有穷自动机<span
+class="math inline">\(M\)</span></h4>
+<blockquote>
+<p>这个过程有点像<font color="red">结构化编程</font>。把正规式<span
+class="math inline">\(r\)</span>自顶向下分解。这个过程也叫做<strong>"语法制导"</strong>。</p>
+</blockquote>
+<blockquote>
+<p><font color="red">Attention: </font> 弧上不能出现<span
+class="math inline">\(a|b\)</span>，而<span
+class="math inline">\(a,b\)</span>是可以接受的。。</p>
+</blockquote>
+<h5 id="基本转换">3.5.2.0 基本转换</h5>
+<ol type="1">
+<li><span class="math inline">\(\varnothing\)</span>表达式</li>
+</ol>
+<p><img src="img/CP/CH3_11.png" /></p>
+<ol start="2" type="1">
+<li><span class="math inline">\(r = \varepsilon\)</span></li>
+</ol>
+<p><img src="img/CP/CH3_12.png" /></p>
+<ol start="3" type="1">
+<li><span class="math inline">\(r = a, a \in \Sigma\)</span></li>
+</ol>
+<p><img src="img/CP/CH3_13.png" /></p>
+<h5 id="顺序-r-r_1r_2">3.5.2.1 顺序 <span class="math inline">\(r =
+r_1r_2\)</span></h5>
+<p><img src="img/CP/CH3_7.png" /></p>
+<p><font color="red">将一个正规式的终止节点和另一个正规式的起始节点连接起来</font></p>
+<h5 id="选择-r-r_1-r_2">3.5.2.2 选择 <span class="math inline">\(r = r_1
+| r_2\)</span></h5>
+<p><img src="img/CP/CH3_8.png" /></p>
+<p><font color="red">让起始节点<span
+class="math inline">\(x\)</span>分别空弧连接到两个正规式的起始节点，再从每一个正规式的终止节点连空弧到终止节点<span
+class="math inline">\(y\)</span></font></p>
+<h5 id="循环-r-r_1">3.5.2.3 循环 <span class="math inline">\(r =
+r_1^*\)</span></h5>
+<p><img src="img/CP/CH3_9.png" /></p>
+<p>从<span
+class="math inline">\(r_1\)</span>的终止节点连接一条空弧到<span
+class="math inline">\(r_1\)</span>的初始节点。</p>
+<p><font color="red">从初始节点<span
+class="math inline">\(x\)</span>到终止节点<span
+class="math inline">\(y\)</span>非常重要！！(<span
+class="math inline">\(r_1^*\)</span>)，否则是<span
+class="math inline">\(r_1^+\)</span></font></p>
+<p>有时可以思考能否像下面的情况一样尽量简化一些:</p>
+<p><img src="img/CP/CH3_10.png" /></p>
+<p>少一些空弧总是好的！</p>
+<h3 id="正规文法和不确定有穷自动机的等价性">3.6
+正规文法和不确定有穷自动机的等价性</h3>
+<blockquote>
+<p>定理<span class="math inline">\(3.6.1\)</span> 从正规文法<span
+class="math inline">\(G\)</span>可以直接构造一个等价的不确定的有穷自动机<span
+class="math inline">\(M\)</span>，从不确定有穷自动机<span
+class="math inline">\(M\)</span>也可以直接构造出一个等价的正规文法<span
+class="math inline">\(G\)</span></p>
+</blockquote>
+<h4 id="从正规文法g中导出不确定有穷自动机m">3.6.1 从正规文法<span
+class="math inline">\(G\)</span>中导出不确定有穷自动机<span
+class="math inline">\(M\)</span></h4>
+<blockquote>
+<p><font color="red">一般只考虑形如<span class="math inline">\(A \to aB,
+\ a\in(\Sigma \cup\{\varepsilon\})\)</span>的正规式。</font></p>
+</blockquote>
+<p>正规文法<span
+class="math inline">\(G(V_N,V_T,P,S)\)</span>到不确定有穷自动机<span
+class="math inline">\(M(K,\Sigma,f,K_S,K_Z)\)</span>转换。</p>
+<ol type="1">
+<li><span class="math inline">\(K = V_N\)</span>:
+将非终结符集作为状态集合。</li>
+<li><span class="math inline">\(\Sigma = V_T\)</span>:
+字符表即终结符集合</li>
+<li><span class="math inline">\(K_S = \{S\}\)</span>:
+起始状态集合仅包含开始符号<span class="math inline">\(S\)</span></li>
+<li>添加一个新的状态<font color="red">Z</font>作为唯一的终止状态。</li>
+<li>对每一条形如<span class="math inline">\(A \to
+aB\)</span>的产生式添加一条从状态<span
+class="math inline">\(A\)</span>到状态<span
+class="math inline">\(B\)</span>的<span
+class="math inline">\(a\)</span>弧（<span class="math inline">\(f(A,a) =
+B\)</span>)。</li>
+<li>对每一条形如<span class="math inline">\(A \to
+a\)</span>的产生式添加一条从状态<span
+class="math inline">\(A\)</span>到终止状态<font color="red"><span
+class="math inline">\(Z\)</span></font>的<span
+class="math inline">\(a\)</span>弧。</li>
+</ol>
+<p>大功告成！</p>
+<h4 id="从不确定有穷自动机m中导出正规文法g">3.6.2
+从<font color="red">不确定有穷自动机<span
+class="math inline">\(M\)</span></font>中导出正规文法<span
+class="math inline">\(G\)</span>​</h4>
+<blockquote>
+<p>M不能有空弧，且只能有一个起始状态，否则将不为正规文法。</p>
+</blockquote>
+<p>确定的有穷自动机<span
+class="math inline">\(M(K,\Sigma,f,S,Z)\)</span>转换为正规文法<span
+class="math inline">\(G(V_N,V_T,P,S)\)</span></p>
+<ol type="1">
+<li><span class="math inline">\(V_N = K\)</span>:
+非终结符集合就是状态集合</li>
+<li><span class="math inline">\(V_T = \Sigma\)</span>:
+终结符集合就是字符表</li>
+<li><span class="math inline">\(S = S\)</span> :开始符就是起始状态</li>
+<li>对于<span class="math inline">\(A\)</span>通过<span
+class="math inline">\(a\)</span>弧转换为状态<span
+class="math inline">\(B\)</span>的状态转换函数<span
+class="math inline">\(f(A,a) = B\)</span>，添加一条<span
+class="math inline">\(A \to aB\)</span>的产生式</li>
+<li>对于终止状态<span class="math inline">\(Z\)</span>，添加一条<span
+class="math inline">\(Z \to \varepsilon\)</span>的产生式</li>
+</ol>
+<p>大功告成！</p>
 
         
       </div>
