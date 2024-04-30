@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="Ch3: 数据链路层 主机\(H_1\)和主机\(H_2\)的通信可能会经过路由器，然而只有在\(H_1\)和\(H_2\)处数据包会完整经过网络的所有层，而在路由器处一般只经过最后三层\(物理层、数据链路层、网络层\)。 单看某一层，可以当作这个传输过程只经过了该层。也就是可以只关心传输过程中协议栈水平方向上的数据链路层。 数据链路层使用的信道主要有：  点对点信道 广播信道">
+  <meta name="description" content="Ch3: 数据链路层 主机$H_1$和主机$H_2$的通信可能会经过路由器，然而只有在$H_1$和$H_2$处数据包会完整经过网络的所有层，而在路由器处一般只经过最后三层$物理层、数据链路层、网络层$。 单看某一层，可以当作这个传输过程只经过了该层。也就是可以只关心传输过程中协议栈水平方向上的数据链路层。 数据链路层使用的信道主要有：  点对点信道 广播信道  1. 点对点信道的数据链路层  定义">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络原理: 数据链路层">
 <meta property="og:url" content="http://blog.fragments.work/2024/04/05/ComputerNetwork/Ch3/index.html">
 <meta property="og:site_name" content="Fragments&#39; Blog">
-<meta property="og:description" content="Ch3: 数据链路层 主机\(H_1\)和主机\(H_2\)的通信可能会经过路由器，然而只有在\(H_1\)和\(H_2\)处数据包会完整经过网络的所有层，而在路由器处一般只经过最后三层\(物理层、数据链路层、网络层\)。 单看某一层，可以当作这个传输过程只经过了该层。也就是可以只关心传输过程中协议栈水平方向上的数据链路层。 数据链路层使用的信道主要有：  点对点信道 广播信道">
+<meta property="og:description" content="Ch3: 数据链路层 主机$H_1$和主机$H_2$的通信可能会经过路由器，然而只有在$H_1$和$H_2$处数据包会完整经过网络的所有层，而在路由器处一般只经过最后三层$物理层、数据链路层、网络层$。 单看某一层，可以当作这个传输过程只经过了该层。也就是可以只关心传输过程中协议栈水平方向上的数据链路层。 数据链路层使用的信道主要有：  点对点信道 广播信道  1. 点对点信道的数据链路层  定义">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.fragments.work/img/covers/ComputerNetwork.jpg">
 <meta property="article:published_time" content="2024-04-05T14:52:00.000Z">
@@ -153,7 +153,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
-                <div class="category-count">11</div>
+                <div class="category-count">13</div>
             </a>
         </div>
     </div>
@@ -198,15 +198,9 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/04/30/discreteMathmatics/Ch3_%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB/" title="" >
+          <a class="recent-link" href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" title="计算机视觉: 第5章特征检测与描述" >
             <div class="recent-link-text">
-              (no title)
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" title="" >
-            <div class="recent-link-text">
-              (no title)
+              计算机视觉: 第5章特征检测与描述
             </div>
           </a>
         
@@ -228,6 +222,12 @@
             </div>
           </a>
         
+          <a class="recent-link" href="/2024/04/18/discreteMathmatics/Ch2_%E9%9B%86%E5%90%88/" title="离散数学 Ch2: 集合" >
+            <div class="recent-link-text">
+              离散数学 Ch2: 集合
+            </div>
+          </a>
+        
       </ul>
     </div>
   </div>
@@ -246,7 +246,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clvmc26s2000bw4wa7tpd21ez">
+      <a class="article-gallery-img" rel="gallery_clvmc9ewb000bsowa8upmazo4">
         <img src="/img/covers/ComputerNetwork.jpg" itemprop="image">
       </a>
     
@@ -282,7 +282,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            9.3k 词 
+            8.9k 词 
           </div>
         </div>
         
@@ -291,462 +291,311 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="ch3-数据链路层">Ch3: 数据链路层</h1>
-<p>主机<span class="math inline">\(H_1\)</span>和主机<span
-class="math inline">\(H_2\)</span>的通信可能会经过路由器，然而只有在<span
-class="math inline">\(H_1\)</span>和<span
-class="math inline">\(H_2\)</span>处数据包会完整经过网络的所有层，而在路由器处一般只经过最后三层<span
-class="math inline">\(物理层、数据链路层、网络层\)</span>。</p>
+          <h1>Ch3: 数据链路层</h1>
+<p>主机$H_1$和主机$H_2$的通信可能会经过路由器，然而只有在$H_1$和$H_2$处数据包会完整经过网络的所有层，而在路由器处一般只经过最后三层$物理层、数据链路层、网络层$。</p>
 <p>单看某一层，可以当作这个传输过程只经过了该层。也就是可以只关心传输过程中协议栈水平方向上的数据链路层。</p>
 <p>数据链路层使用的信道主要有：</p>
-<ol type="1">
+<ol>
 <li>点对点信道</li>
 <li>广播信道</li>
 </ol>
-<h2 id="点对点信道的数据链路层">1. 点对点信道的数据链路层</h2>
+<h2 id="1-点对点信道的数据链路层">1. 点对点信道的数据链路层</h2>
 <blockquote>
-<p>定义<span class="math inline">\(1.1.1\)</span>
-<strong>链路</strong>是一个节点到另一个相邻节点的<strong>物理数据通路</strong>。<strong>数据通路</strong>则是在链路上添加实现<strong>协议</strong>的软件和硬件。其中实现数据传输层的软件和硬件设备一般使用<strong>网络适配器</strong>。一般<strong>网络适配器</strong>实现数据链路层和物理层这两层的功能。</p>
+<p>定义$1.1.1$  <strong>链路</strong>是一个节点到另一个相邻节点的<strong>物理数据通路</strong>。<strong>数据通路</strong>则是在链路上添加实现<strong>协议</strong>的软件和硬件。其中实现数据传输层的软件和硬件设备一般使用<strong>网络适配器</strong>。一般<strong>网络适配器</strong>实现数据链路层和物理层这两层的功能。</p>
 </blockquote>
 <p><strong>规程</strong>和<strong>协议</strong>在数据链路层是同义的。</p>
 <p>数据链路层的主要功能是:</p>
-<ol type="1">
+<ol>
 <li>发送方把上一层网络层交下来的数据添加上首部和尾部构成<strong>帧</strong>，再交由物理层发送到相邻节点。</li>
 <li>接收方把物理层递上来的<strong>帧</strong>数据包解包，提取出其中的报文，若无错误则交给上层网络层，否则就丢弃。</li>
 </ol>
 <p>点对点信道传输要解决的有3个大问题:</p>
-<ol type="1">
-<li>如何封装<span
-class="math inline">\(IP\)</span>数据包为<strong>帧</strong></li>
+<ol>
+<li>如何封装$IP$数据包为<strong>帧</strong></li>
 <li>如何进行<strong>透明传输</strong></li>
 <li>如何进行差错检验</li>
 </ol>
 <p>数据链路层的协议多样，但基本上都是为了解决如上三个大问题所设计的。</p>
-<p>比较有代表性的是<span class="math inline">\(PPP\)</span>协议。</p>
-<p><span
-class="math inline">\(PPP\)</span>协议主要传送的数据分为三种：</p>
-<ol type="1">
-<li><span class="math inline">\(IP\)</span>数据报文</li>
-<li><strong>链路控制协议<span class="math inline">\(LCP(Link \ Control \
-Protocol)\)</span></strong>报文: 建立、配置和测试数据链路的连接。</li>
-<li><strong>网络控制协议<span class="math inline">\(NCP(Network Control
-Protocol)\)</span></strong>报文: 支持不同种类的网络层协议</li>
+<p>比较有代表性的是$PPP$协议。</p>
+<p>$PPP$协议主要传送的数据分为三种：</p>
+<ol>
+<li>$IP$数据报文</li>
+<li>**链路控制协议$LCP(Link \ Control \ Protocol)$**报文: 建立、配置和测试数据链路的连接。</li>
+<li>**网络控制协议$NCP(Network Control Protocol)$**报文: 支持不同种类的网络层协议</li>
 </ol>
-<p>其中<span
-class="math inline">\(LCP\)</span>可用来<strong>识别身份</strong>。</p>
-<h3 id="封装成帧">1.1 封装成帧</h3>
-<p><strong>封装成帧(framing)</strong>指的是在要发送的数据的首部和尾部分别加上一些控制信息，比如<strong>帧定界</strong>。</p>
-<p><strong>帧定界符</strong>包括<span class="math inline">\(SOH(Start \
-of \ header)\)</span>和<span class="math inline">\(EOT(End \ of \
-Transmission)\)</span>。</p>
-<p>只有完整的拥有<span class="math inline">\(SOH\)</span>和<span
-class="math inline">\(EOT\)</span>的帧才是完整的帧，其余不完整的帧一律丢弃。</p>
-<p>每一种链路层协议都规定了帧能够传送的<em>数据部分</em>的最大长度<strong>最大传送单元MTU(Max
-Transfer Unit)</strong></p>
-<hr />
-<p><span class="math inline">\(PPP\)</span>协议的格式如下:</p>
-<p><img src="/img/CN/ch3_1.png" /></p>
+<p>其中$LCP$可用来<strong>识别身份</strong>。</p>
+<h3 id="1-1-封装成帧">1.1 封装成帧</h3>
+<p><strong>封装成帧(framing)<strong>指的是在要发送的数据的首部和尾部分别加上一些控制信息，比如</strong>帧定界</strong>。</p>
+<p><strong>帧定界符</strong>包括$SOH(Start \ of \ header)$和$EOT(End \ of \ Transmission)$。</p>
+<p>只有完整的拥有$SOH$和$EOT$的帧才是完整的帧，其余不完整的帧一律丢弃。</p>
+<p>每一种链路层协议都规定了帧能够传送的<em>数据部分</em>的最大长度<strong>最大传送单元MTU(Max Transfer Unit)</strong></p>
+<hr>
+<p>$PPP$协议的格式如下:</p>
+<p><img src="/img/CN/ch3_1.png" alt=""></p>
 <p>首部有4个字段，5个字节，尾部2个字段，3个字节。</p>
-<p>其中<strong>首部第一个和尾部最后一个是Flag标记字段</strong>，分别是<span
-class="math inline">\(SOH\)</span>和<span
-class="math inline">\(EOT\)</span>，是<span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(7E\)</span>。</p>
-<p>首部第二个字段<span class="math inline">\(A(0\)</span>x<span
-class="math inline">\(FF)\)</span>和第三个字段<span
-class="math inline">\(C(0\)</span>x<span
-class="math inline">\(03)\)</span>是附加信息，至今未有含义，可自己定义。</p>
+<p>其中<strong>首部第一个和尾部最后一个是Flag标记字段</strong>，分别是$SOH$和$EOT$，是$0$x$7E$。</p>
+<p>首部第二个字段$A(0$x$FF)$和第三个字段$C(0$x$03)$是附加信息，至今未有含义，可自己定义。</p>
 <p>首部第四个字段是协议字段</p>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: center;">协议字段</th>
-<th style="text-align: center;">传输的报文种类</th>
+<tr>
+<th style="text-align:center">协议字段</th>
+<th style="text-align:center">传输的报文种类</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;"><span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(0021\)</span></td>
-<td style="text-align: center;">普通<span
-class="math inline">\(IP\)</span>报文</td>
+<tr>
+<td style="text-align:center">$0$x$0021$</td>
+<td style="text-align:center">普通$IP$报文</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;"><span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(C021\)</span></td>
-<td style="text-align: center;"><span
-class="math inline">\(LCP\)</span>报文</td>
+<tr>
+<td style="text-align:center">$0$x$C021$</td>
+<td style="text-align:center">$LCP$报文</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;"><span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(8021\)</span></td>
-<td style="text-align: center;">网络层控制信息</td>
+<tr>
+<td style="text-align:center">$0$x$8021$</td>
+<td style="text-align:center">网络层控制信息</td>
 </tr>
 </tbody>
 </table>
-<p>而尾部第一个字段是<span
-class="math inline">\(FCS\)</span>校验字段(<span
-class="math inline">\(CRC\)</span>校验序列)。</p>
-<h3 id="透明传输">1.2 透明传输</h3>
+<p>而尾部第一个字段是$FCS$校验字段($CRC$校验序列)。</p>
+<h3 id="1-2-透明传输">1.2 透明传输</h3>
 <p>透明传输所做的是<strong>不管要传送的数据是如何形式，包含何种字符，都要能够正确地传输。</strong></p>
 <p>此处特指传送数据中如果包含<strong>定界标识符</strong>的情形。如果不加处理，则会把数据中本身要发送的数据认定为定界符，导致传输出错。</p>
-<p>具体解决的办法是:
-<strong>添加转义字符</strong>。比如在要传送数据的部分中出现定界符之前加入<span
-class="math inline">\(ESC\)</span>表示转义字符，并且在传送数据部分的出现<span
-class="math inline">\(ESC\)</span>之前也要再加入一个转义字符<span
-class="math inline">\(ESC\)</span>。</p>
-<hr />
-<p><span
-class="math inline">\(PPP\)</span>协议中为了保证透明传输，主要有两种做法：</p>
-<ol type="1">
-<li>添加转义字符0x<span class="math inline">\(7D\)</span>:</li>
+<p>具体解决的办法是: <strong>添加转义字符</strong>。比如在要传送数据的部分中出现定界符之前加入$ESC$表示转义字符，并且在传送数据部分的出现$ESC$之前也要再加入一个转义字符$ESC$。</p>
+<hr>
+<p>$PPP$协议中为了保证透明传输，主要有两种做法：</p>
+<ol>
+<li>添加转义字符0x$7D$:</li>
 </ol>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: center;">字符</th>
-<th style="text-align: center;">处理</th>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">处理</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;"><span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(7E\)</span></td>
-<td style="text-align: center;">变为2字节，<span
-class="math inline">\((0x7D,0x5E)\)</span></td>
+<tr>
+<td style="text-align:center">$0$x$7E$</td>
+<td style="text-align:center">变为2字节，$(0x7D,0x5E)$</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;"><span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(7D\)</span></td>
-<td style="text-align: center;">变为2字节，<span
-class="math inline">\((0x7D,0x5D)\)</span></td>
+<tr>
+<td style="text-align:center">$0$x$7D$</td>
+<td style="text-align:center">变为2字节，$(0x7D,0x5D)$</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">值小于<span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(20\)</span>的字符<span
-class="math inline">\(c\)</span></td>
-<td style="text-align: center;">变为2字节，<span
-class="math inline">\((0x7D,c+0x20)\)</span></td>
+<tr>
+<td style="text-align:center">值小于$0$x$20$的字符$c$</td>
+<td style="text-align:center">变为2字节，$(0x7D,c+0x20)$</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">其他字符</td>
-<td style="text-align: center;">不变</td>
+<tr>
+<td style="text-align:center">其他字符</td>
+<td style="text-align:center">不变</td>
 </tr>
 </tbody>
 </table>
-<ol start="2" type="1">
+<ol start="2">
 <li>0比特填充</li>
 </ol>
-<p><span class="math inline">\(PPP\)</span>协议的帧定界符是<span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(7E\)</span>即<span
-class="math inline">\(01111110B\)</span>其中出现连续的6个1。</p>
-<p>则规定:
-在要传送的数据中每当出现连续的<strong>5</strong>个1，就加入一个<span
-class="math inline">\(0\)</span>。就能保证要传送的数据中的字符不可能和<span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(7E\)</span>弄混。</p>
-<h3 id="差错检测">1.3 差错检测</h3>
+<p>$PPP$协议的帧定界符是$0$x$7E$即$01111110B$其中出现连续的6个1。</p>
+<p>则规定: 在要传送的数据中每当出现连续的<strong>5</strong>个1，就加入一个$0$。就能保证要传送的数据中的字符不可能和$0$x$7E$弄混。</p>
+<h3 id="1-3-差错检测">1.3 差错检测</h3>
 <blockquote>
-<p>定义<span class="math inline">\(1.3.1\)</span>
-由于通信链路本身存在不可靠性，会把传输的<span
-class="math inline">\(0/1\)</span>变为<span
-class="math inline">\(1/0\)</span>，这种差错叫做<strong>比特差错</strong>。</p>
+<p>定义$1.3.1$ 由于通信链路本身存在不可靠性，会把传输的$0/1$变为$1/0$，这种差错叫做<strong>比特差错</strong>。</p>
 </blockquote>
 <blockquote>
-<p>定义<span class="math inline">\(1.3.2\)</span>
-传输错误的比特数占所有传输比特总数的比叫做<strong>误码率(Bit Error
-Rate)</strong>。</p>
+<p>定义$1.3.2$ 传输错误的比特数占所有传输比特总数的比叫做<strong>误码率(Bit Error Rate)</strong>。</p>
 </blockquote>
-<p>一般用<strong>循环冗余校验CRC</strong>(Cyclic Redundancy
-Check)来进行检错：</p>
-<p>选定一个<span class="math inline">\((k+1)\)</span>位的除数<span
-class="math inline">\(P\)</span>来模<span
-class="math inline">\(2\)</span>除要发送的数据<span
-class="math inline">\(D\)</span>，得到<span
-class="math inline">\(k\)</span>位的余数<span
-class="math inline">\(R\)</span>，最后发送<span
-class="math inline">\(D\cdot R\)</span>。</p>
-<p>接收端收到数据<span class="math inline">\(D&#39;\)</span>后也用<span
-class="math inline">\(P\)</span>模2除，余数为0则说明只有很小很小的概率出错，则接受它。否则就丢弃。</p>
-<p>可以用一句话来描述这个过程:
-<strong>凡是接受的帧，都几乎没有差错</strong>。[<span
-class="math inline">\(PPP\)</span>协议也采用<span
-class="math inline">\(CRC\)</span>校验]</p>
-<p>不过要注意的是，<span
-class="math inline">\(PPP\)</span>协议只保证了<strong>比特差错</strong>几乎消失，并不包含<strong>帧丢失，帧重复，帧乱序</strong>这种差错，即<strong>传输</strong>差错。</p>
+<p>一般用<strong>循环冗余校验CRC</strong>(Cyclic Redundancy Check)来进行检错：</p>
+<p>选定一个$(k+1)$位的除数$P$来模$2$除要发送的数据$D$，得到$k$位的余数$R$，最后发送$D\cdot R$。</p>
+<p>接收端收到数据$D’$后也用$P$模2除，余数为0则说明只有很小很小的概率出错，则接受它。否则就丢弃。</p>
+<p>可以用一句话来描述这个过程: <strong>凡是接受的帧，都几乎没有差错</strong>。[$PPP$协议也采用$CRC$校验]</p>
+<p>不过要注意的是，$PPP$协议只保证了<strong>比特差错</strong>几乎消失，并不包含<strong>帧丢失，帧重复，帧乱序</strong>这种差错，即<strong>传输</strong>差错。</p>
 <p>因此现在的主流做法是：</p>
 <p>对<strong>通信质量不好的线路</strong>，在数据链路层上添加<strong>重传、帧编号和确认</strong>机制，而<strong>通信质量好的线路</strong>则不添加这部分协议。</p>
-<h3 id="ppp协议的工作状态">1.4 PPP协议的工作状态</h3>
-<p><span
-class="math inline">\(PPP\)</span>​协议的最大特点在于<strong>简单</strong>，<strong>支持多种网络层协议</strong>。</p>
+<h3 id="1-4-PPP协议的工作状态">1.4 PPP协议的工作状态</h3>
+<p>$PPP$​协议的最大特点在于<strong>简单</strong>，<strong>支持多种网络层协议</strong>。</p>
 <p>其工作状态主要是：</p>
-<p><img src="/img/CN\ch3_2.png" /></p>
-<p>连接: <span class="math display">\[
-连接物理链路\to LCP配置 \to 鉴别 \to NCP配置
-\]</span> 断开: <span class="math display">\[
-NCP释放网络层连接 \to LCP释放数据链路层连接 \to 释放物理层连接
-\]</span> 其中<span class="math inline">\(LCP\)</span>配置以<span
-class="math inline">\(LCP\)</span>配置请求帧的形式传输，配置选项包括:
-<strong>最大帧长</strong>、<strong>鉴别协议</strong>、<strong>是否使用PPP协议首部的第二、三字段A和C</strong>。</p>
-<p>对于被请求方收到<span
-class="math inline">\(LCP\)</span>配置请求后可以回答:</p>
-<ol type="1">
+<p><img src="/img/CN%5Cch3_2.png" alt=""></p>
+<p>连接:<br>
+$$<br>
+连接物理链路\to LCP配置 \to 鉴别 \to NCP配置<br>
+$$<br>
+断开:<br>
+$$<br>
+NCP释放网络层连接 \to LCP释放数据链路层连接 \to 释放物理层连接<br>
+$$<br>
+其中$LCP$配置以$LCP$配置请求帧的形式传输，配置选项包括: <strong>最大帧长</strong>、<strong>鉴别协议</strong>、<strong>是否使用PPP协议首部的第二、三字段A和C</strong>。</p>
+<p>对于被请求方收到$LCP$配置请求后可以回答:</p>
+<ol>
 <li>配置确认帧：听懂并接受</li>
 <li>配置否认帧：听懂但拒绝</li>
 <li>配置拒绝帧：没听懂</li>
 </ol>
 <p>当被请求方回复确认帧后则进入<strong>鉴别</strong>状态，使用配置阶段所选择的<strong>PAP</strong>或者更加复杂安全的<strong>CHAP</strong>协议进行鉴别。</p>
-<p>鉴别成功后则进入网路层协议配置即<strong>NCP配置</strong>状态，此时主要是配置双方各自使用哪一种<strong>网络层协议</strong>，<span
-class="math inline">\(PPP\)</span>协议能够支持通信两端的</p>
+<p>鉴别成功后则进入网路层协议配置即<strong>NCP配置</strong>状态，此时主要是配置双方各自使用哪一种<strong>网络层协议</strong>，$PPP$协议能够支持通信两端的</p>
 <p><font color="red">网络协议不一样！</font></p>
 <p>配置完毕后则链路配置完毕，可以相互传送数据！</p>
 <p>当某一方发送<strong>终止请求LCP分组</strong>，而对方回复<strong>确认终止LCP分组</strong>后，则进入链路终止状态。当<strong>调制解调器</strong>的载波消失后，也就进入<strong>链路静止</strong>状态。</p>
-<p><span
-class="math inline">\(PPP\)</span>协议不仅涵盖了数据链路层，也包含了<strong>物理层和网络层</strong>。</p>
-<hr />
-<h2 id="使用广播信道的数据链路层">2. 使用广播信道的数据链路层</h2>
+<p>$PPP$协议不仅涵盖了数据链路层，也包含了<strong>物理层和网络层</strong>。</p>
+<hr>
+<h2 id="2-使用广播信道的数据链路层">2. 使用广播信道的数据链路层</h2>
 <p>广播信道最大的特点是进行<strong>一对多</strong>的通信。</p>
 <p><strong>局域网</strong>使用的信道就是<strong>广播信道</strong>。</p>
 <blockquote>
 <p><strong>利用广播信道通信时同一时间只允许一台机器发送数据，因此是半双工通信方式。</strong></p>
 </blockquote>
-<h3 id="局域网的数据链路层">2.1 局域网的数据链路层</h3>
-<h4 id="局域网的优势">2.1.1 局域网的优势</h4>
+<h3 id="2-1-局域网的数据链路层">2.1 局域网的数据链路层</h3>
+<h4 id="2-1-1-局域网的优势">2.1.1 局域网的优势</h4>
 <p>局域网的特点是<strong>网络为一个单位所拥有，且地理范围和站点数目均有限</strong>。</p>
 <p>局域网的主要优势是:</p>
-<ol type="1">
+<ol>
 <li>具有广播功能</li>
 <li>便于系统的扩展和逐渐演变，各设备位置可以灵活改变</li>
 <li>提高系统的可靠性、可用性、生存性。</li>
 </ol>
-<h4 id="局域网的分类">2.1.2局域网的分类</h4>
+<h4 id="2-1-2局域网的分类">2.1.2局域网的分类</h4>
 <p>局域网可以按照<strong>网络拓扑结构</strong>分为:</p>
-<ol type="1">
+<ol>
 <li>星形网</li>
 <li>环形网</li>
 <li>总线网</li>
 </ol>
-<p><img src="/img/CN/Ch3_3.png" /></p>
-<p>局域网一般在速率不高时采用<strong>双绞线(<span
-class="math inline">\(10Mbps\)</span>~<span
-class="math inline">\(10Gbps\)</span>)</strong>，而更高速的局域网要使用光纤作为媒介。</p>
-<h4 id="以太网与局域网">2.1.3 以太网与局域网</h4>
+<p><img src="/img/CN/Ch3_3.png" alt=""></p>
+<p>局域网一般在速率不高时采用<strong>双绞线($10Mbps$~$10Gbps$)</strong>，而更高速的局域网要使用光纤作为媒介。</p>
+<h4 id="2-1-3-以太网与局域网">2.1.3 以太网与局域网</h4>
 <p>由于<strong>以太网技术</strong>在局域网市场中大获成功，因此<strong>以太网</strong>几乎成了局域网的同义词。</p>
 <blockquote>
 <p>以太网一般使用<strong>曼彻斯特</strong>编码的信号。</p>
 </blockquote>
 <p>局域网内用户要合理共享信道，方式有2中:</p>
-<ol type="1">
+<ol>
 <li>使用信道共享技术，比如时分复用(TDM)、频分复用(FDM)、波分复用(WDM)和码分复用(CDM)。但此种方法<strong>代价</strong>太高，不适合局域网</li>
-<li>使用动态媒体接入控制:
-信道并非在用户通信时固定分配给用户，而是时刻都在用户手中
+<li>使用动态媒体接入控制: 信道并非在用户通信时固定分配给用户，而是时刻都在用户手中
 <ul>
-<li>随机接入:
-用户在信道上可以随机发送信息，会产生<strong>碰撞</strong>，于是需要解决<strong>碰撞</strong>的协议。</li>
-<li>受控接入:
-主要有令牌形式控制和集中控制的多路<strong>探寻(polling)</strong>，或称轮询。</li>
-</ul></li>
+<li>随机接入: 用户在信道上可以随机发送信息，会产生<strong>碰撞</strong>，于是需要解决<strong>碰撞</strong>的协议。</li>
+<li>受控接入: 主要有令牌形式控制和集中控制的多路<strong>探寻(polling)</strong>，或称轮询。</li>
+</ul>
+</li>
 </ol>
 <p><strong>随机接入在局域网中使用的非常普遍，而受控接入却很少被使用。</strong></p>
-<h5 id="以太网的标准">2.1.3.1 以太网的标准</h5>
+<h5 id="2-1-3-1-以太网的标准">2.1.3.1 以太网的标准</h5>
 <blockquote>
 <p>以太网的由来是曾被认为是传播电磁波介质的<strong>以太(Ether)</strong>。</p>
 </blockquote>
-<p>一开始的以太网权威标准是<span class="math inline">\(DIX \ Ether \
-V2\)</span>，之后<span
-class="math inline">\(IEEE\)</span>制定了一个和其差别非常小的<span
-class="math inline">\(IEEE \ 802.3\)</span>标准。</p>
-<p><span class="math inline">\(IEEE \
-802.3\)</span>协议中将数据链路层分为<span
-class="math inline">\(逻辑链路控制层LLC\)</span>(Logical Link
-Control)和<span class="math inline">\(媒体接入控制层MAC(Media \ Access \
-Control)\)</span></p>
-<p><img src="/img/CN/Ch3_4.png" /></p>
-<p>和物理层相关的部分被放入MAC，对于<span
-class="math inline">\(LLC\)</span>透明。</p>
-<p>然而<span class="math inline">\(DIX \ Ether \
-V2\)</span>中却没有这样划分。</p>
-<h5 id="适配器">2.1.3.2 适配器</h5>
+<p>一开始的以太网权威标准是$DIX \ Ether \ V2$，之后$IEEE$制定了一个和其差别非常小的$IEEE \ 802.3$标准。</p>
+<p>$IEEE \ 802.3$协议中将数据链路层分为$逻辑链路控制层LLC$(Logical Link Control)和$媒体接入控制层MAC(Media \ Access \ Control)$</p>
+<p><img src="/img/CN/Ch3_4.png" alt=""></p>
+<p>和物理层相关的部分被放入MAC，对于$LLC$透明。</p>
+<p>然而$DIX \ Ether \ V2$中却没有这样划分。</p>
+<h5 id="2-1-3-2-适配器">2.1.3.2 适配器</h5>
 <p>适配器自身带有<strong>存储器</strong>和<strong>处理器(包括ROM和RAM)</strong>。</p>
 <p>适配器是计算机和外部通信的<strong>接口</strong>。</p>
 <p>作用主要有:</p>
-<ol type="1">
-<li>串并行转换:
-适配器和外部电缆/线路传输主要以串行传输的方式进行，而适配器和计算机传输数据主要是以并行传输。</li>
-<li>缓存传输的数据:
-计算机的速度和外部网络的速度往往不一致，因此建立一个缓冲区。</li>
-<li>安装驱动程序:
-即插即用的硬性条件：操作系统可以从适配器上找到驱动程序来操作适配器。</li>
+<ol>
+<li>串并行转换: 适配器和外部电缆/线路传输主要以串行传输的方式进行，而适配器和计算机传输数据主要是以并行传输。</li>
+<li>缓存传输的数据: 计算机的速度和外部网络的速度往往不一致，因此建立一个缓冲区。</li>
+<li>安装驱动程序: 即插即用的硬性条件：操作系统可以从适配器上找到驱动程序来操作适配器。</li>
 <li>能够实现以太网协议。</li>
 </ol>
 <blockquote>
 <p>显然适配器囊括数据链路层的协议之外，也包含了物理层的协议。</p>
 </blockquote>
 <blockquote>
-<p>并且，适配器的ROM上就存放了该适配器的<strong>物理地址</strong>。而计算机的<strong><span
-class="math inline">\(IP\)</span></strong>地址则处在计算机自己的存储器上。</p>
+<p>并且，适配器的ROM上就存放了该适配器的<strong>物理地址</strong>。而计算机的**$IP$**地址则处在计算机自己的存储器上。</p>
 </blockquote>
-<h4 id="csmacd协议">2.1.4 <span
-class="math inline">\(CSMA/CD\)</span>协议</h4>
-<h5 id="争用期发送时延传播时延之间的关系">2.1.4.1
-争用期、发送时延、传播时延之间的关系</h5>
-<p>由于同一时间只允许一台计算机发送数据，为了处理<strong>碰撞</strong>，引入载波监听多点接入/碰撞检测协议<span
-class="math inline">\(CSMA/CD\)</span>(Carrier Sense Multiple Access
-With Collision Detection)</p>
+<h4 id="2-1-4-CSMA-CD-协议">2.1.4 $CSMA/CD$协议</h4>
+<h5 id="2-1-4-1-争用期、发送时延、传播时延之间的关系">2.1.4.1 争用期、发送时延、传播时延之间的关系</h5>
+<p>由于同一时间只允许一台计算机发送数据，为了处理<strong>碰撞</strong>，引入载波监听多点接入/碰撞检测协议$CSMA/CD$(Carrier Sense Multiple Access With Collision Detection)</p>
 <ul>
-<li><strong>多点接入</strong> :
-指明是多台机器以多点接入的方式相连接在一根总线上。</li>
-<li><strong>载波监听</strong>：即检测信道。
-不管是发送之前还是发送时，都需要不断检测信道。发送前检测是为了获取发送权，而发送时检测是为了检测碰撞。</li>
-<li><strong>碰撞检测</strong>：<strong>"边发送边监听"</strong>。当有多个计算机同时发送数据时，信号的波形叠加，变化幅度变大，<strong>超过一定阈值时就可判断不止一台机器在发送数据</strong>。此时就发生了碰撞。也成为<strong>冲突检测</strong>。</li>
+<li><strong>多点接入</strong> : 指明是多台机器以多点接入的方式相连接在一根总线上。</li>
+<li><strong>载波监听</strong>：即检测信道。 不管是发送之前还是发送时，都需要不断检测信道。发送前检测是为了获取发送权，而发送时检测是为了检测碰撞。</li>
+<li><strong>碰撞检测</strong>：<strong>“边发送边监听”</strong>。当有多个计算机同时发送数据时，信号的波形叠加，变化幅度变大，<strong>超过一定阈值时就可判断不止一台机器在发送数据</strong>。此时就发生了碰撞。也成为<strong>冲突检测</strong>。</li>
 </ul>
 <blockquote>
 <p>由于发送时延导致即便是发送前没有其他机器在发送数据，也有可能产生碰撞。</p>
 </blockquote>
 <blockquote>
-<p>一般认为电磁波在介质传输中的速率是<span
-class="math inline">\(2*10^5km/s\)</span>。因此电磁波在<span
-class="math inline">\(1km\)</span>的信道上产生的传播时延是<span
-class="math inline">\(5\mu s\)</span>。</p>
+<p>一般认为电磁波在介质传输中的速率是$2*10^5km/s$。因此电磁波在$1km$的信道上产生的传播时延是$5\mu s$。</p>
 </blockquote>
 <blockquote>
-<p>一般认为以太网点到点传输的最大距离是<span
-class="math inline">\(5km\)</span>。</p>
+<p>一般认为以太网点到点传输的最大距离是$5km$。</p>
 </blockquote>
 <blockquote>
-<p>一般认为以太网的传输速率是<span class="math inline">\(10
-Mbit/s\)</span>​。</p>
+<p>一般认为以太网的传输速率是$10 Mbit/s$​。</p>
 </blockquote>
 <blockquote>
-<p>规定帧和帧之间的最小间隔是<span class="math inline">\(9.6\mu
-s\)</span>，即发送一帧后要先等待<span class="math inline">\(9.6 \mu
-s\)</span>才进入到发送下一帧的阶段。目的是<strong>使得刚刚收到的数据帧的站点有时间可以接收该缓存，有时间清理。以便接收下一帧。</strong></p>
+<p>规定帧和帧之间的最小间隔是$9.6\mu s$，即发送一帧后要先等待$9.6 \mu s$才进入到发送下一帧的阶段。目的是<strong>使得刚刚收到的数据帧的站点有时间可以接收该缓存，有时间清理。以便接收下一帧。</strong></p>
 </blockquote>
-<p>每一个站最多经过<span
-class="math inline">\(2\tau\)</span>​时间就可以确定是否发生了碰撞。把站能够检测是否发生碰撞的最长时间叫做<strong>争用期(碰撞窗口)</strong>。</p>
-<p><strong>所以一个以太网中所有站点的发送时延都必须大于争用期。</strong>而<strong>争用期要保证能够检测是否发生碰撞，因此争用期<span
-class="math inline">\(\ge 2
-\tau\)</span>​</strong>即两倍<strong>最大</strong>传播时延。</p>
-<p>所以: <span class="math display">\[
-发送时延\ge 争用期 \ge 2倍传播时延 \\
-\frac{bits}{bps}\ge\frac{distance}{v}
-\]</span></p>
+<p>每一个站最多经过$2\tau$​时间就可以确定是否发生了碰撞。把站能够检测是否发生碰撞的最长时间叫做<strong>争用期(碰撞窗口)</strong>。</p>
+<p><strong>所以一个以太网中所有站点的发送时延都必须大于争用期。<strong>而</strong>争用期要保证能够检测是否发生碰撞，因此争用期$\ge 2 \tau$​</strong>即两倍<strong>最大</strong>传播时延。</p>
+<p>所以:<br>
+$$<br>
+发送时延\ge 争用期 \ge 2倍传播时延 \<br>
+\frac{bits}{bps}\ge\frac{distance}{v}<br>
+$$</p>
 <blockquote>
-<p>一般认为以太网的2倍传播时延是<span class="math inline">\(2\tau = 2
-\times (5/2e5)s = 50\mu s\)</span>，传播速率为<span
-class="math inline">\(1Mbit/s\)</span>。 <span class="math display">\[
-\frac{bits_{min}}{10Mbps} \ge 2\tau = 50\mu s \Rightarrow bits_{min} \ge
-500bit
-\]</span>
-由于这个最小比特数最好是2的幂次，所以一般取最小比特数(最小帧长)为<span
-class="math inline">\(2^9=512bit\)</span>​，64字节。</p>
+<p>一般认为以太网的2倍传播时延是$2\tau = 2 \times (5/2e5)s = 50\mu s$，传播速率为$1Mbit/s$。<br>
+$$<br>
+\frac{bits_{min}}{10Mbps} \ge 2\tau = 50\mu s \Rightarrow bits_{min} \ge 500bit<br>
+$$<br>
+由于这个最小比特数最好是2的幂次，所以一般取最小比特数(最小帧长)为$2^9=512bit$​，64字节。</p>
 </blockquote>
 <blockquote>
-<p>所以取以太网的一般争用期为<span class="math inline">\(51.2\mu
-s\)</span>。</p>
+<p>所以取以太网的一般争用期为$51.2\mu s$。</p>
 </blockquote>
-<h5 id="处理碰撞措施和截断2进制指数退避算法">2.1.4.2
-处理碰撞措施和截断2进制指数退避算法</h5>
+<h5 id="2-1-4-2-处理碰撞措施和截断2进制指数退避算法">2.1.4.2 处理碰撞措施和截断2进制指数退避算法</h5>
 <p>当站点发现信号发生<strong>碰撞</strong>后:</p>
-<ol type="1">
+<ol>
 <li>停止发送数据</li>
-<li>继续发送<span
-class="math inline">\(32/48bit\)</span>的<strong>人为干扰信号</strong>:
-让其他所有机器都知道信号发生了碰撞。</li>
-<li>执行截断二进制指数退避算法:
-推迟随机的一段时间再发送数据，而不是等信道空闲了就立刻发送</li>
+<li>继续发送$32/48bit$的<strong>人为干扰信号</strong>: 让其他所有机器都知道信号发生了碰撞。</li>
+<li>执行截断二进制指数退避算法: 推迟随机的一段时间再发送数据，而不是等信道空闲了就立刻发送</li>
 </ol>
 <blockquote>
-<p><strong>截断二进制指数退避</strong>算法(truncated binary exponential
-backoff):</p>
-<ol type="1">
-<li>截断二进制指数退避算法常数就为以太网的争用期<span
-class="math inline">\(2\tau\)</span>。</li>
-<li>假设这是第<span
-class="math inline">\(k\)</span>重新发送该信号，如果<span
-class="math inline">\(k&gt;16\)</span>，则放弃传输该帧，向上层报告。</li>
-<li>取<span class="math inline">\(k&#39;=min(k,10)\)</span></li>
-<li>从<span
-class="math inline">\([0,2^{k&#39;}-1]\)</span>中随机选择一个数<span
-class="math inline">\(l\)</span>，并将<span
-class="math inline">\(l*2\tau\)</span>作为等待时长。</li>
+<p><strong>截断二进制指数退避</strong>算法(truncated binary exponential backoff):</p>
+<ol>
+<li>截断二进制指数退避算法常数就为以太网的争用期$2\tau$。</li>
+<li>假设这是第$k$重新发送该信号，如果$k&gt;16$，则放弃传输该帧，向上层报告。</li>
+<li>取$k’=min(k,10)$</li>
+<li>从$[0,2^{k’}-1]$中随机选择一个数$l$，并将$l*2\tau$作为等待时长。</li>
 </ol>
 </blockquote>
-<p>要等待的平均时长会随着发送次数<span
-class="math inline">\(k\)</span>增大而不断增大，也能够减小发生碰撞的概率。</p>
+<p>要等待的平均时长会随着发送次数$k$增大而不断增大，也能够减小发生碰撞的概率。</p>
 <blockquote>
 <p>存在某一种情况，类似于操作系统中的<strong>饥饿</strong>:</p>
 <p>有一已经重传很多次的帧和很多重传次数不那么多的帧，有可能重传次数不那么多的帧的等待时长小，一直传，而重传很多次的帧因为一直等待，而发生<strong>饥饿</strong>。</p>
 </blockquote>
-<h4 id="使用广播信道和csmacd协议发送数据的流程">2.1.5
-使用广播信道和<span
-class="math inline">\(CSMA/CD协议\)</span>发送数据的流程</h4>
-<p><img src="/img/CN/ch3_6.png" /></p>
+<h4 id="2-1-5-使用广播信道和-CSMA-CD协议-发送数据的流程">2.1.5 使用广播信道和$CSMA/CD协议$发送数据的流程</h4>
+<p><img src="/img/CN/ch3_6.png" alt=""></p>
 <p>另外，每当一帧被完全发送以后，一定要把已经发送的一帧保存一下。如果在争用期发生碰撞，还要推迟一段时间再发送该保存的帧。</p>
-<h3 id="以太网信道的利用率">2.2 以太网信道的利用率</h3>
-<p>以太网中收发数据时的等待时间几乎都是<span
-class="math inline">\(2\tau\)</span>或者是<span
-class="math inline">\(\tau\)</span>的整数倍，并且发送一段发送时延为<span
-class="math inline">\(T_0\)</span>的数据占用信道的时间是<span
-class="math inline">\(T_0+\tau\)</span>，所以比值<span
-class="math inline">\(a\)</span>很重要: <span class="math display">\[
-a = \frac{\tau}{T_0}
-\]</span> 以太网将<span class="math inline">\(a\)</span>作为参数，<span
-class="math inline">\(a\)</span>越小说明以太网越优秀。当发送数据时延<span
-class="math inline">\(T_0\)</span>一定时，端到端的距离的传播时延<span
-class="math inline">\(\tau\)</span>不能太大，当端到端的传播时延<span
-class="math inline">\(\tau\)</span>一定时，<span
-class="math inline">\(T_0\)</span>不能太小。</p>
-<p>考虑信道一直空闲的极限情况，即发送从来不需要等待，那么以太网信道的最大理想利用率就是:
-<span class="math display">\[
-S_{max}=\frac{T_0}{T_0+\tau}=\frac{1}{1+a}
-\]</span> 如果<span
-class="math inline">\(S_{max}\)</span>的值都很不理想，那么一般情况下肯定更加糟糕。</p>
+<h3 id="2-2-以太网信道的利用率">2.2 以太网信道的利用率</h3>
+<p>以太网中收发数据时的等待时间几乎都是$2\tau$或者是$\tau$的整数倍，并且发送一段发送时延为$T_0$的数据占用信道的时间是$T_0+\tau$，所以比值$a$很重要:<br>
+$$<br>
+a = \frac{\tau}{T_0}<br>
+$$<br>
+以太网将$a$作为参数，$a$越小说明以太网越优秀。当发送数据时延$T_0$一定时，端到端的距离的传播时延$\tau$不能太大，当端到端的传播时延$\tau$一定时，$T_0$不能太小。</p>
+<p>考虑信道一直空闲的极限情况，即发送从来不需要等待，那么以太网信道的最大理想利用率就是:<br>
+$$<br>
+S_{max}=\frac{T_0}{T_0+\tau}=\frac{1}{1+a}<br>
+$$<br>
+如果$S_{max}$的值都很不理想，那么一般情况下肯定更加糟糕。</p>
 <blockquote>
-<p>一般以太网的实际利用率为<span
-class="math inline">\(30\%\)</span>时就已经处于<strong>重载</strong>的情况了。</p>
+<p>一般以太网的实际利用率为$30%$时就已经处于<strong>重载</strong>的情况了。</p>
 </blockquote>
-<h3 id="数据链路层的物理地址-mac地址">2.3 数据链路层的物理地址:
-MAC地址</h3>
-<h4 id="mac地址和通信方式">2.3.1 MAC地址和通信方式</h4>
-<p><span
-class="math inline">\(MAC\)</span>地址是固化在<strong>适配器ROM</strong>中的物理地址，用来标识一台计算机，是计算机的"名字"。</p>
-<p><span class="math inline">\(MAC\)</span>地址占<span
-class="math inline">\(6\)</span>个字节，<span
-class="math inline">\(48bit\)</span>。其中前<span
-class="math inline">\(3\)</span>个字节是<span
-class="math inline">\(组织唯一标识符OUI\)</span>，需要向<span
-class="math inline">\(IEEE\)</span>购买。后<span
-class="math inline">\(3\)</span>个字节可以自由分配。</p>
+<h3 id="2-3-数据链路层的物理地址-MAC地址">2.3 数据链路层的物理地址: MAC地址</h3>
+<h4 id="2-3-1-MAC地址和通信方式">2.3.1 MAC地址和通信方式</h4>
+<p>$MAC$地址是固化在<strong>适配器ROM</strong>中的物理地址，用来标识一台计算机，是计算机的&quot;名字&quot;。</p>
+<p>$MAC$地址占$6$个字节，$48bit$。其中前$3$个字节是$组织唯一标识符OUI$，需要向$IEEE$购买。后$3$个字节可以自由分配。</p>
 <blockquote>
-<p><span class="math inline">\(MAC\)</span>地址第一个字节的最低位是<span
-class="math inline">\(I/G\)</span>位，用来表示该<span
-class="math inline">\(MAC\)</span>地址是单播(只给一个站点发送)<span
-class="math inline">\(I/G=0\)</span>，还是多播(给一个组发送)<span
-class="math inline">\(I/G=1\)</span>.</p>
+<p>$MAC$地址第一个字节的最低位是$I/G$位，用来表示该$MAC$地址是单播(只给一个站点发送)$I/G=0$，还是多播(给一个组发送)$I/G=1$.</p>
 </blockquote>
-<p>另外，还考虑到了不向<span
-class="math inline">\(IEEE\)</span>购买<span
-class="math inline">\(OUI\)</span>​的情况:</p>
+<p>另外，还考虑到了不向$IEEE$购买$OUI$​的情况:</p>
 <blockquote>
-<p><span
-class="math inline">\(MAC\)</span>地址第一个字节的最低第二位是<span
-class="math inline">\(G/L\)</span>位，用来表示该<span
-class="math inline">\(MAC\)</span>是否是全球管辖(购买)<span
-class="math inline">\(G/L=0\)</span>，还是个人任意分配<span
-class="math inline">\(G/L=1\)</span>。</p>
+<p>$MAC$地址第一个字节的最低第二位是$G/L$位，用来表示该$MAC$是否是全球管辖(购买)$G/L=0$，还是个人任意分配$G/L=1$。</p>
 </blockquote>
-<p>个人任意分配则不能保证该<span
-class="math inline">\(MAC\)</span>是全球唯一的。</p>
-<p>使用<span class="math inline">\(MAC\)</span>通信时主要有3种形式：</p>
-<ol type="1">
+<p>个人任意分配则不能保证该$MAC$是全球唯一的。</p>
+<p>使用$MAC$通信时主要有3种形式：</p>
+<ol>
 <li>单播(一对一)</li>
 <li>广播(一对<strong>全体</strong>)</li>
 <li>多播(一对多)，一部分站点</li>
@@ -754,159 +603,111 @@ class="math inline">\(MAC\)</span>是全球唯一的。</p>
 <blockquote>
 <p>所有适配器至少要能识别前两种通信方式。</p>
 </blockquote>
-<p>当信道上传播的数据的<span
-class="math inline">\(MAC\)</span>目的地址和自己适配器地址不相符的时候，大多都直接<span
-class="math inline">\(丢弃\)</span>，但是如果是工作在<strong>混杂模式</strong>下，也可以取到这部分发送给其他主机的消息。这种工作方式有好也有坏的地方，<span
-class="math inline">\(hacker\)</span>可以窃听，也可以由<strong>网络管理员</strong>监听网络流量，管理该局域以太网。</p>
-<h4 id="mac帧的格式">2.3.2 MAC帧的格式</h4>
-<p>在以太网中传播的帧的格式有两种: <span class="math inline">\(DIX
-Ether\)</span> V2和<span class="math inline">\(IEEE
-802.3\)</span>，对应两种以太网协议。</p>
+<p>当信道上传播的数据的$MAC$目的地址和自己适配器地址不相符的时候，大多都直接$丢弃$，但是如果是工作在<strong>混杂模式</strong>下，也可以取到这部分发送给其他主机的消息。这种工作方式有好也有坏的地方，$hacker$可以窃听，也可以由<strong>网络管理员</strong>监听网络流量，管理该局域以太网。</p>
+<h4 id="2-3-2-MAC帧的格式">2.3.2 MAC帧的格式</h4>
+<p>在以太网中传播的帧的格式有两种: $DIX Ether$ V2和$IEEE 802.3$，对应两种以太网协议。</p>
 <p>但是它们非常相似，都是如下格式：</p>
-<p><img src="/img/CN/ch3_7.png" /></p>
+<p><img src="/img/CN/ch3_7.png" alt=""></p>
 <p>5(6)个字段：</p>
-<ol start="0" type="1">
-<li><p>前同步码: 用来时钟同步，前7个字节全是<span
-class="math inline">\(010101\cdots\)</span>，最后一个字节是<span
-class="math inline">\(101010\)</span><font color="red"><span
-class="math inline">\(11\)</span></font></p></li>
-<li><p>目的<span class="math inline">\(MAC\)</span>地址</p></li>
-<li><p>源<span class="math inline">\(MAC\)</span>地址</p></li>
-<li><p><span class="math inline">\(类型\)</span>:
-<font color="red">为了兼容不同种上层的网络层协议</font>: <span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(0800\)</span> 表示是<span
-class="math inline">\(IP\)</span>数据报，而<span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(8137\)</span>表示是<span
-class="math inline">\(Novell IPX\)</span>数据报。</p></li>
-<li><p>数据字段: <span
-class="math inline">\(46-1500Byte\)</span></p></li>
-<li><p><span class="math inline">\(FCS\)</span>检测字段: 一般使用<span
-class="math inline">\(CRC\)</span>循环冗余校验码(当传输媒体的误码率是<span
-class="math inline">\(1e-8\)</span>左右时，<span
-class="math inline">\(MAC\)</span>子层可以使得没检测到错误的概率小于<span
-class="math inline">\(1e-14\)</span>)。</p></li>
+<ol start="0">
+<li>
+<p>前同步码: 用来时钟同步，前7个字节全是$010101\cdots$，最后一个字节是$101010$<font color="red">$11$</font></p>
+</li>
+<li>
+<p>目的$MAC$地址</p>
+</li>
+<li>
+<p>源$MAC$地址</p>
+</li>
+<li>
+<p>$类型$: <font color="red">为了兼容不同种上层的网络层协议</font>:  $0$x$0800$ 表示是$IP$数据报，而$0$x$8137$表示是$Novell IPX$数据报。</p>
+</li>
+<li>
+<p>数据字段: $46-1500Byte$</p>
+</li>
+<li>
+<p>$FCS$检测字段: 一般使用$CRC$循环冗余校验码(当传输媒体的误码率是$1e-8$左右时，$MAC$子层可以使得没检测到错误的概率小于$1e-14$)。</p>
+</li>
 </ol>
-<p>由于规定了以太网中帧的长度不能小于<span
-class="math inline">\(512bit(64Byte)\)</span>，因此数据部分内容不能小于<span
-class="math inline">\(64-18=46Byte\)</span>，整个帧长度的范围是<span
-class="math inline">\([64,1518]Byte\)</span>。</p>
+<p>由于规定了以太网中帧的长度不能小于$512bit(64Byte)$，因此数据部分内容不能小于$64-18=46Byte$，整个帧长度的范围是$[64,1518]Byte$。</p>
 <p>无效帧的可能形式有:</p>
-<ol type="1">
+<ol>
 <li>帧长都不是整数个字节</li>
-<li><span class="math inline">\(FCS\)</span>字段检测出错</li>
-<li>帧长不在<span class="math inline">\([64,1518]\)</span>之间。</li>
+<li>$FCS$字段检测出错</li>
+<li>帧长不在$[64,1518]$之间。</li>
 </ol>
 <p>遇见无效帧，直接<strong>丢弃</strong>。</p>
 <blockquote>
-<p>为什么不需要帧长度呢？<font color="red">以太网传输使用是曼彻斯特编码，具有自同步特性。</font>所以根据每次时钟周期中间部分的阶跃变化可以区分出每一个比特。只需要从最后一个比特[<font color="red">区分最后一个比特的办法是，最后一个比特后不再发送任何比特流</font>]开始数<span
-class="math inline">\(4\)</span>​个字节就能找到数据的末尾。因此不需要帧长度这一字段。</p>
+<p>为什么不需要帧长度呢？<font color="red">以太网传输使用是曼彻斯特编码，具有自同步特性。</font>所以根据每次时钟周期中间部分的阶跃变化可以区分出每一个比特。只需要从最后一个比特[<font color="red">区分最后一个比特的办法是，最后一个比特后不再发送任何比特流</font>]开始数$4$​个字节就能找到数据的末尾。因此不需要帧长度这一字段。</p>
 </blockquote>
 <blockquote>
-<p>帧和帧之间存在一定的空隙，<span
-class="math inline">\(96\)</span>比特时间。</p>
+<p>帧和帧之间存在一定的空隙，$96$比特时间。</p>
 </blockquote>
 <p>但是当数据部分有填充字符时这一办法会失效，<strong>这就要求数据链路层上层的网络层要有自己的识别数据长度的手段。</strong></p>
-<p><span class="math inline">\(IEEE \ 802.3\)</span>和<span
-class="math inline">\(DIX \
-V2\)</span>帧的区别只在<strong>类型</strong>字段:</p>
+<p>$IEEE \ 802.3$和$DIX \ V2$帧的区别只在<strong>类型</strong>字段:</p>
 <blockquote>
-<p><span class="math inline">\(DIX \
-V2\)</span>帧的类型字段始终是类型</p>
-<p><span class="math inline">\(IEEE \ 802.3\)</span>类型字段小于<span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(0600\)</span>时，就表示<strong>数据字段的长度</strong>。且数据字段必须装入上层的<span
-class="math inline">\(逻辑链路控制层LLC\)</span>的帧<span
-class="math inline">\(LLC帧\)</span>。</p>
+<p>$DIX \ V2$帧的类型字段始终是类型</p>
+<p>$IEEE \ 802.3$类型字段小于$0$x$0600$时，就表示<strong>数据字段的长度</strong>。且数据字段必须装入上层的$逻辑链路控制层LLC$的帧$LLC帧$。</p>
 </blockquote>
-<h3 id="在物理层扩展以太网-使用集线器的以太网">2.4 在物理层扩展以太网:
-使用集线器的以太网</h3>
+<h3 id="2-4-在物理层扩展以太网-使用集线器的以太网">2.4 在物理层扩展以太网: 使用集线器的以太网</h3>
 <p>集线器是一种工作在<strong>物理层</strong>的，每个接口只是<strong>简单转发比特</strong>的器件。主机通过集线器星形连接在一起。</p>
 <p>使用集线器的以太网本质上仍然是总线网。因此一段时间还是只允许一台主机发送数据，通过集线器连接在一起的主机仍然要采用<strong>CSMA/CD</strong>协议。</p>
 <p>集线器往往多个(4~8个)堆叠在一起使用。功能都以模块的形式叠加在一起。增加功能模块或者是减少功能模块都可以<strong>热插拔</strong>。</p>
 <blockquote>
 <p>通过<strong>光纤</strong>把集线器和站点相连接可以让以太网的范围变大很多很多，这就是<strong>在物理层上扩展以太网</strong>。然而这种方式的缺点是<strong>扩大了冲突域(碰撞域)</strong>。</p>
 </blockquote>
-<p><img src="/img/CN/Ch3_8.png" /></p>
+<p><img src="/img/CN/Ch3_8.png" alt=""></p>
 <p>增大碰撞域的原因就在于<strong>集线器</strong>只会不断转发比特流，因此在一台主机发送数据时，数据会被转发到所有线路中。</p>
-<p>如果每台机器，每条线路的吞吐量都是<span
-class="math inline">\(100Mbit/s\)</span>，那么上面的<strong>集线器</strong>群的吞吐量也是<span
-class="math inline">\(100Mbit/s\)</span>，尽管3个系分开后的吞吐量是<span
-class="math inline">\(3*100Mbit/s = 300Mbit/s\)</span></p>
-<p>另外由于集线器只能转发而没有<strong>缓存</strong>机制，如果有的线路的吞吐量是<span
-class="math inline">\(10Mbit/s\)</span>，而有的是<span
-class="math inline">\(100Mbit/s\)</span>，整个系统也只能工作在<span
-class="math inline">\(10Mbit/s\)</span>。因为没有处理速度不匹配的机制。</p>
-<h3 id="在数据链路层扩展以太网-使用交换机的以太网">2.5
-在数据链路层扩展以太网: 使用交换机的以太网</h3>
+<p>如果每台机器，每条线路的吞吐量都是$100Mbit/s$，那么上面的<strong>集线器</strong>群的吞吐量也是$100Mbit/s$，尽管3个系分开后的吞吐量是$3*100Mbit/s = 300Mbit/s$</p>
+<p>另外由于集线器只能转发而没有<strong>缓存</strong>机制，如果有的线路的吞吐量是$10Mbit/s$，而有的是$100Mbit/s$，整个系统也只能工作在$10Mbit/s$。因为没有处理速度不匹配的机制。</p>
+<h3 id="2-5-在数据链路层扩展以太网-使用交换机的以太网">2.5 在数据链路层扩展以太网: 使用交换机的以太网</h3>
 <blockquote>
 <p>最初在数据链路层扩展以太网的是<strong>网桥(Bridge)</strong>，网桥根据数据帧的<strong>MAC</strong>地址，查找<strong>网桥</strong>内部的<strong>MAC</strong>地址表，进行数据帧的转发或者丢弃(找不到)。</p>
-<p>后来<strong>以太网交换机(交换式集线器、第二层交换机)</strong>出现了。</p>
+<p>后来**以太网交换机(交换式集线器、第二层交换机)**出现了。</p>
 </blockquote>
-<h4 id="以太网交换机的基本特点">2.5.1 以太网交换机的基本特点</h4>
+<h4 id="2-5-1-以太网交换机的基本特点">2.5.1 以太网交换机的基本特点</h4>
 <p>以太网交换机也有许多不同的种类，有<strong>具有第三层特性的第二层交换机</strong>，拥有部分<strong>网络层</strong>的功能，可以对数据报文进行分片和对<strong>多播通信量</strong>的管理。有<strong>多层交换机</strong>，可以根据第三层的<strong>IP</strong>地址对分组进行过滤。</p>
-<h5 id="并行性独占传输媒体">2.5.1.1 并行性、独占传输媒体</h5>
+<h5 id="2-5-1-1-并行性、独占传输媒体">2.5.1.1 并行性、独占传输媒体</h5>
 <p><strong>以太网交换机</strong>具有多个接口，每个接口和一台主机或者是另一个交换机相连接。以太网交换机具有<font color="red">并行性</font>，因此大多工作在<strong>全双工模式</strong>。</p>
 <p>另外<strong>以太网交换机</strong>在两台主机进行通信时都是<strong>独占传输媒体，完全不碰撞地传输。</strong></p>
 <blockquote>
 <p><strong>独占传输媒体并行传输的好处是带宽变得很大</strong>:</p>
-<p>每个接口的带宽是<span class="math inline">\(10M
-bit/s\)</span>，一共有<span
-class="math inline">\(10\)</span>个接口，则整个<strong>以太网交换机</strong>系统的带宽是**10*10Mbit/s**。</p>
-<p>而普通集线器仍然是<span class="math inline">\(10M
-bit/s\)</span>。</p>
+<p>每个接口的带宽是$10M bit/s$，一共有$10$个接口，则整个<strong>以太网交换机</strong>系统的带宽是<strong>10*10Mbit/s</strong>。</p>
+<p>而普通集线器仍然是$10M bit/s$。</p>
 </blockquote>
-<h5 id="自学习性">2.5.1.2 自学习性</h5>
-<p><strong>以太网交换机</strong>内部的<strong><span
-class="math inline">\(MAC\)</span>地址表</strong>是通过自主学习算法自动地逐渐建立起来的。因此是一种<strong>即插即用</strong>的设备。</p>
+<h5 id="2-5-1-2-自学习性">2.5.1.2 自学习性</h5>
+<p><strong>以太网交换机</strong>内部的**$MAC$地址表<strong>是通过自主学习算法自动地逐渐建立起来的。因此是一种</strong>即插即用**的设备。</p>
 <p>每当帧信息传给交换机以后，交换机<strong>先</strong>查找地址表，查找目标地址是否在表中，如果在则单独转发，如果不在则<strong>广播</strong>。<strong>接着</strong>把<strong>源地址</strong>和对应的端口号写入地址表中。</p>
 <p>一般地址表会设置一定的<strong>有效时长</strong>，过期的项目会被自动地删除，来应对某个端口的主机<strong>网卡适配器MAC改变</strong>的情况。</p>
 <p>但是在<strong>有环路</strong>的拓扑网络中，自学习性可能会带来<strong>兜圈子</strong>的问题，因此对于交换机还制定了<strong>生成树协议STP</strong>，即切断某些线路，使得从一台主机到其他的主机是<strong>无环的树形结构</strong>。</p>
-<h5 id="缓存与直通">2.5.1.3 缓存与直通</h5>
+<h5 id="2-5-1-3-缓存与直通">2.5.1.3 缓存与直通</h5>
 <p>交换机一般有<strong>缓存帧</strong>的功能，即暂时保存帧。当帧的接收方端口非常繁忙时，交换机会保存该帧，等到空闲时再转发。</p>
-<p>也有的交换机有<strong>直通</strong>的功能，不在转发前先把帧全缓存，而是直接查找转发表立即转发到目的<span
-class="math inline">\(MAC\)</span>地址对应端口。此种交换方式基于<strong>硬件的交叉矩阵</strong>，<strong>传播时延非常小</strong>。不过，此种方式不进行帧校验，可能会发送错误的帧。</p>
-<h4 id="从总线网到星型网">2.5.2 从总线网到星型网</h4>
+<p>也有的交换机有<strong>直通</strong>的功能，不在转发前先把帧全缓存，而是直接查找转发表立即转发到目的$MAC$地址对应端口。此种交换方式基于<strong>硬件的交叉矩阵</strong>，<strong>传播时延非常小</strong>。不过，此种方式不进行帧校验，可能会发送错误的帧。</p>
+<h4 id="2-5-2-从总线网到星型网">2.5.2 从总线网到星型网</h4>
 <blockquote>
 <p>随着总线上主机设备逐渐变多，总线网的性能逐渐下降。但是基于交换机的星形网效率非常好。<strong>因此如今大多数以太网是星型结构。</strong></p>
 </blockquote>
-<p><strong>使用交换机的以太网不会产生冲突，也就不使用<span
-class="math inline">\(CSMA/CD\)</span>协议。</strong>不像总线网那样工作在半双工模式，以太交换网工作在<strong>全双工模式</strong>。但是<strong>帧的结构</strong>没有改变。</p>
-<h3 id="虚拟局域网vlanvirtual-local-area-network">2.6
-虚拟局域网VLAN<span class="math inline">\((Virtual \ Local \
-Area\  Network)\)</span></h3>
+<p><strong>使用交换机的以太网不会产生冲突，也就不使用$CSMA/CD$协议。<strong>不像总线网那样工作在半双工模式，以太交换网工作在</strong>全双工模式</strong>。但是<strong>帧的结构</strong>没有改变。</p>
+<h3 id="2-6-虚拟局域网VLAN-Virtual-Local-Area-Network">2.6 虚拟局域网VLAN$(Virtual \ Local \ Area\  Network)$</h3>
 <blockquote>
 <p>利用<strong>交换机</strong>可以很简单地做到<strong>VLAN</strong>。</p>
 </blockquote>
 <blockquote>
-<p>定义<span class="math inline">\(2.6.1\)</span>
-<strong>虚拟局域网VLAN</strong>是由一些局域网网段构成的与物理位置无关的<strong>逻辑组。</strong>这些网段往往有某些共同的特性或者需求。<strong>每一个VLAN的帧都有标识符，标识该帧来自于何处。</strong></p>
+<p>定义$2.6.1$ <strong>虚拟局域网VLAN</strong>是由一些局域网网段构成的与物理位置无关的**逻辑组。**这些网段往往有某些共同的特性或者需求。<strong>每一个VLAN的帧都有标识符，标识该帧来自于何处。</strong></p>
 <p><font color="red">虚拟局域网只是局域网提供的一种服务，而不是真正的新型网络。</font></p>
 </blockquote>
 <p><strong>虚拟局域网</strong>中的每一个成员都可以听到来自该虚拟局域网中另一台主机的<strong>广播</strong>。但是非该虚拟局域网中的成员听不到。通过限制广播的范围，能够网络不会因为传播过多的广播信息而造成<strong>广播风暴</strong>。</p>
-<p>支持虚拟局域网的方式是<strong>在数据帧中插入4个字节的<span
-class="math inline">\(VLAN\)</span>标志</strong>。</p>
-<p><img src="/img/CN/ch3_9.png" /></p>
-<p><strong>前两个字节一定是<span class="math inline">\(0\)</span>x<span
-class="math inline">\(8100\)</span></strong>，当接收方检测到<span
-class="math inline">\(0\)</span>x<span
-class="math inline">\(8100\)</span>时就知晓该帧是<strong>VLAN帧</strong>。</p>
-<p>接着前<span
-class="math inline">\(3\)</span>位是<strong>用户优先级</strong>标识符，接着是<strong>规范格式指示符(Canonical
-Format Indicator)</strong>，最后的<span
-class="math inline">\(12\)</span>位是<span
-class="math inline">\(VLAN\)</span>标识符，标识该虚拟局域网的<strong>VID</strong>，唯一标识该以太网帧属于哪一个虚拟局域网。</p>
+<p>支持虚拟局域网的方式是<strong>在数据帧中插入4个字节的$VLAN$标志</strong>。</p>
+<p><img src="/img/CN/ch3_9.png" alt=""></p>
+<p><strong>前两个字节一定是$0$x$8100$</strong>，当接收方检测到$0$x$8100$时就知晓该帧是<strong>VLAN帧</strong>。</p>
+<p>接着前$3$位是<strong>用户优先级</strong>标识符，接着是<strong>规范格式指示符(Canonical Format Indicator)</strong>，最后的$12$位是$VLAN$标识符，标识该虚拟局域网的<strong>VID</strong>，唯一标识该以太网帧属于哪一个虚拟局域网。</p>
 <blockquote>
-<p>加入该<span
-class="math inline">\(4\)</span>字节后，以太网帧的最大帧长变为$ 18 +
-1500 + 4 = 1522$字节。</p>
+<p>加入该$4$字节后，以太网帧的最大帧长变为$ 18 + 1500 + 4 = 1522$字节。</p>
 </blockquote>
-<h3 id="高速以太网">2.7 高速以太网</h3>
+<h3 id="2-7-高速以太网">2.7 高速以太网</h3>
 <blockquote>
-<p><span class="math inline">\(100BASE-T\)</span>指的是<span
-class="math inline">\(100Mbit/s\)</span>，<font color="red">Base表示传输的是基带信号</font>，<font color="blue">T表示传输的介质是双绞线（F表示是光纤)</font></p>
-<p><span class="math inline">\(100BASE-F\)</span></p>
+<p>$100BASE-T$指的是$100Mbit/s$，<font color="red">Base表示传输的是基带信号</font>，<font color="blue">T表示传输的介质是双绞线（F表示是光纤)</font></p>
+<p>$100BASE-F$</p>
 </blockquote>
 
         

@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="1. 集合的概念以及表示 1.1 集合的概念  定义\(1.1.1\) 一个集合是能作为整体进行论述的事物的集体。又被称为族，类，搜集。   定义\(1.1.2\) 组成集合中的每个事物叫做这个集合的元素或者成员。   定义\(1.1.3\) 集合元素的个数叫做该集合的基数或者势。集合\(A\)的势记为\(|A|\)。基数有限的集合叫做有限集合，否则是无穷集合或者无穷集。">
+  <meta name="description" content="1. 集合的概念以及表示 1.1 集合的概念  定义$1.1.1$ 一个集合是能作为整体进行论述的事物的集体。又被称为族，类，搜集。   定义$1.1.2$ 组成集合中的每个事物叫做这个集合的元素或者成员。   定义$1.1.3$ 集合元素的个数叫做该集合的基数或者势。集合$A$的势记为$|A|$。基数有限的集合叫做有限集合，否则是无穷集合或者无穷集。  1.2 集合的表示方法 1.2.1 列举法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="离散数学 Ch2: 集合">
 <meta property="og:url" content="http://blog.fragments.work/2024/04/18/discreteMathmatics/Ch2_%E9%9B%86%E5%90%88/index.html">
 <meta property="og:site_name" content="Fragments&#39; Blog">
-<meta property="og:description" content="1. 集合的概念以及表示 1.1 集合的概念  定义\(1.1.1\) 一个集合是能作为整体进行论述的事物的集体。又被称为族，类，搜集。   定义\(1.1.2\) 组成集合中的每个事物叫做这个集合的元素或者成员。   定义\(1.1.3\) 集合元素的个数叫做该集合的基数或者势。集合\(A\)的势记为\(|A|\)。基数有限的集合叫做有限集合，否则是无穷集合或者无穷集。">
+<meta property="og:description" content="1. 集合的概念以及表示 1.1 集合的概念  定义$1.1.1$ 一个集合是能作为整体进行论述的事物的集体。又被称为族，类，搜集。   定义$1.1.2$ 组成集合中的每个事物叫做这个集合的元素或者成员。   定义$1.1.3$ 集合元素的个数叫做该集合的基数或者势。集合$A$的势记为$|A|$。基数有限的集合叫做有限集合，否则是无穷集合或者无穷集。  1.2 集合的表示方法 1.2.1 列举法">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.fragments.work/img/covers/lisan.jpg">
 <meta property="article:published_time" content="2024-04-18T13:37:49.000Z">
@@ -153,7 +153,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
-                <div class="category-count">11</div>
+                <div class="category-count">13</div>
             </a>
         </div>
     </div>
@@ -198,15 +198,9 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/04/30/discreteMathmatics/Ch3_%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB/" title="" >
+          <a class="recent-link" href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" title="计算机视觉: 第5章特征检测与描述" >
             <div class="recent-link-text">
-              (no title)
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" title="" >
-            <div class="recent-link-text">
-              (no title)
+              计算机视觉: 第5章特征检测与描述
             </div>
           </a>
         
@@ -228,6 +222,12 @@
             </div>
           </a>
         
+          <a class="recent-link" href="/2024/04/18/discreteMathmatics/Ch2_%E9%9B%86%E5%90%88/" title="离散数学 Ch2: 集合" >
+            <div class="recent-link-text">
+              离散数学 Ch2: 集合
+            </div>
+          </a>
+        
       </ul>
     </div>
   </div>
@@ -246,7 +246,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clvmc26se001aw4wa5whnf7xy">
+      <a class="article-gallery-img" rel="gallery_clvmc9ewo001esowahxdr9dra">
         <img src="/img/covers/lisan.jpg" itemprop="image">
       </a>
     
@@ -282,7 +282,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            3.3k 词 
+            3.1k 词 
           </div>
         </div>
         
@@ -291,222 +291,186 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="集合的概念以及表示">1. 集合的概念以及表示</h1>
-<h2 id="集合的概念">1.1 集合的概念</h2>
+          <h1>1. 集合的概念以及表示</h1>
+<h2 id="1-1-集合的概念">1.1 集合的概念</h2>
 <blockquote>
-<p>定义<span class="math inline">\(1.1.1\)</span>
-一个<strong>集合</strong>是能作为整体进行论述的事物的集体。又被称为<strong>族</strong>，<strong>类</strong>，<strong>搜集</strong>。</p>
+<p>定义$1.1.1$ 一个<strong>集合</strong>是能作为整体进行论述的事物的集体。又被称为<strong>族</strong>，<strong>类</strong>，<strong>搜集</strong>。</p>
 </blockquote>
 <blockquote>
-<p>定义<span class="math inline">\(1.1.2\)</span>
-组成集合中的每个事物叫做这个集合的<strong>元素</strong>或者<strong>成员</strong>。</p>
+<p>定义$1.1.2$ 组成集合中的每个事物叫做这个集合的<strong>元素</strong>或者<strong>成员</strong>。</p>
 </blockquote>
 <blockquote>
-<p>定义<span class="math inline">\(1.1.3\)</span>
-集合元素的个数叫做该集合的<strong>基数</strong>或者<strong>势</strong>。集合<span
-class="math inline">\(A\)</span>的势记为<span
-class="math inline">\(|A|\)</span>。<strong>基数</strong>有限的集合叫做<strong>有限集合</strong>，否则是<strong>无穷集合或者无穷集</strong>。</p>
+<p>定义$1.1.3$ 集合元素的个数叫做该集合的<strong>基数</strong>或者<strong>势</strong>。集合$A$的势记为$|A|$。<strong>基数</strong>有限的集合叫做<strong>有限集合</strong>，否则是<strong>无穷集合或者无穷集</strong>。</p>
 </blockquote>
-<h2 id="集合的表示方法">1.2 集合的表示方法</h2>
-<h3 id="列举法">1.2.1 列举法</h3>
-<p>直接<strong>枚举</strong>: <span class="math display">\[
-A = \{1,2,3\}
-\]</span> <font color="red">注意：</font></p>
-<ol type="1">
-<li>元素的位置无关紧要，比如<span class="math inline">\(\{1,2,3\} =
-\{3,1,2\}\)</span></li>
-<li>元素可以重复出现，<span class="math inline">\(\{1,2,3\} =
-\{1,1,2,2,3,3\}\)</span></li>
+<h2 id="1-2-集合的表示方法">1.2 集合的表示方法</h2>
+<h3 id="1-2-1-列举法">1.2.1 列举法</h3>
+<p>直接<strong>枚举</strong>:<br>
+$$<br>
+A = {1,2,3}<br>
+$$<br>
+<font color="red">注意：</font></p>
+<ol>
+<li>元素的位置无关紧要，比如${1,2,3} = {3,1,2}$</li>
+<li>元素可以重复出现，${1,2,3} = {1,1,2,2,3,3}$</li>
 </ol>
-<h3 id="描述法">1.2.2 描述法</h3>
-<p>描述具体性质： <span class="math display">\[
-A = \{x |y\in I \wedge x = 2y\}
-\]</span> 集合的表示也不唯一。</p>
-<h2 id="集合的关系">1.3 集合的关系</h2>
-<p>没有元素的集合叫做<strong>空集<span
-class="math inline">\(\varnothing\)</span></strong>，论述域集合叫做<strong>全集<span
-class="math inline">\(U\)</span>​</strong>。</p>
+<h3 id="1-2-2-描述法">1.2.2 描述法</h3>
+<p>描述具体性质：<br>
+$$<br>
+A = {x |y\in I \wedge x = 2y}<br>
+$$<br>
+集合的表示也不唯一。</p>
+<h2 id="1-3-集合的关系">1.3 集合的关系</h2>
+<p>没有元素的集合叫做<strong>空集$\varnothing$</strong>，论述域集合叫做<strong>全集$U$​</strong>。</p>
 <p><strong>空集是唯一的</strong>。</p>
-<h3 id="集合相等">1.3.1 集合相等</h3>
+<h3 id="1-3-1-集合相等">1.3.1 集合相等</h3>
 <blockquote>
-<p>定理<span class="math inline">\(1.3.1\)</span> <strong>外延公理:
-</strong>两个集合相等当且仅当它们拥有相同的成员，即:</p>
+<p>定理$1.3.1$ **外延公理: **两个集合相等当且仅当它们拥有相同的成员，即:</p>
 </blockquote>
-<p><span class="math display">\[
-A = B \Leftrightarrow \forall x(x\in A \to x\in B) \wedge \forall x(x
-\in B \to x \in A)
-\]</span></p>
-<h3 id="集合包含">1.3.2 集合包含</h3>
-<p><span class="math display">\[
-\begin{align}
-A \subseteq B &amp;\Leftrightarrow \forall x(x\in A \to x\in B)
-&amp;A是B的子集，B是A的扩集\\
-A \subset B &amp;\Leftrightarrow \forall x(x\in A \to x\in B) \wedge
-\exists x (x\in B \wedge x\notin A) &amp;A是B的真子集
-\end{align}
-\]</span></p>
-<p>对于任何集合<span class="math inline">\(A\)</span>: <span
-class="math display">\[
-\varnothing \subseteq A , A \subseteq U
-\]</span></p>
-<h2 id="罗素悖论">1.4 罗素悖论</h2>
-<p>定义集合: <span class="math display">\[
-S = \{A|A \notin A\}
-\]</span> 问<span class="math inline">\(S\)</span>是否是<span
-class="math inline">\(S\)</span>本身的元素？</p>
+<p>$$<br>
+A = B \Leftrightarrow \forall x(x\in A \to x\in B) \wedge \forall x(x \in B \to x \in A)<br>
+$$</p>
+<h3 id="1-3-2-集合包含">1.3.2 集合包含</h3>
+<p>$$<br>
+\begin{align}<br>
+A \subseteq B &amp;\Leftrightarrow \forall x(x\in A \to x\in B) &amp;A是B的子集，B是A的扩集\<br>
+A \subset B &amp;\Leftrightarrow \forall x(x\in A \to x\in B) \wedge \exists x (x\in B \wedge x\notin A) &amp;A是B的真子集<br>
+\end{align}<br>
+$$</p>
+<p>对于任何集合$A$:<br>
+$$<br>
+\varnothing \subseteq A , A \subseteq U<br>
+$$</p>
+<h2 id="1-4-罗素悖论">1.4 罗素悖论</h2>
+<p>定义集合:<br>
+$$<br>
+S = {A|A \notin A}<br>
+$$<br>
+问$S$是否是$S$本身的元素？</p>
 <blockquote>
-<p>定义<span class="math inline">\(1.4.1\)</span> 如果集合<span
-class="math inline">\(S\)</span>会引起矛盾，则称集合<span
-class="math inline">\(S\)</span>是非<strong>良定</strong>的。</p>
+<p>定义$1.4.1$ 如果集合$S$会引起矛盾，则称集合$S$是非<strong>良定</strong>的。</p>
 </blockquote>
-<h1 id="集合运算">2. 集合运算</h1>
-<h2 id="基本运算">2.1 基本运算:</h2>
-<h3 id="cup">2.1.1 <span class="math inline">\(\cup\)</span></h3>
-<p><span class="math display">\[
-A \cup B = \{x|x\in A \vee x \in B\}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}
-A \cup A &amp;= A \\
-A \cup \varnothing &amp;= A \\
-A &amp;\subseteq A \cup B \\
-A\cup B &amp;= B \cup A \\
-(A\cup B)\cup C &amp;= A \cup (B \cup C)
-\end{align}
-\]</span></p>
-<h3 id="cap">2.1.2 <span class="math inline">\(\cap\)</span></h3>
-<p><span class="math display">\[
-A \cap B = \{x|x \in A \wedge x \in B\}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}
-A \cap A &amp;= A \\
-A \cap \varnothing &amp;= \varnothing \\
-A \cap B &amp;\subseteq A \\
-A\cap B &amp;= B \cap A \\
-(A\cap B)\cap C &amp;= A \cap (B \cap C)
-\end{align}
-\]</span></p>
-<h3 id="section">2.1.3 <span class="math inline">\(-\)</span>​</h3>
-<p><span class="math display">\[
-A - B = \{x|x\in A \wedge x\notin B\}
-\]</span></p>
-<p><span class="math display">\[
-\overline{A} = U - A = \{x|x\in U \wedge x \notin  A\}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}
-A \cup \overline{A}=U \\
-A \cap \overline{A}=\varnothing \\
-\overline{\varnothing} = U\\
-\overline{U} = \varnothing
-\end{align}
-\]</span></p>
-<h2 id="成员并和成员交">2.2 成员并和成员交</h2>
-<h3 id="索引集合">2.2.0 索引集合</h3>
+<h1>2. 集合运算</h1>
+<h2 id="2-1-基本运算">2.1 基本运算:</h2>
+<h3 id="2-1-1-cup">2.1.1 $\cup$</h3>
+<p>$$<br>
+A \cup B = {x|x\in A \vee x \in B}<br>
+$$</p>
+<p>$$<br>
+\begin{align}<br>
+A \cup A &amp;= A \<br>
+A \cup \varnothing &amp;= A \<br>
+A &amp;\subseteq A \cup B \<br>
+A\cup B &amp;= B \cup A \<br>
+(A\cup B)\cup C &amp;= A \cup (B \cup C)<br>
+\end{align}<br>
+$$</p>
+<h3 id="2-1-2-cap">2.1.2 $\cap$</h3>
+<p>$$<br>
+A \cap B = {x|x \in A \wedge x \in B}<br>
+$$</p>
+<p>$$<br>
+\begin{align}<br>
+A \cap A &amp;= A \<br>
+A \cap \varnothing &amp;= \varnothing \<br>
+A \cap B &amp;\subseteq A \<br>
+A\cap B &amp;= B \cap A \<br>
+(A\cap B)\cap C &amp;= A \cap (B \cap C)<br>
+\end{align}<br>
+$$</p>
+<h3 id="2-1-3-​">2.1.3 $-$​</h3>
+<p>$$<br>
+A - B = {x|x\in A \wedge x\notin B}<br>
+$$</p>
+<p>$$<br>
+\overline{A} = U - A = {x|x\in U \wedge x \notin  A}<br>
+$$</p>
+<p>$$<br>
+\begin{align}<br>
+A \cup \overline{A}=U \<br>
+A \cap \overline{A}=\varnothing \<br>
+\overline{\varnothing} = U\<br>
+\overline{U} = \varnothing<br>
+\end{align}<br>
+$$</p>
+<h2 id="2-2-成员并和成员交">2.2 成员并和成员交</h2>
+<h3 id="2-2-0-索引集合">2.2.0 索引集合</h3>
 <blockquote>
-<p>定义<span class="math inline">\(2.2.1\)</span> 若集合<span
-class="math inline">\(D\)</span>中的每一个元素<span
-class="math inline">\(d\)</span>都确定一个集合<span
-class="math inline">\(A_d\)</span>，则称<span
-class="math inline">\(d\)</span>是集合<span
-class="math inline">\(A_d\)</span>的<strong>索引</strong>，</p>
-<p>定义<span class="math inline">\(2.2.2\)</span> 若集合<span
-class="math inline">\(C = \{A_d|d\in D\}\)</span>，则<span
-class="math inline">\(C\)</span>为一个<strong>带索引搜集(带索引集合)</strong>。<span
-class="math inline">\(D\)</span>称为<strong>搜集的索引集合</strong>。</p>
+<p>定义$2.2.1$ 若集合$D$中的每一个元素$d$都确定一个集合$A_d$，则称$d$是集合$A_d$的<strong>索引</strong>，</p>
+<p>定义$2.2.2$ 若集合$C = {A_d|d\in D}$，则$C$为一个<strong>带索引搜集(带索引集合)</strong>。$D$称为<strong>搜集的索引集合</strong>。</p>
 </blockquote>
-<h3 id="成员并">2.2.1 成员并</h3>
+<h3 id="2-2-1-成员并">2.2.1 成员并</h3>
 <blockquote>
-<p>定义<span class="math inline">\(2.2.3\)</span> 集合<span
-class="math inline">\(C\)</span>的成员并： <span class="math display">\[
-\mathop{\cup}_{S\in C}S = \{x|\exists S(S\in C \wedge x \in S)\}
-\]</span> 如果<span
-class="math inline">\(C\)</span>为一个带索引集合，<span
-class="math inline">\(D\)</span>为其索引集合，则: <span
-class="math display">\[
-\mathop{\cup}_{S\in C}S = \mathop{\cup}_{d\in D}A_d
-\]</span></p>
+<p>定义$2.2.3$  集合$C$的成员并：<br>
+$$<br>
+\mathop{\cup}<em>{S\in C}S = {x|\exists S(S\in C \wedge x \in S)}<br>
+$$<br>
+如果$C$为一个带索引集合，$D$为其索引集合，则:<br>
+$$<br>
+\mathop{\cup}</em>{S\in C}S = \mathop{\cup}_{d\in D}A_d<br>
+$$</p>
 </blockquote>
-<p>### 2.2.2 成员交</p>
+<h3 id="2-2-2-成员交">2.2.2 成员交</h3>
 <blockquote>
-<p>定义<span class="math inline">\(2.2.4\)</span> 集合<span
-class="math inline">\(C\)</span>的成员交: <span class="math display">\[
-\mathop{\cap}_{S\in C} S = \{x|\forall S(S \in C \to x \in S)\}
-\]</span> 如果<span
-class="math inline">\(C\)</span>为一个带索引集合，<span
-class="math inline">\(D\)</span>为其索引集合，则: <span
-class="math display">\[
-\mathop{\cap}_{S\in C} S = \mathop{\cap}_{d \in D} A_d
-\]</span></p>
+<p>定义$2.2.4$ 集合$C$的成员交:<br>
+$$<br>
+\mathop{\cap}<em>{S\in C} S = {x|\forall S(S \in C \to x \in S)}<br>
+$$<br>
+如果$C$为一个带索引集合，$D$为其索引集合，则:<br>
+$$<br>
+\mathop{\cap}</em>{S\in C} S = \mathop{\cap}_{d \in D} A_d<br>
+$$</p>
 </blockquote>
-<h3 id="环和">2.2.3 环和</h3>
-<p><span class="math display">\[
-\begin{align}
-A \oplus B &amp;= (A\cap \overline{B}) \cup (\overline{A} \cap B) \\
-&amp;=(A - B) \cup (B - A) \\
-&amp;= U \cap (A\cup B) \cap (\overline{B} \cup \overline{A}) \cap
-U   \\
-&amp;= (A\cup B) \cap (\overline{A} \cup \overline{B})\\
-\end{align}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}
-A \oplus B &amp;= B \oplus A \\
-\overline{A} \oplus \overline{B} &amp;= A \oplus B \\
-A \oplus (B \oplus C) &amp;= (A \oplus B) \oplus C \\
-A \cap (B \oplus C) &amp;= (A \cap B) \oplus (A \cap C) \
-交在环和上的分配律
-\end{align}
-\]</span></p>
-<h3 id="环积">2.2.4 环积</h3>
-<p><span class="math display">\[
-\begin{align}
-A \otimes B &amp;= \overline{A \oplus B} = \{ x| x \in A \wedge x \in B
-\vee x \notin A \wedge x \notin B\} \\
-&amp;= A\cap B \cup \overline{A} \cap \overline{B} \\
-\end{align}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}
-A \otimes B &amp;= B \otimes A \\
-A \otimes B &amp;= \overline{A} \otimes \overline{B} \\
-A \otimes A &amp;= U\\
-A \otimes (B \otimes C) &amp;= (A \otimes B) \otimes C \\
-A \cup (B \otimes C) &amp;= (A \cup B) \otimes (A \cup C)
-并在环积上的分配律
-\end{align}
-\]</span></p>
-<h3 id="幂集">2.2.5 幂集</h3>
+<h3 id="2-2-3-环和">2.2.3 环和</h3>
+<p>$$<br>
+\begin{align}<br>
+A \oplus B &amp;= (A\cap \overline{B}) \cup (\overline{A} \cap B) \<br>
+&amp;=(A - B) \cup (B - A) \<br>
+&amp;= U \cap (A\cup B) \cap (\overline{B} \cup \overline{A}) \cap U   \<br>
+&amp;= (A\cup B) \cap (\overline{A} \cup \overline{B})\<br>
+\end{align}<br>
+$$</p>
+<p>$$<br>
+\begin{align}<br>
+A \oplus B &amp;= B \oplus A \<br>
+\overline{A} \oplus \overline{B} &amp;= A \oplus B \<br>
+A \oplus (B \oplus C) &amp;= (A \oplus B) \oplus C \<br>
+A \cap (B \oplus C) &amp;= (A \cap B) \oplus (A \cap C) \ 交在环和上的分配律<br>
+\end{align}<br>
+$$</p>
+<h3 id="2-2-4-环积">2.2.4 环积</h3>
+<p>$$<br>
+\begin{align}<br>
+A \otimes B &amp;= \overline{A \oplus B} = { x| x \in A \wedge x \in B \vee x \notin A \wedge x \notin B} \<br>
+&amp;= A\cap B \cup \overline{A} \cap \overline{B} \<br>
+\end{align}<br>
+$$</p>
+<p>$$<br>
+\begin{align}<br>
+A \otimes B &amp;= B \otimes A \<br>
+A \otimes B &amp;= \overline{A} \otimes \overline{B} \<br>
+A \otimes A &amp;= U\<br>
+A \otimes (B \otimes C) &amp;= (A \otimes B) \otimes C \<br>
+A \cup (B \otimes C) &amp;= (A \cup B) \otimes (A \cup C) 并在环积上的分配律<br>
+\end{align}<br>
+$$</p>
+<h3 id="2-2-5-幂集">2.2.5 幂集</h3>
 <blockquote>
-<p>定义<span class="math inline">\(2.2.5\)</span> 幂集<span
-class="math inline">\(\rho(A) = \{B|B\subseteq A\}\)</span></p>
+<p>定义$2.2.5$ 幂集$\rho(A) = {B|B\subseteq A}$</p>
 </blockquote>
 <blockquote>
-<p><font color="red"><span
-class="math inline">\(\varnothing\)</span>的的幂集<span
-class="math inline">\(\rho(\varnothing) =
-\{\varnothing\}。\)</span></font></p>
+<p><font color="red">$\varnothing$的的幂集$\rho(\varnothing) = {\varnothing}。$</font></p>
 </blockquote>
 <blockquote>
-<p><span class="math inline">\(n\)</span>个元素的集合<span
-class="math inline">\(A\)</span>的幂集<span
-class="math inline">\(\rho(A)\)</span>中元素个数为<span
-class="math inline">\(2^n\)</span>。如果集合<span
-class="math inline">\(A\)</span>的元素个数为无限个，那么幂集<span
-class="math inline">\(\rho(A)\)</span>的元素个数也是无限的。</p>
+<p>$n$个元素的集合$A$的幂集$\rho(A)$中元素个数为$2^n$。如果集合$A$的元素个数为无限个，那么幂集$\rho(A)$的元素个数也是无限的。</p>
 </blockquote>
-<h3 id="集合基数的运算">2.2.6 集合基数的运算</h3>
-<p><span class="math display">\[
-\begin{align}
-|A - B| &amp;\ge |A| - |B| \ 等号成立条件是B \subseteq A\\
-|A\cup B| &amp;= |A| + |B| - |A\cap B| =&gt;   |\mathop{\cap}_{i=1}^n
-A_i| = \sum_{i=1}^{n}|A_i| - \sum_{1\le i &lt; j \le n}|A_i\cap
-A_j|  +\sum_{1 &lt; i &lt; j &lt; k \le n}|A_i \cap A_j \cap A_k|
-\cdots\\
-|A \oplus B| &amp;= |A \cup B - A \cap B| = |A|+|B| - 2*|A\cap B|
-\end{align}
-\]</span></p>
+<h3 id="2-2-6-集合基数的运算">2.2.6 集合基数的运算</h3>
+<p>$$<br>
+\begin{align}<br>
+|A - B| &amp;\ge |A| - |B| \ 等号成立条件是B \subseteq A\<br>
+|A\cup B| &amp;= |A| + |B| - |A\cap B| =&gt;   |\mathop{\cap}<em>{i=1}^n A_i| = \sum</em>{i=1}^{n}|A_i| - \sum_{1\le i &lt; j \le n}|A_i\cap A_j|  +\sum_{1 &lt; i &lt; j &lt; k \le n}|A_i \cap A_j \cap A_k| \cdots\<br>
+|A \oplus B| &amp;= |A \cup B - A \cap B| = |A|+|B| - 2*|A\cap B|<br>
+\end{align}<br>
+$$</p>
 
         
       </div>
@@ -533,13 +497,13 @@ A_j|  +\sum_{1 &lt; i &lt; j &lt; k \le n}|A_i \cap A_j \cap A_k|
   </a>
   <a class="article-nav-btn right "
     
-      href="/2024/04/18/discreteMathmatics/Ch1_%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/"
-      title="离散数学第一章: 数理逻辑"
+      href="/2024/04/18/discreteMathmatics/Ch3_%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB/"
+      title="离散数学 Ch3: 二元关系"
      >
 
     <p class="title-text">
       
-        离散数学第一章: 数理逻辑
+        离散数学 Ch3: 二元关系
         
     </p>
     <i class="fa-solid fa-angle-right"></i>

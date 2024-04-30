@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.fragments.work/2024/04/18/discreteMathmatics/Ch3_%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB/</loc>
+    
+    <lastmod>2024-04-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fragments.work/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</loc>
+    
+    <lastmod>2024-04-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.fragments.work/2024/04/23/PrincipleofCompiling/Ch4/</loc>
     
     <lastmod>2024-04-30</lastmod>
@@ -12,24 +30,6 @@
   
   <url>
     <loc>http://blog.fragments.work/2024/03/17/PrincipleofCompiling/Ch3/</loc>
-    
-    <lastmod>2024-04-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fragments.work/2024/04/30/discreteMathmatics/Ch3_%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB/</loc>
-    
-    <lastmod>2024-04-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fragments.work/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</loc>
     
     <lastmod>2024-04-30</lastmod>
     
@@ -198,14 +198,14 @@
   </url>
   
   <url>
-    <loc>http://blog.fragments.work/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
+    <loc>http://blog.fragments.work/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
     <lastmod>2024-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.fragments.work/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <loc>http://blog.fragments.work/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2024-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

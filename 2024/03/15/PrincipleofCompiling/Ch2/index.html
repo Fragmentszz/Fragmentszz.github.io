@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="Ch2: 文法和语言  一门高级语言是一个记号系统，需要定义语言和语义两部分。  1. 符号串上的运算: 1.0 符号串的长度 \(x\)为一串，则\(|x|\)为\(x\)所占字符表中，字符的个数 1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀 若\(z &#x3D; xy\)，则\(x\)为\(z\)的头(前缀)，注意\(x\)可以为\(\varepsilon\) \">
+  <meta name="description" content="Ch2: 文法和语言  一门高级语言是一个记号系统，需要定义语言和语义两部分。  1. 符号串上的运算: 1.0 符号串的长度 $x$为一串，则$|x|$为$x$所占字符表中，字符的个数 1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀 若$z &#x3D; xy$，则$x$为$z$的头(前缀)，注意$x$可以为$\varepsilon$ $x$为$z$的头，且$x \ne z$，则$x$为$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理：文法、句型、句子、语言和文法的类型">
 <meta property="og:url" content="http://blog.fragments.work/2024/03/15/PrincipleofCompiling/Ch2/index.html">
 <meta property="og:site_name" content="Fragments&#39; Blog">
-<meta property="og:description" content="Ch2: 文法和语言  一门高级语言是一个记号系统，需要定义语言和语义两部分。  1. 符号串上的运算: 1.0 符号串的长度 \(x\)为一串，则\(|x|\)为\(x\)所占字符表中，字符的个数 1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀 若\(z &#x3D; xy\)，则\(x\)为\(z\)的头(前缀)，注意\(x\)可以为\(\varepsilon\) \">
+<meta property="og:description" content="Ch2: 文法和语言  一门高级语言是一个记号系统，需要定义语言和语义两部分。  1. 符号串上的运算: 1.0 符号串的长度 $x$为一串，则$|x|$为$x$所占字符表中，字符的个数 1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀 若$z &#x3D; xy$，则$x$为$z$的头(前缀)，注意$x$可以为$\varepsilon$ $x$为$z$的头，且$x \ne z$，则$x$为$">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.fragments.work/img/covers/PrinciplesofCompilation.jpg">
 <meta property="article:published_time" content="2024-03-15T14:09:29.000Z">
@@ -153,7 +153,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
-                <div class="category-count">11</div>
+                <div class="category-count">13</div>
             </a>
         </div>
     </div>
@@ -198,15 +198,9 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/04/30/discreteMathmatics/Ch3_%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB/" title="" >
+          <a class="recent-link" href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" title="计算机视觉: 第5章特征检测与描述" >
             <div class="recent-link-text">
-              (no title)
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" title="" >
-            <div class="recent-link-text">
-              (no title)
+              计算机视觉: 第5章特征检测与描述
             </div>
           </a>
         
@@ -228,6 +222,12 @@
             </div>
           </a>
         
+          <a class="recent-link" href="/2024/04/18/discreteMathmatics/Ch2_%E9%9B%86%E5%90%88/" title="离散数学 Ch2: 集合" >
+            <div class="recent-link-text">
+              离散数学 Ch2: 集合
+            </div>
+          </a>
+        
       </ul>
     </div>
   </div>
@@ -246,7 +246,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clvmc26s6000iw4wa5x56hros">
+      <a class="article-gallery-img" rel="gallery_clvmc9ewh000psowa08019p9t">
         <img src="/img/covers/PrinciplesofCompilation.jpg" itemprop="image">
       </a>
     
@@ -282,7 +282,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            5.5k 词 
+            5.2k 词 
           </div>
         </div>
         
@@ -291,432 +291,332 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="ch2-文法和语言">Ch2: 文法和语言</h1>
+          <h1>Ch2: 文法和语言</h1>
 <blockquote>
 <p>一门高级语言是一个记号系统，需要定义语言和语义两部分。</p>
 </blockquote>
-<h2 id="符号串上的运算">1. 符号串上的运算:</h2>
-<h3 id="符号串的长度">1.0 符号串的长度</h3>
-<p><span class="math inline">\(x\)</span>为一串，则<span
-class="math inline">\(|x|\)</span>为<span
-class="math inline">\(x\)</span>所占字符表中，字符的个数</p>
-<h3 id="符号串的固有头和固有尾真前缀和真后缀">1.1
-符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀</h3>
-<p>若<span class="math inline">\(z = xy\)</span>，则<span
-class="math inline">\(x\)</span>为<span
-class="math inline">\(z\)</span>的头(前缀)，注意<span
-class="math inline">\(x\)</span>可以为<font color="red"><span
-class="math inline">\(\varepsilon\)</span></font></p>
-<p><span class="math inline">\(x\)</span>为<span
-class="math inline">\(z\)</span>的头，且<span class="math inline">\(x
-\ne z\)</span>，则<span class="math inline">\(x\)</span>为<span
-class="math inline">\(z\)</span>的固有头/真前缀</p>
-<h3 id="符号串的连接">1.2 符号串的连接。</h3>
-<p><span class="math inline">\(x\)</span>,<span
-class="math inline">\(y\)</span>为两个符号串,<span
-class="math inline">\(z = xy\)</span>，<span class="math inline">\(|z| =
-|x| + |y|\)</span> <span class="math display">\[
-x = \varepsilon x=x \varepsilon
-\]</span></p>
-<h3 id="符号串的方幂">1.3 符号串的方幂</h3>
-<p><span class="math inline">\(x^n\)</span>表示将串<span
-class="math inline">\(x\)</span>重复连接<span
-class="math inline">\(n\)</span>次 <span class="math display">\[
-x^0=\varepsilon \\ x^mx^{n-m}=x^{n-m}x^m=x^n,\quad n\ge m
-\]</span></p>
-<h3 id="符号串集">1.4 符号串集</h3>
+<h2 id="1-符号串上的运算">1. 符号串上的运算:</h2>
+<h3 id="1-0-符号串的长度">1.0 符号串的长度</h3>
+<p>$x$为一串，则$|x|$为$x$所占字符表中，字符的个数</p>
+<h3 id="1-1-符号串的-固有-头和-固有-尾，-真-前缀和-真-后缀">1.1 符号串的(固有)头和(固有)尾，(真)前缀和(真)后缀</h3>
+<p>若$z = xy$，则$x$为$z$的头(前缀)，注意$x$可以为<font color="red">$\varepsilon$</font></p>
+<p>$x$为$z$的头，且$x \ne z$，则$x$为$z$的固有头/真前缀</p>
+<h3 id="1-2-符号串的连接。">1.2 符号串的连接。</h3>
+<p>$x$,$y$为两个符号串,$z = xy$，$|z| = |x| + |y|$<br>
+$$<br>
+x = \varepsilon x=x \varepsilon<br>
+$$</p>
+<h3 id="1-3-符号串的方幂">1.3 符号串的方幂</h3>
+<p>$x^n$表示将串$x$重复连接$n$次<br>
+$$<br>
+x^0=\varepsilon \ x^mx^{n-m}=x^{n-m}x^m=x^n,\quad n\ge m<br>
+$$</p>
+<h3 id="1-4-符号串集">1.4 符号串集</h3>
 <blockquote>
-<p>定义: 如果集合<span class="math inline">\(&lt;span
-class=&quot;md-search-hit&quot;&gt;A&lt;/span&gt;\)</span>中所有的元素都是定义在符号表$<span
-class="math inline">\(上的符号串，则称集合\)</span><span
-class="md-search-hit">A</span><span
-class="math inline">\(为定义在字符表\)</span> $的符号串集合</p>
+<p>定义: 如果集合$<span class="md-search-hit">A</span>$中所有的元素都是定义在符号表$\Sigma $上的符号串，则称集合$<span class="md-search-hit">A</span>$为定义在字符表$ \Sigma $的符号串集合</p>
 </blockquote>
 <blockquote>
-<p>定义两个符号串的乘积: <span class="math inline">\(A \times B =
-\{xy|x\in A,y \in B\}\)</span></p>
+<p>定义两个符号串的乘积: $A \times B = {xy|x\in A,y \in B}$</p>
 </blockquote>
-<p><span class="math display">\[
-\{\varepsilon\} \times A = A
-\]</span></p>
-<p>已有符号集<span
-class="math inline">\(\Sigma\)</span>,根据集合乘积的定义，可得到集合的方幂<span
-class="math inline">\(\Sigma^n\)</span></p>
-<p>其中: <span class="math display">\[
-\Sigma^0 = {\varepsilon}
-\]</span> 定义闭包: <span class="math display">\[
-\Sigma^*=\Sigma^0 \cup \Sigma^1 \cup \Sigma^2 \cup \Sigma^3 \cup ...
-\]</span> 定义正闭包: <span class="math display">\[
-\Sigma^+=\Sigma^1 \cup \Sigma^2 \cup \Sigma^3 \cup ...
-\]</span></p>
-<p><span class="math display">\[
-\Sigma ^* = \Sigma^+ \cup \Sigma^0 \\
-\Sigma ^+ = \Sigma^\ \times \Sigma^*
-\]</span></p>
-<h2 id="文法的定义-v_nv_tps">2. 文法的定义: (<span
-class="math inline">\(V_N,V_T,P,S\)</span>)</h2>
+<p>$$<br>
+{\varepsilon} \times A = A<br>
+$$</p>
+<p>已有符号集$\Sigma$,根据集合乘积的定义，可得到集合的方幂$\Sigma^n$</p>
+<p>其中:<br>
+$$<br>
+\Sigma^0 = {\varepsilon}<br>
+$$<br>
+定义闭包:<br>
+$$<br>
+\Sigma^*=\Sigma^0 \cup \Sigma^1 \cup \Sigma^2 \cup \Sigma^3 \cup …<br>
+$$<br>
+定义正闭包:<br>
+$$<br>
+\Sigma^+=\Sigma^1 \cup \Sigma^2 \cup \Sigma^3 \cup …<br>
+$$</p>
+<p>$$<br>
+\Sigma ^* = \Sigma^+ \cup \Sigma^0 \<br>
+\Sigma ^+ = \Sigma^\ \times \Sigma^*<br>
+$$</p>
+<h2 id="2-文法的定义-V-N-V-T-P-S">2. 文法的定义: ($V_N,V_T,P,S$)</h2>
 <p>对于某一<strong>语言</strong>，能够使用的是语言当中的<strong>句子</strong>，如果这些句子是有穷的，对于该语言可以列出一个有限大的句子集合。</p>
 <p>但是有的语言当中的句子是无穷的，因此需要有限数量的<strong>文法</strong>来描述<strong>无穷</strong>数量的句子。</p>
 <blockquote>
 <p>文法: 用有穷集合描述无穷集合的工具。</p>
 </blockquote>
-<p><strong>文法</strong>由<font color="blue">非空有穷</font>集合<strong><span
-class="math inline">\(V_N,V_T,P\)</span></strong>和一个起始符<span
-class="math inline">\(S\)</span>构成。</p>
-<h3 id="非终结符集v_nnon-terminal-symbols">2.1 非终结符集<span
-class="math inline">\(V_N\)</span>（non-terminal symbols)</h3>
+<p><strong>文法</strong>由<font color="blue">非空有穷</font>集合**$V_N,V_T,P$**和一个起始符$S$构成。</p>
+<h3 id="2-1-非终结符集-V-N-（non-terminal-symbols">2.1 非终结符集$V_N$（non-terminal symbols)</h3>
 <p><strong>非终结符</strong>的含义是，能够<font color = "red">继续被替换下去的符号</font>。</p>
 <ul>
-<li><p>rule:</p>
-<ol type="1">
-<li><p>一般用尖括号<font color="red">“&lt;&gt;”</font>扩起非终结符。</p></li>
-<li><p>一般用<strong>大写字母</strong>表示非终结符。</p></li>
-</ol></li>
+<li>
+<p>rule:</p>
+<ol>
+<li>
+<p>一般用尖括号<font color="red">“&lt;&gt;”</font>扩起非终结符。</p>
+</li>
+<li>
+<p>一般用<strong>大写字母</strong>表示非终结符。</p>
+</li>
+</ol>
+</li>
 </ul>
-<h3 id="终结符集v_tterminal-symbols">2.2 终结符集<span
-class="math inline">\(V_T\)</span>(terminal symbols)</h3>
+<h3 id="2-2-终结符集-V-T-terminal-symbols">2.2 终结符集$V_T$(terminal symbols)</h3>
 <p><strong>终结符</strong>的含义是，不能够继续被替换的符号。</p>
 <ul>
-<li><p>rule:</p>
+<li>
+<p>rule:</p>
 <pre><code>  1. 一般不用尖括号扩起。
-  1. 一般用**小写字母**表示终结符</code></pre></li>
+  1. 一般用**小写字母**表示终结符
+</code></pre>
+</li>
 </ul>
-<h3 id="规则集pprescriptions">2.3 规则集<span
-class="math inline">\(P\)</span>(prescriptions)</h3>
+<h3 id="2-3-规则集-P-prescriptions">2.3 规则集$P$(prescriptions)</h3>
 <blockquote>
 <p>定义：</p>
 </blockquote>
-<p>规则(重写规则/产生式/生成式)，是一种形如<span
-class="math inline">\(\alpha \to \beta\)</span>,<span
-class="math inline">\(\alpha ::= \beta\)</span>,<span
-class="math inline">\((\alpha,\beta)\)</span>的有序对。<font color="blue">读作:<span
-class="math inline">\(\alpha\)</span>定义为<span
-class="math inline">\(\beta\)</span></font></p>
-<p><font color = "red">其中<span
-class="math inline">\(\alpha\)</span>是规则的左部，<span
-class="math inline">\(\alpha \in (V_N \cup
-V_T)^*,且至少包含一个非终结符\)</span></font></p>
-<p><font color = "red"><span
-class="math inline">\(\beta\)</span>是规则的右部，<span
-class="math inline">\(\beta \in (V_N \cup V_P)^*\)</span></font></p>
-<h3 id="识别符开始符s">2.4 识别符(开始符)<span
-class="math inline">\(S\)</span></h3>
+<p>规则(重写规则/产生式/生成式)，是一种形如$\alpha \to \beta$,$\alpha ::= \beta$,$(\alpha,\beta)$的有序对。<font color="blue">读作:$\alpha$定义为$\beta$</font></p>
+<p><font color = "red">其中$\alpha$是规则的左部，$\alpha \in (V_N \cup V_T)^*,且至少包含一个非终结符$</font></p>
+<p><font color = "red">$\beta$是规则的右部，$\beta \in (V_N \cup V_P)^*$</font></p>
+<h3 id="2-4-识别符-开始符-S">2.4 识别符(开始符)$S$</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>识别符<span
-class="math inline">\(S\)</span>是一个<strong>非终结符</strong>，即<span
-class="math inline">\(S \in V_N\)</span>。</p>
+<p>识别符$S$是一个<strong>非终结符</strong>，即$S \in V_N$。</p>
 <ul>
-<li>rule: 1. 识别符<span
-class="math inline">\(S\)</span>至少需要在一条规则中的左部出现。 1.
-一般<strong>第一条产生式</strong>的左部就是识别符<span
-class="math inline">\(S\)</span> 1. 文法<span
-class="math inline">\(G\)</span>还可以表示为<span
-class="math inline">\(G[S]\)</span>，突出识别符<span
-class="math inline">\(S\)</span></li>
+<li>rule:<br>
+1. 识别符$S$至少需要在一条规则中的左部出现。<br>
+1. 一般<strong>第一条产生式</strong>的左部就是识别符$S$<br>
+1. 文法$G$还可以表示为$G[S]$，突出识别符$S$</li>
 </ul>
-<h3 id="字母表字汇表v">2.5 字母表(字汇表)V</h3>
+<h3 id="2-5-字母表-字汇表-V">2.5 字母表(字汇表)V</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>字母表<span class="math inline">\(V = V_N \cup V_T\)</span>。</p>
-<p>另外: <span class="math display">\[
-V_N \cap V_T = \varnothing
-\]</span> 故<span class="math inline">\(\{V_N,V_T\}\)</span>是<span
-class="math inline">\(V\)</span>的一个划分。</p>
-<h2 id="推导">3. 推导</h2>
-<h3 id="直接推导">3.1 直接推导</h3>
+<p>字母表$V = V_N \cup V_T$。</p>
+<p>另外:<br>
+$$<br>
+V_N \cap V_T = \varnothing<br>
+$$<br>
+故${V_N,V_T}$是$V$的一个划分。</p>
+<h2 id="3-推导">3. 推导</h2>
+<h3 id="3-1-直接推导">3.1 直接推导</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>若规则<span class="math inline">\(\alpha \to
-\beta\)</span>是文法<span
-class="math inline">\(G\)</span>的一条规则，且有<span
-class="math inline">\(\delta,\gamma \in V^*\)</span>,<span
-class="math inline">\(\exist v,w\)</span>满足: <span
-class="math display">\[
-v = \delta \alpha \gamma \ \ \ \ w=\delta \beta \gamma
-\]</span> 其中<span
-class="math inline">\(\delta,\gamma\)</span>可以是空串。</p>
+<p>若规则$\alpha \to \beta$是文法$G$的一条规则，且有$\delta,\gamma \in V^*$,$\exist v,w$满足:<br>
+$$<br>
+v = \delta \alpha \gamma \ \ \ \ w=\delta \beta \gamma<br>
+$$<br>
+其中$\delta,\gamma$可以是空串。</p>
 <p>则以下说法等价:</p>
-<ol type="1">
-<li><span class="math inline">\(v\)</span>应用规则<span
-class="math inline">\(\alpha \to
-\beta\)</span><strong>直接推导</strong>出<span
-class="math inline">\(w\)</span></li>
-<li><span
-class="math inline">\(w\)</span><strong>直接归约</strong>到<span
-class="math inline">\(v\)</span></li>
-<li><span class="math inline">\(w\)</span>是<span
-class="math inline">\(v\)</span>的<strong>直接推导</strong></li>
-<li><span class="math inline">\(v\)</span>是<span
-class="math inline">\(w\)</span>的<strong>直接归约</strong></li>
-<li><span class="math inline">\(v =&gt; w\)</span></li>
+<ol>
+<li>$v$应用规则$\alpha \to \beta$<strong>直接推导</strong>出$w$</li>
+<li>$w$<strong>直接归约</strong>到$v$</li>
+<li>$w$是$v$的<strong>直接推导</strong></li>
+<li>$v$是$w$的<strong>直接归约</strong></li>
+<li>$v =&gt; w$</li>
 </ol>
-<h3 id="长度大于0的推导v-xrightarrow-w">3.2 长度大于0的推导<span
-class="math inline">\(v \xRightarrow{+} w\)</span></h3>
+<h3 id="3-2-长度大于0的推导-v-xRightarrow-w">3.2 长度大于0的推导$v \xRightarrow{+} w$</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>如果有推导序列: <span class="math display">\[
-v =&gt; w_1 =&gt; w_2 =&gt; \cdots =&gt; w_n =&gt; w (n&gt;0)
-\]</span> 则称:</p>
-<ol type="1">
-<li><span class="math inline">\(v\)</span>推导到<span
-class="math inline">\(w\)</span>, 长度为<span
-class="math inline">\(n\)</span></li>
-<li><span class="math inline">\(w\)</span>归约到<span
-class="math inline">\(w\)</span></li>
-<li><span class="math inline">\(v \xRightarrow{+} w\)</span></li>
+<p>如果有推导序列:<br>
+$$<br>
+v =&gt; w_1 =&gt; w_2 =&gt; \cdots =&gt; w_n =&gt; w (n&gt;0)<br>
+$$<br>
+则称:</p>
+<ol>
+<li>$v$推导到$w$, 长度为$n$</li>
+<li>$w$归约到$w$</li>
+<li>$v \xRightarrow{+} w$</li>
 </ol>
-<h3 id="长度大于等于0的推导v-xrightarroww">3.3 长度大于等于0的推导<span
-class="math inline">\(v \xRightarrow{*}w\)</span></h3>
+<h3 id="3-3-长度大于等于0的推导-v-xRightarrow-w">3.3 长度大于等于0的推导$v \xRightarrow{*}w$</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p><span class="math inline">\(v = w 可写作v \xRightarrow{0}
-w\)</span></p>
-<p>则<span class="math inline">\(v \xRightarrow{+}
-w\)</span><strong>或者</strong><span class="math inline">\(v =
-w\)</span>，写作<span class="math inline">\(v
-\xRightarrow{*}w\)</span>，<font color="blue">读作: <span
-class="math inline">\(v\)</span>推导到<span
-class="math inline">\(w\)</span></font></p>
-<h2 id="句型句子语言">4. 句型、句子、语言</h2>
-<h3 id="句型">4.1 句型</h3>
+<p>$v = w 可写作v \xRightarrow{0} w$</p>
+<p>则$v \xRightarrow{+} w$<strong>或者</strong>$v = w$，写作$v \xRightarrow{*}w$，<font color="blue">读作: $v$推导到$w$</font></p>
+<h2 id="4-句型、句子、语言">4. 句型、句子、语言</h2>
+<h3 id="4-1-句型">4.1 句型</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>有文法<span class="math inline">\(G[S]\)</span>，对某一<span
-class="math inline">\(x \in V^*\)</span>, 若<span
-class="math inline">\(x\)</span>可由识别符<span
-class="math inline">\(S\)</span>推导而来，即: <span
-class="math display">\[
-S \xRightarrow{*} x
-\]</span> 则称<span class="math inline">\(x\)</span>为文法<span
-class="math inline">\(G[S]\)</span>的句型。</p>
+<p>有文法$G[S]$，对某一$x \in V^<em>$, 若$x$可由识别符$S$推导而来，即:<br>
+$$<br>
+S \xRightarrow{</em>} x<br>
+$$<br>
+则称$x$为文法$G[S]$的句型。</p>
 <blockquote>
 <p>Hint:</p>
-<p>识别符<span class="math inline">\(S\)</span>满足<span
-class="math inline">\(S \xRightarrow{*} S(S=S)\)</span>，但<span
-class="math inline">\(S\)</span>是一个非终结符，故<span
-class="math inline">\(S\)</span>本身是一个句型而不是句子。</p>
+<p>识别符$S$满足$S \xRightarrow{*} S(S=S)$，但$S$是一个非终结符，故$S$本身是一个句型而不是句子。</p>
 </blockquote>
-<h3 id="句子">4.2 句子</h3>
+<h3 id="4-2-句子">4.2 句子</h3>
 <blockquote>
 <p>定义：</p>
 </blockquote>
-<p>有文法<span class="math inline">\(G[S]\)</span>和文法<span
-class="math inline">\(G[S]\)</span>上的句型<span
-class="math inline">\(x\)</span>，如果<span
-class="math inline">\(x\)</span>仅由<font color="red">终结符组成<strong>或者为空串</strong></font>,即:
-<span class="math display">\[
-S \xRightarrow{*} x \wedge x \in (V_T)^*
-\]</span> 则句型<span class="math inline">\(x\)</span>为文法<span
-class="math inline">\(G[S]\)</span>的句子。</p>
+<p>有文法$G[S]$和文法$G[S]$上的句型$x$，如果$x$仅由<font color="red">终结符组成<strong>或者为空串</strong></font>,即:<br>
+$$<br>
+S \xRightarrow{<em>} x \wedge x \in (V_T)^</em><br>
+$$<br>
+则句型$x$为文法$G[S]$的句子。</p>
 <blockquote>
 <p>句子是不包含非终结符的句型。</p>
 </blockquote>
-<h3 id="语言language">4.3 语言(Language)</h3>
+<h3 id="4-3-语言-Language">4.3 语言(Language)</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>对文法<span class="math inline">\(G[S]\)</span>, <span
-class="math display">\[
-L[G] = \{x| x \in (V_T)^* \wedge S \xRightarrow{*} x \}
-\]</span> 则<span class="math inline">\(L[G]\)</span>为文法<span
-class="math inline">\(G[S]\)</span>的语言。</p>
+<p>对文法$G[S]$,<br>
+$$<br>
+L[G] = {x| x \in (V_T)^* \wedge S \xRightarrow{*} x }<br>
+$$<br>
+则$L[G]$为文法$G[S]$的语言。</p>
 <blockquote>
-<p>文法<span
-class="math inline">\(G[S]\)</span>的语言是该文法一切句子的集合。[<font color="red">包含空串</font>]</p>
+<p>文法$G[S]$的语言是该文法一切句子的集合。[<font color="red">包含空串</font>]</p>
 </blockquote>
-<h3 id="文法的等价">4.4 文法的等价</h3>
+<h3 id="4-4-文法的等价">4.4 文法的等价</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>有两个文法<span class="math inline">\(G_1[S_1],G_2[S_2]\)</span>,若：
-<span class="math display">\[
-L[G_1] = L[G_2]
-\]</span> 则称文法<span class="math inline">\(G_1\)</span>和文法<span
-class="math inline">\(G_2\)</span>等价。</p>
+<p>有两个文法$G_1[S_1],G_2[S_2]$,若：<br>
+$$<br>
+L[G_1] = L[G_2]<br>
+$$<br>
+则称文法$G_1$和文法$G_2$等价。</p>
 <blockquote>
 <p>两个文法等价当且仅当他们能够表示的语言相同。</p>
 </blockquote>
-<h2 id="文法的类型">5. 文法的类型</h2>
-<h3 id="型文法短语文法phrase-structure-grammar图灵机">5.1
-0型文法（短语文法Phrase Structure Grammar）:图灵机</h3>
+<h2 id="5-文法的类型">5. 文法的类型</h2>
+<h3 id="5-1-0型文法（短语文法Phrase-Structure-Grammar）-图灵机">5.1  0型文法（短语文法Phrase Structure Grammar）:图灵机</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>对于一文法<span class="math inline">\(G[S]\)</span>规则集<span
-class="math inline">\(P\)</span>中的规则<span
-class="math inline">\(\alpha \to
-\beta\)</span><font color="red"><strong>都</strong></font>满足: <span
-class="math display">\[
-\alpha \in V^* 并且\alpha 至少包含一个非终结符 \\ \beta \in V^*
-\]</span> 即是一个<strong>0型文法</strong>。</p>
+<p>对于一文法$G[S]$规则集$P$中的规则$\alpha \to \beta$<font color="red"><strong>都</strong></font>满足:<br>
+$$<br>
+\alpha \in V^* 并且\alpha 至少包含一个非终结符 \ \beta \in V^*<br>
+$$<br>
+即是一个<strong>0型文法</strong>。</p>
 <blockquote>
 <p>任何0型语言都是递归可枚举的。任何递归可枚举集也都是0型语言。</p>
 </blockquote>
-<h3
-id="型文法上下文有关文法-context-sensitive-grammar线性界限自动机">5.2
-1型文法（上下文有关文法 Context-Sensitive Grammar）:线性界限自动机</h3>
+<h3 id="5-2-1型文法（上下文有关文法-Context-Sensitive-Grammar）-线性界限自动机">5.2 1型文法（上下文有关文法 Context-Sensitive Grammar）:线性界限自动机</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>对于<strong>一个0型文法</strong><span
-class="math inline">\(G[S]\)</span>，若规则集<span
-class="math inline">\(P\)</span>中的规则<span
-class="math inline">\(\alpha \to
-\beta\)</span><font color="red"><strong>都</strong></font>满足: <span
-class="math display">\[
-|\alpha| \le |\beta| \vee \beta = \varepsilon
-\]</span> 此文法即是一个1型文法。</p>
+<p>对于<strong>一个0型文法</strong>$G[S]$，若规则集$P$中的规则$\alpha \to \beta$<font color="red"><strong>都</strong></font>满足:<br>
+$$<br>
+|\alpha| \le |\beta| \vee \beta = \varepsilon<br>
+$$<br>
+此文法即是一个1型文法。</p>
 <blockquote>
-<p>0型文法规则集中除了<span class="math inline">\(\beta =
-\varepsilon\)</span>的情况，规则右部的长度<em>不小于</em>左部的长度，则文法为一个1型文法。</p>
+<p>0型文法规则集中除了$\beta = \varepsilon$的情况，规则右部的长度<em>不小于</em>左部的长度，则文法为一个1型文法。</p>
 </blockquote>
-<h3 id="型文法上下文无关文法-context-free-grammar-下推自动机">5.3
-2型文法（上下文无关文法 Context-Free Grammar): 下推自动机</h3>
+<h3 id="5-3-2型文法（上下文无关文法-Context-Free-Grammar-下推自动机">5.3 2型文法（上下文无关文法 Context-Free Grammar):  下推自动机</h3>
 <blockquote>
 <p>定义：</p>
 </blockquote>
-<p>对于一个0型文法<span
-class="math inline">\(G[S]\)</span>，对于规则集<span
-class="math inline">\(P\)</span>中的规则<strong>每一个</strong>规则<span
-class="math inline">\(\alpha \to \beta\)</span>，满足: <span
-class="math display">\[
-\alpha \in V_N \\ \beta \in V^*
-\]</span> 即每一条规则都形如<span class="math inline">\(A \to
-\beta\)</span>，该文法为一个2型文法。</p>
+<p>对于一个0型文法$G[S]$，对于规则集$P$中的规则<strong>每一个</strong>规则$\alpha \to \beta$，满足:<br>
+$$<br>
+\alpha \in V_N \ \beta \in V^*<br>
+$$<br>
+即每一条规则都形如$A \to \beta$，该文法为一个2型文法。</p>
 <blockquote>
 <p>每一条规则的左部都是<strong>一个非终结符</strong>的文法就是上下文无关文法。</p>
 </blockquote>
 <blockquote>
 <p><font color="red">上下文无关文法也是上下文有关文法。</font></p>
 </blockquote>
-<h3 id="型文法-正规文法左线性文法右线性文法-有穷状态自动机">5.4 3型文法
-(正规文法:左线性文法/右线性文法) : 有穷状态自动机</h3>
+<h3 id="5-4-3型文法-正规文法-左线性文法-右线性文法-有穷状态自动机">5.4 3型文法 (正规文法:左线性文法/右线性文法) : 有穷状态自动机</h3>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>对于一个文法<span
-class="math inline">\(G[S]\)</span>，规则集中<strong>每一条</strong>规则<span
-class="math inline">\(\alpha \to \beta\)</span>都满足: <span
-class="math display">\[
-\alpha = A, A\in V_N \\ \beta = aB \ \vee \beta = \ a , B \in V_N
-\]</span> 即规则形如$ Aa$或者 <span class="math inline">\(A
-\to  aB\)</span>​。<font color="red">(一定有终结符，且终结符一定在左边，非终结符可有可无。）</font></p>
-<p>其中<span class="math inline">\(a \in V_T \cup
-{\varepsilon}\)</span>。</p>
+<p>对于一个文法$G[S]$，规则集中<strong>每一条</strong>规则$\alpha \to \beta$都满足:<br>
+$$<br>
+\alpha = A, A\in V_N \ \beta = aB \ \vee \beta = \ a , B \in V_N<br>
+$$<br>
+即规则形如$ A\to a$或者 $A \to  aB$​。<font color="red">(一定有终结符，且终结符一定在左边，非终结符可有可无。）</font></p>
+<p>其中$a \in V_T \cup {\varepsilon}$。</p>
 <p>此文法为一个3型文法，是一个<strong>右线性文法</strong>。</p>
 <blockquote>
 <p>定义:</p>
 </blockquote>
-<p>对于一个文法<span
-class="math inline">\(G[S]\)</span>，规则集中<strong>每一条</strong>规则<span
-class="math inline">\(\alpha \to \beta\)</span>都满足: <span
-class="math display">\[
-\alpha = A, A\in V_N \\ \beta = Ba \ \vee \beta = \ a , B \in V_N
-\]</span> 即规则形如$ Aa$或者 <span class="math inline">\(A
-\to  aB\)</span>。<font color="red">(一定有终结符，且终结符一定在右边，非终结符可有可无。）</font></p>
+<p>对于一个文法$G[S]$，规则集中<strong>每一条</strong>规则$\alpha \to \beta$都满足:<br>
+$$<br>
+\alpha = A, A\in V_N \ \beta = Ba \ \vee \beta = \ a , B \in V_N<br>
+$$<br>
+即规则形如$ A\to a$或者 $A \to  aB$。<font color="red">(一定有终结符，且终结符一定在右边，非终结符可有可无。）</font></p>
 <p>此文法也是一个3型文法，是一个<strong>左线性文法</strong>。</p>
 <p>但有的规则终结符在左边，有的规则在右边的文法不是3型文法！</p>
 <blockquote>
 <p>显然，3型文法一定是一个上下文无关文法。</p>
 </blockquote>
-<h3 id="语言的类型">5.5 语言的类型</h3>
-<p>不同种文法产生不同种语言。 <span class="math display">\[
-0型文法 \to 0型语言 \\ 上下文有关文法 \to 上下文有关语言 \\
-上下文无关文法 \to 上下文无关语言 \\ 正规文法 \to 正规语言
-\]</span></p>
-<hr />
-<h2 id="上下文无关文法与语法树">6. 上下文无关文法与语法树</h2>
-<h3 id="语法树">6.1 语法树</h3>
+<h3 id="5-5-语言的类型">5.5 语言的类型</h3>
+<p>不同种文法产生不同种语言。<br>
+$$<br>
+0型文法 \to 0型语言 \ 上下文有关文法 \to 上下文有关语言 \ 上下文无关文法 \to 上下文无关语言 \ 正规文法 \to 正规语言<br>
+$$</p>
+<hr>
+<h2 id="6-上下文无关文法与语法树">6.  上下文无关文法与语法树</h2>
+<h3 id="6-1-语法树">6.1 语法树</h3>
 <blockquote>
 <p>上下文无关文法已经很足够能描述现今的一般的程序设计语言了。因此后续如果出现<strong>文法</strong>，一般指的就是<strong>上下文无关文法</strong>。</p>
 </blockquote>
 <blockquote>
-<p>定义<span class="math inline">\(6.1.1\)</span>
-语法树是一种形象地表示<strong>上下文无关文法</strong>推导过程的直观工具。也成为推导树。并且只要给定一个<strong>上下文无关文法</strong>，对于<span
-class="math inline">\(G\)</span>的任何句型，都能够构造出一棵<strong>语法树</strong>。</p>
+<p>定义$6.1.1$ 语法树是一种形象地表示<strong>上下文无关文法</strong>推导过程的直观工具。也成为推导树。并且只要给定一个<strong>上下文无关文法</strong>，对于$G$的任何句型，都能够构造出一棵<strong>语法树</strong>。</p>
 </blockquote>
-<p>语法树满足: <span class="math display">\[
-\begin{align}
-&amp;0. 语法树的根节点是起始符S\\
-&amp;1. 语法树的节点都是该文法的字符\\
-&amp;2. 语法树的非叶子节点(有后继的节点)都是非终结符节点。
-\Leftrightarrow 语法树的终结符都是语法树的叶子节点\\
-&amp;3.
-非叶子节点A的直接子孙n_1,n_2,\cdots,n_k从左到右连在一起构成了规则集P中一条规则的右部，A是左部
-\\ &amp; \ \ \ 也就是有一条文法G的规则A\to n_1n_2\cdots n_k
-\end{align}
-\]</span></p>
-<h3 id="推导和语法树">6.2 推导和语法树</h3>
+<p>语法树满足:<br>
+$$<br>
+\begin{align}<br>
+&amp;0. 语法树的根节点是起始符S\<br>
+&amp;1. 语法树的节点都是该文法的字符\<br>
+&amp;2. 语法树的非叶子节点(有后继的节点)都是非终结符节点。 \Leftrightarrow 语法树的终结符都是语法树的叶子节点\<br>
+&amp;3. 非叶子节点A的直接子孙n_1,n_2,\cdots,n_k从左到右连在一起构成了规则集P中一条规则的右部，A是左部 \ &amp; \ \ \ 也就是有一条文法G的规则A\to n_1n_2\cdots n_k<br>
+\end{align}<br>
+$$</p>
+<h3 id="6-2-推导和语法树">6.2 推导和语法树</h3>
 <blockquote>
-<p>定义<span class="math inline">\(6.2.1\)</span> <strong>最右(左)推导:
-</strong>
-如果一个推导每一次都是替换最右(左)边的非终结符，则这个推导称为<strong>最右(左)推导</strong>。其中<strong>最右推导也被称为规范推导</strong>。由<strong>规范推导</strong>推导而来的句型称为<strong>规范句型</strong>。</p>
+<p>定义$6.2.1$ <strong>最右(左)推导: ** 如果一个推导每一次都是替换最右(左)边的非终结符，则这个推导称为</strong>最右(左)推导**。其中<strong>最右推导也被称为规范推导</strong>。由<strong>规范推导</strong>推导而来的句型称为<strong>规范句型</strong>。</p>
 </blockquote>
 <blockquote>
-<p>定义<span class="math inline">\(6.2.2\)</span>
-<strong>最左(右)归约</strong>：如果一种归约每一次都是先把最左(右)边的终结符归约为非终结符，那么这个归约就被称为<strong>最左(右)归约。</strong>其中<strong>最左归约被称为规范归约。</strong></p>
+<p>定义$6.2.2$ <strong>最左(右)归约</strong>：如果一种归约每一次都是先把最左(右)边的终结符归约为非终结符，那么这个归约就被称为<strong>最左(右)归约。<strong>其中</strong>最左归约被称为规范归约。</strong></p>
 </blockquote>
 <p><font color="red">最左归约是最右推导的逆过程。 </font></p>
 <blockquote>
 <p>一种推导就对应一棵语法树。但是一棵语法树一般对应多种推导。比如既对应最左推导也对应最右推导。</p>
 </blockquote>
 <p>但是一棵语法树就只对应一个最右(左)推导。</p>
-<h3 id="语言和语法树">6.3 语言和语法树</h3>
+<h3 id="6-3-语言和语法树">6.3 语言和语法树</h3>
 <p>把一颗语法树的叶子节点从左往右连在一起就是一个文法的句型。</p>
 <blockquote>
 <p>一颗语法树对应一个句型。但是一个句型并不一定只对应一颗语法树。</p>
 </blockquote>
 <blockquote>
-<p>定义<span class="math inline">\(6.3.1\)</span>
-<strong>二义文法</strong>:
-如果一个文法的某一个句子对应了至少2棵语法树(2种最右推导)，则称该文法是<strong>二义</strong>的。</p>
+<p>定义$6.3.1$ <strong>二义文法</strong>: 如果一个文法的某一个句子对应了至少2棵语法树(2种最右推导)，则称该文法是<strong>二义</strong>的。</p>
 </blockquote>
-<p><font color="red">注意：
-语言的二义性和文法的二义性不一样。如果文法<span
-class="math inline">\(G\)</span>是二义的，也会存在另一个文法<span
-class="math inline">\(G&#39;\)</span>(可能二义，也可能不是二义的)产生的语言<span
-class="math inline">\(L[G&#39;]\)</span>和<span
-class="math inline">\(L[G]\)</span>等价。</font></p>
+<p><font color="red">注意： 语言的二义性和文法的二义性不一样。如果文法$G$是二义的，也会存在另一个文法$G’$(可能二义，也可能不是二义的)产生的语言$L[G’]$和$L[G]$等价。</font></p>
 <blockquote>
-<p>定义<span class="math inline">\(6.3.2\)</span>
-<strong>语言的二义性:</strong> 如果产生语言<span
-class="math inline">\(L\)</span>的<strong>所有上下文无关</strong>文法<span
-class="math inline">\(G\)</span>都是二义的，才称这个语言是<strong>先天二义的</strong>。</p>
+<p>定义$6.3.2$ <strong>语言的二义性:</strong> 如果产生语言$L$的<strong>所有上下文无关</strong>文法$G$都是二义的，才称这个语言是<strong>先天二义的</strong>。</p>
 </blockquote>
-<p>已经证明:
-判断一个文法是否为二义文法，和一种语言是否为二义语言都是<strong>递归不可解的</strong>。即<strong>不存在一个算法，它可以在有限步内给出任何输入的这两个问题的答案</strong>。[不存在一个算法，它可以在有限步骤内判断<strong>任何</strong>一个文法的二义性。]</p>
+<p>已经证明: 判断一个文法是否为二义文法，和一种语言是否为二义语言都是<strong>递归不可解的</strong>。即<strong>不存在一个算法，它可以在有限步内给出任何输入的这两个问题的答案</strong>。[不存在一个算法，它可以在有限步骤内判断<strong>任何</strong>一个文法的二义性。]</p>
 <p>如果想判定一个文法的二义性，就要<strong>找出一个句子，它对应了至少2个正规推导(2棵语法树)。</strong></p>
 <blockquote>
 <p>对于一个程序设计语言来说，我们希望对它的每一个语句的分析都是单一意思的，因此需要消除文法的二义性。</p>
 </blockquote>
-<p>消除文法二义性的办法一般是：为文法的非二义性寻找一组<strong>充分条件</strong>，比如给文法规定一些运算的结合顺序，保证有的运算先进行。
-<span class="math display">\[
-\begin{align}
-&amp; S \to T | E + T \\
-&amp; T \to F|T*F   \\
-&amp; F \to (E)|i
-\end{align}
-\]</span> 引入中间变量<span
-class="math inline">\(F\)</span>，保证必须先归约<span
-class="math inline">\(()\)</span>里的E才能归约<span
-class="math inline">\(*\)</span>。</p>
-<p>引入中间变量<span
-class="math inline">\(T\)</span>，保证只有当归约<span
-class="math inline">\(*\)</span>后才能归约<span
-class="math inline">\(+\)</span>。</p>
+<p>消除文法二义性的办法一般是：为文法的非二义性寻找一组<strong>充分条件</strong>，比如给文法规定一些运算的结合顺序，保证有的运算先进行。<br>
+$$<br>
+\begin{align}<br>
+&amp; S \to T | E + T \<br>
+&amp; T \to F|T<em>F	\<br>
+&amp; F \to (E)|i<br>
+\end{align}<br>
+$$<br>
+引入中间变量$F$，保证必须先归约$()$里的E才能归约$</em>$。</p>
+<p>引入中间变量$T$，保证只有当归约$*$后才能归约$+$。</p>
 <p>*一定比+更先结合。</p>
-<h2 id="句型分析">7. 句型分析</h2>
-<h3 id="句型分析和分析算法">7.1 句型分析和分析算法</h3>
+<h2 id="7-句型分析">7. 句型分析</h2>
+<h3 id="7-1-句型分析和分析算法">7.1 句型分析和分析算法</h3>
 <blockquote>
-<p>定义<span class="math inline">\(7.1.1\)</span>
-<strong>句型分析</strong>是识别一个符号串是否是某个文法的句型，也就是某个推导的构造过程。</p>
+<p>定义$7.1.1$ <strong>句型分析</strong>是识别一个符号串是否是某个文法的句型，也就是某个推导的构造过程。</p>
 </blockquote>
 <p>一般把完成<strong>句型分析</strong>的程序叫做<strong>分析程序</strong>或者<strong>识别程序</strong>。</p>
 <blockquote>
@@ -724,14 +624,12 @@ class="math inline">\(+\)</span>。</p>
 </blockquote>
 <blockquote>
 <p>分析算法的实现方式主要有：</p>
-<ol type="1">
-<li>自顶向下(从开始符号<span
-class="math inline">\(S\)</span>出发，不断推导到该句型)</li>
-<li>自底向上(从该句型出发，不断归约到开始符号<span
-class="math inline">\(S\)</span>)</li>
+<ol>
+<li>自顶向下(从开始符号$S$出发，不断推导到该句型)</li>
+<li>自底向上(从该句型出发，不断归约到开始符号$S$)</li>
 </ol>
 </blockquote>
-<h3 id="自顶向下的分析方法">7.2 自顶向下的分析方法</h3>
+<h3 id="7-2-自顶向下的分析方法">7.2 自顶向下的分析方法</h3>
 <blockquote>
 <p><font color="red">不断利用产生式替换最左非终结符，使匹配上目标句型第一个未被匹配的字符。</font></p>
 </blockquote>

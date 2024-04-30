@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="更新于2024-04-29 20:32:48   不同于电信网络面向连接的通信方式，网络层向上只提供简单灵活的、无连接的、尽最大努力交付的数据报服务。 也就是说网络层不提供服务质量的承诺。  1. 网际协议: \(IP\)协议  \(IP\)协议是用来使互连起来的许多计算机网络(网络之间，网际)能够进行通信的。  1.1 虚拟互连网络 在市面上有很多种性能不同、不同网络协">
+  <meta name="description" content="更新于2024-04-29 20:32:48   不同于电信网络面向连接的通信方式，网络层向上只提供简单灵活的、无连接的、尽最大努力交付的数据报服务。 也就是说网络层不提供服务质量的承诺。  1. 网际协议: $IP$协议  $IP$协议是用来使互连起来的**许多计算机网络(网络之间，网际)**能够进行通信的。  1.1 虚拟互连网络 在市面上有很多种性能不同、不同网络协议的网络，供不同的用户选">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络原理: 网络层">
 <meta property="og:url" content="http://blog.fragments.work/2024/04/29/ComputerNetwork/Ch4/index.html">
 <meta property="og:site_name" content="Fragments&#39; Blog">
-<meta property="og:description" content="更新于2024-04-29 20:32:48   不同于电信网络面向连接的通信方式，网络层向上只提供简单灵活的、无连接的、尽最大努力交付的数据报服务。 也就是说网络层不提供服务质量的承诺。  1. 网际协议: \(IP\)协议  \(IP\)协议是用来使互连起来的许多计算机网络(网络之间，网际)能够进行通信的。  1.1 虚拟互连网络 在市面上有很多种性能不同、不同网络协">
+<meta property="og:description" content="更新于2024-04-29 20:32:48   不同于电信网络面向连接的通信方式，网络层向上只提供简单灵活的、无连接的、尽最大努力交付的数据报服务。 也就是说网络层不提供服务质量的承诺。  1. 网际协议: $IP$协议  $IP$协议是用来使互连起来的**许多计算机网络(网络之间，网际)**能够进行通信的。  1.1 虚拟互连网络 在市面上有很多种性能不同、不同网络协议的网络，供不同的用户选">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.fragments.work/img/covers/ComputerNetwork.jpg">
 <meta property="article:published_time" content="2024-04-29T12:32:27.000Z">
@@ -153,7 +153,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
-                <div class="category-count">11</div>
+                <div class="category-count">13</div>
             </a>
         </div>
     </div>
@@ -198,15 +198,9 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/04/30/discreteMathmatics/Ch3_%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB/" title="" >
+          <a class="recent-link" href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" title="计算机视觉: 第5章特征检测与描述" >
             <div class="recent-link-text">
-              (no title)
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" title="" >
-            <div class="recent-link-text">
-              (no title)
+              计算机视觉: 第5章特征检测与描述
             </div>
           </a>
         
@@ -228,6 +222,12 @@
             </div>
           </a>
         
+          <a class="recent-link" href="/2024/04/18/discreteMathmatics/Ch2_%E9%9B%86%E5%90%88/" title="离散数学 Ch2: 集合" >
+            <div class="recent-link-text">
+              离散数学 Ch2: 集合
+            </div>
+          </a>
+        
       </ul>
     </div>
   </div>
@@ -246,7 +246,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clvmc26s10009w4wa08fq79nz">
+      <a class="article-gallery-img" rel="gallery_clvmc9ewa0009sowads6abmo8">
         <img src="/img/covers/ComputerNetwork.jpg" itemprop="image">
       </a>
     
@@ -282,7 +282,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            4k 词 
+            3.7k 词 
           </div>
         </div>
         
@@ -298,440 +298,275 @@
 <p>不同于<strong>电信网络</strong><font color="red">面向连接</font>的通信方式，<strong>网络层</strong>向上只提供<font color="red">简单灵活的、无连接的、尽最大努力交付的数据报服务</font>。</p>
 <p>也就是说<strong>网络层不提供服务质量的承诺</strong>。</p>
 </blockquote>
-<h1 id="网际协议-ip协议">1. 网际协议: <span
-class="math inline">\(IP\)</span>协议</h1>
+<h1>1. 网际协议: $IP$协议</h1>
 <blockquote>
-<p><span
-class="math inline">\(IP\)</span>协议是用来使互连起来的<strong>许多计算机网络(网络之间，网际)</strong>能够进行通信的。</p>
+<p>$IP$协议是用来使互连起来的**许多计算机网络(网络之间，网际)**能够进行通信的。</p>
 </blockquote>
-<h2 id="虚拟互连网络">1.1 虚拟互连网络</h2>
+<h2 id="1-1-虚拟互连网络">1.1 虚拟互连网络</h2>
 <p>在市面上有很多种性能不同、不同网络协议的网络，供不同的用户选用。</p>
 <p>从一般的概念讲，将网络连接在一起需要一些<strong>中间设备</strong>。</p>
-<p>​ (1)
-物理层使用的<strong>中间设备</strong>叫做<strong>转发器</strong>(repeater)。</p>
-<p>​ (2)
-数据链路层使用的<strong>中间设备</strong>叫做<strong>网桥</strong>或者<strong>桥接器</strong>(bridge)。</p>
-<p>​ (3)
-网络层使用的<strong>中间设备</strong>叫做<strong>路由器</strong>(router)。</p>
-<p>​ (4)
-在网络层以上使用的<strong>中间设备</strong>叫做<strong>网关</strong>(gateway)，用网关连接<strong>两个不兼容的系统</strong>需要在高层进行转换。</p>
+<p>​	(1) 物理层使用的<strong>中间设备</strong>叫做<strong>转发器</strong>(repeater)。</p>
+<p>​	(2) 数据链路层使用的<strong>中间设备</strong>叫做<strong>网桥</strong>或者<strong>桥接器</strong>(bridge)。</p>
+<p>​	(3) 网络层使用的<strong>中间设备</strong>叫做<strong>路由器</strong>(router)。</p>
+<p>​	(4) 在网络层以上使用的<strong>中间设备</strong>叫做<strong>网关</strong>(gateway)，用网关连接<strong>两个不兼容的系统</strong>需要在高层进行转换。</p>
 <blockquote>
 <p><strong>网关</strong>的使用非常复杂，因此如今使用的很少了。<strong>转发器</strong>和<strong>网桥</strong>是在物理层和数据链路层拓展网络，但这只是把一个网络扩大了，并没有产生新的网络。</p>
 <p>因此讨论<strong>网络互联</strong>一般就指用<strong>路由器</strong>进行网络互连和路由选择。</p>
 </blockquote>
-<p>如果参加互连的计算机网络都是用同一种网际协议<span
-class="math inline">\(IP\)</span>​，那么可以忽略这些网络本身客观存在的异构性，而把它们都看成是一个虚拟互连网络相连接的。</p>
-<p><img src="/img/CN/Ch4_1.png" /></p>
+<p>如果参加互连的计算机网络都是用同一种网际协议$IP$​，那么可以忽略这些网络本身客观存在的异构性，而把它们都看成是一个虚拟互连网络相连接的。</p>
+<p><img src="/img/CN/Ch4_1.png" alt=""></p>
 <blockquote>
-<p><span
-class="math inline">\(IP\)</span>协议使得性能各异的网络看上去就像是一个<strong>统一的网络</strong>。看不到每个网络具体的细节。</p>
+<p>$IP$协议使得性能各异的网络看上去就像是一个<strong>统一的网络</strong>。看不到每个网络具体的细节。</p>
 </blockquote>
-<h2 id="ip地址">1.2 <span class="math inline">\(IP\)</span>地址</h2>
-<h3 id="分类的ip地址">1.2.1 分类的<span
-class="math inline">\(IP\)</span>地址</h3>
-<p>把网络分为<span class="math inline">\(A,B,C,D,E\)</span>这5个类。</p>
+<h2 id="1-2-IP-地址">1.2 $IP$地址</h2>
+<h3 id="1-2-1-分类的-IP-地址">1.2.1 分类的$IP$地址</h3>
+<p>把网络分为$A,B,C,D,E$这5个类。</p>
 <table>
-<colgroup>
-<col style="width: 4%" />
-<col style="width: 20%" />
-<col style="width: 39%" />
-<col style="width: 35%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: center;">类别</th>
-<th style="text-align: center;">开头</th>
-<th style="text-align: center;">网络号范围</th>
-<th style="text-align: center;">主机号范围</th>
+<tr>
+<th style="text-align:center">类别</th>
+<th style="text-align:center">开头</th>
+<th style="text-align:center">网络号范围</th>
+<th style="text-align:center">主机号范围</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">0开头，8位网络号</td>
-<td style="text-align: center;"><span
-class="math inline">\([1,126]，2^{8-1}-2个\)</span></td>
-<td style="text-align: center;"><span
-class="math inline">\([0.0.1,255.255.254]，2^{24}-2个\)</span></td>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">0开头，8位网络号</td>
+<td style="text-align:center">$[1,126]，2^{8-1}-2个$</td>
+<td style="text-align:center">$[0.0.1,255.255.254]，2^{24}-2个$</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">B</td>
-<td style="text-align: center;">10开头，16位网络号</td>
-<td style="text-align: center;"><span
-class="math inline">\([128.1,191.255],，2^{16-2}-1个\)</span></td>
-<td style="text-align: center;"><span
-class="math inline">\([0.1,255.254]，2^{16}-2个\)</span></td>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">10开头，16位网络号</td>
+<td style="text-align:center">$[128.1,191.255],，2^{16-2}-1个$</td>
+<td style="text-align:center">$[0.1,255.254]，2^{16}-2个$</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">110开头，24位网络号</td>
-<td style="text-align: center;"><span
-class="math inline">\([192.0.1,223.255.255]，2^{24-3}-1个\)</span></td>
-<td style="text-align: center;"><span
-class="math inline">\([1,254]，2^{8}-2个\)</span></td>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">110开头，24位网络号</td>
+<td style="text-align:center">$[192.0.1,223.255.255]，2^{24-3}-1个$</td>
+<td style="text-align:center">$[1,254]，2^{8}-2个$</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">D</td>
-<td style="text-align: center;">1110开头，多播地址</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">1110开头，多播地址</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">E</td>
-<td style="text-align: center;">1111开头，未用</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:center">1111开头，未用</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 </tbody>
 </table>
-<p><font color="red">注意<span
-class="math inline">\(A,B,C\)</span>类每类第一个网络号[最小的网络号<span
-class="math inline">\(非固定位全0\)</span>]都是不可用的，并且<span
-class="math inline">\(A\)</span>类的<span
-class="math inline">\(127\)</span>网络号用作本地软件的<strong>环回测试</strong></font>。</p>
-<p>特别的<span class="math inline">\(A\)</span>类地址中的网络号为<span
-class="math inline">\(0\)</span>的网络，名为<span
-class="math inline">\(this\)</span>，表示这个网络。</p>
+<p><font color="red">注意$A,B,C$类每类第一个网络号[最小的网络号$非固定位全0$]都是不可用的，并且$A$类的$127$网络号用作本地软件的<strong>环回测试</strong></font>。</p>
+<p>特别的$A$类地址中的网络号为$0$的网络，名为$this$，表示这个网络。</p>
 <p>主机号全0表示该网络本身。主机号全1表示广播。</p>
-<p>特殊的<span class="math inline">\(ip\)</span>:</p>
+<p>特殊的$ip$:</p>
 <table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 16%" />
-<col style="width: 18%" />
-<col style="width: 21%" />
-<col style="width: 35%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: center;">网络号</th>
-<th style="text-align: center;">主机号</th>
-<th style="text-align: center;">是否可做源地址</th>
-<th style="text-align: center;">是否可做目的地址</th>
-<th style="text-align: center;">用处</th>
+<tr>
+<th style="text-align:center">网络号</th>
+<th style="text-align:center">主机号</th>
+<th style="text-align:center">是否可做源地址</th>
+<th style="text-align:center">是否可做目的地址</th>
+<th style="text-align:center">用处</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;">全0</td>
-<td style="text-align: center;">全0</td>
-<td style="text-align: center;">是</td>
-<td style="text-align: center;">否</td>
-<td style="text-align: center;">本网络的本主机(this)</td>
+<tr>
+<td style="text-align:center">全0</td>
+<td style="text-align:center">全0</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">本网络的本主机(this)</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">全0</td>
-<td style="text-align: center;">host-id</td>
-<td style="text-align: center;">是</td>
-<td style="text-align: center;">否</td>
-<td style="text-align: center;">本网络(this)的host-id主机</td>
+<tr>
+<td style="text-align:center">全0</td>
+<td style="text-align:center">host-id</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">本网络(this)的host-id主机</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">全1</td>
-<td style="text-align: center;">全1</td>
-<td style="text-align: center;">否</td>
-<td style="text-align: center;">是</td>
-<td style="text-align: center;">只在本网络上广播</td>
+<tr>
+<td style="text-align:center">全1</td>
+<td style="text-align:center">全1</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">只在本网络上广播</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">net-id</td>
-<td style="text-align: center;">全1</td>
-<td style="text-align: center;">否</td>
-<td style="text-align: center;">是</td>
-<td style="text-align: center;">在net-id上广播</td>
+<tr>
+<td style="text-align:center">net-id</td>
+<td style="text-align:center">全1</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">在net-id上广播</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">127</td>
-<td style="text-align: center;">非全1也非全0</td>
-<td style="text-align: center;">是</td>
-<td style="text-align: center;">是</td>
-<td style="text-align: center;">本地软件环回测试(端口转发)</td>
+<tr>
+<td style="text-align:center">127</td>
+<td style="text-align:center">非全1也非全0</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">本地软件环回测试(端口转发)</td>
 </tr>
 </tbody>
 </table>
-<h3 id="子网的划分">1.2.2 子网的划分</h3>
-<h3 id="超网">1.2.3 超网</h3>
-<h3 id="ip地址和物理地址">1.2.4 <span
-class="math inline">\(IP\)</span>地址和物理地址</h3>
-<p><strong>物理地址</strong>(<span
-class="math inline">\(MAC\)</span>)是物理层和数据链路层使用的地址，而<span
-class="math inline">\(IP\)</span>​地址是网络层及以上使用的<strong>逻辑地址</strong>。</p>
-<p>但从网络层上看，<span
-class="math inline">\(IP\)</span>协议把下层复杂的细节全屏蔽了，只是用<strong>单一的、抽象的</strong><span
-class="math inline">\(IP\)</span>地址进行通信，这极大简化了互联网的传输过程。</p>
-<p>但数据报在数据链路层进行传输时就变成<strong>帧(frame)</strong>，只能使用物理地址(<span
-class="math inline">\(MAC\)</span>)，<font color="red">在跨局域网时会变</font>。</p>
-<p><img src="/img/CN/ch4_2.png" /></p>
+<h3 id="1-2-2-子网的划分">1.2.2 子网的划分</h3>
+<h3 id="1-2-3-超网">1.2.3 超网</h3>
+<h3 id="1-2-4-IP-地址和物理地址">1.2.4 $IP$地址和物理地址</h3>
+<p><strong>物理地址</strong>($MAC$)是物理层和数据链路层使用的地址，而$IP$​地址是网络层及以上使用的<strong>逻辑地址</strong>。</p>
+<p>但从网络层上看，$IP$协议把下层复杂的细节全屏蔽了，只是用<strong>单一的、抽象的</strong>$IP$地址进行通信，这极大简化了互联网的传输过程。</p>
+<p>但数据报在数据链路层进行传输时就变成<strong>帧(frame)</strong>，只能使用物理地址($MAC$)，<font color="red">在跨局域网时会变</font>。</p>
+<p><img src="/img/CN/ch4_2.png" alt=""></p>
 <p>另外在数据报传输时有以下几个特点:</p>
-<ol type="1">
-<li>网络层上只能看到<span class="math inline">\(IP\)</span>数据报，<span
-class="math inline">\(IP\)</span>源地址和目的地址根本不变</li>
-<li>尽管<span class="math inline">\(IP\)</span>数据报中有<span
-class="math inline">\(IP\)</span>源地址，但是<font color="red">路由选择时只看目的地址</font>。</li>
-<li>数据链路层中只能看见<span
-class="math inline">\(MAC\)</span>地址，每当从一个主机/路由器转发到另一个主机/路由器时，主机/路由器都要封装帧，把源<span
-class="math inline">\(MAC\)</span>和目的<span
-class="math inline">\(MAC\)</span>都告诉数据链路层。</li>
+<ol>
+<li>网络层上只能看到$IP$数据报，$IP$源地址和目的地址根本不变</li>
+<li>尽管$IP$数据报中有$IP$源地址，但是<font color="red">路由选择时只看目的地址</font>。</li>
+<li>数据链路层中只能看见$MAC$地址，每当从一个主机/路由器转发到另一个主机/路由器时，主机/路由器都要封装帧，把源$MAC$和目的$MAC$都告诉数据链路层。</li>
 </ol>
 <p>要解决的问题有:</p>
-<ol type="1">
-<li>主机/路由器如何根据<span
-class="math inline">\(IP\)</span>得到要发送的帧的目的<span
-class="math inline">\(MAC\)</span>(<span
-class="math inline">\(ARP\)</span>协议)</li>
-<li>路由器/主机如何在只知道<strong>最终</strong>目的<span
-class="math inline">\(IP\)</span>的情况下找到下一跳<span
-class="math inline">\(IP\)</span>(<span
-class="math inline">\(路由表\)</span>)</li>
+<ol>
+<li>主机/路由器如何根据$IP$得到要发送的帧的目的$MAC$($ARP$协议)</li>
+<li>路由器/主机如何在只知道<strong>最终</strong>目的$IP$的情况下找到下一跳$IP$($路由表$)</li>
 </ol>
-<h4 id="arp协议">1.2.4.1 <span
-class="math inline">\(ARP\)</span>协议</h4>
+<h4 id="1-2-4-1-ARP-协议">1.2.4.1 $ARP$协议</h4>
 <blockquote>
-<h5
-id="地址解析协议arpaddress-resolution-procotol通过ip地址解析出局域网内的目的mac地址过去还有逆地址解析协议rarpreverse-address-resolution-procotol通过mac地址解析出ip地址">地址解析协议<span
-class="math inline">\(ARP(Address \ Resolution \
-Procotol)\)</span>通过<span
-class="math inline">\(IP\)</span>地址解析出局域网内的目的<span
-class="math inline">\(MAC\)</span>地址，过去还有逆地址解析协议<span
-class="math inline">\(RARP(Reverse \ Address \ Resolution \
-Procotol)\)</span>，通过<span
-class="math inline">\(MAC\)</span>地址解析出<span
-class="math inline">\(IP\)</span>地址。</h5>
+<h5 id="地址解析协议-ARP-Address-Resolution-Procotol-通过-IP-地址解析出局域网内的目的-MAC-地址，过去还有逆地址解析协议-RARP-Reverse-Address-Resolution-Procotol-，通过-MAC-地址解析出-IP-地址。">地址解析协议$ARP(Address \ Resolution \ Procotol)$通过$IP$地址解析出局域网内的目的$MAC$地址，过去还有逆地址解析协议$RARP(Reverse \ Address \ Resolution \ Procotol)$，通过$MAC$地址解析出$IP$地址。</h5>
 </blockquote>
-<p><span
-class="math inline">\(ARP\)</span>协议在每台主机/路由器中都设立一个<span
-class="math inline">\(ARP\)</span>缓冲区，表中存放了<span
-class="math inline">\(IP\)</span>地址向<span
-class="math inline">\(MAC\)</span>​​地址的映射，以及<strong><font color="red">生存时间</font></strong>。</p>
-<h5 id="同一局域网下">1.2.4.1.1 同一局域网下</h5>
-<p>当终端(可以是主机，也可以是路由器)<span
-class="math inline">\(A\)</span>要向<strong>同一局域网</strong>中的终端<span
-class="math inline">\(B\)</span>发送数据报时，<span
-class="math inline">\(ARP\)</span>​协议的基本工作模式是:</p>
-<ol type="1">
-<li>A查找自身的ARP缓冲区<span
-class="math inline">\(buffer\)</span>，如果A中<span
-class="math inline">\(ARP\)</span>缓冲区存在B的<span
-class="math inline">\(IP\)</span>表项，则直接根据表映射出<span
-class="math inline">\(B\)</span>的<span
-class="math inline">\(MAC\)</span>地址，结束</li>
-<li>如果缓冲区<span class="math inline">\(buffer\)</span>中没有<span
-class="math inline">\(B\)</span>的<span
-class="math inline">\(IP\)</span>表项，则向局域网内所有终端<strong>广播</strong><span
-class="math inline">\(ARP\)</span><font color="red">请求</font>分组，内容是<font color="blue"><span
-class="math inline">\(我的IP地址是xx.xx.xx.xx,\
-MAC地址是XX-XX-XX-XX\)</span>，请问<span
-class="math inline">\(IP地址为B.IP\)</span>的终端的<span
-class="math inline">\(MAC\)</span>地址是？</font></li>
-<li>非<span class="math inline">\(B\)</span>终端都无视该帧，而<span
-class="math inline">\(B\)</span>主机发现此数据报文是发送给自己的，则收下这个数据报，并且回复给<span
-class="math inline">\(A\)</span>一个<span
-class="math inline">\(ARP\)</span><font color="red"><strong>单播的</strong>响应</font>分组，内容是<font color="blue">我的<span
-class="math inline">\(IP\)</span>地址是xx.xx.xx.xx，<span
-class="math inline">\(MAC\)</span>是XX-XX-XX-XX</font></li>
-<li>主机<span class="math inline">\(A\)</span>收到<span
-class="math inline">\(B\)</span>的响应分组后，就在自己的缓冲区里更新<span
-class="math inline">\(B\)</span>的<span
-class="math inline">\(IP\)</span>到<span
-class="math inline">\(MAC\)</span>的映射，并且<span
-class="math inline">\(B\)</span>也知道了<span
-class="math inline">\(A\)</span>的相关信息，因此再发送数据报就很方便了！</li>
+<p>$ARP$协议在每台主机/路由器中都设立一个$ARP$缓冲区，表中存放了$IP$地址向$MAC$​​地址的映射，以及**<font color="red">生存时间</font>**。</p>
+<h5 id="1-2-4-1-1-同一局域网下">1.2.4.1.1 同一局域网下</h5>
+<p>当终端(可以是主机，也可以是路由器)$A$要向<strong>同一局域网</strong>中的终端$B$发送数据报时，$ARP$​协议的基本工作模式是:</p>
+<ol>
+<li>A查找自身的ARP缓冲区$buffer$，如果A中$ARP$缓冲区存在B的$IP$表项，则直接根据表映射出$B$的$MAC$地址，结束</li>
+<li>如果缓冲区$buffer$中没有$B$的$IP$表项，则向局域网内所有终端<strong>广播</strong>$ARP$<font color="red">请求</font>分组，内容是<font color="blue">$我的IP地址是xx.xx.xx.xx,\ MAC地址是XX-XX-XX-XX$，请问$IP地址为B.IP$的终端的$MAC$地址是？</font></li>
+<li>非$B$终端都无视该帧，而$B$主机发现此数据报文是发送给自己的，则收下这个数据报，并且回复给$A$一个$ARP$<font color="red"><strong>单播的</strong>响应</font>分组，内容是<font color="blue">我的$IP$地址是xx.xx.xx.xx，$MAC$是XX-XX-XX-XX</font></li>
+<li>主机$A$收到$B$的响应分组后，就在自己的缓冲区里更新$B$的$IP$到$MAC$的映射，并且$B$也知道了$A$的相关信息，因此再发送数据报就很方便了！</li>
 </ol>
-<h5 id="不同局域网下">1.2.4.1.2 不同局域网下</h5>
-<p>实际上，不同局域网中的<span class="math inline">\(A\)</span>和<span
-class="math inline">\(B\)</span>通信时，<span
-class="math inline">\(A\)</span>是没办法通过<span
-class="math inline">\(ARP\)</span>协议解析出<span
-class="math inline">\(B\)</span>的<span
-class="math inline">\(MAC\)</span>地址的，因为<font color="red">没有必要解析的出来</font>，<span
-class="math inline">\(A\)</span>只需要把数据报转发给可以转发数据报的路由器即可。<span
-class="math inline">\(A\)</span>要做的事情应该是<font color="red">根据下一跳的<span
-class="math inline">\(IP\)</span>地址解析出该终端的<span
-class="math inline">\(MAC\)</span>​地址</font>，这个过程还是在同一个局域网下的。</p>
-<p>所以每次跳转的时候重复同一局域网下的过程就能完成不同局域网下的<span
-class="math inline">\(ARP\)</span>​协议工作过程。</p>
+<h5 id="1-2-4-1-2-不同局域网下">1.2.4.1.2 不同局域网下</h5>
+<p>实际上，不同局域网中的$A$和$B$通信时，$A$是没办法通过$ARP$协议解析出$B$的$MAC$地址的，因为<font color="red">没有必要解析的出来</font>，$A$只需要把数据报转发给可以转发数据报的路由器即可。$A$要做的事情应该是<font color="red">根据下一跳的$IP$地址解析出该终端的$MAC$​地址</font>，这个过程还是在同一个局域网下的。</p>
+<p>所以每次跳转的时候重复同一局域网下的过程就能完成不同局域网下的$ARP$​协议工作过程。</p>
 <blockquote>
-<p>通过<span
-class="math inline">\(ARP\)</span>协议让网络通信时要完成的复杂物理地址的转换变得很透明，只需要主机<span
-class="math inline">\(A\)</span>和<span
-class="math inline">\(B\)</span>的有独立的<span
-class="math inline">\(IP\)</span>，就好像<span
-class="math inline">\(A\)</span>和<span
-class="math inline">\(B\)</span>连在同一个网络下。</p>
+<p>通过$ARP$协议让网络通信时要完成的复杂物理地址的转换变得很透明，只需要主机$A$和$B$的有独立的$IP$，就好像$A$和$B$连在同一个网络下。</p>
 </blockquote>
-<h3 id="ip数据报的格式">1.2.5 <span
-class="math inline">\(IP\)</span>数据报的格式</h3>
-<p><img src="/img/CN/ch4_3.png" /></p>
+<h3 id="1-2-5-IP-数据报的格式">1.2.5 $IP$数据报的格式</h3>
+<p><img src="/img/CN/ch4_3.png" alt=""></p>
 <table>
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 74%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: center;">字段值</th>
-<th style="text-align: center;">位数/字节数</th>
-<th style="text-align: center;">说明</th>
+<tr>
+<th style="text-align:center">字段值</th>
+<th style="text-align:center">位数/字节数</th>
+<th style="text-align:center">说明</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;">版本</td>
-<td style="text-align: center;">4/0.5</td>
-<td style="text-align: center;"><span
-class="math inline">\(IPv4/IPv6\)</span>。<font color="red">通信双方的IP版本必须一致！</font></td>
+<tr>
+<td style="text-align:center">版本</td>
+<td style="text-align:center">4/0.5</td>
+<td style="text-align:center">$IPv4/IPv6$。<font color="red">通信双方的IP版本必须一致！</font></td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">首部长度</td>
-<td style="text-align: center;">4/0.5</td>
-<td style="text-align: center;">指示首部长度为<font color="red"><span
-class="math inline">\(4k\)</span></font>个<font color="red">字节</font>，由于首部至少20字节，所以值域在<span
-class="math inline">\([5,15]\)</span>之间(首部<font color="red">最长60字节！且首部长度一定为4字节的倍数！</font>)</td>
+<tr>
+<td style="text-align:center">首部长度</td>
+<td style="text-align:center">4/0.5</td>
+<td style="text-align:center">指示首部长度为<font color="red">$4k$</font>个<font color="red">字节</font>，由于首部至少20字节，所以值域在$[5,15]$之间(首部<font color="red">最长60字节！且首部长度一定为4字节的倍数！</font>)</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">服务类型</td>
-<td style="text-align: center;">8/1</td>
-<td
-style="text-align: center;">只有在<font color="blue">区分服务(Differentiated
-Services)下才使用</font></td>
+<tr>
+<td style="text-align:center">服务类型</td>
+<td style="text-align:center">8/1</td>
+<td style="text-align:center">只有在<font color="blue">区分服务(Differentiated Services)下才使用</font></td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">总长度</td>
-<td style="text-align: center;">16/2</td>
-<td
-style="text-align: center;">指示<font color="red">首部+数据部分</font>一共有<span
-class="math inline">\(k\)</span>个字节，值域<span
-class="math inline">\((20,2^{16}-1]\)</span></td>
+<tr>
+<td style="text-align:center">总长度</td>
+<td style="text-align:center">16/2</td>
+<td style="text-align:center">指示<font color="red">首部+数据部分</font>一共有$k$个字节，值域$(20,2^{16}-1]$</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">标识</td>
-<td style="text-align: center;">16/2</td>
-<td
-style="text-align: center;"><font color="blue">指示该数据报属于哪一个<span
-class="math inline">\(IP\)</span>数据报</font>，而不是该数据包属于源<span
-class="math inline">\(IP\)</span>数据报的<span
-class="math inline">\(id\)</span></td>
+<tr>
+<td style="text-align:center">标识</td>
+<td style="text-align:center">16/2</td>
+<td style="text-align:center"><font color="blue">指示该数据报属于哪一个$IP$数据报</font>，而不是该数据包属于源$IP$数据报的$id$</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">标志</td>
-<td style="text-align: center;">3/-</td>
-<td style="text-align: center;">分别是<span
-class="math inline">\(MF(More \ Fragment),DF(Don&#39;t \
-Fragment)\)</span>，以及一位空闲。</td>
+<tr>
+<td style="text-align:center">标志</td>
+<td style="text-align:center">3/-</td>
+<td style="text-align:center">分别是$MF(More \ Fragment),DF(Don’t \ Fragment)$，以及一位空闲。</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">片偏移</td>
-<td style="text-align: center;">13/-</td>
-<td
-style="text-align: center;">指示该数据报的<font color="red">数据部分</font>(只有数据部分)在源<span
-class="math inline">\(IP\)</span>数据报中起始位置处于<font color="red"><span
-class="math inline">\(8k\)</span>字节</font>处，(每个分片大小都是<span
-class="math inline">\(8k\)</span>个字节的整数倍)</td>
+<tr>
+<td style="text-align:center">片偏移</td>
+<td style="text-align:center">13/-</td>
+<td style="text-align:center">指示该数据报的<font color="red">数据部分</font>(只有数据部分)在源$IP$数据报中起始位置处于<font color="red">$8k$字节</font>处，(每个分片大小都是$8k$个字节的整数倍)</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">生存时间</td>
-<td style="text-align: center;">8/1</td>
-<td style="text-align: center;"><span
-class="math inline">\(TTL\)</span>，指示仍能跳的次数，值域为<span
-class="math inline">\([0,255]\)</span>，<span
-class="math inline">\(0\)</span>则丢弃该数据报，<font color="blue">1表示该局域网内的数据报</font></td>
+<tr>
+<td style="text-align:center">生存时间</td>
+<td style="text-align:center">8/1</td>
+<td style="text-align:center">$TTL$，指示仍能跳的次数，值域为$[0,255]$，$0$则丢弃该数据报，<font color="blue">1表示该局域网内的数据报</font></td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">协议</td>
-<td style="text-align: center;">8/1</td>
-<td style="text-align: center;">用协议<span
-class="math inline">\(id\)</span>指示该数据报传输的是上层协议中的哪一种，具体见协议-id表。</td>
+<tr>
+<td style="text-align:center">协议</td>
+<td style="text-align:center">8/1</td>
+<td style="text-align:center">用协议$id$指示该数据报传输的是上层协议中的哪一种，具体见协议-id表。</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">首部校验和</td>
-<td style="text-align: center;">16/2</td>
-<td
-style="text-align: center;">使用<font color="red">反码算数加法</font>+变为反码的方式算出校验和。使用同样的方式在接收端校验，全0则视为无差错。</td>
+<tr>
+<td style="text-align:center">首部校验和</td>
+<td style="text-align:center">16/2</td>
+<td style="text-align:center">使用<font color="red">反码算数加法</font>+变为反码的方式算出校验和。使用同样的方式在接收端校验，全0则视为无差错。</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">源地址</td>
-<td style="text-align: center;">32/4</td>
-<td style="text-align: center;">源<span
-class="math inline">\(IP\)</span>地址</td>
+<tr>
+<td style="text-align:center">源地址</td>
+<td style="text-align:center">32/4</td>
+<td style="text-align:center">源$IP$地址</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">目的地址</td>
-<td style="text-align: center;">32/4</td>
-<td style="text-align: center;">目的<span
-class="math inline">\(IP\)</span>地址</td>
+<tr>
+<td style="text-align:center">目的地址</td>
+<td style="text-align:center">32/4</td>
+<td style="text-align:center">目的$IP$地址</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">可选字段</td>
-<td style="text-align: center;">0-320/0-40</td>
-<td
-style="text-align: center;">补充字段，可自己选用，但是会影响传输效率一般不用。<font color="red">注意一定要</font><font color="red"><font color="blue">全0</font>填充为4字节的整数倍！！！</font></td>
+<tr>
+<td style="text-align:center">可选字段</td>
+<td style="text-align:center">0-320/0-40</td>
+<td style="text-align:center">补充字段，可自己选用，但是会影响传输效率一般不用。<font color="red">注意一定要</font><font color="red"><font color="blue">全0</font>填充为4字节的整数倍！！！</font></td>
 </tr>
 </tbody>
 </table>
-<p><span
-class="math inline">\(IP\)</span>下层的数据链路层帧有<strong>最大传送单元<span
-class="math inline">\(MTU(Maximum \ Transfer \
-Unit)\)</span></strong>的限制，<span
-class="math inline">\(IP\)</span>数据报就不能无限制地长，要通过<strong>分片</strong>的方式切分数据报文，这也就是数据报首部<span
-class="math inline">\(标识、标志、片偏移\)</span>存在的意义。</p>
+<p>$IP$下层的数据链路层帧有<strong>最大传送单元$MTU(Maximum \ Transfer \ Unit)$<strong>的限制，$IP$数据报就不能无限制地长，要通过</strong>分片</strong>的方式切分数据报文，这也就是数据报首部$标识、标志、片偏移$存在的意义。</p>
 <blockquote>
-<p><span
-class="math inline">\(IP\)</span>数据报尽可能长会让<strong>传输效率</strong>变大(<span
-class="math inline">\(所需要的首部信息变少\)</span>)，但是在路由器转发时会让速度下降。数据报长度比较短能在转发时速度变快。</p>
-<p><font color="red"><span
-class="math inline">\(IP\)</span>协议规定，任何主机/路由器都至少能处理<span
-class="math inline">\(576 = 512+60 +
-4\)</span>字节的数据报</font>，576字节以下的数据报不用分片就一定可以处理，但是576字节以上的数据报就要先了解途径的路由器/主机的处理能力。</p>
+<p>$IP$数据报尽可能长会让<strong>传输效率</strong>变大($所需要的首部信息变少$)，但是在路由器转发时会让速度下降。数据报长度比较短能在转发时速度变快。</p>
+<p><font color="red">$IP$协议规定，任何主机/路由器都至少能处理$576 = 512+60 + 4$字节的数据报</font>，576字节以下的数据报不用分片就一定可以处理，但是576字节以上的数据报就要先了解途径的路由器/主机的处理能力。</p>
 </blockquote>
-<p>数据报中的标志字段有<span
-class="math inline">\(DF,MF\)</span>字段，<font color="red">只有当<span
-class="math inline">\(DF=0(Don&#39;t \
-Fragment=0)\)</span>时该数据才允许分段</font>，而<span
-class="math inline">\(MF=1\)</span>表示<font color="blue">该数据报后还有其他分片数据报</font>。同一个源数据报的不同分组都具有同一<strong>标识</strong>，并且用<strong>片偏移</strong>确定当前分片的数据部分在源数据报中的位置。</p>
-<p>通过<strong>标识和片偏移</strong>就能够在接收端恢复出源<span
-class="math inline">\(IP\)</span>​数据报。</p>
+<p>数据报中的标志字段有$DF,MF$字段，<font color="red">只有当$DF=0(Don’t \ Fragment=0)$时该数据才允许分段</font>，而$MF=1$表示<font color="blue">该数据报后还有其他分片数据报</font>。同一个源数据报的不同分组都具有同一<strong>标识</strong>，并且用<strong>片偏移</strong>确定当前分片的数据部分在源数据报中的位置。</p>
+<p>通过<strong>标识和片偏移</strong>就能够在接收端恢复出源$IP$​数据报。</p>
 <blockquote>
 <p>请特别注意每个字段的单位是什么:</p>
-<p><font color="red">首部长度: 4字节 总长度: 字节 片偏移:
-8字节</font></p>
+<p><font color="red">首部长度: 4字节  总长度: 字节  片偏移: 8字节</font></p>
 </blockquote>
-<p>另外，还有标识上层协议的协议-<span
-class="math inline">\(id\)</span>表:</p>
+<p>另外，还有标识上层协议的协议-$id$表:</p>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: center;">协议名</th>
-<th style="text-align: center;"><span
-class="math inline">\(ICMP\)</span></th>
-<th style="text-align: center;"><span
-class="math inline">\(IGMP\)</span></th>
-<th style="text-align: center;"><span
-class="math inline">\(IP\)</span></th>
-<th style="text-align: center;"><span
-class="math inline">\(TCP\)</span></th>
-<th style="text-align: center;"><span
-class="math inline">\(UDP\)</span></th>
-<th style="text-align: center;"><span
-class="math inline">\(IPv6\)</span></th>
+<tr>
+<th style="text-align:center">协议名</th>
+<th style="text-align:center">$ICMP$</th>
+<th style="text-align:center">$IGMP$</th>
+<th style="text-align:center">$IP$</th>
+<th style="text-align:center">$TCP$</th>
+<th style="text-align:center">$UDP$</th>
+<th style="text-align:center">$IPv6$</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;">协议<span
-class="math inline">\(id\)</span></td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">17</td>
-<td style="text-align: center;">41</td>
+<tr>
+<td style="text-align:center">协议$id$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">41</td>
 </tr>
 </tbody>
 </table>
-<p>其中<span class="math inline">\(IP和IPv6\)</span>指的是该<span
-class="math inline">\(IP\)</span>数据报是由<span
-class="math inline">\(IP/IPv6的数据报再封装到IP数据报中\)</span>，(有2个首部？)</p>
+<p>其中$IP和IPv6$指的是该$IP$数据报是由$IP/IPv6的数据报再封装到IP数据报中$，(有2个首部？)</p>
 
         
       </div>

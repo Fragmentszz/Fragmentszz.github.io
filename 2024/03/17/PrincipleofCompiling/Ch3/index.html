@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="更新于2024-04-21 22:34:13  Ch3: 词法分析 0. 词法分析的模式和主要功能 0.1: 词法分析的工作方式: 词法分析程序主要有两种工作方式:  词法分析和语法分析完全分开，变为两个等地位的模块，词法分析的输出作为语法分析的输入，词法分析和语法分析一共至少扫描文本两遍。 词法分析作为语法分析的调用子模块，每当语法分析需要读入一个单词时，调用词法分析子模块从">
+  <meta name="description" content="更新于2024-04-21 22:34:13  Ch3: 词法分析 0. 词法分析的模式和主要功能 0.1: 词法分析的工作方式: 词法分析程序主要有两种工作方式:  词法分析和语法分析完全分开，变为两个等地位的模块，词法分析的输出作为语法分析的输入，词法分析和语法分析一共至少扫描文本两遍。 词法分析作为语法分析的调用子模块，每当语法分析需要读入一个单词时，调用词法分析子模块从字符流种读入一个单">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理: 词法分析">
 <meta property="og:url" content="http://blog.fragments.work/2024/03/17/PrincipleofCompiling/Ch3/index.html">
 <meta property="og:site_name" content="Fragments&#39; Blog">
-<meta property="og:description" content="更新于2024-04-21 22:34:13  Ch3: 词法分析 0. 词法分析的模式和主要功能 0.1: 词法分析的工作方式: 词法分析程序主要有两种工作方式:  词法分析和语法分析完全分开，变为两个等地位的模块，词法分析的输出作为语法分析的输入，词法分析和语法分析一共至少扫描文本两遍。 词法分析作为语法分析的调用子模块，每当语法分析需要读入一个单词时，调用词法分析子模块从">
+<meta property="og:description" content="更新于2024-04-21 22:34:13  Ch3: 词法分析 0. 词法分析的模式和主要功能 0.1: 词法分析的工作方式: 词法分析程序主要有两种工作方式:  词法分析和语法分析完全分开，变为两个等地位的模块，词法分析的输出作为语法分析的输入，词法分析和语法分析一共至少扫描文本两遍。 词法分析作为语法分析的调用子模块，每当语法分析需要读入一个单词时，调用词法分析子模块从字符流种读入一个单">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.fragments.work/img/covers/PrinciplesofCompilation.jpg">
 <meta property="article:published_time" content="2024-03-17T06:02:22.000Z">
@@ -153,7 +153,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
-                <div class="category-count">11</div>
+                <div class="category-count">13</div>
             </a>
         </div>
     </div>
@@ -198,15 +198,9 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/04/30/discreteMathmatics/Ch3_%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB/" title="" >
+          <a class="recent-link" href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" title="计算机视觉: 第5章特征检测与描述" >
             <div class="recent-link-text">
-              (no title)
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/04/30/ComputerVision/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" title="" >
-            <div class="recent-link-text">
-              (no title)
+              计算机视觉: 第5章特征检测与描述
             </div>
           </a>
         
@@ -228,6 +222,12 @@
             </div>
           </a>
         
+          <a class="recent-link" href="/2024/04/18/discreteMathmatics/Ch2_%E9%9B%86%E5%90%88/" title="离散数学 Ch2: 集合" >
+            <div class="recent-link-text">
+              离散数学 Ch2: 集合
+            </div>
+          </a>
+        
       </ul>
     </div>
   </div>
@@ -246,7 +246,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clvmc26s8000nw4waacrqba2b">
+      <a class="article-gallery-img" rel="gallery_clvmc9ewg000nsowa5ccg76nt">
         <img src="/img/covers/PrinciplesofCompilation.jpg" itemprop="image">
       </a>
     
@@ -282,7 +282,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            6.9k 词 
+            6.4k 词 
           </div>
         </div>
         
@@ -294,542 +294,347 @@
           <blockquote>
 <p>更新于<code>2024-04-21 22:34:13</code></p>
 </blockquote>
-<h1 id="ch3-词法分析">Ch3: 词法分析</h1>
-<h2 id="词法分析的模式和主要功能">0. 词法分析的模式和主要功能</h2>
-<h3 id="词法分析的工作方式">0.1: 词法分析的工作方式:</h3>
+<h1>Ch3: 词法分析</h1>
+<h2 id="0-词法分析的模式和主要功能">0. 词法分析的模式和主要功能</h2>
+<h3 id="0-1-词法分析的工作方式">0.1: 词法分析的工作方式:</h3>
 <p>词法分析程序主要有两种工作方式:</p>
-<ol type="1">
+<ol>
 <li>词法分析和语法分析完全分开，变为两个等地位的模块，词法分析的输出作为语法分析的输入，词法分析和语法分析一共至少扫描文本两遍。</li>
 <li>词法分析作为语法分析的调用子模块，每当语法分析需要读入一个单词时，调用词法分析子模块从字符流种读入一个单词。词法分析和语法分析放在一起扫描文本一遍。<font color="red">一般采用的都是这个方式。</font></li>
 </ol>
-<h3 id="词法分析程序的输出">0.2: 词法分析程序的输出:</h3>
+<h3 id="0-2-词法分析程序的输出">0.2: 词法分析程序的输出:</h3>
 <p>词法分析程序每次从字符流中取出一个字符时，以<strong>单词符号</strong>的形式发送至语法分析程序。</p>
 <blockquote>
-<p><strong>单词符号</strong>是一个二元组<strong>(单词种别，单词本身的值)</strong>，其中单词的种别往往用整数编码来表示，单词本身的值是用来区分单凭单词种别无法区分的单词。比如<code>const int i=1,j = 25</code>，<span
-class="math inline">\(1\)</span>和<span
-class="math inline">\(25\)</span>都是常量，但是需要有单词本身的值来区分。特别的，一般标识符本身的值往往是<strong>单词符号表中的指针</strong>。</p>
+<p><strong>单词符号</strong>是一个二元组**(单词种别，单词本身的值)<strong>，其中单词的种别往往用整数编码来表示，单词本身的值是用来区分单凭单词种别无法区分的单词。比如<code>const int i=1,j = 25</code>，$1$和$25$都是常量，但是需要有单词本身的值来区分。特别的，一般标识符本身的值往往是</strong>单词符号表中的指针**。</p>
 </blockquote>
-<h3 id="词法分析的主要功能">0.3: 词法分析的主要功能:</h3>
+<h3 id="0-3-词法分析的主要功能">0.3: 词法分析的主要功能:</h3>
 <p>词法也是语法的一部分，但是仍旧将词法分析和语法分析分开的原因是：</p>
-<ol type="1">
+<ol>
 <li>使编译程序的结构更加清楚明了</li>
 <li>改进编译程序的效率</li>
 <li>增加编译程序的可移植、可维护性。</li>
 </ol>
 <p>除了1. 识别单词，词法分析还具有：</p>
-<ol start="2" type="1">
+<ol start="2">
 <li>滤去注释与空格</li>
 <li>记录新读入的字符和行号</li>
 <li>宏展开</li>
-<li>词法分析的预处理...</li>
+<li>词法分析的预处理…</li>
 </ol>
-<h3 id="用来描述词法规则的工具">0.4 用来描述词法规则的工具</h3>
+<h3 id="0-4-用来描述词法规则的工具">0.4 用来描述词法规则的工具</h3>
 <p>描述词法规则的工具主要有：</p>
-<ol type="1">
+<ol>
 <li>状态转换图</li>
 <li>扩展巴科斯范式(EBNF)</li>
-<li>正规文法(<span class="math inline">\(\star\)</span>)</li>
-<li>正规表达式(<span class="math inline">\(\star\)</span>)</li>
-<li>有限状态自动机(<span class="math inline">\(\star\)</span>)</li>
+<li>正规文法($\star$)</li>
+<li>正规表达式($\star$)</li>
+<li>有限状态自动机($\star$)</li>
 </ol>
-<h2 id="正规文法">1. 正规文法</h2>
-<p>3型文法<span
-class="math inline">\(G(V_N,V_T,P,S)\)</span>(左线性/右线性)能够描述一个正规集。</p>
-<h2 id="正规表达式">2. 正规表达式</h2>
-<h3 id="正规式和正规集的定义">2.1 正规式和正规集的定义:</h3>
-<p>正规表达式所表示的正规式和正规集一般用递归定义： <span
-class="math display">\[
-\begin{align}
-&amp;(1)\varepsilon和\varnothing都是\Sigma上的正规式,对应的正规集为\{\varepsilon\},\varnothing
-\\
-&amp;(2)如果a \in \Sigma，则a也是\Sigma上的正规式,
-它所表示的正规集是\{a\} \\
-&amp;(3)如果e_1和e_2都是正规式，表示的正规集分别是L(e_1)和L(e_2)，\\&amp;
-\ \ \ \ \ 则(e_1)[L(e_1)],e_1|e_2[L(e_1) \cup L(e_2)],e_1\cdot
-e_2[L(e_1)\times
-L(e_2)],e_1^*[L^*(e_1)]也都是正规式,[]中为对应的正规集。\\
-&amp;(4)只有有限次数应用上述规则得到的正规集才是\Sigma上的正规集。
-\end{align}
-\]</span></p>
+<h2 id="1-正规文法">1. 正规文法</h2>
+<p>3型文法$G(V_N,V_T,P,S)$(左线性/右线性)能够描述一个正规集。</p>
+<h2 id="2-正规表达式">2. 正规表达式</h2>
+<h3 id="2-1-正规式和正规集的定义">2.1 正规式和正规集的定义:</h3>
+<p>正规表达式所表示的正规式和正规集一般用递归定义：<br>
+$$<br>
+\begin{align}<br>
+&amp;(1)\varepsilon和\varnothing都是\Sigma上的正规式,对应的正规集为{\varepsilon},\varnothing \<br>
+&amp;(2)如果a \in \Sigma，则a也是\Sigma上的正规式, 它所表示的正规集是{a} \<br>
+&amp;(3)如果e_1和e_2都是正规式，表示的正规集分别是L(e_1)和L(e_2)，\&amp; \ \ \ \ \ 则(e_1)[L(e_1)],e_1|e_2[L(e_1) \cup L(e_2)],e_1\cdot e_2[L(e_1)\times L(e_2)],e_1^<em>[L^</em>(e_1)]也都是正规式,[]中为对应的正规集。\<br>
+&amp;(4)只有有限次数应用上述规则得到的正规集才是\Sigma上的正规集。<br>
+\end{align}<br>
+$$</p>
 <blockquote>
-<p>定理<span class="math inline">\(2.1.1\)</span> 运算符号的优先级为:
-<span class="math inline">\(^* &gt; \cdot &gt; |\)</span> 。并且<span
-class="math inline">\(^*,\cdot,|\)</span>都是<strong>左结合</strong>的。</p>
-<p>左结合： 相同优先级的运算符的运算顺序: <span
-class="math inline">\(a\cdot b\cdot c=(a\cdot b)\cdot c\)</span></p>
+<p>定理$2.1.1$ 运算符号的优先级为: $^* &gt; \cdot &gt; |$ 。并且$^*,\cdot,|$都是<strong>左结合</strong>的。</p>
+<p>左结合： 相同优先级的运算符的运算顺序: $a\cdot b\cdot c=(a\cdot b)\cdot c$</p>
 </blockquote>
 <blockquote>
-<p>例<span class="math inline">\(2.1.1\)</span> <span
-class="math inline">\(d^*(.dd^*|\varepsilon)(e(+|-|\varepsilon)dd^*|\varepsilon)\)</span>表示一个无符号数。</p>
+<p>例$2.1.1$ $d^<em>(.dd^</em>|\varepsilon)(e(+|-|\varepsilon)dd^*|\varepsilon)$表示一个无符号数。</p>
 </blockquote>
 <blockquote>
 <p>配合ppt中例题使用</p>
 </blockquote>
-<h3 id="正规式的代数规律运算符的性质">2.2
-正规式的代数规律(运算符的性质):</h3>
-<p><span class="math display">\[
-\begin{align}
-&amp;a | b | c = (a | b) | c = a | (b | c) &amp;|的结合率\\
-&amp;a | b = b | a &amp;|的交换律 \\
-&amp;a | a = a &amp;|的抽取律 \\
-&amp;a \cdot b \cdot c = (a \cdot b) \cdot c = a \cdot (b \cdot c)
-&amp;\cdot的结合律 \\
-&amp; \varepsilon \cdot a=a \cdot \varepsilon = a
-&amp;\varepsilon是\cdot上的幺元 \\
-&amp;(a|b)\cdot c = a\cdot c \ | \ b \cdot c, \ c \cdot(a|b) = c\cdot a
-\ | \ c \cdot b &amp;\cdot在|上的分配律
-\end{align}
-\]</span></p>
+<h3 id="2-2-正规式的代数规律-运算符的性质">2.2 正规式的代数规律(运算符的性质):</h3>
+<p>$$<br>
+\begin{align}<br>
+&amp;a | b | c = (a | b) | c = a | (b | c) &amp;|的结合率\<br>
+&amp;a | b = b | a &amp;|的交换律 \<br>
+&amp;a | a = a &amp;|的抽取律 \<br>
+&amp;a \cdot b \cdot c = (a \cdot b) \cdot c = a \cdot (b \cdot c) &amp;\cdot的结合律 \<br>
+&amp; \varepsilon \cdot a=a \cdot \varepsilon = a &amp;\varepsilon是\cdot上的幺元 \<br>
+&amp;(a|b)\cdot c = a\cdot c \ | \ b \cdot c, \ c \cdot(a|b) = c\cdot a \ | \ c \cdot b &amp;\cdot在|上的分配律<br>
+\end{align}<br>
+$$</p>
 <blockquote>
-<p>引申性质: <span class="math display">\[
-\begin{align}
-r^* &amp;= (r | \varepsilon)^* \\
-(a | b)^* &amp;= (a^*b^*)^* \\
-(r^*)^*&amp;=r^*
-\end{align}
-\]</span></p>
+<p>引申性质:<br>
+$$<br>
+\begin{align}<br>
+r^* &amp;= (r | \varepsilon)^* \<br>
+(a | b)^* &amp;= (a^<em>b^</em>)^* \<br>
+(r^<em>)^</em>&amp;=r^*<br>
+\end{align}<br>
+$$</p>
 </blockquote>
-<h3 id="正规式和正规文法的等价性">2.3 正规式和正规文法的等价性</h3>
+<h3 id="2-3-正规式和正规文法的等价性">2.3 正规式和正规文法的等价性</h3>
 <blockquote>
-<p>如果正规式<span
-class="math inline">\(e\)</span>所表达的字符串的正规集<span
-class="math inline">\(L[e]\)</span>和正规文法<span
-class="math inline">\(G[S]\)</span>所表达的正规语言<span
-class="math inline">\(L[G]\)</span>相等，则说该正规式和该正规文法等价。</p>
+<p>如果正规式$e$所表达的字符串的正规集$L[e]$和正规文法$G[S]$所表达的正规语言$L[G]$相等，则说该正规式和该正规文法等价。</p>
 </blockquote>
-<h3 id="正规式和正规文法的相互转换">2.3.1
-正规式和正规文法的相互转换</h3>
+<h3 id="2-3-1-正规式和正规文法的相互转换">2.3.1 正规式和正规文法的相互转换</h3>
 <table>
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 44%" />
-<col style="width: 44%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>规则</th>
 <th>正规式</th>
 <th>正规文法</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>规则1:<strong>顺序</strong></td>
-<td><span class="math inline">\(ab\)</span></td>
-<td><span class="math inline">\(A \to aB, B \to b\)</span></td>
+<td>$ab$</td>
+<td>$A \to aB, B \to b$</td>
 </tr>
-<tr class="even">
+<tr>
 <td>规则2:<strong>选择</strong></td>
-<td><span class="math inline">\(a|b\)</span></td>
-<td><span class="math inline">\(A\to a,A\to b\)</span></td>
+<td>$a</td>
+<td>b$</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>规则3:<strong>循环</strong></td>
-<td><font color="red"><span
-class="math inline">\(ab^*\)</span></font>/<font color="blue"><span
-class="math inline">\(a^*b\)</span></font></td>
-<td><font color="red"><span class="math inline">\(A \to aB,B \to bB |
-\varepsilon\)</span></font> / <font color="blue"><span
-class="math inline">\(A\to aA | b\)</span></font></td>
+<td><font color="red">$ab^*$</font>/<font color="blue">$a^*b$</font></td>
+<td><font color="red">$A \to aB,B \to bB</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
 <p>注意: 注意正规文法的左/右线性要保持好！不能混用！</p>
 </blockquote>
-<p>当正规式转换为正规文法时，可以使用<strong>代入规则</strong>。并且可以使用更加熟悉的"+
-*"来代替”| <span
-class="math inline">\(\cdot\)</span>两个运算，化简更快更熟悉(+*的运算性质和"|<span
-class="math inline">\(\cdot\)</span>完全一致)</p>
-<p><img src=".\imgs\Ch3_3.png" /></p>
-<h2 id="有穷自动机">3. 有穷自动机</h2>
+<p>当正规式转换为正规文法时，可以使用<strong>代入规则</strong>。并且可以使用更加熟悉的&quot;+ *“来代替”| $\cdot$两个运算，化简更快更熟悉(+*的运算性质和”|$\cdot$完全一致)</p>
+<p><img src=".%5Cimgs%5CCh3_3.png" alt=""></p>
+<h2 id="3-有穷自动机">3. 有穷自动机</h2>
 <blockquote>
-<p>定义：<strong>有穷自动机(有限自动机)</strong>(Finite
-Automata)是一种识别装置，用来自动识别正规集[正规文法构成的语言的集合/正规式所表示的集合]。分为确定的有穷自动机和不确定的有穷自动机。</p>
+<p>定义：<strong>有穷自动机(有限自动机)</strong>(Finite Automata)是一种识别装置，用来自动识别正规集[正规文法构成的语言的集合/正规式所表示的集合]。分为确定的有穷自动机和不确定的有穷自动机。</p>
 </blockquote>
-<h3 id="确定的有穷自动机dfadeterministic-finite-automata">3.1
-确定的有穷自动机DFA(Deterministic Finite Automata)</h3>
+<h3 id="3-1-确定的有穷自动机DFA-Deterministic-Finite-Automata">3.1 确定的有穷自动机DFA(Deterministic Finite Automata)</h3>
 <blockquote>
-<p>定义<span class="math inline">\(3.1.1\)</span>
-一个<strong>确定的有穷自动机M</strong>是一个5元组 <span
-class="math display">\[
-M = (K,\Sigma,f,S,Z)
-\]</span> 其中:</p>
-<p><span
-class="math inline">\(K\)</span>是一个<strong>有穷</strong>的状态集合。</p>
-<p><span
-class="math inline">\(\Sigma\)</span>是一个<strong>有穷</strong>的输入符号表。每个元素称为一个输入符号。</p>
-<p><span class="math inline">\(f\)</span>是状态转换函数，<span
-class="math inline">\(f: K\times \Sigma \to
-K\)</span>定义了从一个状态接受一个合法符号后转换到的<font color="red"><strong>一个确定</strong></font>的状态。注意，确定有穷自动机不因为空串<span
-class="math inline">\(\varepsilon\)</span>转换状态。</p>
-<p><span
-class="math inline">\(S\)</span>是<font color="red">唯一的一个</font>起始状态，并且<span
-class="math inline">\(S\in K\)</span></p>
-<p><span
-class="math inline">\(Z\)</span>是一个终止状态<font color="red">集合</font>，且<span
-class="math inline">\(Z \subseteq K\)</span>，注意<span
-class="math inline">\(Z = \varnothing\)</span>的情况。​</p>
+<p>定义$3.1.1$ 一个<strong>确定的有穷自动机M</strong>是一个5元组<br>
+$$<br>
+M = (K,\Sigma,f,S,Z)<br>
+$$<br>
+其中:</p>
+<p>$K$是一个<strong>有穷</strong>的状态集合。</p>
+<p>$\Sigma$是一个<strong>有穷</strong>的输入符号表。每个元素称为一个输入符号。</p>
+<p>$f$是状态转换函数，$f: K\times \Sigma \to K$定义了从一个状态接受一个合法符号后转换到的<font color="red"><strong>一个确定</strong></font>的状态。注意，确定有穷自动机不因为空串$\varepsilon$转换状态。</p>
+<p>$S$是<font color="red">唯一的一个</font>起始状态，并且$S\in K$</p>
+<p>$Z$是一个终止状态<font color="red">集合</font>，且$Z \subseteq K$，注意$Z = \varnothing$的情况。​</p>
 </blockquote>
 <p>以上是定义表示法，还有矩阵表示法(状态转换矩阵)[易被计算机表示]和图表示法(状态图)[直观]。见书Page48即可。注意<strong>表示方法</strong>。</p>
-<ol type="1">
+<ol>
 <li>如何表示初态节点</li>
 <li>如何表示终态节点</li>
 </ol>
 <blockquote>
-<p>定义<span class="math inline">\(3.1.2\)</span> 定义符号串<span
-class="math inline">\(t\)</span>可以被自动机所接受:
-如果在状态图上存在一条从初态节点到某一终态节点的道路，且该条道路上的所有弧连接成的符号串等于<span
-class="math inline">\(t\)</span>，则称符号串可以被自动机接受。注意：<font color="red">只有当起始节点恰好也是终止节点时，<span
-class="math inline">\(\varepsilon\)</span>才可被接受</font></p>
+<p>定义$3.1.2$ 定义符号串$t$可以被自动机所接受: 如果在状态图上存在一条从初态节点到某一终态节点的道路，且该条道路上的所有弧连接成的符号串等于$t$，则称符号串可以被自动机接受。注意：<font color="red">只有当起始节点恰好也是终止节点时，$\varepsilon$才可被接受</font></p>
 </blockquote>
 <blockquote>
-<p>定义<span class="math inline">\(3.1.3\)</span> 定义在自动机<span
-class="math inline">\(M\)</span>上的运算： <span class="math display">\[
-f(U,t) = f(U,t_1t_x) = f(f(U,t_1),t_x) \\
-f(U,\varepsilon) = U
-\]</span> 其中<span class="math inline">\(U\in K,
-t\in\Sigma^*,t_1\in\Sigma,t = t_1t_x\)</span>。</p>
-<p>则<span class="math inline">\(t\)</span>可被接受也等价于<span
-class="math inline">\(f(S,t) = u,u \in Z\)</span>。</p>
+<p>定义$3.1.3$ 定义在自动机$M$上的运算：<br>
+$$<br>
+f(U,t) = f(U,t_1t_x) = f(f(U,t_1),t_x) \<br>
+f(U,\varepsilon) = U<br>
+$$<br>
+其中$U\in K, t\in\Sigma^*,t_1\in\Sigma,t = t_1t_x$。</p>
+<p>则$t$可被接受也等价于$f(S,t) = u,u \in Z$。</p>
 </blockquote>
-<p>定义集合<span class="math inline">\(L(M)\)</span>: <span
-class="math display">\[
-L(M) = \{t|t可以被自动机M接受\}
-\]</span> 为自动机<span class="math inline">\(M\)</span>的语言。</p>
+<p>定义集合$L(M)$:<br>
+$$<br>
+L(M) = {t|t可以被自动机M接受}<br>
+$$<br>
+为自动机$M$的语言。</p>
 <blockquote>
-<p>定理<span class="math inline">\(3.1.1\)</span> <span
-class="math inline">\(\Sigma\)</span>上的一个串集合<span
-class="math inline">\(V \subseteq
-\Sigma^*\)</span>是正规的当且仅当存在一个确定的有穷自动机<span
-class="math inline">\(M\)</span>的语言<span class="math inline">\(L(M) =
-V\)</span>。</p>
+<p>定理$3.1.1$ $\Sigma$上的一个串集合$V \subseteq \Sigma^*$是正规的当且仅当存在一个确定的有穷自动机$M$的语言$L(M) = V$。</p>
 </blockquote>
-<h3 id="不确定的有穷自动机nfanondeterministic-finite-automata">3.2
-不确定的有穷自动机NFA(Nondeterministic Finite Automata)</h3>
+<h3 id="3-2-不确定的有穷自动机NFA-Nondeterministic-Finite-Automata">3.2 不确定的有穷自动机NFA(Nondeterministic Finite Automata)</h3>
 <blockquote>
-<p>定义<span class="math inline">\(3.2.1\)</span>
-不确定的有穷自动机<span class="math inline">\(M\)</span>也是一个5元组：
-<span class="math display">\[
-M = (K,\Sigma,f,S,Z)
-\]</span> 其中:</p>
-<p><span
-class="math inline">\(K\)</span>是一个<strong>有穷</strong>的状态集合。</p>
-<p><span
-class="math inline">\(\Sigma\)</span>是一个<strong>有穷</strong>的输入符号表。每个元素称为一个输入符号。</p>
-<p><span class="math inline">\(f\)</span>是一个状态转移函数，<span
-class="math inline">\(f: K \times \Sigma^* \to 2^{K}\)</span>，其中<span
-class="math inline">\(2^K\)</span>是<span
-class="math inline">\(K\)</span>的幂集，<span
-class="math inline">\(\Sigma^*\)</span>是<span
-class="math inline">\(\Sigma\)</span>上的字符串集。首先是可以因为<font color="red"><span
-class="math inline">\(\varepsilon\)</span></font>转换状态，接着是因为一个输入可以有<span
-class="math inline">\(n\)</span>个后继状态。</p>
-<p><span
-class="math inline">\(S\)</span>是一个初始状态<strong>集合</strong>，<span
-class="math inline">\(S \subseteq K\)</span>且<span
-class="math inline">\(S \neq \varnothing\)</span></p>
-<p><span
-class="math inline">\(Z\)</span>是一个终止状态<strong>集合</strong>，<span
-class="math inline">\(Z\subseteq K\)</span>。可为空！</p>
+<p>定义$3.2.1$ 不确定的有穷自动机$M$也是一个5元组：<br>
+$$<br>
+M = (K,\Sigma,f,S,Z)<br>
+$$<br>
+其中:</p>
+<p>$K$是一个<strong>有穷</strong>的状态集合。</p>
+<p>$\Sigma$是一个<strong>有穷</strong>的输入符号表。每个元素称为一个输入符号。</p>
+<p>$f$是一个状态转移函数，$f: K \times \Sigma^* \to 2^{K}$，其中$2^K$是$K$的幂集，$\Sigma^*$是$\Sigma$上的字符串集。首先是可以因为<font color="red">$\varepsilon$</font>转换状态，接着是因为一个输入可以有$n$个后继状态。</p>
+<p>$S$是一个初始状态<strong>集合</strong>，$S \subseteq K$且$S \neq \varnothing$</p>
+<p>$Z$是一个终止状态<strong>集合</strong>，$Z\subseteq K$。可为空！</p>
 </blockquote>
-<p>当然<span
-class="math inline">\(NFA\)</span>也可以用状态图和状态转移矩阵表示。接受字符串的定义也和<span
-class="math inline">\(DFA\)</span>完全一致。不过<span
-class="math inline">\(\varepsilon\)</span>可以被不确定的有穷自动机<span
-class="math inline">\(M\)</span>接受的条件是:</p>
-<ol type="1">
+<p>当然$NFA$也可以用状态图和状态转移矩阵表示。接受字符串的定义也和$DFA$完全一致。不过$\varepsilon$可以被不确定的有穷自动机$M$接受的条件是:</p>
+<ol>
 <li>存在一个初始节点也是终止节点。</li>
-<li>从初始节点出发存在一条<span
-class="math inline">\(\varepsilon\)</span>的路径到终止节点。</li>
+<li>从初始节点出发存在一条$\varepsilon$的路径到终止节点。</li>
 </ol>
 <blockquote>
-<p>定理<span class="math inline">\(3.2.2\)</span>
-对于任意一个不确定的有穷自动机<span
-class="math inline">\(M&#39;\)</span>，一定存在一个确定的有穷自动机<span
-class="math inline">\(M\)</span>,使得<span
-class="math inline">\(L(M&#39;) = L(M)\)</span>.
-也就是一定存在一个确定的有穷自动机<span
-class="math inline">\(M\)</span>使得<span
-class="math inline">\(M&#39;\)</span>和<span
-class="math inline">\(M\)</span>等价。</p>
+<p>定理$3.2.2$ 对于任意一个不确定的有穷自动机$M’$，一定存在一个确定的有穷自动机$M$,使得$L(M’) = L(M)$. 也就是一定存在一个确定的有穷自动机$M$使得$M’$和$M$等价。</p>
 </blockquote>
-<h3 id="nfa转换为dfa-子集法">3.3 <span
-class="math inline">\(NFA\)</span>转换为<span
-class="math inline">\(DFA\)</span>: 子集法</h3>
+<h3 id="3-3-NFA-转换为-DFA-子集法">3.3 $NFA$转换为$DFA$: 子集法</h3>
 <blockquote>
-<p>定义<span class="math inline">\(3.3.1\)</span> 状态集合<span
-class="math inline">\(I\)</span>的<span
-class="math inline">\(\varepsilon\)</span>闭包： <span
-class="math display">\[
-\varepsilon-closure(I) =
-\{u|v经过&lt;任意&gt;条\varepsilon能够抵达u,其中v\in I\}
-\]</span></p>
+<p>定义$3.3.1$ 状态集合$I$的$\varepsilon$闭包：<br>
+$$<br>
+\varepsilon-closure(I) = {u|v经过&lt;任意&gt;条\varepsilon能够抵达u,其中v\in I}<br>
+$$</p>
 </blockquote>
 <blockquote>
-<p>定义<span class="math inline">\(3.3.2\)</span> 状态集合<span
-class="math inline">\(I\)</span>的<span
-class="math inline">\(a\)</span>弧转换： <span class="math display">\[
-move(I,a) = \{u|v经过&lt;一条&gt;a弧可以抵达u,其中v \in I \}
-\]</span></p>
+<p>定义$3.3.2$ 状态集合$I$的$a$弧转换：<br>
+$$<br>
+move(I,a) = {u|v经过&lt;一条&gt;a弧可以抵达u,其中v \in I }<br>
+$$</p>
 </blockquote>
-<h4 id="子集法转换">3.3.1 子集法转换</h4>
-<p>用确定的有穷自动机<span
-class="math inline">\(M\)</span>的一个状态来对应不确定自动机<span
-class="math inline">\(N\)</span>的一组状态。</p>
-<p>把不确定有穷自动机<span class="math inline">\(N =
-(K,\Sigma,f,K_0,K_t)\)</span>转换为确定的有穷自动机<span
-class="math inline">\(M = (S,\Sigma,D,S_0,S_t)\)</span>： <span
-class="math display">\[
-\begin{align}
-&amp;1. 输入字符集\Sigma不变。 令队列C = \varnothing\\
-&amp;2. 令M的初始状态S_0 = \varepsilon-closure(K_0)，且将S_0置入C中\\
-&amp;3. 执行子集构造算法 \ 得到子集组S作为M的状态集合\\
-&amp;4. M的终止状态集合S_t = \{Q|Q\in S且Q\cap K_t \neq
-\varnothing\}即所有包含N中终止节点的状态集合Q都是M的终止节点
-\end{align}
-\]</span></p>
+<h4 id="3-3-1-子集法转换">3.3.1 子集法转换</h4>
+<p>用确定的有穷自动机$M$的一个状态来对应不确定自动机$N$的一组状态。</p>
+<p>把不确定有穷自动机$N = (K,\Sigma,f,K_0,K_t)$转换为确定的有穷自动机$M = (S,\Sigma,D,S_0,S_t)$：<br>
+$$<br>
+\begin{align}<br>
+&amp;1. 输入字符集\Sigma不变。 令队列C = \varnothing\<br>
+&amp;2. 令M的初始状态S_0 = \varepsilon-closure(K_0)，且将S_0置入C中\<br>
+&amp;3. 执行子集构造算法 \ 得到子集组S作为M的状态集合\<br>
+&amp;4. M的终止状态集合S_t = {Q|Q\in S且Q\cap K_t \neq \varnothing}即所有包含N中终止节点的状态集合Q都是M的终止节点<br>
+\end{align}<br>
+$$</p>
 <p>如果是手算，一般是构建一个表格。</p>
 <p>横行是输入字符集，纵列是状态集合。</p>
-<h3 id="dfa的最小化">3.4 DFA的最小化</h3>
+<h3 id="3-4-DFA的最小化">3.4 DFA的最小化</h3>
 <blockquote>
-<p>定义<span class="math inline">\(3.4.1\)</span>
-当一个<strong>DFA</strong>既没有多余状态，也没有等价状态时，该<span
-class="math inline">\(DFA\)</span>是化简了的，也是最小化了的。</p>
+<p>定义$3.4.1$ 当一个<strong>DFA</strong>既没有多余状态，也没有等价状态时，该$DFA$是化简了的，也是最小化了的。</p>
 </blockquote>
-<p><font color="red">最小化<span
-class="math inline">\(DFA\)</span>的步骤有<strong>2</strong>步！！</font></p>
-<ol type="1">
+<p><font color="red">最小化$DFA$的步骤有<strong>2</strong>步！！</font></p>
+<ol>
 <li>消除多余状态</li>
 <li>合并等价状态</li>
 </ol>
-<h4 id="消除多余状态">3.4.1 消除多余状态</h4>
+<h4 id="3-4-1-消除多余状态">3.4.1 消除多余状态</h4>
 <blockquote>
-<p>定义<span class="math inline">\(3.4.2\)</span>
-<strong>有穷自动机</strong>的多余状态是</p>
-<ol type="1">
+<p>定义$3.4.2$ <strong>有穷自动机</strong>的多余状态是</p>
+<ol>
 <li>从开始状态出发无法到达的状态。</li>
 <li>从该状态出发无法到达终止状态的状态。</li>
 </ol>
 </blockquote>
-<p>对于这<strong>2</strong>种多余状态的处理办法是:
-<font color="red">简单地去掉该节点和和该节点相关的边即可。</font></p>
-<p>建议还是先<span
-class="math inline">\(bfs\)</span>找出多余的状态。</p>
-<h4 id="合并等价状态">3.4.2 合并等价状态</h4>
+<p>对于这<strong>2</strong>种多余状态的处理办法是: <font color="red">简单地去掉该节点和和该节点相关的边即可。</font></p>
+<p>建议还是先$bfs$找出多余的状态。</p>
+<h4 id="3-4-2-合并等价状态">3.4.2 合并等价状态</h4>
 <blockquote>
-<p>定义<span class="math inline">\(3.4.3\)</span>
-<strong>有穷自动机</strong>的状态<span
-class="math inline">\(u\)</span>和<span
-class="math inline">\(v\)</span>是等价状态，当且仅当<span
-class="math inline">\(u,v\)</span>满足： <span class="math display">\[
-\begin{align}
-&amp;1.
-u和v同时是终止状态(可接受状态)或者同时是非终止状态(不可接受状态)。 \\
-&amp;2. \forall a \in (\Sigma \cup\varepsilon),
-u和v必须由a弧上转移到等价的状态上。
-\end{align}
-\]</span></p>
+<p>定义$3.4.3$ <strong>有穷自动机</strong>的状态$u$和$v$是等价状态，当且仅当$u,v$满足：<br>
+$$<br>
+\begin{align}<br>
+&amp;1. u和v同时是终止状态(可接受状态)或者同时是非终止状态(不可接受状态)。 \<br>
+&amp;2. \forall a \in (\Sigma \cup\varepsilon), u和v必须由a弧上转移到等价的状态上。<br>
+\end{align}<br>
+$$</p>
 </blockquote>
 <blockquote>
-<p>定义<span class="math inline">\(3.4.4\)</span>
-<strong>有穷自动机</strong>的状态<span
-class="math inline">\(u\)</span>和<span
-class="math inline">\(v\)</span>如果不等价，则称状态<span
-class="math inline">\(u\)</span>和<span
-class="math inline">\(v\)</span>是可区分的。</p>
+<p>定义$3.4.4$ <strong>有穷自动机</strong>的状态$u$和$v$如果不等价，则称状态$u$和$v$是可区分的。</p>
 </blockquote>
 <blockquote>
 <p>好用的结论：</p>
-<ol type="1">
-<li><strong>一致性条件</strong>: 如果状态<span
-class="math inline">\(u\)</span>和状态<span
-class="math inline">\(v\)</span>的<strong>所有</strong>后继都一样，则<span
-class="math inline">\(u\)</span>和<span
-class="math inline">\(v\)</span>一定等价。</li>
-<li><strong>蔓延性条件</strong>: 如果状态<span
-class="math inline">\(u\)</span>和状态<span
-class="math inline">\(v\)</span>对于某一输入字符(非空串)，一个有后继而另一个没有，则则<span
-class="math inline">\(u\)</span>和<span
-class="math inline">\(v\)</span>一定可区分。</li>
+<ol>
+<li><strong>一致性条件</strong>: 如果状态$u$和状态$v$的<strong>所有</strong>后继都一样，则$u$和$v$一定等价。</li>
+<li><strong>蔓延性条件</strong>: 如果状态$u$和状态$v$对于某一输入字符(非空串)，一个有后继而另一个没有，则则$u$和$v$一定可区分。</li>
 </ol>
 </blockquote>
-<p>用来合并<font color="red">不含多余状态的DFA</font>(也没有空弧)的等价状态的方法是<strong>分割法</strong>:
-一个一个把不等价的状态从等价集合中分开。</p>
-<p>执行步骤: <span class="math display">\[
-\begin{align}
-&amp;0. 建议先画状态转移表格\\
-&amp;1. 把状态集合分为两个大的集合: \{u|u \in Z\}和\{u|u \notin
-Z\}(终止集和非终止集)\\
-&amp;2. 遍历所有状态数量\ge2的集合I，\forall c\in Sigma,求move(I,c)\\
-&amp;3. 如果I状态的某一个move(I,c)不同属一个等价集合\\ &amp; \ \ \
-则反过来求I的一个划分\pi，把I划分为\pi,回到2\\
-&amp;4. 如果所有状态数量\ge2的集合I的所有输入后继都同属一个集合，\\&amp;
-\ \ \ 则此为最后的最小状态集合。
-\end{align}
-\]</span></p>
-<h3 id="正规式和有穷自动机的等价性">3.5 正规式和有穷自动机的等价性</h3>
+<p>用来合并<font color="red">不含多余状态的DFA</font>(也没有空弧)的等价状态的方法是<strong>分割法</strong>: 一个一个把不等价的状态从等价集合中分开。</p>
+<p>执行步骤:<br>
+$$<br>
+\begin{align}<br>
+&amp;0. 建议先画状态转移表格\<br>
+&amp;1. 把状态集合分为两个大的集合: {u|u \in Z}和{u|u \notin Z}(终止集和非终止集)\<br>
+&amp;2. 遍历所有状态数量\ge2的集合I，\forall c\in Sigma,求move(I,c)\<br>
+&amp;3. 如果I状态的某一个move(I,c)不同属一个等价集合\ &amp; \ \ \ 则反过来求I的一个划分\pi，把I划分为\pi,回到2\<br>
+&amp;4. 如果所有状态数量\ge2的集合I的所有输入后继都同属一个集合，\&amp; \ \ \ 则此为最后的最小状态集合。<br>
+\end{align}<br>
+$$</p>
+<h3 id="3-5-正规式和有穷自动机的等价性">3.5 正规式和有穷自动机的等价性</h3>
 <blockquote>
-<p>定理<span class="math inline">\(3.5.1\)</span>
-对于任何一个不确定的有穷自动机(NFA)<span
-class="math inline">\(M\)</span>，一定存在一个相同<span
-class="math inline">\(\Sigma\)</span>上的正规式<span
-class="math inline">\(r\)</span>，使得<span class="math inline">\(L(r) =
-L(M)\)</span>。</p>
+<p>定理$3.5.1$ 对于任何一个不确定的有穷自动机(NFA)$M$，一定存在一个相同$\Sigma$上的正规式$r$，使得$L® = L(M)$。</p>
 </blockquote>
 <blockquote>
-<p>定理<span class="math inline">\(3.5.2\)</span>
-对于任何一个正规式<span
-class="math inline">\(r\)</span>，一定存在一个相同<span
-class="math inline">\(\Sigma\)</span>上的不确定的有穷自动机(NFA)<span
-class="math inline">\(M\)</span>，使得<span class="math inline">\(L(M) =
-L(r)\)</span>。</p>
+<p>定理$3.5.2$ 对于任何一个正规式$r$，一定存在一个相同$\Sigma$上的不确定的有穷自动机(NFA)$M$，使得$L(M) = L®$。</p>
 </blockquote>
-<h4 id="不确定有穷自动机m转换为等价的正规式r">3.5.1
-不确定有穷自动机<span
-class="math inline">\(M\)</span>转换为等价的正规式<span
-class="math inline">\(r\)</span></h4>
-<h5 id="添加新的节点x和y">3.5.1.1 <font color="red">添加新的节点<span
-class="math inline">\(x\)</span>和<span
-class="math inline">\(y\)</span></font></h5>
-<p>在原不确定有穷自动机<span
-class="math inline">\(M\)</span>中添加两个新的节点<span
-class="math inline">\(x\)</span>和<span
-class="math inline">\(y\)</span>，<font color="red">其中<span
-class="math inline">\(x\)</span>向每一个起始节点添加一条<span
-class="math inline">\(\varepsilon\)</span>弧</font>，<font color="blue">每个终止节点向<span
-class="math inline">\(y\)</span>添加一条<span
-class="math inline">\(\varepsilon\)</span>弧</font>。</p>
-<h5 id="将自动机的弧转换为正规式直至只剩下节点x和y">3.5.1.2
-将自动机的弧转换为正规式，直至只剩下节点<span
-class="math inline">\(x\)</span>和<span
-class="math inline">\(y\)</span></h5>
-<ol type="1">
+<h4 id="3-5-1-不确定有穷自动机-M-转换为等价的正规式-r">3.5.1 不确定有穷自动机$M$转换为等价的正规式$r$</h4>
+<h5 id="3-5-1-1-font-color-red-添加新的节点-x-和-y-font">3.5.1.1 <font color="red">添加新的节点$x$和$y$</font></h5>
+<p>在原不确定有穷自动机$M$中添加两个新的节点$x$和$y$，<font color="red">其中$x$向每一个起始节点添加一条$\varepsilon$弧</font>，<font color="blue">每个终止节点向$y$添加一条$\varepsilon$弧</font>。</p>
+<h5 id="3-5-1-2-将自动机的弧转换为正规式，直至只剩下节点-x-和-y">3.5.1.2 将自动机的弧转换为正规式，直至只剩下节点$x$和$y$</h5>
+<ol>
 <li>顺序</li>
 </ol>
-<p><img src="./img/CP/CH3_4.png" /></p>
-<ol start="2" type="1">
+<p><img src="./img/CP/CH3_4.png" alt=""></p>
+<ol start="2">
 <li>选择</li>
 </ol>
-<p><img src="./img/CP/CH3_5.png" /></p>
-<ol start="3" type="1">
+<p><img src="./img/CP/CH3_5.png" alt=""></p>
+<ol start="3">
 <li>循环</li>
 </ol>
-<p><img src="./img/CP/CH3_6.png" /></p>
-<p>最后节点<span class="math inline">\(x\)</span>和<span
-class="math inline">\(y\)</span>上弧的正规式就是最后的答案。</p>
-<h4 id="正规式r转换为等价的不确定有穷自动机m">3.5.2 正规式<span
-class="math inline">\(r\)</span>转换为等价的不确定有穷自动机<span
-class="math inline">\(M\)</span></h4>
+<p><img src="./img/CP/CH3_6.png" alt=""></p>
+<p>最后节点$x$和$y$上弧的正规式就是最后的答案。</p>
+<h4 id="3-5-2-正规式-r-转换为等价的不确定有穷自动机-M">3.5.2 正规式$r$转换为等价的不确定有穷自动机$M$</h4>
 <blockquote>
-<p>这个过程有点像<font color="red">结构化编程</font>。把正规式<span
-class="math inline">\(r\)</span>自顶向下分解。这个过程也叫做<strong>"语法制导"</strong>。</p>
+<p>这个过程有点像<font color="red">结构化编程</font>。把正规式$r$自顶向下分解。这个过程也叫做**“语法制导”**。</p>
 </blockquote>
 <blockquote>
-<p><font color="red">Attention: </font> 弧上不能出现<span
-class="math inline">\(a|b\)</span>，而<span
-class="math inline">\(a,b\)</span>是可以接受的。。</p>
+<p><font color="red">Attention: </font> 弧上不能出现$a|b$，而$a,b$是可以接受的。。</p>
 </blockquote>
-<h5 id="基本转换">3.5.2.0 基本转换</h5>
-<ol type="1">
-<li><span class="math inline">\(\varnothing\)</span>表达式</li>
+<h5 id="3-5-2-0-基本转换">3.5.2.0 基本转换</h5>
+<ol>
+<li>$\varnothing$表达式</li>
 </ol>
-<p><img src="img/CP/CH3_11.png" /></p>
-<ol start="2" type="1">
-<li><span class="math inline">\(r = \varepsilon\)</span></li>
+<p><img src="img/CP/CH3_11.png" alt=""></p>
+<ol start="2">
+<li>$r = \varepsilon$</li>
 </ol>
-<p><img src="img/CP/CH3_12.png" /></p>
-<ol start="3" type="1">
-<li><span class="math inline">\(r = a, a \in \Sigma\)</span></li>
+<p><img src="img/CP/CH3_12.png" alt=""></p>
+<ol start="3">
+<li>$r = a, a \in \Sigma$</li>
 </ol>
-<p><img src="img/CP/CH3_13.png" /></p>
-<h5 id="顺序-r-r_1r_2">3.5.2.1 顺序 <span class="math inline">\(r =
-r_1r_2\)</span></h5>
-<p><img src="img/CP/CH3_7.png" /></p>
+<p><img src="img/CP/CH3_13.png" alt=""></p>
+<h5 id="3-5-2-1-顺序-r-r-1r-2">3.5.2.1 顺序 $r = r_1r_2$</h5>
+<p><img src="img/CP/CH3_7.png" alt=""></p>
 <p><font color="red">将一个正规式的终止节点和另一个正规式的起始节点连接起来</font></p>
-<h5 id="选择-r-r_1-r_2">3.5.2.2 选择 <span class="math inline">\(r = r_1
-| r_2\)</span></h5>
-<p><img src="img/CP/CH3_8.png" /></p>
-<p><font color="red">让起始节点<span
-class="math inline">\(x\)</span>分别空弧连接到两个正规式的起始节点，再从每一个正规式的终止节点连空弧到终止节点<span
-class="math inline">\(y\)</span></font></p>
-<h5 id="循环-r-r_1">3.5.2.3 循环 <span class="math inline">\(r =
-r_1^*\)</span></h5>
-<p><img src="img/CP/CH3_9.png" /></p>
-<p>从<span
-class="math inline">\(r_1\)</span>的终止节点连接一条空弧到<span
-class="math inline">\(r_1\)</span>的初始节点。</p>
-<p><font color="red">从初始节点<span
-class="math inline">\(x\)</span>到终止节点<span
-class="math inline">\(y\)</span>非常重要！！(<span
-class="math inline">\(r_1^*\)</span>)，否则是<span
-class="math inline">\(r_1^+\)</span></font></p>
+<h5 id="3-5-2-2-选择-r-r-1-r-2">3.5.2.2 选择 $r = r_1 | r_2$</h5>
+<p><img src="img/CP/CH3_8.png" alt=""></p>
+<p><font color="red">让起始节点$x$分别空弧连接到两个正规式的起始节点，再从每一个正规式的终止节点连空弧到终止节点$y$</font></p>
+<h5 id="3-5-2-3-循环-r-r-1">3.5.2.3 循环 $r = r_1^*$</h5>
+<p><img src="img/CP/CH3_9.png" alt=""></p>
+<p>从$r_1$的终止节点连接一条空弧到$r_1$的初始节点。</p>
+<p><font color="red">从初始节点$x$到终止节点$y$非常重要！！($r_1^*$)，否则是$r_1^+$</font></p>
 <p>有时可以思考能否像下面的情况一样尽量简化一些:</p>
-<p><img src="img/CP/CH3_10.png" /></p>
+<p><img src="img/CP/CH3_10.png" alt=""></p>
 <p>少一些空弧总是好的！</p>
-<h3 id="正规文法和不确定有穷自动机的等价性">3.6
-正规文法和不确定有穷自动机的等价性</h3>
+<h3 id="3-6-正规文法和不确定有穷自动机的等价性">3.6 正规文法和不确定有穷自动机的等价性</h3>
 <blockquote>
-<p>定理<span class="math inline">\(3.6.1\)</span> 从正规文法<span
-class="math inline">\(G\)</span>可以直接构造一个等价的不确定的有穷自动机<span
-class="math inline">\(M\)</span>，从不确定有穷自动机<span
-class="math inline">\(M\)</span>也可以直接构造出一个等价的正规文法<span
-class="math inline">\(G\)</span></p>
+<p>定理$3.6.1$ 从正规文法$G$可以直接构造一个等价的不确定的有穷自动机$M$，从不确定有穷自动机$M$也可以直接构造出一个等价的正规文法$G$</p>
 </blockquote>
-<h4 id="从正规文法g中导出不确定有穷自动机m">3.6.1 从正规文法<span
-class="math inline">\(G\)</span>中导出不确定有穷自动机<span
-class="math inline">\(M\)</span></h4>
+<h4 id="3-6-1-从正规文法-G-中导出不确定有穷自动机-M">3.6.1 从正规文法$G$中导出不确定有穷自动机$M$</h4>
 <blockquote>
-<p><font color="red">一般只考虑形如<span class="math inline">\(A \to aB,
-\ a\in(\Sigma \cup\{\varepsilon\})\)</span>的正规式。</font></p>
+<p><font color="red">一般只考虑形如$A \to aB, \ a\in(\Sigma \cup{\varepsilon})$的正规式。</font></p>
 </blockquote>
-<p>正规文法<span
-class="math inline">\(G(V_N,V_T,P,S)\)</span>到不确定有穷自动机<span
-class="math inline">\(M(K,\Sigma,f,K_S,K_Z)\)</span>转换。</p>
-<ol type="1">
-<li><span class="math inline">\(K = V_N\)</span>:
-将非终结符集作为状态集合。</li>
-<li><span class="math inline">\(\Sigma = V_T\)</span>:
-字符表即终结符集合</li>
-<li><span class="math inline">\(K_S = \{S\}\)</span>:
-起始状态集合仅包含开始符号<span class="math inline">\(S\)</span></li>
+<p>正规文法$G(V_N,V_T,P,S)$到不确定有穷自动机$M(K,\Sigma,f,K_S,K_Z)$转换。</p>
+<ol>
+<li>$K = V_N$: 将非终结符集作为状态集合。</li>
+<li>$\Sigma = V_T$: 字符表即终结符集合</li>
+<li>$K_S = {S}$: 起始状态集合仅包含开始符号$S$</li>
 <li>添加一个新的状态<font color="red">Z</font>作为唯一的终止状态。</li>
-<li>对每一条形如<span class="math inline">\(A \to
-aB\)</span>的产生式添加一条从状态<span
-class="math inline">\(A\)</span>到状态<span
-class="math inline">\(B\)</span>的<span
-class="math inline">\(a\)</span>弧（<span class="math inline">\(f(A,a) =
-B\)</span>)。</li>
-<li>对每一条形如<span class="math inline">\(A \to
-a\)</span>的产生式添加一条从状态<span
-class="math inline">\(A\)</span>到终止状态<font color="red"><span
-class="math inline">\(Z\)</span></font>的<span
-class="math inline">\(a\)</span>弧。</li>
+<li>对每一条形如$A \to aB$的产生式添加一条从状态$A$到状态$B$的$a$弧（$f(A,a) = B$)。</li>
+<li>对每一条形如$A \to a$的产生式添加一条从状态$A$到终止状态<font color="red">$Z$</font>的$a$弧。</li>
 </ol>
 <p>大功告成！</p>
-<h4 id="从不确定有穷自动机m中导出正规文法g">3.6.2
-从<font color="red">不确定有穷自动机<span
-class="math inline">\(M\)</span></font>中导出正规文法<span
-class="math inline">\(G\)</span>​</h4>
+<h4 id="3-6-2-从-font-color-red-不确定有穷自动机-M-font-中导出正规文法-G-​">3.6.2 从<font color="red">不确定有穷自动机$M$</font>中导出正规文法$G$​</h4>
 <blockquote>
 <p>M不能有空弧，且只能有一个起始状态，否则将不为正规文法。</p>
 </blockquote>
-<p>确定的有穷自动机<span
-class="math inline">\(M(K,\Sigma,f,S,Z)\)</span>转换为正规文法<span
-class="math inline">\(G(V_N,V_T,P,S)\)</span></p>
-<ol type="1">
-<li><span class="math inline">\(V_N = K\)</span>:
-非终结符集合就是状态集合</li>
-<li><span class="math inline">\(V_T = \Sigma\)</span>:
-终结符集合就是字符表</li>
-<li><span class="math inline">\(S = S\)</span> :开始符就是起始状态</li>
-<li>对于<span class="math inline">\(A\)</span>通过<span
-class="math inline">\(a\)</span>弧转换为状态<span
-class="math inline">\(B\)</span>的状态转换函数<span
-class="math inline">\(f(A,a) = B\)</span>，添加一条<span
-class="math inline">\(A \to aB\)</span>的产生式</li>
-<li>对于终止状态<span class="math inline">\(Z\)</span>，添加一条<span
-class="math inline">\(Z \to \varepsilon\)</span>的产生式</li>
+<p>确定的有穷自动机$M(K,\Sigma,f,S,Z)$转换为正规文法$G(V_N,V_T,P,S)$</p>
+<ol>
+<li>$V_N = K$: 非终结符集合就是状态集合</li>
+<li>$V_T = \Sigma$: 终结符集合就是字符表</li>
+<li>$S = S$ :开始符就是起始状态</li>
+<li>对于$A$通过$a$弧转换为状态$B$的状态转换函数$f(A,a) = B$，添加一条$A \to aB$的产生式</li>
+<li>对于终止状态$Z$，添加一条$Z \to \varepsilon$的产生式</li>
 </ol>
 <p>大功告成！</p>
 
