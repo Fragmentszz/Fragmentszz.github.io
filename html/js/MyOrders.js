@@ -30,12 +30,6 @@ let gettrans = function()
 list = ["tsid","toaddress","pay"];
 document.addEventListener('DOMContentLoaded',()=>{
     gettrans();
-    document.getElementById("completeButton").addEventListener('click',()=>{
-        Operation("complete")
-    });
-    document.getElementById("abandonButton").addEventListener('click',()=>{
-        Operation("abandon")
-    });
 });
 var selectedDeliveryId = null;
 var selectedDeliveryPay = null;

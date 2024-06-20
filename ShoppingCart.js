@@ -108,7 +108,6 @@ server.post('/update_og',(req,res) => {
                 res.send({"status":-1});
                 return;
             }
-            //console.log(dbres);
             res.send({"status":0});
         })
     });

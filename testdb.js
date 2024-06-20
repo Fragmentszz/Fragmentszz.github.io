@@ -3,9 +3,9 @@ const pg = require('pg');
 var config = {
     user:'wwd',
     database:'postgres',
-    password:'WWDldg!!!',
+    password:'WWDldg@123',
     host:'127.0.0.1',
-    port:'7654'
+    port:'15432'
 };
 console.log(pg.native);
 var pool = new pg.Pool(config);

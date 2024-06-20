@@ -40,7 +40,16 @@ server.post('/acceptTrans',(req,res) => {
             }
             console.log(dbres);
             Tools.log("运单" + oridic["tsid"] + "被" + fid + "接受了");
+            sqldic2 = {...vr.getdic("update","Forwarder"),"set":{"FUNCION1":"credit = credit - 1"},"equal":{"fid":fid}};
+            console.log(toSelect.tosql(sqldic2),'\n');
+            db.dbpool.query(toSelect.tosql(sqldic2),(err,dbres) =>{
+                if(err){
+                    console.log(err);
+                    return;
+                }
+            });
             vr.send(res,'0',"接受任务成功！！");
+            
         });
         // sqldic = {...vr.getdic("select","forwarder"),"attribute":["credit"],"equal":{"fid":fid}};
         // db.dbpool.query(toSelect.tosql(sqldic),(err,dbres1)=>{
@@ -125,16 +134,14 @@ server.post('/OperateTrans',(req,res) => {
                     return;
                 }
                 pay = dbres["rows"][0]["pay"];
-                console.log(dbres);
-                console.log(pay);
-                // sqldic2 = {...vr.getdic("update","Forwarder"),"set":{"FUNCION1":"totcost = totcost + " + pay.toString(),"FUNCION2":"credit = credit + 1"},"equal":{"fid":fid}};
-                // console.log(toSelect.tosql(sqldic2),'\n');
-                // db.dbpool.query(toSelect.tosql(sqldic2),(err,dbres) =>{
-                //     if(err){
-                //         console.log(err);
-                //         return;
-                //     }
-                // });
+                sqldic2 = {...vr.getdic("update","Forwarder"),"set":{"FUNCION1":"totcost = totcost + " + pay.toString(),"FUNCION2":"credit = credit + 1"},"equal":{"fid":fid}};
+                console.log(toSelect.tosql(sqldic2),'\n');
+                db.dbpool.query(toSelect.tosql(sqldic2),(err,dbres) =>{
+                    if(err){
+                        console.log(err);
+                        return;
+                    }
+                });
             });
             sqldic = {...vr.getdic("update","trans"),"set":{"endtime":"NOW()","status":2},"equal":{"tsid":oridic["tsid"]}};
             
