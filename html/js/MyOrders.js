@@ -17,7 +17,6 @@ let gettrans = function()
         var result = JSON.parse(xhr.responseText);
         if(xhr.status === 200){
             deliveryData = result["orders"];
-            console.log(deliveryData);
             refresh();
         }else{
             alert(result["describe"]);

@@ -24,4 +24,8 @@
 
 推荐使用```pm2```创建后台进程运行，```pm2```的使用请参考[PM2 | NodeJS应用进程管理工具—PM2的基本使用-CSDN博客](https://blog.csdn.net/sunyctf/article/details/130655852)
 
+安装```pm2```后可以使用```pm2 start ./server.js --log ./log/stdout.txt```将输出重定向至```./log/stdout.txt```中。
+
+关于系统的日志被保存在```./log/log.txt```中。
+
 剩下的以后再补=。=

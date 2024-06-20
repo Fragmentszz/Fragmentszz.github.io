@@ -19,6 +19,11 @@ const { toId } = require('./Tools.js');
 const Forward = require('./Forward.js');
 
 var numcount = vr.numcount;
+// 创建一个日志文件
+const logDirectory = path.join(__dirname, 'log');
+if (!fs.existsSync(logDirectory)) {
+  fs.mkdirSync(logDirectory);
+}
 server.use(session({
     name:'sid',
     secret:'wwdldg',
@@ -67,7 +72,7 @@ server.all('*',(req,res) => {
     res.statusCode = 404;
     res.send('404 NOT FOUND');
 });
-var port = 80;
+var port = 6831;
 // var numcount = {"c":0,"s":0,"f":0,"g":0,"o":0};
 server.listen(port,() =>{
     let list = ["c","s","f","g","o","ts"];
